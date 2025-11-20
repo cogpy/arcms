@@ -149,34 +149,9 @@ jobs:
               echo "Status page: $status_url" >&2
               echo "Available URLs checked: $URLS" >&2
               echo "Creating placeholder page..."
-              # Continue to placeholder creation below
-              cat > "$SITE_DIR/index.html" <<EOF
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$url - Restoration Pending</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
-        .status { background: #fff3cd; border: 1px solid #ffc107; padding: 20px; border-radius: 5px; }
-        h1 { color: #856404; }
-        a { color: #0066cc; }
-    </style>
-</head>
-<body>
-    <div class="status">
-        <h1>🔄 Site Restoration Pending</h1>
-        <p><strong>Site:</strong> $url</p>
-        <p><strong>Description:</strong> $description</p>
-        <p><strong>Archivarix Code:</strong> $code</p>
-        <p>No valid archive was found. The restoration may still be in progress.</p>
-        <p><a href="$status_url" target="_blank">View restoration status</a></p>
-        <p><a href="/">Back to site index</a></p>
-    </div>
-</body>
-</html>
-EOF
+              # Create simple placeholder and continue to next site
+              mkdir -p "$SITE_DIR"
+              echo "<html><body><h1>Site Restoration Pending</h1><p>No valid archive found.</p></body></html>" > "$SITE_DIR/index.html"
               continue
             fi
             
