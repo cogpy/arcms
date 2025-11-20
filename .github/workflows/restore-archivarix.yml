@@ -99,13 +99,19 @@ jobs:
 
             # Download the archive from Archivarix
             DOWNLOAD_URL="https://archivarix.com/get/$code_clean/"
-            echo "Downloading from: $DOWNLOAD_URL"
+            echo "Download URL: $DOWNLOAD_URL"
+
+            # Validate URL is not empty
+            if [ -z "$DOWNLOAD_URL" ]; then
+              echo "ERROR: Download URL is empty" >&2
+              exit 2
+            fi
 
             # Download with retry logic
             MAX_RETRIES=3
             RETRY_COUNT=0
             while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-              if curl -L -f -o "$SITE_DIR/archive.zip" "$DOWNLOAD_URL"; then
+              if curl -fSL -o "$SITE_DIR/archive.zip" "$DOWNLOAD_URL"; then
                 echo "Download successful!"
                 break
               else
@@ -114,7 +120,7 @@ jobs:
                   echo "Download failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
                   sleep 5
                 else
-                  echo "ERROR: Failed to download after $MAX_RETRIES attempts"
+                  echo "ERROR: Could not fetch archive from $DOWNLOAD_URL" >&2
                   echo "Creating placeholder page..."
                   # Create a placeholder page if download fails
                   cat > "$SITE_DIR/index.html" <<EOF
@@ -425,8 +431,11 @@ jobs:
           # Read sites data and inject into HTML
           SITES_DATA=$(jq -c '[.sites[] | select(.enabled == true)]' "$CONFIG_FILE")
 
-          # Escape for JavaScript injection
-          SITES_DATA_ESCAPED=$(echo "$SITES_DATA" | sed 's/"/\\"/g')
+          # Validate that INDEX_FILE exists and is non-empty before processing
+          if [ ! -s "$INDEX_FILE" ]; then
+            echo "ERROR: Index file missing or empty for sed manipulation." >&2
+            exit 3
+          fi
 
           # Replace SITES_DATA placeholder in the HTML
           sed -i "s/const sites = SITES_DATA;/const sites = $SITES_DATA;/" "$INDEX_FILE"
