@@ -1,0 +1,36 @@
+{
+  "sites": [
+    {
+      "url": "livingneighborhoods.org",
+      "code": "R6IO-2MK4-OEI0-WO26",
+      "status_url": "https://archivarix.com/en/status/R6IO2MK4OEI0WO26/",
+      "enabled": true,
+      "description": "Living Neighborhoods - Archive of community design and pattern language resources"
+    },
+    {
+      "url": "patternlanguage.com",
+      "code": "DICS-IEES-IQSU-MW0K",
+      "status_url": "https://archivarix.com/en/status/DICSIEESIQSUMW0K/",
+      "enabled": true,
+      "description": "Pattern Language - Christopher Alexander's pioneering work on architectural patterns"
+    },
+    {
+      "url": "iwritewordsgood.com",
+      "code": "SUCE-8ASG-E6AG-MWO2",
+      "status_url": "https://archivarix.com/en/status/SUCE8ASGE6AGMWO2/",
+      "enabled": true,
+      "description": "I Write Words Good - Creative writing and literary archive"
+    }
+  ],
+  "config": {
+    "deployment_branch": "gh-pages",
+    "sites_directory": "sites",
+    "archivarix_api_base": "https://archivarix.com/api/v1",
+    "optimization": {
+      "convert_utf8": true,
+      "fix_broken_links": true,
+      "remove_broken_images": true,
+      "update_viewport": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "sites": [
+    {
+      "url": "example-test.com",
+      "code": "TEST-CODE-HERE-0001",
+      "status_url": "https://archivarix.com/en/status/TESTCODEHERE0001/",
+      "enabled": false,
+      "description": "Example site configuration - disabled by default"
+    }
+  ],
+  "config": {
+    "deployment_branch": "gh-pages",
+    "sites_directory": "sites",
+    "archivarix_api_base": "https://archivarix.com/api/v1",
+    "optimization": {
+      "convert_utf8": true,
+      "fix_broken_links": true,
+      "remove_broken_images": true,
+      "update_viewport": true
+    }
+  }
+}

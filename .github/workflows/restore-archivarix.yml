@@ -1,0 +1,467 @@
+# Restore and Deploy Archivarix Sites
+# This workflow automates the restoration and deployment of archived sites using Archivarix codes
+
+name: Restore and Deploy Archivarix Sites
+
+on:
+  # Runs when archivarix_sites.json is modified
+  push:
+    branches: ["main", "copilot/add-archivarix-deployment"]
+    paths:
+      - '.github/archivarix_sites.json'
+      - '.github/workflows/restore-archivarix.yml'
+
+  # Allows manual triggering from Actions tab
+  workflow_dispatch:
+    inputs:
+      force_restore:
+        description: 'Force restoration of all sites'
+        required: false
+        default: 'false'
+        type: boolean
+
+# Sets permissions for deployment
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "archivarix-deploy"
+  cancel-in-progress: false
+
+jobs:
+  restore-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: pdo_sqlite, json, pcre, curl, dom, fileinfo, iconv, intl, libxml, zip, openssl
+          ini-values: memory_limit=512M
+
+      - name: Parse site configuration
+        id: parse_config
+        run: |
+          echo "Parsing archivarix_sites.json..."
+          cat .github/archivarix_sites.json
+
+          # Extract site count
+          SITE_COUNT=$(jq '.sites | length' .github/archivarix_sites.json)
+          echo "site_count=$SITE_COUNT" >> $GITHUB_OUTPUT
+          echo "Found $SITE_COUNT sites in configuration"
+
+      - name: Create deployment directory structure
+        run: |
+          mkdir -p deployment/sites
+          echo "Created deployment directory structure"
+
+      - name: Download and restore Archivarix sites
+        run: |
+          set -e
+
+          # Read configuration
+          CONFIG_FILE=".github/archivarix_sites.json"
+          SITES_DIR="deployment/sites"
+
+          # Process each site
+          jq -c '.sites[]' "$CONFIG_FILE" | while read -r site; do
+            enabled=$(echo "$site" | jq -r '.enabled')
+
+            if [ "$enabled" != "true" ]; then
+              echo "Skipping disabled site"
+              continue
+            fi
+
+            url=$(echo "$site" | jq -r '.url')
+            code=$(echo "$site" | jq -r '.code')
+            code_clean=$(echo "$code" | tr -d '-')
+            status_url=$(echo "$site" | jq -r '.status_url')
+            description=$(echo "$site" | jq -r '.description')
+
+            echo "=================================================="
+            echo "Processing site: $url"
+            echo "Code: $code"
+            echo "Description: $description"
+            echo "=================================================="
+
+            # Create site directory
+            SITE_DIR="$SITES_DIR/$url"
+            mkdir -p "$SITE_DIR"
+
+            # Download the archive from Archivarix
+            DOWNLOAD_URL="https://archivarix.com/get/$code_clean/"
+            echo "Downloading from: $DOWNLOAD_URL"
+
+            # Download with retry logic
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              if curl -L -f -o "$SITE_DIR/archive.zip" "$DOWNLOAD_URL"; then
+                echo "Download successful!"
+                break
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  echo "Download failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+                  sleep 5
+                else
+                  echo "ERROR: Failed to download after $MAX_RETRIES attempts"
+                  echo "Creating placeholder page..."
+                  # Create a placeholder page if download fails
+                  cat > "$SITE_DIR/index.html" <<EOF
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>$url - Restoration Pending</title>
+              <style>
+                  body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+                  .status { background: #fff3cd; border: 1px solid #ffc107; padding: 20px; border-radius: 5px; }
+                  h1 { color: #856404; }
+                  a { color: #0066cc; }
+              </style>
+          </head>
+          <body>
+              <div class="status">
+                  <h1>🔄 Site Restoration Pending</h1>
+                  <p><strong>Site:</strong> $url</p>
+                  <p><strong>Description:</strong> $description</p>
+                  <p><strong>Archivarix Code:</strong> $code</p>
+                  <p>This site is currently being restored. Please check back later.</p>
+                  <p><a href="$status_url" target="_blank">View restoration status</a></p>
+                  <p><a href="/">Back to site index</a></p>
+              </div>
+          </body>
+          </html>
+          EOF
+                  continue 2
+                fi
+              fi
+            done
+
+            # Extract archive if downloaded successfully
+            if [ -f "$SITE_DIR/archive.zip" ]; then
+              echo "Extracting archive..."
+              unzip -q "$SITE_DIR/archive.zip" -d "$SITE_DIR" || {
+                echo "ERROR: Failed to extract archive"
+                rm -f "$SITE_DIR/archive.zip"
+                continue
+              }
+
+              # Clean up zip file
+              rm "$SITE_DIR/archive.zip"
+
+              # Copy Archivarix CMS file for site management
+              if [ -f "archivarix.cms.php" ]; then
+                cp archivarix.cms.php "$SITE_DIR/"
+                echo "Copied Archivarix CMS to site directory"
+              fi
+
+              # Create site metadata
+              cat > "$SITE_DIR/.site-meta.json" <<EOF
+          {
+            "url": "$url",
+            "code": "$code",
+            "description": "$description",
+            "status_url": "$status_url",
+            "restored_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          }
+          EOF
+
+              echo "✓ Site $url restored successfully"
+            fi
+          done
+
+          echo "=================================================="
+          echo "Restoration process completed"
+          echo "=================================================="
+
+      - name: Generate site index
+        run: |
+          set -e
+
+          CONFIG_FILE=".github/archivarix_sites.json"
+          INDEX_FILE="deployment/index.html"
+
+          cat > "$INDEX_FILE" <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Archived Sites - Archivarix Restoration Portal</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body {
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                      line-height: 1.6;
+                      color: #333;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      min-height: 100vh;
+                      padding: 20px;
+                  }
+                  .container {
+                      max-width: 1200px;
+                      margin: 0 auto;
+                      background: white;
+                      border-radius: 10px;
+                      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                      overflow: hidden;
+                  }
+                  header {
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      color: white;
+                      padding: 40px;
+                      text-align: center;
+                  }
+                  header h1 {
+                      font-size: 2.5em;
+                      margin-bottom: 10px;
+                      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+                  }
+                  header p {
+                      font-size: 1.2em;
+                      opacity: 0.9;
+                  }
+                  .content {
+                      padding: 40px;
+                  }
+                  .intro {
+                      text-align: center;
+                      margin-bottom: 40px;
+                      padding: 20px;
+                      background: #f8f9fa;
+                      border-radius: 8px;
+                  }
+                  .intro h2 {
+                      color: #667eea;
+                      margin-bottom: 10px;
+                  }
+                  .sites-grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                      gap: 25px;
+                      margin-top: 30px;
+                  }
+                  .site-card {
+                      background: white;
+                      border: 2px solid #e9ecef;
+                      border-radius: 8px;
+                      padding: 25px;
+                      transition: all 0.3s ease;
+                      cursor: pointer;
+                  }
+                  .site-card:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                      border-color: #667eea;
+                  }
+                  .site-card h3 {
+                      color: #667eea;
+                      margin-bottom: 10px;
+                      font-size: 1.4em;
+                  }
+                  .site-card p {
+                      color: #666;
+                      margin-bottom: 15px;
+                  }
+                  .site-card .meta {
+                      font-size: 0.9em;
+                      color: #999;
+                      margin-bottom: 15px;
+                  }
+                  .site-card .actions {
+                      display: flex;
+                      gap: 10px;
+                  }
+                  .btn {
+                      display: inline-block;
+                      padding: 10px 20px;
+                      background: #667eea;
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 5px;
+                      transition: background 0.3s;
+                      text-align: center;
+                      flex: 1;
+                  }
+                  .btn:hover {
+                      background: #764ba2;
+                  }
+                  .btn-secondary {
+                      background: #6c757d;
+                  }
+                  .btn-secondary:hover {
+                      background: #5a6268;
+                  }
+                  .stats {
+                      display: flex;
+                      justify-content: space-around;
+                      margin: 30px 0;
+                      padding: 20px;
+                      background: #f8f9fa;
+                      border-radius: 8px;
+                  }
+                  .stat {
+                      text-align: center;
+                  }
+                  .stat-number {
+                      font-size: 2.5em;
+                      font-weight: bold;
+                      color: #667eea;
+                  }
+                  .stat-label {
+                      color: #666;
+                      margin-top: 5px;
+                  }
+                  footer {
+                      background: #f8f9fa;
+                      padding: 30px;
+                      text-align: center;
+                      color: #666;
+                      border-top: 1px solid #e9ecef;
+                  }
+                  footer a {
+                      color: #667eea;
+                      text-decoration: none;
+                  }
+                  footer a:hover {
+                      text-decoration: underline;
+                  }
+                  .code {
+                      font-family: 'Courier New', monospace;
+                      background: #f8f9fa;
+                      padding: 2px 6px;
+                      border-radius: 3px;
+                      font-size: 0.9em;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <header>
+                      <h1>🌐 Archived Sites Portal</h1>
+                      <p>Restored through Archivarix - Preserving Digital History</p>
+                  </header>
+
+                  <div class="content">
+                      <div class="intro">
+                          <h2>Welcome to the Archive</h2>
+                          <p>This portal hosts websites restored from archives using Archivarix technology. Each site has been carefully preserved and deployed for exploration and research.</p>
+                      </div>
+
+                      <div class="stats">
+                          <div class="stat">
+                              <div class="stat-number" id="siteCount">0</div>
+                              <div class="stat-label">Restored Sites</div>
+                          </div>
+                          <div class="stat">
+                              <div class="stat-number">🔄</div>
+                              <div class="stat-label">Automated Deployment</div>
+                          </div>
+                          <div class="stat">
+                              <div class="stat-number">🌟</div>
+                              <div class="stat-label">Preserved History</div>
+                          </div>
+                      </div>
+
+                      <div class="sites-grid" id="sitesGrid">
+                          <!-- Sites will be populated here -->
+                      </div>
+                  </div>
+
+                  <footer>
+                      <p>Powered by <a href="https://archivarix.com" target="_blank">Archivarix CMS</a> |
+                      <a href="https://github.com/cogpy/arcms" target="_blank">GitHub Repository</a></p>
+                      <p style="margin-top: 10px; font-size: 0.9em;">
+                          To add a new site, update <span class="code">.github/archivarix_sites.json</span> with your Archivarix restoration code
+                      </p>
+                  </footer>
+              </div>
+
+              <script>
+                  // Site data will be injected here
+                  const sites = SITES_DATA;
+
+                  // Populate site count
+                  document.getElementById('siteCount').textContent = sites.length;
+
+                  // Generate site cards
+                  const sitesGrid = document.getElementById('sitesGrid');
+                  sites.forEach(site => {
+                      const card = document.createElement('div');
+                      card.className = 'site-card';
+                      card.onclick = () => window.location.href = `sites/${site.url}/`;
+
+                      card.innerHTML = `
+                          <h3>${site.url}</h3>
+                          <p>${site.description}</p>
+                          <div class="meta">
+                              <span class="code">${site.code}</span>
+                          </div>
+                          <div class="actions">
+                              <a href="sites/${site.url}/" class="btn" onclick="event.stopPropagation()">Visit Site</a>
+                              <a href="${site.status_url}" class="btn btn-secondary" target="_blank" onclick="event.stopPropagation()">Status</a>
+                          </div>
+                      `;
+
+                      sitesGrid.appendChild(card);
+                  });
+              </script>
+          </body>
+          </html>
+          EOF
+
+          # Read sites data and inject into HTML
+          SITES_DATA=$(jq -c '[.sites[] | select(.enabled == true)]' "$CONFIG_FILE")
+
+          # Escape for JavaScript injection
+          SITES_DATA_ESCAPED=$(echo "$SITES_DATA" | sed 's/"/\\"/g')
+
+          # Replace SITES_DATA placeholder in the HTML
+          sed -i "s/const sites = SITES_DATA;/const sites = $SITES_DATA;/" "$INDEX_FILE"
+
+          echo "✓ Generated site index at deployment/index.html"
+
+          # Show what was generated
+          echo "Generated index for $(echo "$SITES_DATA" | jq '. | length') sites"
+
+      - name: Prepare deployment
+        run: |
+          # Create .nojekyll to disable Jekyll processing
+          touch deployment/.nojekyll
+
+          # Create CNAME if custom domain is configured
+          # Uncomment and set your custom domain if needed
+          # echo "your-domain.com" > deployment/CNAME
+
+          echo "✓ Deployment prepared"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deployment
+          publish_branch: gh-pages
+          force_orphan: true
+          enable_jekyll: false
+          commit_message: "Deploy restored Archivarix sites"
+
+      - name: Summary
+        run: |
+          echo "=================================================="
+          echo "Deployment Summary"
+          echo "=================================================="
+          echo "✓ Sites restored and deployed to gh-pages branch"
+          echo "✓ View your sites at: https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          echo "=================================================="
