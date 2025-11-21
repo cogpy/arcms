@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Density</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+
+  .base {color:blue; font-weight:normal; font-size:100%; background-color:eeeeee}
+  .bigChange {color:blue; font-weight:BOLD; font-size:100%; background-color:ffFFFF}
+  .smallChange {color:white; font-size:100%; background-color:66ddaa}
+  .start {color:ffffdd;background-color:6699cc; text-decoration:none}
+  .blustart {color:ffffdd;background-color:6699ff; text-decoration:none}
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+
+  .h31class {
+        FONT-WEIGHT: normal; FONT-SIZE: 31px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h414class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 15px; FONT-FAMILY: "Arial"; COLOR: GREEN;
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h69class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69medclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69bigclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+
+
+  </style>
+</head>
+<body text="#000000" vlink="#0000FF" link="#0000FF" bgcolor="#FFFFFF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <table width="650" align="center" border="0">
+    <tr>
+      <td align="center"><span class="h4class" style="font-family:Times"><span style="FONT-SIZE:140%">A F</span>ragment of the <span style="FONT-SIZE:140%">G</span>enerative <span style="FONT-SIZE:140%">C</span>ode for <span style="FONT-SIZE:140%">N</span>eighborhoods</span></td>
+    </tr>
+    <tr>
+      <td align="left">
+        <a href="../packets/buildingvolumes.htm"><span class="h5class" style='font-weight:normal;color:blue'>Back to Building Volumes Group</span></a>
+      </td>
+    </tr>
+  </table>
+  <center>
+    <img src="../actions/pics/density/delftcanal-rs2-words.jpg" width="650px">
+  </center><br>
+  <hr height="10" color="#005511">
+  <table align="center" width="550" border="0">
+    <tr>
+      <td width="1" align="center" valign="top"></td>
+      <td>
+        <table width="549" align="center" border="0" padding-left="0px">
+          <tr>
+            <td align="left">
+              <table align="center" width="549" border="0" bgcolor="#FFFFDD">
+                <tr>
+                  <td width="560" align="justify" colspan="4">
+                    <span class="h404class">One very simple way to measure density, is by the total area of built space, as a fraction of the total area of the neighborhood. This is known as the floor area ratio.<br>
+                    Consider an imaginary neighborhood of 5 hectares (about 12 acres). Here is a table of some possible densities in this five-hectare neighborhood:<br></span>
+                    <p></p>
+                  </td>
+                </tr>
+              </table>
+              <table width="560" align="center" border="3" bgcolor="#FFFFDD" bordercolor="#0000FF">
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">Number of houses</span></td>
+                  <td width="100px" valign="top"><span class="h4class">Density (FAR)</span></td>
+                  <td width="100px" valign="top"><span class="h4class">Average size of garden</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">1</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.005</span></td>
+                  <td width="100px" valign="top"><span class="h4class">10 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">2</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.01</span></td>
+                  <td width="100px" valign="top"><span class="h4class">5 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">4</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.02</span></td>
+                  <td width="100px" valign="top"><span class="h4class">2.5 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">8</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.04</span></td>
+                  <td width="100px" valign="top"><span class="h4class">1.25 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">16</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.08</span></td>
+                  <td width="100px" valign="top"><span class="h4class">0.6 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">32</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.16</span></td>
+                  <td width="100px" valign="top"><span class="h4class">0.3 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">64</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.32</span></td>
+                  <td width="100px" valign="top"><span class="h4class">0.15 acres</span></td>
+                </tr>
+                <tr>
+                  <td width="200px" valign="top"><span class="h4class">Photo</span></td>
+                  <td width="100px" valign="top"><span class="h4class">128</span></td>
+                  <td width="100px" valign="top"><span class="h4class">.64</span></td>
+                  <td width="100px" valign="top"><span class="h4class">0.07 acres</span></td>
+                </tr>
+              </table><br>
+              <span class="h4class">Whenever you start a project, or whenever you begin to take action, you must always looks for those sparks of life, among the buildings, or in the open land -- places that, just very slightly, have a quality that make you feel fractionally a little more alive and a little more inclined to love life.</span>
+              <p><span class="h4class">You need to be very discriminating when you do this. If you get good at recognizing such places, they may be fragments, only. in the middle of stuff that is not worth much.</span></p>
+              <p><span class="h4class"></span></p>
+              <p><span class="h4class">These small fragments are too precious to be swept carelessly out of the way, or destroyed, or casually rebuilt. They are capaable, like seeds, of starting the new life of the place, like fresh shoots.</span></p>
+              <p><span class="h4class">Indeed, if you start with nothing but these fragments -- a bench here, the base of a tree that has primroses around it in spring, an archway from an ancient building, a piece of a brick wall with lovely scarlet bricks -- keep <b>all</b> of them. These are what we mean by "magic configurations." You can always find a way to build whatever new you are going to build, without destroying these magic configurations.</span></p>
+              <p><span class="h4class">If you follow this rule, it will give the place you are making, an altogether different character.</span></p>
+              <p><span class="h4class">Do not think that you can achieve the same end, by plucking the beautiful fragment, and replanting it, or inserting it into some other structure. That will always be damage, as if one had hacked out a piece of life and pasted it into a new place. It can't be done, because the life that exists in a thing, always comes from the larger context -- it is both its existence in the land, as it is, and the thing itself, which are capable of giving continuity to life.</span></p>
+              <p><span class="h4class"></span></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#FFFFFF">
+        <center>
+          <hr height="14" color="#000000">
+          <span class="h404class">SUMMARY OF TASKS FOR THIS UNFOLDING:</span>
+          <hr height="14" color="#000000">
+        </center><span class="h4class"></span>
+        <ul>
+          <li><span class="h4class">Follow the rules written down above, exactly as they are written.</span></li>
+        </ul><span class="h4class"></span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#FFFFFF">
+        <center>
+          <br>
+          <hr height="10" color="#000000">
+          <a href="../packets/buildingvolumes.htm"><span class="h5class" style='font-weight:normal;color:blue;font-size:11px;'>Back to Building Volumes Group</span></a><br>
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span> <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span>
+        </center>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ENTRANCE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+  H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+  H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+  H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+  H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+  H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .stepnumber {padding-left:16px;padding-right:8px;text-align:right}
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#44bbdd; color:#ffffff; font-weight:normal}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #illuminate {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 300px;
+  visibility: visible;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   320px;
+  width   : 440px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    420;
+                left:   30px;
+  width   : 300px;
+  height : 500px;
+  FONT-style: italic; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps">
+    <script>
+
+
+    // these must appear before stepb is first called
+    enableMovieControlViaStepb = true; 
+        setStepDescriptionToShowInline(1); 
+    </script>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">SLIDESHOW-TUTORIAL</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:15px;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="h6class">The design process has these main steps</span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td width='30px' class="stepnumber" valign="top">1.</td>
+              <td valign="top"><span class="h6class">
+              <script>
+
+              stepb(1,'Define a single space which extends from the front door to the street','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">2.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(2,'Changes of level and direction','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">3.</td>
+              <td valign="top"><span class="h6class">
+              <script>
+
+              stepb(3,'Forming the transition as an actual space','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">4.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(4,'The five senses','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">5.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(5,'The inner center of the transition','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">6.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(6,'Shaping the mouth of the path')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">7.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(7,'Make all spaces positive','')
+              </script></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table></a>
+  </div>
+  <script language="javascript">
+   // ******* set up handling movie and restart-button divs ***************
+        // *********************************************************************
+        // When reusing this, make sure the following settings are correct
+        // *********************************************************************
+
+        // name of div that holds the movie
+        var moviediv = 'movie';   
+        // name of div to show after movie and slideshow
+        var aftermoviediv = 'restartdiv';  
+
+        // Include the following to replace moviediv with aftermoviediv
+        //  when the movie and slideshow are done
+        setDelayedCallWhenSlideshowDone(
+           function () { hideElement(moviediv); showElement(aftermoviediv); }
+        );
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:400;height:400;visibility:hidden">
+      <table width="400" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="400" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftermoviediv);showElement(moviediv);getMovieBackAndRestart()"><font color="#000000">Watch the movie again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='movie' style="position:absolute;left:00;top:0;width:350;height:400;visibility:visible">
+      <table height="60" width="435" align="center" border="0">
+        <tr>
+          <td valign="top" align="center"><br>
+          <span class="h4class"><font color="#222222"><b>ENTRANCE SEQUENCE UNFOLDING TO CREATE A HOUSE ENTRANCE</b></font></span></td>
+        </tr>
+      </table>
+      <script language="javascript">
+      setAppletURL();
+        replayCab = "/gdrawreplay2-3-27.cab";
+        jarFile = "/gdrawreplay.jar";
+
+        //////// PARAMETERS TO SET /////////////
+        inputFileName = "artemis.gdraw";
+
+        // increasing this number slows the replay
+        replayDelay = 5;  
+
+        // file name, wait before photo
+        showSlideshowAfterReplayDone("anselmo1.jpg",2000); 
+
+        SetDrawingSize(425,340);
+
+        // must be true unless there's some other way to start the replay
+        //  (for example, a button that calls requestReplay()  )
+        replayWhenLoaded = true;   
+        ////////////////////////////////////////
+
+        forReplay = true;
+        supplyCaptions = false;
+        resizeIfNecessary = false;
+        setCallOnDocumentLoad(updateCaption);
+
+        // Set up a slideshow to follow the movie
+        //  If there is no slideshow, leave this here,
+        //  but setupSlides should have no parameters
+        //  (creates an empty slide show)
+        setupSlides();
+
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 3000;
+        timeAfterLastSlide = 3000;
+        showSetupCaptions = true;
+
+        // if set to 0, will be ignored (not specified in img tag)
+        slideWidth = 425; 
+        slideHeight = 0; 
+      </script>
+      <table align="center" border="0">
+        <tr height="400">
+          <td valign="top" align="left">
+            <script language="javascript">
+            // the following call generates the html for the movie and slideshow
+            // It should come after everything has been specified
+            drawapplet();
+            </script>
+          </td>
+        </tr>
+      </table>
+      <div id="loadingmsg" align="center">
+        A movie is loading.
+      </div>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

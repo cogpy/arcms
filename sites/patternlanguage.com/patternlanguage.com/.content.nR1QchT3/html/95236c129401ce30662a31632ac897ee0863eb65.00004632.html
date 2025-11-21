@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ORNAMENT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"; }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"; }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; margin-bottom: 0;      }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+    .unhighlightedSlideMarker {visibility:hidden}
+    .highlightedSlideMarker {visibility:visible}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+    #steps {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: hidden;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    360px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+    FONT-style: italic; 
+    FONT-SIZE: 16px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+    showWhenReady('steps'); // We hide the steps until images are loaded
+                                     // so user sees whole show
+                                     //  This call tells how to make them visible
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(445,299);
+        // slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+        slideImageAttributeString = 'width=445 name="adBanner"';
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        setScrollDiv('stepscrolldiv');  // The name of the div holding the step list that will be scrolled
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");  // for displaying a marker such as a blue triangle
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>You can let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp;click&nbsp;here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'>The ornament-making process has some simple steps which typically go along the following lines. Of course each case is different.</span> <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;height:220;overflow-y:scroll'>
+                  <span style='font-size:80%;line-height:1.2;'></span>
+                  <ul>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blank.jpg','Look, and find gaps','caption-manual:Look carefully at the building or building component which is to receive the ornament, and find the "gaps" in it.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus1.jpg','Find overall gesture','caption-manual:Ask yourself what overall gesture in the whole seems to repair the empty gap-like feeling in the whole?');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus2.jpg');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus3.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus4.jpg','Find repeating pattern','caption-manual:Find a simple repeating pattern which is consistent with this gesture and fits within it.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus5.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus6.jpg','Make space positive','caption-manual:Now improve the ornament, by making the individual bits of space in the ornament more positive.  To do this, start giving better shape to individual repeating elements. "Better" means that the negative space between these elements, not only the elements themselves, become well-shaped and positive in shape.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus7.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus8.jpg','Make boundaries','caption-manual:Make appropriate boundaries, which help to unify the ornament, and its relation to its surroundings.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus9.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus10.jpg','Add second level','caption-manual:Once you have this clear, try adding a second level of scale, of other smaller shapes, which make the ornament whole, and which increase the unity of its interior space-- what this means is that the space between element become more positive because of these small elements you have added.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus11.jpg','Add third level','caption-manual:Do what you may need to, to add a third level of detail, thus embellishing the centers you have just created with small centers. They should be chosen to create both large centers and small ones. (check tutorial to understand wehat this means).');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus12.jpg','Make space positive','caption-manual:Once again sharpen these smallest ones, and make them more positive.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus13.jpg','Increase contrast','caption-manual:If it is helpful, increase contrast, to make the ornament more vivid.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:blankplus14.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:blankplus15.jpg','Make harmonious','caption-manual:In any case make sure it is not too extreme: it should end up subdued and harmonious.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college3.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:college3.jpg','Here is the result','caption-manual:');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college4.jpg');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college5.jpg');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:college5.jpg','See more','caption-manual:');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college building 6.jpg');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college building 7.jpg');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:college building 8.jpg');
+                    </script></span></li>
+                  </ul><span style='font-size:80%;line-height:1.2;'></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>CREATING THE ORNAMENT ON A BUILDING BY UNFOLDING</b></font></span>
+          <p><span class="h2class"><font color="#222222"><span class="h6class"><i>This is a complex process, but using certain simple steps repeatedly, many people can make beautiful ornament and increase the joy and life of a building</i></span></font></span></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+       putCaptionsHere('<center>A slideshow is loading.</center>','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

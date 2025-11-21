@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatternLanguage.com</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/bookstore/bookshelf-mobile.css" title="external">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <style>
+        #leftarrow {position: absolute; top: 380px; left: 18px;}
+                #leftarrow img, #rightarrow img {height: 120px; width: 28px;}
+        #rightarrow {position: absolute; top: 380px; left: 607px;}
+  </style>
+  <script type="text/javascript">
+
+  var currVisibleId; 
+  function togVisible(id) { if(currVisibleId) document.getElementById(currVisibleId).style.visibility="hidden"; document.getElementById(id).style.visibility="visible"; currVisibleId=id; }
+  </script>
+</head>
+<body onload="togVisible('one1')">
+  <div id="header">
+    <div id="frameimage">
+      <a href="/"><img src="/img/apllogo2.jpg" height="48px"></a>
+    </div>
+    <div id="frametitle">
+      <a href="/bookstore/bookshelf.html">Bookstore</a>
+    </div>
+    <div id="frametree" class="h5class">
+      <a href="/">home page</a> &gt;&gt; this page
+    </div>
+  </div>
+  <div id="leftarrow"><img src="/img/leftarrow.png"></div>
+  <div id="rightarrow"><img src="/img/rightarrow.png"></div>
+  <div id="wrapper">
+    <div id="buttons2">
+      <ul>
+        <li onclick="togVisible('one1')">
+          <a href="#">
+          <div id="one">
+            <img src="/img/apllogo.jpg">
+            <h1>A Pattern Language</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('two2')">
+          <a href="#">
+          <div id="two">
+            <img src="/img/nofoemblem.jpg" style="left: 23px;">
+            <h1 style="background-color: #369;">The Nature of Order: <span style="font-size: 13px;">Volumes I-IV</span></h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('three3')">
+          <a href="#">
+          <div id="three">
+            <img src="/img/cover_images/twb-emblem.jpg" style="height: 46px; left: 27px;">
+            <h1 style="font-size: 14px; left: 14px;">The Timeless Way of Building</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('four4')">
+          <a href="#">
+          <div id="four" style="width: 75px;">
+            <img src="/img/cover_images/oregonexp-emblem.jpg" style="height: 46px; left: 14px;">
+            <h1 style="left: -4px;">The Oregon Experiment</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('five5')">
+          <a href="#">
+          <div id="five" style="width: 70px;">
+            <h1 style="left: -5px;">A Foreshadowing of 21st Century Art</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('six6')">
+          <a href="#">
+          <div id="six" style="width: 80px;">
+            <img src="/img/battlelogo-1.jpg" style="height: 46px; left: 16px;">
+            <h1 style="left: 1px;">Battle</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('eight8')">
+          <a href="#">
+          <div id="eight" style="width: 70px;">
+            <h1 style="left: -5px;">Notes on the Synthesis of Form</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('nine9')">
+          <a href="#">
+          <div id="nine" style="width: 60px;">
+            <img src="/img/cover_images/linz-emblem.jpg" style="height: 38px; left: 11px; top: 18px;">
+            <h1 style="left: -9px;">The Linz Caf&eacute;</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('seven7')">
+          <a href="#">
+          <div id="seven" style="width: 90px;">
+            <img src="/img/cover_images/poh-emblem.jpg" style="height: 46px; left: 20px;">
+            <h1 style="left: 7px;">The Production of Houses</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('eleven11')">
+          <a href="#">
+          <div id="eleven" style="width: 70px;">
+            <img src="/img/cover_images/ntud-emblem.jpg" style="height: 44px; left: 13px;">
+            <h1 style="left: -5px;">A New Theory of Urban Design</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('ten10')">
+          <a href="#">
+          <div id="ten" style="width: 70px;">
+            <img src="/img/cover_images/mrm-emblem.jpg" style="height: 42px; left: 13px;">
+            <h1 style="left: -5px;">The Mary Rose Museum</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('twelve12')">
+          <a href="#">
+          <div id="twelve" style="width: 70px;">
+            <h1 style="left: -5px;">Houses Generated by Patterns</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('thirteen13')">
+          <a href="#">
+          <div id="thirteen" style="width: 70px;">
+            <h1 style="left: -10px; font-size: 14px;">A Pattern Language which Generates</h1>
+            <h1 style="left: 9px; font-size: 14px;">Multi Service Community Centers</h1>
+          </div></a>
+        </li>
+        <li onclick="togVisible('fourteen14')">
+          <a href="#">
+          <div id="fourteen" style="width: 80px; margin-right: 20px;">
+            <h1 style="left: 1px;">Community and Privacy</h1>
+          </div></a>
+        </li>
+      </ul>
+    </div>
+    <div id="group9"><img src="/img/shelf.jpg"></div>
+  </div>
+  <div id="booksummaries">
+    <div id="one1">
+    <h2>A Pattern Language.</h2>
+    <h3 style="font-size: 15px;">Towns, Buildings, Construction</h3><span class="author">By Christopher Alexander, Sara Ishikawa, Murray Silverstein<br>
+    with Ingrid king, Shlomo Angel and Max Jacobsen</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1977. 1141 pages.</span>
+    <p><b>Summary.</b> You can use this book to design a house for yourself with your family; you can use it to work with your neighbors to improve your town and neighborhood; you can use it to design an office, or a workshop, or a public building. And you can use it to guide you in the actual process of construction.</p>
+    <p><i>A Pattern Language</i>, along with <i>The Timeless Way of Building</i> and <i>The Oregon Experiment</i>, presents "an entirely new approach to architecture, building and planning, which will we hope replace existing ideas and practices entirely". At the core of these books is the idea that people should design for themselves their own houses, streets, and communities. This idea may be radical (it implies a radical transformation of the architectural profession) but it comes simply from the observation that most of the wonderful places of the world were not made by architects but by the people.</p>
+    <p>At the core of these books too is the point that in designing their environments people always rely on certain "languages", which, like the languages we speak, allow them to articulate and communicate an infinite variety of designs within a formal system which gives them coherence.</p>
+    <p>This book provides a language of this kind. It will enable a person to make a design for almost any kind of building, or any part of the built environment.</p>
+    <p>"Patterns", the units of this language, are answers to design problems (How high should a window sill be? How many stories should a building have? How much space in a neighborhood should be devoted to grass and trees?). More than 250 of the patterns in this pattern language are given: each consists of a problem statement, a discussion of the problem with an illustration, and a solution. As the authors say in their introduction, many of the patterns are archetypal, so deeply rooted in the nature of things that it seems likely that they will be a part of human nature, and human action, as much in five hundred years as they are today.</p>
+    <p><a href="/leveltwo/patternsframegreen.htm?/leveltwo/../apl/twopanelnlb.htm">Click here to view the patterns online (members only:</a> <a href="/membership/membership.html"><i>click here to become a member</i>)</a></p>
+    <p><b>Reviews.</b> "I believe this to be perhaps the most important book on architectural design published this century. Every library, every school, every environmental action group, every architect, and every first-year student should have a copy." &mdash;<i>Tony Ward, Architectural Design</i></p>
+    <p>"The best book in the <i>Whole Earth Catalog</i>" &mdash;<i>Stewart Brand</i></p>
+    <p>"Don't go to architecture school; devour this book instead and use it to design buildings and places that really work." &mdash;<i>Kevin Kelly, Reader</i></p>
+    <form>
+      <input type="button" value="Buy from PatternLanguage.com" onclick="location.href='/leveltwo/booksframe.htm?/leveltwo/../apl/frontorderapl-ca.htm'">
+    </form><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px; padding-top: 8px;"></div>
+    <div id="two2">
+    <h2>The Nature of Order.</h2>
+    <h3 style="font-size: 15px;">An Essay on the Art of Building and<br>
+    the Nature of the Universe</h3><span class="author">By Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Center for Environmental Structure, 2004. Four Volumes.</span>
+    <p><b>Summary.</b> Christopher Alexander's series of groundbreaking books&mdash;including <i>The Timeless Way of Building</i> and <i>A Pattern Language</i>&mdash;have pointed to fundamental truths of the way we build, revealing what gives life and beauty and true functionality to our buildings and towns. Now, in <i>The Nature of Order</i>, Alexander's Magnum Opus, he delves into the properties of life itself and finds 15 properties, highlighting a set of well-defined structures present in all order&mdash;and in all life&mdash;from micro-organisms and mountain ranges to the creation of good houses and vibrant communities.</p>
+    <p>Here is the culmination of decades of intense thinking by one of the most innovative architects of the 20th century.</p>
+    <p>Click here to view a complete summary of all four volumes</p>
+    <p>Click here to visit natureoforder.com and purchase <i>The Nature of Order</i></p>
+    <p>Click here to see the 15 properties applied to neighborhoods</p>
+    <p>Click here to see the complete empirical findings of <i>The Nature of Order</i></p>
+    <p><b>Reviews.</b> "&hellip;Five hundred years is a long time, and I don't expect many of the people I interview will be known in the year 2500. Christopher Alexander may be an exception." &mdash;<i>David Creelman, Author, Interviewer and Editor, HR Magazine</i></p>
+    <p>"Alexander's genetic scripts are likely to&hellip;play a role so fundamental in the future, that their widespread use cannot even be imagined today. This will change the world as effectively as the advent of printing changed the world&hellip;" &mdash;<i>Doug Carlston, Silicon Valley Luminary, former President of Broderbund</i></p>
+    <p>"After the publication of this new work, our civilization has to seriously question why it has ignored the Pattern Language for so long, and to face the blame for the damage that it has done to our cities, neighborhoods, buildings, and psyche by doing so." &mdash;<i>Nikos Salingaros</i></p>
+    <p>"&hellip;I believe Alexander is likely to be remembered most of all, in the end, for having produced the first credible proof of the existence of God&hellip;" &mdash;<i>Eric Buck, Dept. of Philosophy, Univ. of Kentucky</i></p>
+    <form>
+      <input type="button" value="Buy from NatureofOrder.com" onclick="parent.location='http://www.natureoforder.com'">
+    </form><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px; padding-top: 8px;"></div>
+    <div id="three3">
+    <h2>The Timeless Way of Building.</h2><span class="author">By Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1979. 552 pages.</span>
+    <p><b>Summary.</b> Alexander writes, "There is one timeless way of building. It is thousands of years old, and the same today as it has always been. The great traditional buildings of the past, the villages and tents and temples in which man feels at home, have always been made by people who were very close to the center of this way. And as you will see, this way will lead anyone who looks for it to building which are themselves as ancient in their form as the trees and hills, and as our faces are."</p>
+    <p>This volume provides the opening work in Christopher Alexander's seminal series on architecture. Here he provides a fascinating introduction to the ideas behind the succeeding books. Volume 1, <i>The Timeless Way of Building</i>, lays the foundation of the series. It presents a new theory of architecture, building, and planning which has, at its core, that age-old process by which the people of a society have always pulled the order of their world from their own being&mdash;it forms, in essence, the basis for a new traditional post-industrial architecture, created by the people&hellip;</p>
+    <p><b>Reviews.</b> "Read it for inspiration; as a practicing planner, an educator, or a student, you cannot help but be challenged and stimulated by this book." &mdash;<i>Dennis Michael Ryan, Journal of the American Planning Association</i></p>
+    <p>"This is one of the most important books on architectural theory of the late 20th century. If you haven't read it yet, you better soon, because the times, they are a changing." &mdash;<i>Dylan Scoles, Reader</i></p>
+    <p>"This book takes you in a different world, a more humane, emphatic world, such a lovely read. Everyone who does not feel good in a glass, steel and concrete building and does not understand why, this book is a good start to appreciate 'The quality without a name'." &mdash;<i>Craciun Octavian, Reader</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="four4">
+    <h2>The Oregon Experiment.</h2><span class="author">By Christopher Alexander, Murray Silverstein, Shlomo Angel, Sara Ishikawa and Denny Abrams</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1975. 202 pages.</span>
+    <p><b>Summary.</b> The third volume of Christopher Alexander's series on architecture, <i>The Oregon Experiment</i> is the first of the series to describe in full detail how the theory presented in <i>A Pattern Language</i> and <i>The Timeless Way of Building</i> may be implemented.</p>
+    <p>This book is the master plan for the University of Oregon, and has now been implemented at that university; but it shows at the same time how any community the size of a university or small town might go about designing its own future environment&mdash;with all members of the community participating personally. It is a concrete example of the Center's theories in practice, showing in simple detail, with numerous illustrations, how to implement six guiding principles: organic order, participation, piecemeal growth, patterns, diagnosis, and coordination.</p>
+    <p><b>Reviews.</b> "<i>The Oregon Experiment</i> is perhaps this decade's best candidate for a permanently important book." &mdash;<i>Rory Campbell, The Boston Globe</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="five5">
+    <h2>A Foreshadowing<br>
+    of 21st Century Art.</h2>
+    <h3 style="font-size: 15px;">The Geometry of Very Early Turkish Carpets</h3><span class="author">By Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1993. 352 pages.</span>
+    <p><b>Summary.</b> Christopher Alexander has assembled what many believe to be one of the finest collections of early Turkish carpets in the world. More than half the carpets are unique examples&mdash;carpets with no known counterpart. In this richly illustrated volume&mdash;featuring six hundred illustrations, ninety-eight in full color&mdash;Alexander takes readers on an engaging tour of his beautiful collection.</p>
+    <p>This book makes an important contribution to the world of carpet scholarship. It contains the first coherent theory of structure of carpet designs, and contains much material that anticipates Alexander's general theory of order which appears in <i>The Nature of Order</i>.</p>
+    <p>Equally important, Alexander's thoughtful meditations on these carpets will fascinate the many architects, artists, and planners who follow his work.</p>
+    <p><b>Reviews.</b> "Profoundly thrilling&hellip;A trip through space and time: for Alexander&hellip;Turkish carpets are portals to the Absolute. But this isn't an academic Shirley MacLaine gazing through a rug into his own navel: the tough-minded Alexander shows that the early Turks knew some basic truths about structure, color and light that have been forgotten in our time." &mdash;<i>Newsweek</i></p>
+    <p>"One of the most fascinating and beautiful groups of carpets ever assembled by an individual collector." &mdash;<i>Ian Bennett, Hali Magazine</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="six6">
+    <h2>Battle.</h2><span class="author">By Christopher Alexander<br>
+    with HansJoachim Neis and Maggie Moore Alexander</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 2012. 520 pages.</span>
+    <p><b>Summary.</b> This book puts forth a revolutionary vision of the human environment: in coming eras, the environment will be conceived, designed, made and widely understood as a necessary part of our emotional and social life. Using the example of the construction of the Eishin Campus in Japan, built by the Center for Environmental Structure, this book demonstrates the comprehensive application of Alexander's principles and methods to large-scale building projects and communities. It also explains in detail the innovative techniques of construction and administration that are at the heart of system-A. The vision established in this book leads to a new architecture that we can conceive in our hearts, and build with our own hands, using processes that encourage us to make places of life and beauty. An entirely new built landscape, embracing creation, art, craft, technology, ecology, and science&mdash;all that we would like to call architecture&mdash;will then come into view.</p>
+    <p><b>Reviews.</b> "Alexander, again, does what he does so well: in the process of adult argument, weave biology, theology, art appreciation, and geometry, plus cultural call outs from Jung to Fellini, into his tale." &mdash;<i>Architect's Newspaper</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="seven7">
+    <h2>The Production of Houses.</h2><span class="author">By Christopher Alexander<br>
+    with Howard Davis, Julio Martinez and Don Corner</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1985. 381 pages.</span>
+    <p><b>Summary.</b> Fifth in the Center for Environmental Structure's series on architecture, <i>The Production of Houses</i> puts Alexander's theories to the test and shows what sort of production system can create the kind of environment Alexander has envisioned. The book centers around a group of buildings which Alexander and his associates built in 1976 in northern Mexico. Each house is different and the book explains how each family helped to lay out and construct its own home according to the family's own needs and in the framework of the pattern language. Numerous diagrams and tables as well as a variety of anecdotes make the day-to-day process clear.</p>
+    <p>The Mexican project, however, is only the starting point for a comprehensive theory of housing production. <i>The Production of Houses</i> describes seven principles which apply to any system of production in any part of the world for housing of any cost in any climate or culture or at any density.</p>
+    <p>In the last part of the book, "The Shift of Paradigm", Alexander describes, in detail, the devastating nature of the revolution in world view which is contained in his proposal for housing construction and its overall implication for deep-seated cultural change.</p>
+    <p><b>Reviews.</b> "A moving record record of what untrained builders can do." &mdash;<i>Diana Ketchum, Oakland Tribune</i></p>
+    <p>"If only we could get the public authorities to absorb the lessons that Christopher Alexander and his colleagues provide." &mdash;<i>Colin Ward, New Society</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="eight8">
+    <h2>Notes on the Synthesis of Form.</h2><span class="author">By Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Harvard University Press, 1964. 224 pages.</span>
+    <p><b>Summary.</b> "These notes are about the process of design: the process of inventing things which display new physical order, organization, form, in response to function." This book, opening with these words, presents an entirely new theory of the process of design.</p>
+    <p>In the first part of the book, Alexander discusses the process by which a form is adapted to the context of human needs and demands that has called it into being. He shows that such an adaptive process will be successful only if it proceeds piecemeal instead of all at once. It is for this reason that forms from traditional unselfconscious cultures, molded not by designers but by the slow pattern of changes within tradition, are so beautifully organized and adapted. When the designer, in our own self-conscious culture, is called on to create a form that is adapted to its context he is unsuccessful, because the preconceived categories out of which he builds his picture of the problem do not correspond to the inherent components of the problem, and therefore lead only to the arbitrariness, willfulness, and lack of understanding which plague the design of modern buildings and modern cities.</p>
+    <p>In the second part, Alexander presents a method by which the designer may bring his full creative imagination into play, and yet avoid the traps of irrelevant preconception. He shows that, whenever a problem is stated, it is possible to ignore existing concepts and to create new concepts, out of the structure of the problem itself, which do correspond correctly to what he calls the subsystems of the adaptive process. By treating each of these subsystems as a separate subproblem, the designer can translate the new concepts into form. The form, because of the process, will be well-adapted to its context, non-arbitrary, and correct.</p>
+    <p>The mathematics underlying this method, based mainly on set theory, is fully developed in a long appendix. Another appendix demonstrates the application of the method to the design of an Indian village.</p>
+    <p><b>Reviews.</b> "Alexander's <i>Notes on the Synthesis of Form</i> was required reading for researchers in computer science throughout the 1960s. It had a strong influence in the 1960s and 1970s on programming language design, modular programming, object-oriented programming, software engineering and other design methodologies." &mdash;<i>Unknown Programmer</i></p>
+    <p>"The success or failure of the designed environment will remain, as always, a human responsibility&hellip;Alexander's assertions are not only challenging and stimulating but informative." &mdash;<i>American Institute of Architects Journal</i></p>
+    <p>"One of the most important contemporary books about the art of design, what it is, and how to go about it." &mdash;<i>Industrial Design Magazine</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="nine9">
+    <h2>The Linz Cafe.</h2><span class="author">By Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1982. 96 pages.</span>
+    <p><b>Summary.</b> <i>The Linz Cafe</i> is the fourth in the seminal series of books on architecture. <i>The Linz Cafe</i> describes the application of the theory to a single building commissioned by the organizers of the 1980 summer exposition "Forum Design" in Linz, Austria. From the Introduction: "The Linz Cafe is one of the first buildings in which I have succeeded in carrying out almost all the intentions expressed in the earlier volumes of this series. It is a small three storey building, built on the banks of the Danube in Linz." <i>&ndash;Christopher Alexander</i>. This book tells an intimate story of the conception and realization of the building.</p>
+    <p><b>Reviews.</b> "The book is a sort of gift." &mdash;<i>J. Baldwin, Co-evolution Quarterly</i></p>
+    <p>"A welcome experiment in the evolution of architecture for post-industrial societies." &mdash;<i>Josef Juhasz</i></p>
+    <form style="padding-left: 12px;">
+      <input type="button" value="Request a Reprinting" onclick="parent.location='/contact/contactus.html'">
+    </form><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px; padding-top: 8px;"></div>
+    <div id="ten10">
+    <h2>The Mary Rose Museum.</h2><span class="author">By Christopher Alexander<br>
+    with Gary Black and Miyoko Tsutsui</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1995. 128 pages.</span>
+    <p><b>Summary.</b> In 1982, more than four hundred years after she mysteriously sank off the English coastline, Henry VIII's great warship the <i>Mary Rose</i> was raised to the surface. The extraordinarily intact ship was towed to a dry dock in the beautiful and historic harbor at Portsmouth, where she lies today, an enduring symbol of Britain's seafaring past.</p>
+    <p>In 1991, Christopher Alexander was commissioned by the Prince of Wales and the Mary Rose Trust to design a museum to house this national treasure. Grounded in his techniques and principles for a new way of building that have earned Alexander a world-wide following over the last several decades, this book explains Alexander's vision of a permanent home for the <i>Mary Rose</i>. Spanning from the first inception of its design to finished models and drawings, it includes detailed, step-by-step explanations of the way this vision could be realized in structure and construction. Emphasizing the unification of design and construction, with hands-on construction management by the architect, it provides a model for the way a large and highly technical building can be designed with proper importance given to human comfort and human feeling, while using the most advanced and sophisticated technology.</p>
+    <p><b>Reviews.</b></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="eleven11">
+    <h2>A New Theory of Urban Design.</h2><span class="author">By Christopher Alexander, Hajo Neis, Artemis Anninou and Ingrid King</span> <span class="colophon" style="display: block; text-align: center;">Oxford University Press, 1987. 272 pages.</span>
+    <p><b>Summary.</b> In this volume, the sixth in the seminal series on architecture, Christopher Alexander and his associates present a new theory of urban design which attempts to recapture the process by which cities develop organically. To discover the kinds of laws needed to create a growing whole in a city, the authors propose a preliminary set of seven rules which embody the process at a practical level and which are consistent with the day-to-day demands of urban development.</p>
+    <p>They then put these rules to the test, setting out with a number of graduate students to simulate the urban redesign of a high-density part of San Francisco, initiating a project that encompassed some ninety different design problems, including warehouses, hotels, fishing piers, a music hall, and a public square. This extensive experiment is documented project by project, with detailed discussion of how each project satisfied the seven rules, accompanied by floor-plans, elevations, street grids, axonometric diagrams and photographs of the scaled-down model which clearly illustrate the discussion.</p>
+    <p><i>A New Theory of Urban Design</i> provides an entirely new theoretical framework for the discussion of urban problems, one that goes far to remedy the defects which cities have today.</p>
+    <p><b>Reviews.</b> "It tackles the terrible problem of the inorganic fragmentation of the contemporary city and does so intelligently, in depth and with a wealth of suggestions that stimulate the imagination." &mdash;<i>Giancarlo De Carlo, Spazio e Societ&aacute;</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+    <div id="twelve12">
+      <h2>Houses Generated by Patterns.</h2><span class="author">By Christopher Alexander, Sanford Hirschen, Sara Ishikawa, Christie Coffin, and Shlomo Angel</span> <span class="colophon" style="display: block; text-align: center;">Center for Environmental Structure, 1969. 219 pages.</span>
+      <p><b>Summary.</b> A document which lays out the process of creating the pattern language for a group of houses designed for an experimental housing competition in Lima, Peru in 1969. Shows the process of creating the pattern language and the pattern language itself. Currently out of print.</p>
+      <p><b>Reviews.</b></p>
+      <form>
+        <input type="button" value="Request a Reprinting" onclick="parent.location='/contact/contact.htm'">
+      </form>
+    </div>
+    <div id="thirteen13">
+      <h2>A Pattern Language which Generates Multi-Service Community Centers.</h2><span class="author">By Christopher Alexander, Sara Ishikawa, and Murray Silverstein</span> <span class="colophon" style="display: block; text-align: center;">Center for Environmental Structure, 1968. 283 pages.</span>
+      <p><b>Summary.</b> One of Alexander's early works, this text is the working pattern language for building a (multi-service) community center, developed while building a community center in the Bronx, New York in 1967, notably Alexander's first description of pattern languages. The described pattern language is comprised of 64 patterns, with information about how to combine them and several real-world examples. Currently out of print.</p>
+      <p><b>Reviews.</b></p>
+      <form>
+        <input type="button" value="Request a Reprinting" onclick="parent.location='/contact/contactus.html'">
+      </form>
+    </div>
+    <div id="fourteen14">
+    <h2>Community and Privacy: Toward a New Architecture of Humanism.</h2><span class="author">By Serge Chermayeff and Christopher Alexander</span> <span class="colophon" style="display: block; text-align: center;">Doubleday Anchor, 1963. 255 pages.</span>
+    <p><b>Summary.</b> In a carefully studied and detailed analysis, Chermayeff and Alexander propose a new kind of urban order, structured to provide clearly-articulated domains within which various human needs can be fulfilled without interference or conflict with other activities. Their hierarchy of spaces and realms extends from the largest aspect of public urban life to the smallest of individual solitude and is designed to create a rational order of physical relationships based on human qualities&hellip;</p>
+    <p><b>Reviews.</b> "This book deserves close study because it analyses human needs and makes them crystal clear." &mdash;<i>Jan White, House and Home Magazine</i></p>
+    <p>"Using a computer to simplify and structure their numerous requirements for a dwelling, the authors have evolved a series of experimental cluster plans that are fascinating in their implications for livability." &mdash;<i>Frederick Gutheim, The Nation</i></p><img src="/img/amazonbutton3.png" style="width: 120px; padding-left: 15px;"></div>
+  </div>
+  <div id="footer">
+    <span><i>These tools allow anyone, and any group of people, to create beautiful, functional, meaningful places.</i><br>
+    <i>You</i> can <i>create a living world.</i></span><br>
+    <span class="h4class" style="font-size: 12px;">&copy;2001-2013 <a href="/contact/contactus.html" style="color: #9f2214;">patternlanguage.com</a></span>
+  </div>
+</body>
+</html>

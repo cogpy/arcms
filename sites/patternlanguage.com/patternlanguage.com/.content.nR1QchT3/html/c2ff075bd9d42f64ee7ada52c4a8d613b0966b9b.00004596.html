@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PEDESTRIAN NETWORK</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"; }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"; }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; margin-bottom: 0;      }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+    .headingdiv { margin-left:53px; text-align:left;}
+    .heading { 
+        color:#ffffff; background-color:#000000;
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Arial"; text-decoration: none;  
+    }
+  .subheading {
+        color:#ffffff; background-color:#000000;
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Arial"; text-decoration: none;  
+    }
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+    .unhighlightedSlideMarker {visibility:hidden}
+    .highlightedSlideMarker {visibility:visible}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+    #steps {
+        position: absolute;
+        top:    10px;
+        left:   80px;
+        width   : 200px;
+        visibility: hidden;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   330px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    430px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+    FONT-style: italic; 
+    FONT-SIZE: 16px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        text-align: center;
+        text-decoration:italic;
+        visibility: visible;
+    }
+
+
+    #controlstripdiv {
+        position: absolute;
+        top:    10px;
+        left:   30px;
+        width: 100px;
+        text-align: right;
+        visibility: visible;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+    showWhenReady('steps'); // We hide the steps until images are loaded
+                                     // so user sees whole show
+                                     //  This call tells how to make them visible
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(400,200);
+        // slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+        slideImageAttributeString = 'width=260 name="adBanner"';
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(true);
+        setScrollDiv('stepscrolldiv');  // The name of the div holding the step list that will be scrolled
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        // setControlStripDimensions(40,400);
+        setControlStripTileSize(40,12);
+
+  //      setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");  // for displaying a marker such as a blue triangle
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="250" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>You can let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp; click here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the colored bars</b> to the left, to view the cycles of unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <br>
+          <span style='font-size:80%'></span> <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv'>
+                  <span style='font-size:80%;line-height:1.2;'></span>
+                  <ul>
+                    <li style="color: #ff0000"><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_operation_step('operation:look','tile:../images/slidecontroltilereda.gif','Where are some feasible places where a small segment of pedestrian path might be put?')
+                    </script></span></li>
+                    <li style='color:#ffff00'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_operation_step('operation:choose','tile:../images/slidecontroltileyellowa.gif','Which of these does the most to extend and complete the connectivity of the pedestrian network in the neighborhood?')
+
+                    </script></span></li>
+                    <li style='color:#00ff00'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_operation_step('operation:positive','tile:../images/slidecontroltilegreena.gif','Make the space positive')
+
+                    </script></span></li>
+                    <li style='color:#0000ff'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_operation_step('operation:embellish','tile:../images/slidecontroltilebluea.gif','Embellish the new bit of path with centers')
+                    </script></span></li>
+                    <li style='color:#ff00ff'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_operation_step('operation:car','tile:../images/slidecontroltilemagentaa.gif','If needed make small car roads, and small parking areas, to replace any roads you have converted to pedestrian use')
+                    </script> 
+                    <script>
+
+
+                    setup_operation_step('operation:picture','tile:../images/slidecontroltilecyana.gif')
+                    </script></span></li>
+                  </ul><span style='font-size:80%;line-height:1.2;'></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <table style='font-size:2px'>
+      <tr>
+        <td>
+          <script>
+          setup_control_strip_step('image:flo1.jpg','operation:picture','caption:');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td width="100">
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo1ac.jpg','operation:look','caption:Cycle 1');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo1bc.jpg','operation:choose','caption:Cycle 1');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo1cc.jpg','operation:positive','caption:Cycle 1');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo1dc.jpg','operation:embellish','caption:Cycle 1');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo1ec.jpg','operation:car','caption:Cycle 1');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo2.jpg','operation:picture','caption:');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo2ac.jpg','operation:look','caption:Cycle 2');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo2bc.jpg','operation:choose','caption:Cycle 2');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo2cc.jpg','operation:positive','caption:Cycle 2');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo2dc.jpg','operation:embellish','caption:Cycle 2');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo2ec.jpg','operation:car','caption:Cycle 2');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo3.jpg','operation:picture','caption:');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo3ac.jpg','operation:look','caption:Cycle 3');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo3bc.jpg','operation:choose','caption:Cycle 3');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo3cc.jpg','operation:positive','caption:Cycle 3');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo3dc.jpg','operation:embellish','caption:Cycle 3');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo3ec.jpg','operation:car','caption:Cycle 3');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo4.jpg','operation:picture','caption:');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo4ac.jpg','operation:look','caption:Cycle 4');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo4bc.jpg','operation:choose','caption:Cycle 4');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo4cc.jpg','operation:positive','caption:Cycle 4');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo4dc.jpg','operation:embellish','caption:Cycle 4');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo4ec.jpg','operation:car','caption:Cycle 4');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo5.jpg','operation:picture','caption:');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo5ac.jpg','operation:look','caption:Cycle 5');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo5bc.jpg','operation:choose','caption:Cycle 5');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo5cc.jpg','operation:positive','caption:Cycle 5');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo5dc.jpg','operation:embellish','caption:Cycle 5');
+          </script><br>
+          <script>
+
+          setup_control_strip_step('image:flo5ec.jpg','operation:car','caption:Cycle 5');
+          </script>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br>
+          <script>
+
+          setup_control_strip_step('image:flo5ec.jpg','operation:picture','caption:After five cycles');
+          </script>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>THE UNFOLDING OF A PEDESTRIAN NETWORK</b></font></span><font color="#222222"></font>
+          <p><font color="#222222"><span class="h6class"><span class="h6class"><font color="#000000">This repeating five-step sequence helps a community build a pedestrian network over time; the individual paths will come to work as a whole network adapted to the neighborhood, with its own unique character.</font></span></span></font></p>
+        </td>
+      </tr>
+    </table>
+    <table width="180">
+      <tr height="400">
+        <td valign="top" align="center">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+      putCaptionsHere('<center><!-- A slideshow is loading. --></center>','');
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

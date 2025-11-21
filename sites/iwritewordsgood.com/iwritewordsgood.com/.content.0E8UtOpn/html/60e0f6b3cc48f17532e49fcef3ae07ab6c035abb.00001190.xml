@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>ahartman &#8211; iwritewordsgood.com</title>
+	<atom:link href="/?feed=rss2&#038;author=1" rel="self" type="application/rss+xml" />
+	<link>http://iwritewordsgood.com</link>
+	<description></description>
+	<lastBuildDate>Sat, 26 Dec 2009 21:03:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.12</generator>
+	<item>
+		<title>The Word Made Flesh</title>
+		<link>http://iwritewordsgood.com/?p=1</link>
+		<comments>http://iwritewordsgood.com/?p=1#comments</comments>
+		<pubDate>Sun, 13 Dec 2009 19:03:13 +0000</pubDate>
+		<dc:creator><![CDATA[ahartman]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://iwritewordsgood.com/?p=1</guid>
+		<description><![CDATA[[See post to watch Flash video] The body. Can the body disobey? This is the film I made for my thesis about a lot of things, but in particular, it speaks through art, music and poetry about how the body is interpreted, and hideously misinterpreted, by Western culture. 33 min.]]></description>
+				<content:encoded><![CDATA[<p><DIV ALIGN=CENTER><br />
+[See post to watch Flash video]</div>
+<blockquote><p>The body. Can the body disobey? This is the film I made for my thesis about a lot of things, but in particular, it speaks through art, music and poetry about how the body is interpreted, and hideously misinterpreted, by Western culture. 33 min. </p></blockquote>
+]]></content:encoded>
+			<wfw:commentRss>http://iwritewordsgood.com/?feed=rss2&#038;p=1</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

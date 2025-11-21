@@ -1,0 +1,106 @@
+/*!--------------------------------------------------------------------
+PLICONS
+-----------------------------------------------------------------------*/
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'plicons';
+  src: url('../fonts/plicons.eot');
+  src: url('../fonts/plicons.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/plicons.woff') format('woff'),
+       url('../fonts/plicons.ttf')  format('truetype'),
+       url('../fonts/plicons.svg#svgFontName') format('svg');
+  font-weight: normal;
+  font-style: normal;}
+
+.plicon:before {
+  font-family: 'plicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1;
+  display: inline-block;
+  margin-right: 0em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.plicon-archive:before {
+  content: "\e000";
+}
+.plicon-settings:before {
+  content: "\e001";
+}
+.plicon-hamburger:before {
+  content: "\e002";
+}
+.plicon-home:before {
+  content: "\e003";
+}
+.plicon-download:before {
+  content: "\e004";
+}
+.plicon-top:before {
+  content: "\e005";
+}
+.plicon-level-down:before {
+  content: "\e006";
+}
+.plicon-back:before {
+  content: "\e007";
+}
+.plicon-enter:before {
+  content: "\e008";
+}
+.plicon-arrow-left:before {
+  content: "\e009";
+}
+.plicon-arrow-right:before {
+  content: "\e00a";
+}
+.plicon-arrow-down:before {
+  content: "\e00b";
+}
+.plicon-arrow-up:before {
+  content: "\e00c";
+}
+.plicon-table:before {
+  content: "\e00d";
+}
+.plicon-circle-one:before {
+  content: "\e00e";
+}
+.plicon-circle-two:before {
+  content: "\e00f";
+}
+.plicon-circle-three:before {
+  content: "\e010";
+}
+.plicon-circle-four:before {
+  content: "\e011";
+}
+.plicon-circle-five:before {
+  content: "\e012";
+}
+.plicon-circle-six:before {
+  content: "\e013";
+}
+.plicon-circle-seven:before {
+  content: "\e014";
+}
+.plicon-circle-eight:before {
+  content: "\e015";
+}
+.plicon-circle-nine:before {
+  content: "\e016";
+}
+.plicon-cross-out:before {
+  content: "\e017";
+}
+.plicon-decoration:before {
+  content: "\e018";
+}

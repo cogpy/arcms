@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WORKBOOK</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style type="text/css">
+
+  INPUT {
+  height: 50px;
+  width: 150px;
+  background-color: #ff0000;
+  border-color: #990000;
+  color: BLACK;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+  }
+  </style>
+  <style>
+
+  .h1greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 008833;
+  }
+  .h1yellowclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: FFFF22;<!-- eeee33; -->
+  }
+  .h1darkgreenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 004400;
+  }
+  .h2greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: 005522;
+  }
+
+  .h3greenclass {
+        FONT-WEIGHT: bold; FONT-DECORATION: italic; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h4greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-SPACING: 16px; FONT-FAMILY: "Arial"; COLOR: 0000ff;
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+
+  .h4class {
+        FONT-WEIGHT: bold; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  *******************************************
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  160px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="h4menuclass" style="color:007722"><b><span style="font-size:12px">Coming soon</span><br>
+        <a class="type1" href="../ht-0/workbook.htm"><span class="h4menuclass" style="color:ff0000"><b>WORKBOOK</b></span></a><span style="color:ffffff"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/workbook-assembly.htm">Workbook Assembly</a></b></span></span><span class="h7menuclass" style="color:000000"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/workbook-assembly.htm#printing">Printing Pages</a></b></span></span><span class="h7menuclass" style="color:000000"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../packets/workbook-section1.htm"><span style="color:000000">Worksheets-Section 1</span></a></b></span></span></b></span></td>
+      </tr>
+      <tr>
+        <td><span class="h4menuclass" style="color:007722"><b><span style="font-size:12px">Coming soon</span><br>
+        <a class="type1" href="../drawing-pad/intro.htm"><span class="h4menuclass" style="color:ff0000"><b>DRAWING PAD</b></span></a><span style="color:ffffff"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../drawing-pad/instructions.htm">Drawing instructions</a></b></span><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../drawing-pad/drawingpad.htm">The drawing pad itself</a></b></span><br></span></b></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="560" align="center" bgcolor="#1166CC" border="1">
+      <tr>
+        <td width="204" align="center" valign="middle" bgcolor="#1188DD"><img align="center" src="../pics/open-workbook.jpg" width="204"></td>
+        <td align="center" width="152"><font font-size="12px" color="#FFFF00"><b><i>Building Living Neighborhoods</i></b></font><br>
+        <img src="../images/noonew5-t.jpg" height="80"></td>
+        <td align="right" width="204"><br></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#1188DD">
+      <tr>
+        <td align="center"><span class="h1yellowclass">THE WORKBOOK<br>
+        <span style="font-size:55%">and HOW TO USE IT</span></span></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8">
+      <tr>
+        <td align="left" colspan="2"></td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          &nbsp;<br>
+          <blockquote>
+            <span class="h4menuclass" style="color:000000;font-size:16px"></span>
+            <center>
+              <span class="h4menuclass" style="color:000000;font-size:16px"><b>WHAT GOES IN YOUR WORKBOOK</b></span>
+            </center>
+            <p><span class="h4menuclass" style="color:000000;font-size:12px">There are three kinds of things to put in your workbook:</span></p>
+            <ul>
+              <li><span class="h4menuclass" style="color:000000;font-size:12px"><b>Unfoldings</b>. A printed copy of each unfolding you want to use. This can be printed directly from the appropriate page on this website.</span></li>
+              <li><span class="h4menuclass" style="color:000000;font-size:12px"><b>Worksheets</b>. A printed copy of the worksheets that go with each unfolding, and on which you make your own comments, drawings and modifications. These are available section by section, and may be printed that way from the workbook-section pages.</span></li>
+              <li><span class="h4menuclass" style="color:000000;font-size:12px"><b>Drawings</b>. A printed copy of each drawing you have made, as the unfoldings proceed. If you make these drawings on the DRAWING PAD (see menu to the left), then these should also be printed and kept in the workbook.</span></li>
+            </ul>
+          </blockquote><br>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#1188DD">
+      <tr>
+        <td align="center" height="10"></td>
+      </tr>
+    </table>
+    <table width="560" cellpadding="8" align="center" bgcolor="#FFFFDD" border="1">
+      <tr>
+        <td align="left" width="560" valign="top" bgcolor="#FFFFDD" colspan="3">
+          <blockquote>
+            <p></p>
+            <center>
+              <span class="h4class"><span style="font-size:16px"><b>USING THE WORKBOOK</b><br></span></span>
+            </center>
+            <p><span class="h4menuclass">This workbook can serve to help you think about and implement the Unfoldings described on this website in a step by step manner for your project. It will also help you organize the information you generate with others. You will have a record that supports your discussion with architects, city planners, neighbors who are joining the project, or whoever you might want to explain your project to. Careful documentation can be very useful when talking with city planners, architects, engineers and other professionals - an added benefit to taking detailed notes.</span></p>
+            <p><span class="h4menuclass">The worksheets in this workbook correspond with each "Unfolding" page on the website. The Unfolding pages provide direction on what to do. The worksheets provide space in which you record your observations, thoughts, pictures, decisions, conclusions or processes for each Unfolding. The workbook is a living record of your project and helps you recall details, should you want to convey them to others, or backtrack to see how you got to where you are.</span></p>
+            <p><span class="h4menuclass">When you work through the sections that come later in the process of building your neighborhood, the documentation from the earlier sections will be available for review. This will help you recall earlier choices and decisions in light of current questions, and consider whether they should be adjusted to serve the whole project as it moves forward.</span></p>
+            <p><span class="h4menuclass">The LivingNeighborhoods.org website guides your understanding of how to grow a neighborhood. The workbook, which you can print and keep in a binder, allows you to document each step you take.</span></p>
+          </blockquote>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#1188DD">
+      <tr>
+        <td align="center" height="10"></td>
+      </tr>
+    </table><br>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+      <br>
+    </center>
+  </div>
+</body>
+</html>

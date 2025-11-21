@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <title>SALEM OPENER</title>
+  <script src='../universal/universal.js'></script>
+  <script>
+  function floatWindow(file,window) {
+       msgWindow=open(file,window,'resizable=no,scrollbars=0,width=390,height=250,left=185,top=185,border=2');
+              if (msgWindow.opener == null) msgWindow.opener = self;
+              msgWindow.focus();
+  clearID=msgWindow.setTimeout("self.close()",9000)
+                     };
+
+  /*
+  var group_identifier='salem';
+  var grouplogins = GetCookieX('grouplogins');
+  // var rxs = group_identifier + '\\s*\\{[^}]*\\blevel\\s*:\\s*(\\d*)';
+  var rxs = '\\{[^}]*\\blevel\\s*:\\s*(\\d*)';
+  var rx = new RegExp(rxs);
+  var level;
+  if (location.protocol=='file:')
+  { level = 3;
+  }
+  else if (grouplogins.match(rx))
+  { level = RegExp.$1-0;
+  }
+  else
+  { level = 0;
+  }
+  // var level=1;
+  */
+
+  /*
+  function getClearanceString() {
+   var clearance;
+        if (level == 0)
+           clearance = "FREE TOOLS FOR VISITORS";
+        else if (level == 1)
+           clearance = "FREE TOOLS AND LEVEL 1";
+        else if (level == 2)
+           clearance = "FREE TOOLS AND LEVELS 1 AND 2";
+        else if (level == 3)
+           clearance = "FREE TOOLS AND LEVELS 1, 2, AND 3";
+   document.write("YOU ARE CLEARED FOR ACCESS TO " + clearance);
+  }
+  */
+
+  function tierLink(target, string, tier) {
+   var stringColor;
+
+        // make all links live now
+        // if (tier <= level) {
+        if (true) {
+           document.writeln("<a href='" + target + "' target='picture'>");
+           stringColor = "ffcc66";
+        }
+        else {
+           document.writeln("<a href=javascript:floatWindow('../cities/need-level" + tier + ".htm','window2')>");
+           stringColor = "999999";
+        }
+
+        document.writeln("<span style='color: " + stringColor + ";'>" 
+                         + string + "</span>");
+        document.writeln("</a>");
+  }
+  </script>
+  <style type="text/css">
+  .h1class {
+   font-size: 20px; font-family: "Times New Roman"; font-weight: normal; color:ffcc66; align=center;
+  }
+  .h2class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times New Roman"; margin-bottom: 0;
+  }
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times New Roman"; margin-bottom: 0;
+  }
+
+  H4{
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom: 0;color:ffcc66; 
+  }
+
+  .h4class{
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom: 0;
+  }
+
+  .change{
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "arial"; 
+        background-color:000000; 
+  }
+
+  .newchange{
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Arial"; 
+        background-color:000000; line-height:16px;
+  }
+
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFCC66" link="#99CCFF" vlink="#99CCFF" alink="blue" border="navy">
+  <table width="770" border="1" align="center">
+    <tr>
+      <td colspan="4" align="center" bgcolor="#006644"><span class="h4class"><span style="COLOR:99ccff;font-size:150%;font-weight:bold">THESE ARE THE TOOLS YOU NEED TO LIVE IN AND HELP CREATE THE ECOLOGICAL, SUSTAINABLE COMMUNITY OF FAIRVIEW</span></span><br></td>
+    </tr>
+    <tr>
+      <td width="200" bgcolor="#006644">
+        <span class="h2class" style="COLOR:99ccff">Welcome to our citizen and business-guided process. It is a process which will continue in Fairview for the next ten years or so, accomplishing something new every year. What has to be done, project by project, to accomplish something big in the long run: That is what we wish to show you and provide you with.</span>
+        <p></p>
+        <center>
+          <img src="butterfly.jpg" width="130">
+        </center>
+        <p></p>
+      </td>
+      <td width="570">
+        <table width="100%" border="1">
+          <tr>
+            <td width="100%" valign="top" align="center" colspan="4"><span class="h4class" style="COLOR:ffcc66;"></span><br>
+            <br></td>
+          </tr>
+          <tr height="300">
+            <td width="25%" valign="top">
+              <table bgcolor="#993300">
+                <tr>
+                  <td width="25%">
+                    <center>
+                      <span class="change">WHY NOT LIVE IN SALEM, AT FAIRVIEW<br></span>
+                    </center>
+                    <hr>
+                    <span class="newchange">" 
+                    <script>
+
+                    tierLink("../salem/invitation.htm", "Invitation", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/ecoland.htm", "Eco-Land", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/example-house.htm", "Examples", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/networking.htm", "Networking", 0);
+                    </script><br></span> <span class="newchange">" 
+                    <script>
+
+                    tierLink("../salem/team.htm", "Team", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/precedent.htm", "Precedent", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/transformingsalem.htm", "Transformation", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../salem/how.htm", "Process", 0);
+                    </script></span>
+                    <p><span class="newchange"></span></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td width="25%" valign="top">
+              <center>
+                <span class="change" style="COLOR:99ccff;">PLACE FOR PEOPLE<br>
+                <br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("diagnosis/salemlayers4.htm", "Diagnosis", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../salem/deal.htm", "The Deal", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("clubhouse.htm", "A clubhouse", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("land.htm", "Land", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../salem/russ.htm", "Sketch Plan", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("contribution.htm", "Contribution", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../salem/patterns-sept17.htm", "Patterns", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("http://www.conservationeconomy.net", "Ecology", 1);
+              </script></span>
+            </td>
+            <td width="25%" valign="top">
+              <center>
+                <span class="change" style="COLOR:66aaff;">FAIRVIEW RESIDENTS & BUSINESSES<br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("../housegroup/movie.htm", "Movie of people placing their houses", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../patternforum/twopanelforum-salem.htm", "Voting", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../salem/groupcenters.htm", "Centers", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../salem/timeline7.htm", "Timeline", 2);
+              </script></span>
+            </td>
+            <td width="25%" valign="top">
+              <center>
+                <span class="change" style="COLOR:3399ff;">ADVANCED TOOLS<br>
+                <br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("../housegroup/housegrouptable.htm", "House-group", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../volume/volumetable.htm", "House-Volume", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../smallhouse/chris1-movienl3-29.htm", "Movie", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../smallhouse/smallhousetable.htm", "House", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../kgame/kgametable.htm", "Money", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../construction/operationsframe.htm", "Construction", 3);
+              </script></span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

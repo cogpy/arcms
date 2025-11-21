@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatternLanguage.com</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="/newindex-ios.css" title="external">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+        $(document).ready(function() {
+            if(navigator.platform == 'iPad' || navigator.platform == 'iPhone' || navigator.platform == 'iPod') {
+                $("a").each(function() { // have to use an `each` here - either a jQuery `each` or a `for(...)` loop
+                    var onClick; // this will be a function
+                    var firstClick = function() {
+                        onClick = secondClick;
+                        return false;
+                    };
+                    var secondClick = function() {
+                        onClick = firstClick;
+                        return true;
+                    };
+                    onClick = firstClick;
+                    $(this).click(function() {
+                        return onClick();
+                    });
+                });
+            }
+
+        });
+  </script>
+  <script type="text/javascript">
+  var currVisibleId; 
+  function togVisible(id) { if(currVisibleId) document.getElementById(currVisibleId).style.visibility="hidden"; document.getElementById(id).style.visibility="visible"; currVisibleId=id; }
+  </script>
+</head>
+<body>
+  <div class="hidden">
+    <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    var images = new Array()
+    function preload() {
+    for (i = 0; i < preload.arguments.length; i++) {
+    images[i] = new Image()
+    images[i].src = preload.arguments[i]
+    }
+    }
+    preload(
+    "/img/lfrp/linzcoffeedrinkers-fsmall.jpg",
+    "/img/lfrp/thumbs/martinezbench-small.jpg",
+    "/img/lfrp/thumbs/woodenint2-small.jpg",
+    "/img/lfrp/thumbs/sullivankitchen-small.jpg",
+    "/img/lfrp/thumbs/chris-small.jpg",
+    "/img/lfrp/thumbs/linzflowers-small.jpg",
+    "/img/lfrp/thumbs/linzint-small.jpg",
+    "/img/lfrp/thumbs/linzgreen-small.jpg",
+    "/img/lfrp/thumbs/fountain-small.jpg",
+    "/img/lfrp/thumbs/woodenint2-small.jpg",
+    "/img/lfrp/thumbs/battlecover.jpg",
+    "/img/lfrp/thumbs/linzint2-small.jpg",
+    "/img/lfrp/thumbs/woodenint-small.jpg",
+    "/img/lfrp/thumbs/kingkitchen-small.jpg",
+    "/img/lfrp/thumbs/salakbig-small.jpg",
+    "/img/lfrp/thumbs/greenbook3.jpg",
+    "/img/lfrp/thumbs/greenoff-small.jpg",
+    "/img/lfrp/thumbs/saalcove-small.jpg",
+    "/img/lfrp/thumbs/blueoff-small.jpg",
+    "/img/lfrp/thumbs/pasadenaaerial-small.jpg",
+    "/img/lfrp/thumbs/kerala-small.jpg",
+    "/img/lfrp/thumbs/mart-small.jpg"
+    )
+    //--><!]]>
+    </script>
+  </div>
+  <div style="width: 100%; margin: 0 auto;">
+    <div id="header">
+      <div id="frameimage">
+        <a href="/"><img src="/img/apllogo2.jpg" height="48px"></a>
+      </div>
+      <div id="frametitle">
+        <a href="/">PatternLanguage.com</a>
+      </div>
+      <div id="frametext">
+        An Association of people from<br>
+        all walks of life<br>
+        with architects and builders<br>
+        <span style="font-weight: bold; color: #9f2214; font-size: 11px;">we are rebuilding our neighborhoods<br>
+        slowly rebuilding the earth</span>
+      </div>
+    </div>
+    <div id="maincontent">
+      <div id="fiv">
+        <a href="/bookstore/battle.html"><img src="/img/cover_images/battle-cover.jpg" style="width: auto; height: 410px; padding-left: 20px; margin-top: 85px;"></a><br>
+        <div style="width: 90%; margin: 0 auto; padding: 0;">
+          <img src="/img/decorationbonw.png" style="width: 12px; height: auto; padding-top: 0;"> &nbsp; Buy <i>Battle for the Life and Beauty of the Earth</i><br>
+          by Christopher Alexander, 2012
+        </div><br>
+        <div style="width: 80%; margin: auto; text-align: left;">
+          <ul id="large-links" style="color: #9f2214;">
+            <li style="border: none;">
+              <p style="padding: 10px 0 0 0; margin: 0; font-size: 1.6em;">Newly Renovated:</p>
+            </li>
+            <li style="border: none; padding-bottom: 5px;">
+              <p style="padding: 0; margin: 0;"><a href="/bookstore/bookshelf.html" style="color: #9f2214; font-size: 1.8em; font-family: myClarendon, serif;"><span class="fa fa-book" aria-hidden="true"></span>&nbsp;&nbsp;Bookstore</a>&nbsp;&nbsp;</p>
+            </li>
+            <li style="border: none; padding-bottom: 5px;">
+              <p style="padding: 0; margin: 0;"><a href="/archive/archive.html" style="color: #9f2214; font-size: 1.8em; font-family: myClarendon, serif;"><span class="plicon plicon-archive" aria-hidden="true"></span>&nbsp;&nbsp;Archive</a>&nbsp;&nbsp;</p>
+            </li>
+            <li style="border: none; padding-bottom: 5px;">
+              <p style="padding: 0; margin: 0;"><a href="/gallery/gallery.html" style="color: #9f2214; font-size: 1.8em; font-family: myClarendon, serif;"><span class="fa fa-picture" aria-hidden="true"></span>&nbsp;&nbsp;Gallery</a>&nbsp;&nbsp;</p>
+            </li><br>
+            <li style="border: none;">
+              <p style="padding: 10px 0 0 0; margin: 0; font-size: 1.6em; color: black;">News:</p>
+            </li>
+          </ul><br>
+          <img src="/img/decorationbonw.png" style="width: 12px; height: auto; padding-top: 0;"> &nbsp; <span style="font-weight: bold;">Building Beauty: Ecologic Design &amp; Construction Process,</span> a post-graduate diploma in architecture that continues the legacy of Christopher Alexander. &nbsp;&nbsp;&nbsp;&nbsp;www.buildingbeauty.org<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<b>Registration for the 2020-21 online session is open, including the new Beautiful Software Initiative</b><br>
+          <br>
+          <br>
+          <br>
+          <a href="/membership/membership.html" class="membership-button">become a member</a><br>
+          <br>
+        </div>
+        <div id="group2">
+          <div id="one">
+            <h2>Introduction</h2>
+            <ul>
+              <li id="aims">
+                <a href="/aims/aims.html">Our Aims &amp; Goals<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="intro">
+                <a href="/aims/intro.html">An&nbsp;Introduction to this Site<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/salakbig.jpg"></li>
+              <li id="aplint">
+                <a href="/labyrinth/apl-tour1.html">An&nbsp;Introduction to <i>A Pattern Language</i></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/poppylr-2.jpg"></li>
+              <li id="ca">
+                <a href="/ca/ca.html" style="color: red; font-size: 16px;">Christopher Alexander<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/linzgreen2-1.jpg"></li>
+              <li id="compsci">
+                <a href="/comp-sci/comp-sci.html">CA &amp; Computer Science</a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/blueoff.jpg"></li>
+            </ul>
+          </div>
+          <div id="thr">
+            <h2>Resources</h2>
+            <ul>
+              <li id="battle">
+                <a href="/bookstore/battle.html">Buy <i>Battle</i><br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="gallery">
+                <a href="/gallery/gallery.html">Image Gallery<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/martinezbench.jpg"></li>
+              <li id="books">
+                <a href="/bookstore/bookshelf.html" style="font-weight: bold;">The<br>
+                BOOKSTORE<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/kingkitchen-small.jpg"></li>
+              <li id="archive">
+                <a href="/archive/archive.html" style="font-weight: bold;">The<br>
+                ARCHIVE<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/saalcove-2-1.jpg"></li>
+              <li id="ln">Building Living <span style="font-size: 13px;">Neighborhoods.org</span><br>
+              <img src="/img/decoration.png" style="width: 24px; height: auto;"></li>
+              <li id="nofo">
+                <a href="/bookstore/nature-of-order.html">Buy <i>The Nature of Order</i><br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+            </ul>
+          </div>
+          <div id="two">
+            <h2>Tools</h2>
+            <ul>
+              <li id="methods">
+                <a href="/leveltwo-temp/methods.html">Methods<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="building">
+                <a href="/tools/buildingprocess.html">Building Process<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="tp">
+                <a href="/townplanning/townp-grid.html">Town Planning<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="seq">
+                <a href="/sequences/sequences.html" style="color: red; font-size: 16px;">Sequences<br>
+                <span style="font-size: 11px; font-weight: bold;">LETS CHANGE OUR WORLD</span></a>
+              </li>
+              <li id="patterns">
+                <a href="/patterns/patterns.html" style="color: red; font-size: 16px;">Patterns<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/greenoff2.jpg"></li>
+              <li><img src="/img/lfrp/thumbs/poppylr-2.jpg"></li>
+              <li id="design">
+                <a href="/leveltwo-temp/design.html">Design<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="recipes">
+                <a href="/leveltwo-temp/recipes.html">Recipes<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+            </ul>
+          </div><br>
+          <br>
+          <div style="text-align: center; margin: 0 auto;">
+            <a href="/bookstore/pattern-language.html" class="membership-button">Buy <i>A Pattern Language</i></a><br>
+            <br>
+          </div>
+          <div id="fou">
+            <h2>Community &amp; Membership</h2>
+            <ul>
+              <li id="members">
+                <a href="/membership/membership.html" style="color: red; font-size: 16px;">Membership Office<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="links">
+                <a href="/links/links.html" style="color: red; font-size: 16px;">Links<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="contact">
+                <a href="/contact/contactus.html">Contact Us<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li id="spirit">
+                <a href="/leveltwo-temp/spirit.html">Spirit<br>
+                <img src="/img/decoration.png" style="width: 24px; height: auto;"></a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/linzflowers.jpg"></li>
+              <li><img src="/img/lfrp/thumbs/linzgreen2-1.jpg"></li>
+              <li><img src="/img/lfrp/thumbs/martinlight-2.jpg"></li>
+              <li id="struggle">
+                <a href="/membership/memberstour3-struggle.html">The&nbsp;Struggle&nbsp;for People to be Free</a>
+              </li>
+              <li><img src="/img/lfrp/thumbs/martinezbench.jpg"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <span><i>These tools allow anyone, and any group of people, to create beautiful, functional, meaningful places.</i><br>
+        <i>You</i> can <i>create a living world.</i></span><br>
+        <span class="h4class" style="font-size: 12px;">&copy;2001- 
+        <script type="text/javascript">
+
+        document.write(new Date().getFullYear());
+        </script> <a href="/contact/contactus.html" style="color: #9f2214;">patternlanguage.com</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KITCHEN</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+  H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+  H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+  H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+  H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+  H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .stepnumber {padding-left:16px;padding-right:8px;text-align:right}
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#55bbff; color:#ffffff; font-weight:normal}
+  .unhighlightedSlideMarker {visibility:hidden}
+  .highlightedSlideMarker {visibility:hidden}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #illuminate {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 330px;
+  visibility: visible;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   340px;
+  width   : 425px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    420;
+                left:   00px;
+  width   : 425px;
+  height : 500px;
+  FONT-style: italic; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <script>
+   function highlightCallback(step) { 
+                if (step >= firstSlideStep) {
+                        showElement('slidediv');
+                        hideElement('movie');
+                        showElement('loadingmsg');
+                }
+                else { 
+                   showElement('movie');
+                        hideElement('slidediv');
+                        hideElement('loadingmsg');
+                }
+        }
+
+        addStepHighlightCallback(highlightCallback);
+
+        // name of div that holds the movie
+        var moviediv = 'movie';   
+
+        // name of div to show after movie and slideshow
+        var aftermoviediv = 'restartdiv';  
+
+        setDelayedCallWhenSlideshowDone(
+           function () { hideElement(moviediv); showElement(aftermoviediv); }
+        );
+
+        ////////// MOVIE SETTINGS ////////////
+
+   // these must appear before stepb is first called
+   enableMovieControlViaStepb = true; 
+        setStepDescriptionToShowInline(1); 
+
+   setAppletURL();
+        replayCab = "/gdrawreplay2-3-27.cab";
+        jarFile = "/gdrawreplay.jar";
+
+        //////// PARAMETERS TO SET /////////////
+        inputFileName = "kitchen-2002.gdraw";
+
+        // increasing this number slows the replay
+        replayDelay = 5;
+
+        // file name, wait before photo
+        showSlideshowAfterReplayDone("",2000); 
+
+        SetDrawingSize(425,340);
+
+        // must be true unless there's some other way to start the replay
+        //  (for example, a button that calls requestReplay()  )
+        replayWhenLoaded = true;
+        ////////////////////////////////////////
+
+        forReplay = true;
+        supplyCaptions = true;
+        resizeIfNecessary = false;
+        setCallOnDocumentLoad(updateCaption);
+
+        // Set up a slideshow to follow the movie
+        //  If there is no slideshow, leave this here,
+        //  but setupSlides should have no parameters
+        //  (creates an empty slide show)
+
+   setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 3000;
+        timeAfterLastSlide = 3000;
+        showSetupCaptions = true;
+
+        // if set to 0, will be ignored (not specified in img tag)
+        slideWidth = 425; 
+        slideHeight = 0;
+
+
+        ////////// SLIDESHOW SETTINGS ////////////
+
+        writeSlideDivs = true;
+        slideImageAttributeString = 'width=426 height=284';
+        var firstSlideStep = 12;  // set appropriately
+  </script>
+  <div id="slideshow">
+    <table height="60" width="80%" align="center" border="0">
+      <tr>
+        <td valign="top" align="center"><br>
+        <span class="h4class"><font color="#222222"><b>KITCHEN SEQUENCE UNFOLDING TO CREATE A KITCHEN</b></font></span></td>
+      </tr>
+    </table>
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:400;height:400;visibility:hidden">
+      <table width="400" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="400" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftermoviediv);showElement(moviediv);getMovieBackAndRestart()"><font color="#000000">Watch the movie again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='movie' style="position:absolute;left:0;top:70;width:350;height:400;visibility:visible">
+      <table align="center">
+        <tr height="400">
+          <td valign="top" align="left">
+            <script language="javascript">
+            // the following call generates the html for the movie and slideshow
+            // It should come after everything has been specified
+            drawapplet();
+            </script>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='slidediv' style="position:absolute;left:3;top:73;width:425; height:340; background-color:#000000; visibility:hidden">
+      <div style="position:absolute;left:0;top:28;width:425">
+        <script>
+        setupSlides(12, "caption:Sketch plan which followed this process", "../archimages/sala/farmhouse2.jpg", 
+                    "caption:The final plan as  built", "../archimages/sala/salaplancolor.jpg", 
+                                        "caption:The final plan as built", "../archimages/sala/salaplan2.jpg",
+                                        "caption:Overview of the built kitchen laid out with this sequence showing table-fireplace-alcove", "../archimages/sala/salaki1.jpg");
+        </script>
+      </div>
+    </div>
+    <div id="loadingmsg" align="center">
+      A movie is loading.
+    </div>
+  </div>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="320" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">SLIDESHOW-TUTORIAL</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:15px;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="h6class">The design process has eleven steps</span>
+          <p></p>
+          <script>
+          enableMovieControlViaStepb = false; 
+          enableManualSlideshowViaStepb = true;
+
+          setSlideMarker("");
+          </script>
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td valign="top" class="stepnumber">1.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(1,'Draw room outline','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">2.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(2,'Put in garden position interlocking the kitchen','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">3.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(3,'Make banks of windows for beautiful light','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">4.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(4,'Place the table as the most important center','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">5.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(5,'Make a fireplace as a second main center to strengthen the main center of the kitchen table','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">6.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(6,'Put in the position and size of your main work area and counter','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">7.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(7,'Put in alcoves','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">8.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(8,'Put counter and thick walls around the room','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">9.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(9,'Make seats and chairs to make a comfortable community','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">10.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(10,'Make the garden work nicely with a sunny, sheltered, garden spot','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">11.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(11,'Place subsidiary centers: stove, sink, and refrigerator. The refrigerator DOES NOT dominate the beauty of the kitchen','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td valign="top" class="stepnumber">12.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(12,'Final Plan','')
+              </script></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+  h4 {font-size: 14px; font-family: "Arial"; font-weight: bold}
+  </style>
+  <script type="text/javascript" language="JavaScript">
+
+  <!--
+
+  function checkOtherFrame()
+  { // alert(history.length);
+    var hr = parent.frames.mainframe.location.href;
+    //if (hr && hr.indexOf('/welcome/') < 0)
+    if (hr==activeNoteURL)
+      { document.all.activeNote.style.visibility='visible';
+      }
+    else
+      { document.all.activeNote.style.visibility='hidden';
+      }
+
+    setTimeout('checkOtherFrame()',200)
+  }
+
+  var windowHome='';
+  var homeHistoryLength = 0;
+
+  function setWindowHome()
+  { windowHome = parent.frames.mainframe.location.href;
+    homeHistoryLength = history.length;
+    // alert("home " + windowHome);
+    
+  }
+
+  // var imgwid =24;
+  // var imght = 36;
+  var imgwid =50;
+  var imght = 30;
+
+
+    // Create arrays to hold images
+
+    var overImg = new Array();
+    overImg[0] = new Image(imgwid,imght);
+    overImg[1] = new Image(imgwid,imght);
+
+
+    var downImg = new Array();
+    downImg[0] = new Image(imgwid,imght);
+    downImg[1] = new Image(imgwid,imght);
+
+
+    var defaultImg = new Array();
+    defaultImg[0] = new Image(imgwid,imght);
+    defaultImg[1] = new Image(imgwid,imght);
+
+    var grayImg = new Array();
+    grayImg[0] = new Image(imgwid,imght);
+    grayImg[1] = new Image(imgwid,imght);
+
+
+    // Preload images in the array
+
+    overImg[0].src = "backbutup1.gif";
+    overImg[1].src = "closebutup1.gif";
+
+
+    downImg[0].src = "backbutdown1.gif";
+    downImg[1].src = "closebutdown1.gif";
+
+
+    defaultImg[0].src = "backbut1.gif";
+    defaultImg[1].src = "closebut1.gif";
+
+    grayImg[0].src = "backbutgray.gif";
+
+
+    // Change the state of image depending on the event that fired.
+    var earlierImages = 2; // number of images coming in document before the button images
+
+    function rollImage(img,type){
+
+      if (!active[img])
+        {  document.images[earlierImages+img].src = grayImg[img].src;
+           return;
+        }
+
+      switch(type){
+
+        case "over":
+
+          document.images[earlierImages+img].src = overImg[img].src;
+
+          break;
+
+        case "out":
+
+          document.images[earlierImages+img].src = defaultImg[img].src;
+
+          break;
+
+        case "up":
+
+          document.images[earlierImages+img].src = defaultImg[img].src;
+
+          break;
+
+        case "down":
+
+          document.images[earlierImages+img].src = downImg[img].src;
+
+          break;
+
+      }
+
+    }
+
+  var activeNoteURL='';
+
+  function noteActive()
+  { document.images[earlierImages+2].src='../images/welcomelinkmarker.gif';
+    activeNoteURL = parent.frames.mainframe.location.href;
+    // document.all.activeNote.style.visibility='visible';
+  }
+
+  function goHome()
+  { 
+    parent.frames.mainframe.location.href=windowHome;
+    /*
+    var referrer = parent.frames.mainframe.document.referrer;
+    if (referrer && referrer == windowHome)
+       { top.history.go(-1);
+       }
+    else
+      { parent.frames.mainframe.location.href=windowHome;
+        // top.history.go(homeHistoryLength-history.length);
+      }
+    */
+  }
+
+
+  function homeOrClose(closeButton)
+  { if (windowHome=='')
+      { if (closeButton)
+          top.close();
+      }
+    else
+      { var hr = parent.frames.mainframe.location.href;
+        if (hr == windowHome)
+          { if (closeButton)
+              top.close();
+          }
+        else
+          { parent.frames.mainframe.location.href=windowHome;
+            // goHome();
+            // top.history.go(homeHistoryLength-history.length);
+          }
+      }
+  }
+
+  active = new Array();
+
+  function setActive(ix,act)
+  { var oldact = active[ix];
+    active[ix] = act;
+    if (oldact != act)
+      { rollImage(ix,'out');
+      }
+  }
+
+  function startup()
+  {
+    // setActive(0,0);
+    setActive(0,1);
+    setActive(1,1);
+    // checkOtherFrame();
+  }
+
+    // Process the buttons as they are pressed
+
+    function process(item,ix){
+      // alert("process " + ix);
+      if (!active[ix])
+          return;
+
+      var isIE = new Boolean(navigator.userAgent.indexOf("MSIE") != -1);
+
+
+
+      switch(item){
+
+        case "back":
+          // homeOrClose(false);
+          homeOrClose(true);
+
+          /*
+          if(isIE){
+
+            top.history.back();
+
+          }else{
+
+            // window.back();
+            top.history.back();
+
+          }
+          */
+
+          break;
+
+
+        case "close":
+          homeOrClose(true);
+
+          // top.close();
+
+          break;
+
+      }
+
+    }
+
+  //-->
+
+  </script>
+  <title></title>
+</head>
+<body style='margin-top:0px;margin-bottom:0px' bgcolor="#CCCCCC" onload='startup()'>
+  <div align='center'>
+    <h4>SPECIAL WELCOME WINDOW<br>
+    <span style="font-size:70%">FOR TEMPORARY ACCESS TO MEMBER PAGES AND SAMPLE TOURS OF MATERIAL FOR DIFFERENT USERS</span></h4>
+    <table width='100%' align='center' cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td style='background-color:#999999'><img height="1" width="1"></td>
+      </tr>
+      <tr>
+        <td style='background-color:#ffffff'><img height="1" width="1"></td>
+      </tr>
+      <tr>
+        <td>
+          <table width='90%' border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="130">&nbsp;</td>
+              <td align="center"><span id='backspan'><a href="javascript:process('back',0)" onclick="return active[0]==1" onmouseup="rollImage(0,'up')" onmousedown="rollImage(0,'down')" onmouseout="rollImage(0,'out')" onmouseover="rollImage(0,'over')"><img border="0" src="backbut1.gif" width="50" height="30" alt="Back"></a></span></td>
+              <td align="center"><span id='closespan'><a href="javascript:process('close',1)" onmouseup="rollImage(1,'up')" onmousedown="rollImage(1,'down')" onmouseout="rollImage(1,'out')" onmouseover="rollImage(1,'over')"><img border="0" src="closebut1.gif" width="50" height="30" alt="Close"></a></span></td>
+              <td width="130">&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style='background-color:#999999'><img height="1" width="1"></td>
+      </tr>
+      <tr>
+        <td style='background-color:#ffffff'><img height="1" width="1"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

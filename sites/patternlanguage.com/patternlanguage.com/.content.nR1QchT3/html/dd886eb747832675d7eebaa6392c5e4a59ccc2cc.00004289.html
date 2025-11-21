@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generative Sequences</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+
+  H1 {
+   font-size: 56px; font-family: "Times Roman"; font-weight: normal; margin-bottom:0; 
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman";
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom:0;
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space:15px;
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "galleria";
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman";
+  }
+
+  .bigChange {color:ffff99; text-decoration:none }
+  .start {color:ffffff;background-color:000000; text-decoration:none}
+
+
+  #agate {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #baptistery {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #bedroom {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #bigger {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #bridge {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #colombia {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  <!-- #comment {
+                position: absolute;
+                top:   350px;
+                left:  80px;
+  width: 250px
+  height  : 160px;
+  visibility: hidden;
+        } -->
+
+  #construction {
+                position: absolute;
+                top:   135px;
+                left:  250px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #costs {
+                position: absolute;
+                top:   135px;
+                left:  370px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #downtown {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #emoto {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #entrance {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #entranceroom {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #fire {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #flags {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #floor {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #gate {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #genericroom {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #green {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #guasare {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #group {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #hill {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #india {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #julian {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #kitchen {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #kyriakos {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #korea {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #linz {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #market {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #matisse {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #meadows {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #meadows2 {
+                position: absolute;
+                top:   195px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #medlock {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #mexicali {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #nbd {
+                position: absolute;
+                top:    135px;
+                left:  280px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+  #neighborhood {
+                position: absolute;
+                top:    135px;
+                left:  280px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+  #network {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #oldman {
+                position: absolute;
+                top:    135px;
+                left:  280px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+  #office {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #organization {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #ornament {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #orn {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #pedestrian {
+                position: absolute;
+                top:    135px;
+                left:  280px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+  #pedestrianstreet {
+                position: absolute;
+                top:    135px;
+                left:  280px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+  #polar {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #public {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #rialto{
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #rooms {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #school {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #shiratori {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #shops {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #small {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #street {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #stmarks {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden;
+        }
+
+  #thess {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #urban {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #volume {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #water {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #watersedge {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #window {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #windowdesign {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #windowposition {
+                position: absolute;
+                top:   135px;
+                left:  280px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #yellow {
+                position: absolute;
+                top:   135px;
+                left:  330px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+
+  <!-- //////////////MENUS////////////////// -->
+
+
+  #mainmenu {
+                position: absolute;
+        top:   0px;
+                left:  0px;
+  height  : 500px;
+        }
+
+  #dynamicmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #housemenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #publicmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #wildernessmenu {
+                position: absolute;
+                top:   295px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #constructionmenu {
+                position: absolute;
+                top:   335px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #urbanmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #roommenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #neighborhoodmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #officemenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #streetsmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #windowsmenu {
+                position: absolute;
+                top:   255px;
+                left:  500px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+
+
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onload="checkBrowser()" onmouseup="hideVisibleMenus();">
+  <div id="main">
+    <p></p>
+    <table width="750">
+      <tr>
+        <td align="left" colspan="2">&nbsp;<br>
+        <img src="blueband3.gif" width="750" height="7"></td>
+      </tr>
+      <tr>
+        <td align="left" width="550">
+          <h1>Let's Change Our World</h1>
+        </td>
+        <td width="200">
+          <table width="200" height="10" align="left" bgcolor="#222222">
+            <tr>
+              <td align="left">
+                <h4><a href="../index.htm" target="_top"><br>
+                home page</a> &gt;&gt; let's change our world</h4>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table height="450">
+      <tr>
+        <td valign="top" align="left">
+          <img src="../archimages/medlock/givens-6a.jpg" alt="patterns" width="240">
+          <p></p>
+          <p><font face="Times New Roman, Times, serif" size="1">&copy; 2001 <a href="../contact/contact.htm">patternlanguage.com</a></font></p>
+          <p>&nbsp;</p>
+        </td>
+        <td align="right" valign="bottom">
+          <h2></h2>
+          <ul>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('korea');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('korea');"><span onmouseover="changeClass(this,'bigChange')" class="start">Urban Area</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('wildernessmenu','visible');togglePic('hill');" onmousedown="changeState('wildernessmenu','hidden');" onmouseout="javascript:togglePic('hill');"><span onmouseover="changeClass(this,'bigChange')" class="start">Wilderness and Nature</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('streetsmenu','visible');togglePic('nbd');" onmousedown="changeState('streetsmenu','hidden');" onmouseout="javascript:togglePic('nbd');"><span onmouseover="changeClass(this,'bigChange')" class="start">Streets and Space</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('neighborhoodmenu','visible');togglePic('oldman');" onmousedown="changeState('neighborhoodmenu','hidden');" onmouseout="javascript:togglePic('oldman');"><span onmouseover="changeClass(this,'bigChange')" class="start">Neighborhoods</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('publicmenu','visible');togglePic('public');" onmousedown="changeState('publicmenu','hidden');" onmouseout="javascript:togglePic('public');"><span onmouseover="changeClass(this,'bigChange')" class="start">Public Buildings</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('housemenu','visible');togglePic('medlock');" onmousedown="changeState('housemenu','hidden');" onmouseout="javascript:togglePic('medlock');"><span onmouseover="changeClass(this,'bigChange')" class="start">Houses &amp; Housing</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('roommenu','visible');togglePic('rooms');" onmousedown="changeState('roommenu','hidden');" onmouseout="javascript:togglePic('rooms');"><span onmouseover="changeClass(this,'bigChange')" class="start">Rooms</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('officemenu','visible');togglePic('organization');" onmousedown="changeState('officemenu','hidden');" onmouseout="javascript:togglePic('organization');"><span onmouseover="changeClass(this,'bigChange')" class="start">Offices &amp; Work</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('dynamicmenu','visible');togglePic('construction');" onmousedown="changeState('dynamicmenu','hidden');" onmouseout="javascript:togglePic('construction');"><span onmouseover="changeClass(this,'bigChange')" class="start">Dynamic Construction</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('windowsmenu','visible');togglePic('window');" onmousedown="changeState('windowsmenu','hidden');" onmouseout="javascript:togglePic('window');"><span onmouseover="changeClass(this,'bigChange')" class="start">Windows and Doors</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onmouseover="changeState('constructionmenu','visible');togglePic('ornament');" onmousedown="changeState('constructionmenu','hidden');" onmouseout="javascript:togglePic('ornament');"><span onmouseover="changeClass(this,'bigChange')" class="start">Details &amp; Ornament</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="wildernessmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../meadow/meadowframe.htm','../meadow/meadowtable.htm')" onmouseover="javascript:togglePic('meadows2');" onmouseout="javascript:togglePic('meadows2');">Making meadows</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('water');" onmouseout="javascript:togglePic('water');">Interweaving nature, water, city</span></li>
+            <li><span onmouseover="javascript:togglePic('watersedge');" onmouseout="javascript:togglePic('watersedge');">The Water's Edge</span></li>
+            <li><span onmouseover="javascript:togglePic('polar');" onmouseout="javascript:togglePic('polar');">Creating the Wild</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="urbanmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../downtown/downtownframe.htm','../downtown/downtown.htm')" onmouseover="javascript:togglePic('baptistery');" onmouseout="javascript:togglePic('baptistery');">Downtown areas</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('neighborhood');" onmouseout="javascript:togglePic('neighborhood');">Neighborhood Regeneration</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="publicmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:goToInFrame('../public/publicframe.htm','../public/publictable.htm')" onmouseover="javascript:togglePic('rialto');" onmouseout="javascript:togglePic('rialto');">Sketching an outline of a major public building</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('julian');" onmouseout="javascript:togglePic('julian');">Homeless Shelter</span></li>
+            <li><span onmouseover="javascript:togglePic('school');" onmouseout="javascript:togglePic('school');">College Campus</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="streetsmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:goToInFrame('../stmarks/stmarksframe.htm','../stmarks/stmarkstable.htm')" onmouseover="javascript:togglePic('stmarks');" onmouseout="javascript:togglePic('stmarks');">St Marks Square: Formation of a great public square</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../network/networkframe.htm','../network/networktable.htm')" onmouseover="javascript:togglePic('network');" onmouseout="javascript:togglePic('network');">Pedestrian network</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../yggr/yggrframe.htm','../yggr/yggrtable.htm')" onmouseover="javascript:togglePic('yellow');" onmouseout="javascript:togglePic('yellow');">Yellow-green-gray-red</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../stmarks/stmarksframe.htm','../stmarks/stmarkstable.htm')" onmouseover="javascript:togglePic('urban');" onmouseout="javascript:togglePic('urban');">Shaping urban space</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../pedestrian/pedestrianframe.htm','../pedestrian/pedestriantable.htm')" onmouseover="javascript:togglePic('market');" onmouseout="javascript:togglePic('market');">Pedestrian street</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../bridge/bridgeframe.htm','../bridge/bridge.htm');" onmouseover="javascript:togglePic('bridge');" onmouseout="javascript:togglePic('bridge');">Bridges</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('pedestrianstreet');" onmouseout="javascript:togglePic('pedestrianstreet');">Shape of a street</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="neighborhoodmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:goToInFrame('../india/indiaframe.htm','../india/indiatable.htm')" onmouseover="javascript:togglePic('india');" onmouseout="javascript:togglePic('india');">High density Indian housing and community</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../network/networkframe.htm','../network/networktable.htm')" onmouseover="javascript:togglePic('network');" onmouseout="javascript:togglePic('network');">Pedestrian Network</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('network');" onmouseout="javascript:togglePic('network');">Growing a community</span></li>
+            <li>
+              <a href="javascript:goToInFrame('../green/greenframe.htm','../green/greentable.htm')" onmouseover="javascript:togglePic('green');" onmouseout="javascript:togglePic('green');">Neighborhood green</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('shops');" onmouseout="javascript:togglePic('shops');">Local shops and coffee</span></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="housemenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../salemhouses/salemhousesframe.htm','../salemhouses/salemhousestable.htm')" onmouseover="javascript:togglePic('guasare');" onmouseout="javascript:togglePic('guasare');">100 Houses and Gardens</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../housegroup/housegroupframe.htm','../housegroup/housegrouptable.htm')" onmouseover="javascript:togglePic('group');" onmouseout="javascript:togglePic('group');">House Group</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../volume/volumeframe.htm','../volume/volumetable.htm')" onmouseover="javascript:togglePic('volume');" onmouseout="javascript:togglePic('volume');">Placing a house volume on a piece of land</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../smallhouse/smallhouseframe.htm','../smallhouse/smallhousetable.htm')" onmouseover="javascript:togglePic('small');" onmouseout="javascript:togglePic('small');">Small house</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../familyhouse/familyhouseframe.htm','../familyhouse/familyhousetable.htm')" onmouseover="javascript:togglePic('bigger');" onmouseout="javascript:togglePic('bigger');">Family house</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('shiratori');" onmouseout="javascript:togglePic('shiratori');">Streets of Cottages</span></li>
+            <li><span onmouseover="javascript:togglePic('colombia');" onmouseout="javascript:togglePic('colombia');">Ultra low-cost housing</span></li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../apartments/apartmentsframe.htm','../apartments/apartmentstable.htm')" onmouseover="javascript:togglePic('agate');" onmouseout="javascript:togglePic('agate');">2-3 story apartments</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../fivestoryapartment/emotoframe.htm','../emoto/emototable.htm')" onmouseover="javascript:togglePic('emoto');" onmouseout="javascript:togglePic('emoto');">4-5 story apartments</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="roommenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../kitchen/kitchenframe.htm','../kitchen/kitchentable.htm')" onmouseover="javascript:togglePic('kitchen');" onmouseout="javascript:togglePic('kitchen');">Kitchen</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../kgame/kgameframe.htm','../kgame/kgametable.htm')" onmouseover="javascript:togglePic('kitchen');" onmouseout="javascript:togglePic('kitchen');">Kitchen Cost Game</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../entrance/entranceframe.htm','../entrance/entrancetable.htm')" onmouseover="javascript:togglePic('entrance');" onmouseout="javascript:togglePic('entrance');">House entrance</a>
+            </li>
+            <li><span onmouseover="javascript:togglePic('entranceroom');" onmouseout="javascript:togglePic('entranceroom');">Entrance room</span></li>
+            <li><span onmouseover="javascript:togglePic('bedroom');" onmouseout="javascript:togglePic('bedroom');">Bedroom</span></li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../generic/genericframe.htm','../generic/generictable.htm')" onmouseover="javascript:togglePic('genericroom');" onmouseout="javascript:togglePic('genericroom');">Generic room-making sequence</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="officemenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:goToInFrame('../office/officeframe.htm','../office/officetable.htm')" onmouseover="javascript:togglePic('office');" onmouseout="javascript:togglePic('office');">Offices and Office Layout</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../organization/organizationframe.htm','../organization/organizationprocess.htm')" onmouseover="javascript:togglePic('organization');" onmouseout="javascript:togglePic('organization');">Human Organizations</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="dynamicmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:goToInFrame('../cost/costframe.htm','../cost/costtable.htm')" onmouseover="javascript:togglePic('costs');" onmouseout="javascript:togglePic('costs');">Cost optimizing process</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../pregeometry/pregeometryframe.htm','../pregeometry/pregeometrytable.htm')" onmouseover="javascript:togglePic('linz');" onmouseout="javascript:togglePic('linz');">Pre-geometry</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../construction/constructionframe.htm','../construction/constructiontable.htm')" onmouseover="javascript:togglePic('kyriakos');" onmouseout="javascript:togglePic('kyriakos');">Dynamic construction process</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="windowsmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../windowplacing/windowplacingframe.htm','../windowplacing/windowplacingtable.htm')" onmouseover="javascript:togglePic('windowposition');" onmouseout="javascript:togglePic('windowposition');">Placing windows</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../windowdesign/windowdesignframe.htm','../windowdesign/windowdesigntable.htm')" onmouseover="javascript:togglePic('window');" onmouseout="javascript:togglePic('window');">Window pane design</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="constructionmenu">
+    <table>
+      <tr>
+        <td width="34%" align="left">
+          <h3></h3>
+          <ul>
+            <li>
+              <a href="javascript:parent.goToInFrame('../gate/gateframe.htm','../gate/gatetable.htm')" onmouseover="javascript:togglePic('gate');" onmouseout="javascript:togglePic('gate');">Gates and Gateways</a>
+            </li>
+            <li>
+              <a href="javascript:parent.goToInFrame('../fireplace/fireplaceframe.htm','../fireplace/fireplacetable.htm')" onmouseover="javascript:togglePic('fire');" onmouseout="javascript:togglePic('fire');">Fireplace</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../floor/floorframe.htm','../floor/floortable.htm')" onmouseover="javascript:togglePic('floor');" onmouseout="javascript:togglePic('floor');">Floors</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../ornament/ornamentframe.htm','../ornament/ornamenttable.htm')" onmouseover="javascript:togglePic('orn');" onmouseout="javascript:togglePic('orn');">Making ornament</a>
+            </li>
+            <li>
+              <a href="javascript:goToInFrame('../matisse/matisseframe.htm','../matisse/matissetable.htm')" onmouseover="javascript:togglePic('matisse');" onmouseout="javascript:togglePic('matisse');">Matisse Painting</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="baptistery"><img src="../archimages/traditional/baptisteryflorence.jpg" height="160" name="baptistery1" alt="the baptistery, Florence" border="0" id="baptistery1"></div>
+  <div id="bedroom"><img src="../archimages/medlock/widbeybedrm.jpg" height="160" name="bedroom1" alt="bedroom of a house in Seattle" border="0" id="bedroom1"></div>
+  <div id="bigger"><img src="../archimages/upham/poppy.jpg" height="160" name="bigger1" alt="a larger house in California" border="0" id="bigger1"></div>
+  <div id="bridge"><img src="../bridge/bridge.jpg" name="bridge1" height="100" alt="San Francisco bay bridge" id="bridge1"></div>
+  <div id="colombia"><img src="../pbrochure/colombia.jpg" height="160" name="colombia1" alt="Low cost housing in Mexico" border="0" id="colombia1"></div>
+  <div id="construction"><img src="../archimages/eishin/19.jpg" height="160" name="construction1" alt="a larger house in California" border="0" id="construction1"></div>
+  <div id="costs"><img src="../kgame/dollar.gif" height="120" name="construction1" alt="a larger house in California" border="0" id="construction1"></div>
+  <div id="downtown"><img src="../archimages/thessaloniki/downtown.jpg" height="160" name="downtown1" alt="a larger house in California" border="0" id="downtown1"></div>
+  <div id="entrance"><img src="../archimages/berkeley/logoentrance.jpg" height="160" name="entrance1" alt="a larger house in California" border="0" id="entrance1"></div>
+  <div id="entranceroom"><img src="../archimages/upham/poppyhall.jpg" height="160" name="entranceroom1" alt="a larger house in California" border="0" id="entranceroom1"></div>
+  <div id="fire"><img src="../archimages/jenny/jennysfire.jpg" name="fire1" height="160" alt="A fireplace" id="fire1"></div>
+  <div id="flags"><img src="../archimages/eishin/flags.jpg" name="flags1" height="160" alt="Pedestrian street" id="flags1"></div>
+  <div id="floor"><img src="../floors/salafloor2.jpg" name="floor1" height="160" alt="Pedestrian street" id="floor1"></div>
+  <div id="genericroom"><img src="../apl/apl223/apl223photo.jpg" height="160" name="genericroom1" alt="a beautiful room" border="0" id="genericroom1"></div>
+  <div id="green"><img src="../archimages/westdean/howard.jpg" height="160" name="green1" alt="a small house in California" border="0" id="green1"></div>
+  <div id="gate"><img src="../archimages/traditional/redgate.jpg" height="160" name="green1" alt="the red gate" border="0" id="green1"></div>
+  <div id="group"><img src="../archimages/traditional/norwegian.jpg" height="160" border="0"></div>
+  <div id="julian"><img src="../archimages/julian/julian.jpg" height="160" name="julian1" alt="a larger house in California" border="0" id="julian1"></div>
+  <div id="kitchen"><img src="../archimages/george/kitchen.jpg" height="160" name="kitchen1" alt="a larger house in California" border="0" id="kitchen1"></div>
+  <div id="kyriakos"><img src="../archimages/kyriakos/kyri6.jpg" height="160" name="kyriakos1" alt="a larger house in California" border="0" id="kyriakos1"></div>
+  <div id="hill"><img src="../naturecity/berkeley/sibleyfromroundtop.jpg" height="160" name="hill1" alt="a larger house in California" border="0" id="hill1"></div>
+  <div id="linz"><img src="../archimages/linz/linzgrid.gif" height="160" name="linz1" alt="a larger house in California" border="0" id="linz1"></div>
+  <div id="matisse"><img src="../matisse/femme2.jpg" height="160" name="matisse1" alt="a larger house in California" border="0" id="matisse1"></div>
+  <div id="meadows"><img src="../archimages/needlegrass.jpg" name="meadows1" height="160" alt="making a meadow" border="0" id="meadows1"></div>
+  <div id="meadows2"><img src="../meadow/mcclung3.jpg" name="meadows1" height="100" alt="making a meadow" border="0" id="meadows1"></div>
+  <div id="medlock"><img src="../archimages/medlock/givens-4a.jpg" name="medlock1" height="160" alt="a living room" border="0" id="medlock1"></div>
+  <div id="nbd"><img src="../archimages/thessaloniki/cafe2.jpg" height="160" name="nbd1" alt="a pedestrian street" border="0" id="nbd1"></div>
+  <div id="network"><img src="../archimages/paintings/turkmini5.jpg" height="160" name="network1" alt="a pedestrian network" border="0" id="network1"></div>
+  <div id="neighborhood"><img src="../archimages/paintings/turkmini2.jpg" height="160" name="office1" alt="a pedestrian network" border="0" id="office1"></div>
+  <div id="office"><img src="../archimages/other/plantin-bookshop.jpg" height="160" name="office1" alt="a pedestrian network" border="0" id="office1"></div>
+  <div id="oldman"><img src="../archimages/otherarchs/oldmansitting.jpg" name="oldman1" height="160" alt="15th century spanish tiles" id="oldman1"></div>
+  <div id="organization"><img src="../organization/work.jpg" name="organization1" height="160" alt="work in a pleasant company" id="organization1"></div>
+  <div id="ornament"><img src="../archimages/westdean/orn.jpg" name="ornament1" height="160" alt="15th century spanish tiles" id="ornament1"></div>
+  <div id="orn"><img src="../campus/college.jpg" name="orn1" height="160" alt="ornament on a college building" id="orn1"></div>
+  <div id="pedestrian"><img src="../corral/pedestrian/imaginaryneighborhood.jpg" height="160" name="pedestrian1" alt="a pedestrian network" border="0" id="pedestrian1"></div>
+  <div id="pedestrianstreet"><img src="../archimages/eishin/eishinpedestrianstreet.jpg" name="pedestrianstreet1" height="160" alt="Pedestrian street" id="pedestrianstreet1"></div>
+  <div id="polar"><img src="../archimages/other/polar.jpg" height="160" name="polar1" alt="near the icecap" border="0" id="polar1"></div>
+  <div id="public"><img src="../archimages/otherarchs/stockholmtownhallext.jpg" height="160" name="public1" alt="the Stockholm town hall" border="0" id="public1"></div>
+  <div id="rialto"><img src="../archimages/chichester/cathedral.jpg" height="160" name="rooms1" alt="Chichester cathedral" border="0" id="rooms1"></div>
+  <div id="rooms"><img src="../archimages/otherarchs/bawastair.jpg" height="160" name="rooms1" alt="a larger house in California" border="0" id="rooms1"></div>
+  <div id="school"><img src="../campus/students.jpg" height="160" name="school1" alt="a larger house in California" border="0" id="school1"></div>
+  <div id="shops"><img src="../archimages/berkeley/codys1.jpg" height="160" name="shops1" alt="a pedestrian street" border="0" id="shops1"></div>
+  <div id="small"><img src="../archimages/martinez/exterior-3.jpg" height="160" name="small1" alt="a small house in California" border="0" id="small1"></div>
+  <div id="stmarks"><img src="../archimages/traditional/stmarks.jpg" name="stmarks1" height="160" alt="St Mark's, Venice" id="stmarks1"></div>
+  <div id="street"><img src="../archimages/eishin/eishinpedestrianstreet.jpg" height="160" name="street1" alt="a pedestrian street" border="0" id="street1"></div>
+  <div id="thess"><img src="../whitepaper/street.jpg" height="160" name="thess1" alt="a larger house in California" border="0" id="thess1"></div>
+  <div id="urban"><img src="../archimages/athens/southconc.jpg" height="160" name="urban1" alt="amajor urban space" border="0" id="urban1"></div>
+  <div id="volume"><img src="../archimages/berkeley/meadow.jpg" height="160" name="volume1" alt="siting a house" border="0" id="volume1"></div>
+  <div id="water"><img src="../naturecity/iceland.jpg" height="160" name="water1" alt="a larger house in California" border="0" id="water1"></div>
+  <div id="watersedge"><img src="../archimages/bridge-boat.jpg" height="160" name="wateredge1" alt="a larger house in California" border="0" id="wateredge1"></div>
+  <div id="window"><img src="../archimages/texas/giojawindows.jpg" height="160" name="window1" alt="a larger house in California" border="0" id="window1"></div>
+  <div id="windowdesign"><img src="../archimages/westdean/frontdoor.jpg" height="160" name="windowdesign1" alt="a larger house in California" border="0" id="windowdesign1"></div>
+  <div id="windowposition"><img src="../houses/poppylr.jpg" height="160" name="windowposition1" alt="a larger house in California" border="0" id="windowposition1"></div>
+  <div id="shiratori"><img src="../shiratori/shr4.jpg" height="160" name="shiratori1" alt="terrace housing for Nagoya" border="0" id="shiratori1"></div>
+  <div id="agate"><img src="../archimages/agate/agate.jpg" height="160" name="agate1" alt="apartments in Oregon" border="0" id="agate1"></div>
+  <div id="india"><img src="../india/mansitting2.jpg" height="160" name="india1" alt="a larger house in California" border="0" id="india1"></div>
+  <div id="mexicali"><img src="../india/mansitting2.jpg" height="160" name="mexicali1" alt="Low cost housing in Mexico" border="0" id="mexicali1"></div>
+  <div id="emoto"><img src="../archimages/emoto/tokyo2.jpg" height="160" name="emoto1" alt="apartments in Oregon" border="0" id="emoto1"></div>
+  <div id="market"><img src="../archimages/thessaloniki/market2.jpg" height="160" name="market1" alt="Low cost housing in Mexico" border="0" id="market1"></div>
+  <div id="korea"><img src="../archimages/korea/korea.jpg" height="160" name="korea1" alt="downtown Seoul" border="0" id="korea1"></div>
+  <div id="yellow"><img src="../yggr/yggr.jpg" height="160" name="korea1" alt="downtown Seoul" border="0" id="korea1"></div>
+  <div id="guasare"><img src="../archimages/guasare/housesandlots.jpg" height="160" border="0"></div>
+  <div id='comment' style="position:absolute;left:270;top:260;width:250;height:420;background-color:black;color:white;padding:10px;visibility:hidden">
+    <h3><b><span style="font-size:80%">It seems amazing, but in about an hour, I designed a beautiful house: The design seemed to come almost by itself; it was leaping ahead of me, and going so naturally and so amazingly fast. My students would take weeks to make a thing like this, and I would normally take much much longer than I did. Yet it is just what I wanted to design.</span></b></h3>
+    <p><b><span style="font-size:80%">And above all, it really is a beautiful house.</span></b></p>
+    <p><b><span style="font-size:80%">Howard Davis</span></b></p>
+  </div>
+</body>
+</html>

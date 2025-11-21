@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PLAYBACK DRAWING</title>
+  <style>
+  h1 {font: 24pt "Times Roman";
+  font-weight: bold; line height: 30pt}
+  h2 {font: 18pt "Times Roman";
+  font-weight: normal; line height: 24pt}
+  h3 {font: 14pt "Times Roman";
+  font-weight: normal; line height: 22pt}
+  h4 {font: 10pt "Times Roman";
+  font-weight: bold; line height: 14pt}
+  h6 {font: 10pt "Times Roman";
+  font-weight: normal; line height: 10pt}
+  </style>
+</head>
+<body>
+  <h2 align="center">PLAYBACK DRAWING</h2>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <div align="center">
+    <script language="JavaScript">
+    setAppletURL();
+    jarFile = "/gdrawreplay2-3-29b.jar";
+    inputFileName = GetCookieX('InputFileName');
+    SetDrawingSize(700,300);
+    SetAppletSize(765,385);
+    forReplay = true;
+    // replayOnly = true;
+    replayWhenLoaded = true;   // must be true unless there's some other way to start the replay
+           //  (for example, a button that calls requestReplay()  )
+    // replayDelay = GetCookieX('ReplayDelay');
+    playbackParameterFile='pbparams.txt';
+    drawapplet();
+    </script>
+    <p></p>
+  </div>
+  <table cellpadding="1" cellspacing="0" border="2" width="100%">
+    <tr>
+      <td height="30" bgcolor="#000000" align="right">
+        <a href="chooseplayback1.htm" target="_top">
+        <h4><span style="color:6699FF;">Run another example of unfolding</span></h4></a>
+      </td>
+    </tr>
+    <tr align="center">
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

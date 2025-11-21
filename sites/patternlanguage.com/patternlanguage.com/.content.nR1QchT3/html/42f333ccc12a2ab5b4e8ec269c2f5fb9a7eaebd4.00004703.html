@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PATTERN DISCUSSION</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {mso-style-parent:"";
+        margin:.5in;
+        margin-bottom:.0001pt;
+        mso-pagination:none;
+        mso-layout-grid-align:none;
+        punctuation-wrap:simple;
+        text-autospace:none;
+        font-size:12.0pt;
+        mso-bidi-font-size:10.0pt;
+        font-family:"Book Antiqua";
+        mso-fareast-font-family:"Times New Roman";
+        mso-bidi-font-family:"Times New Roman";
+  color:222222; background-color:ffeeaa;}
+
+  </style>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language='javascript'>
+  if (location.href.match(/^(.*patternlanguage.com)\/cgi-bin/))
+   { var prefix =  RegExp.$1;
+     document.write("<base href='"+prefix+"/duncanville'>");
+   }
+
+  function doWhenLoaded()
+  { if (location.href.match(/^(.*patternlanguage.com)/) && !location.href.match(/cgi-bin/))
+    document.forms.voteform.submit();
+  }
+  </script>
+  <style>
+  .rankedChartTitle {font-size:15px;color:#0000ff}
+  .rankedChartVotes {font-size:15px;color:#00ff00;padding-left:20px;display:block}
+  .rankedChartBarHolder {padding-left:30px;display:block}
+  .standardChartTitle {font-size:18px;color:#ff00ff}
+  .standardChartVotes {font-size:18px;color:#ff00ff;padding-left:20px}
+  .standardChartBarHolder {padding-left:30px;display:block}
+  </style>
+  <script language='javascript'>
+  function checkVoteCount(category,maxVotes)
+  { var aa = document.all['vote_'+category];
+    count = 0;
+    for (var i = 0; i < aa.length; i++)
+      { var a = aa[i];
+        if (a.checked)
+          { count++;
+          }
+      }
+    if (count > maxVotes)
+      { alert('You have voted for more than ' + maxVotes + ' choices. Please modify your votes and resubmit.');
+        return false;
+      }
+    else
+       return true;
+  }
+
+  function setFormActionAnchor(formname,anchor)
+  { document.forms[formname].action = document.forms[formname].action.replace(/#.*$/,'')+'#'+anchor;
+  }
+  </script>
+  <script language="JavaScript">
+  <!--
+
+
+  function commentWindow(file,window) {
+        var url = makeAbsolute(file).replace(/\/cgi-bin\/.*\.py/,'');
+        
+
+
+
+       msgWindow=open(url,window,'resizable=yes,scrollbars=1,width=500,height=300,left=155,top=300,border=2');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  //clearID=msgWindow.setTimeout("self.close()",16000)//
+                     }
+
+                     //-->
+  </script>
+</head>
+<body>
+  <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+    <tr>
+      <td align="middle" bgcolor="#006644">
+        <h2><span style="color:ffcc66">THE FAIRVIEW FAMILIES' MINI-FORUM</span></h2>
+      </td>
+    </tr>
+    <tr align="middle">
+      <td align="center">
+        <h6><span style="color:ffcc66">A chance for searching, talking, and making agreements about what we all want in Fairview. Perhaps this can guide the conduct of the master plan, and nourish idealism (and some family power) in the developmental process.</span></h6>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+  <p></p>
+  <p></p>
+  <table cellspacing="0" cellpadding="0" width="200">
+    <tr>
+      <td bgcolor="#006644" height="30">
+        <span style="color:ffcc66;"></span>
+        <h6><span style="color:ffcc66;"><a href="explanation.htm" target="text"><span style="font-size:130%">Explanation</span></a></span></h6>
+        <p><a href="currentlist.htm" target="text"><span style="font-size:130%">Current List of Patterns</span></a></p>
+        <p><span style="color:ddeeff">Click below for the pattern you would like to review, work on or think about</span></p>
+        <p><a href="park.htm#pattern1" target="text">Pattern 1: Park with view of Cascades</a> &nbsp; <a href="park.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+        <p><a href="density.htm#pattern2" target="text">Pattern 2: Density of houses</a>&nbsp; <a href="density.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+        <p><a href="lotsize.htm#pattern3" target="text">Pattern 3: Lot size</a> &nbsp; <a href="lotsize.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+      </td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;</td>
+    </tr>
+    <tr>
+      <td bgcolor="#006644" height="30">
+        <span style="color:ffcc66"></span>
+        <h6><span style="color:ffcc66">Other patterns Delana mentions in her letter:<br>
+        For instance, what is the desired density per acre?<br>
+        Once that is agreed upon, what percentage of each owner's piece of an acre are owners willing to add to the commons?<br>
+        Must lots be the same size? (I say yes) Or, can those who pay more money purchase larger lots - and presumably build larger houses? (although the additional land of the larger lots could be used for larger private gardens.)<br>
+        If the commons was used for herb garden, rose garden, vegetable gardens, playground, a central gathering building, walking paths, greenhouse, etc., what would be the responsibility of each resident for labor, maintenance, etc.?<br>
+        Where would any one housing cluster be on the continuum from co-housing, to sharing some space and some resources (tools, etc.), to the classic separate dwelling?<br>
+        How can we best open up our common green spaces, pathways, etc. to the surrounding neighborhoods?<br>
+        Will there be a park open to all? Can the high ground with the great views of the Cascade mountain peaks be kept for public paths and benches for viewing?<br>
+        These, and others, are key, essential questions. To date they have not been addressed by the total company membership.</span></h6>
+      </td>
+    </tr>
+    <tr>
+      <td height="30">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="70%" bgcolor="#006644">
+        <span style="color:ffcc66"></span>
+        <h6><span style="color:ffcc66"><b>The following summarizes some of the principal economic-ecological issues (pertinent to creation of a sustainable local economy and a sustainable ecology) that have practical consequences for the form and layout of houses, gardens and workshops.</b></span></h6>
+        <ol>
+          <li><span style="color:ffcc66"><span style="color:11bbdd">Interlocking ribbons of houses and natural land</span> creating the greatest boundary length between nature-agriculture and the housing areas.</span></li>
+          <li><span style="color:11bbdd">Workspace or workshop in every house</span>This provides the easiest method of rentfree space and reducing transportation costs.</li>
+          <li><span style="color:11bbdd">Vehicle access very easy to houses</span> while consuming <i>the absolute minimum</i> amount of land, asphalt, and wasted acreage - hence an "Italian" form of parking.</li>
+          <li><span style="color:11bbdd">Water collection</span> cisterns in each house.</li>
+          <li><span style="color:11bbdd">Local sewage treatment and filtration</span> effluent going direct to fields.</li>
+          <li><span style="color:11bbdd">Vegetables and fruit food growing space in every house</span>.</li>
+          <li><span style="color:11bbdd">Conserve fruitful earth</span> by parking under streets or buildings.</li>
+          <li><span style="color:11bbdd">Fruit trees and vines with maximum exposure to sunshine</span> on sloping trellises in every house.</li>
+          <li><span style="color:11bbdd">Production of energy and fuel on site</span> Corn, wood, etc.</li>
+          <li><span style="color:11bbdd">Recycle solid waste</span> Burn as fuel, make bricks, make walls, make containers.</li>
+          <li><span style="color:11bbdd">Brick making</span> Use clay on site, clay pits, tiles.</li>
+        </ol>
+        <p><font color="#E3E5C9"><span style="font-size:120%;color:66ee66"></span></font></p>
+        <p><font color="#E3E5C9"><span style="font-size:120%;color:66ee66">These factors should influence the whole, and also make their appearance in every individual house and street.</span></font></p>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+</body>
+</html>

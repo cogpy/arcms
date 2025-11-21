@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>APARTMENT BUILDING</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="javascript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+
+  .h1class {
+   FONT-WEIGHT: normal; FONT-SIZE: 14px; line-space:20px; font-style: italic;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";   
+  }
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; line-height: 15px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .stepnumber {padding-left:16px;padding-right:8px;text-align:right}
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+  .unhighlightedSlideMarker {visibility:hidden}
+  .highlightedSlideMarker {visibility:visible}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 350px;
+  visibility: visible;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   420px;
+  width   : 300px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    350;
+                left:   10px;
+  width   : 250px;
+  height : 100px;
+  FONT-style: italic; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <script language="javascript">
+    // these must appear before stepb is first called
+        enableManualSlideshowViaStepb = true; 
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+        setStepDescriptionToShowInline(1);
+
+        setupSlides(0, "ufp1.jpg",
+                    1, "caption:Define inner rectangle.", "ufp2.jpg",
+                                        2, "caption:Define main rectangle", "ufp3.jpg",
+                                        3, "ufp4.jpg",
+                                        4, "ufp5.jpg", 
+                                        5, "ufp6.jpg", "ufp6note.jpg", "ufp7.jpg", "ufp7note4.jpg", "ufp9.jpg", "ufp9note.jpg", "ufp10.jpg",
+                                        6, "caption:", "ufp11.jpg", "ufp12.jpg",
+                                        7, "ufp13.jpg", "urreafp1.jpg");
+
+    //setCallOnDocumentLoad(rotate);
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 3000;
+        timeAfterLastSlide = 5000;
+        showSetupCaptions = false;
+    </script>
+    <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">WATCH A SLIDESHOW</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:70%;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span class="h1class"><font color="#222222" style='font-size:80%'>This sequence allows you to design your own fireplace, according to your own wishes. Your emotional comfort in a room with a fire matters a great deal.</font></span>
+          <p><span class="h6class" style='font-size:80%'>The design process has six main steps</span></p>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" style='font-size:80%'>
+            <tr>
+              <td width='30px' class="stepnumber" valign="top">1.</td>
+              <td>
+                <script>
+                stepb(1,'Define inner rectangle','Define inner rectangle which makes the whole harmonious')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">2.</td>
+              <td>
+                <script>
+                stepb(2,'Define main rectangle','Define main rectangle of outside of the fireplace under the shelf')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">3.</td>
+              <td>
+                <script>
+                stepb(3,'Get the height of mantel shelf','Get the height of mantel shelf')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">4.</td>
+              <td>
+                <script>
+                stepb(4,'Add the periphery','Add the periphery -- chimney, wings, chimney breast, hearth, to make it complete in three dimensions.')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">&nbsp;</td>
+              <td>
+                <script>
+                stepb(5,'.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.',
+                    'We now began a series of experiments, to see what the 3-dimensional character of the area in front of the fire should be.')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">5.</td>
+              <td>
+                <script>
+                stepb(6,'Get color and material','Get color and material of main body of the fireplace')
+                </script>
+              </td>
+            </tr>
+            <tr>
+              <td class="stepnumber" valign="top">6.</td>
+              <td>
+                <script>
+                stepb(7,'Put finishing touches','Put finishing touches of ornament')
+                </script>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+   // ******* set up handling slideshow and restart-button divs ***************
+        // *********************************************************************
+        // When reusing this, make sure the following settings are correct
+        // *********************************************************************
+
+        // name of div that holds just the slideshow (without the restart button)
+        var showdiv = 'showdiv';
+
+        // name of div to show after the slideshow
+        var aftershowdiv = 'restartdiv';  
+
+        // Include the following to replace showdiv with aftershowdiv
+        //  when the slideshow is done
+        setDelayedCallWhenSlideshowDone(
+           function () { hideElement(showdiv); showElement(aftershowdiv); }
+        );
+  </script>
+  <div id="slideshow" style='position:relative'>
+    <div id='restartdiv' style="position:absolute;left:0;top:0width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftershowdiv);showElement(showdiv);startRotate()"><font color="#000000">Watch the slideshow again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:270;height:400;visibility:visible">
+      <table align="center" bgcolor="black" border="1">
+        <tr>
+          <td bgcolor="black" align="center"><font color="white"><span class="h4class">Using the tools available on this site, anyone can make a beautiful fireplace</span></font></td>
+        </tr>
+        <tr>
+          <td align="center" height="300"><img src="ufp1.jpg" width="200" name="adBanner" alt="You?" id="adBanner"></td>
+        </tr>
+      </table>
+      <script language='javascript'>
+      writeMessageDiv('stepDescriptionCaption',300,300,
+                  'align=left', 'A slideshow is loading.', 
+                                                'font-size:90%;top:350px;left:10px;');
+      setStepCaptionDiv('stepDescriptionCaption',2);
+      </script>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

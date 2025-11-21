@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOUSE MOVIE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .link {
+       FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() function) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#44bbdd; color:#ffffff; font-weight:normal}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+
+    .superstep {font-weight:bold;background-color:#888888;color:#ffffff;padding-left:8px;padding-right:8px}
+    ul {margin-bottom:0}
+
+    #illuminate {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: visible;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    390px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+        FONT-style: italic; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman" ;
+        FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(445,299);
+        slideImageAttributeString = 'width=445';  //// set size of slideshow images here
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        startAutoplayWhenLoaded(false);
+        replayDelay = 4;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+    //////// DESCRIPTION OF THE SHOW ///////////////
+        setMovieFile("chris1nl3-27.gdraw");
+
+
+
+    // setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>First, let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp;click&nbsp;here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <table align='center' width='90%' style='font-size:80%;line-height:1.2;'>
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class='superstep'>Establish context</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul>
+                        <li>
+                          <script>
+                          setup_step('movie:1','Draw boundaries','caption-manual:Start by drawing the site plan boundaries and the road')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:2','Show nearby houses, trees','caption-manual:Now put in the neighboring houses, and the trees on your land')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:3','Draw south arrow','caption-manual:Draw a south arrow showing where the sun comes from')
+                          </script>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class='superstep'>Locate house in relation to garden</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul>
+                        <li>
+                          <script>
+                          setup_step('movie:4','Find beautiful spot','caption-manual:Find the most beautiful place outdoors that you want for your garden')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:5','Best place for living room','caption-manual:Now place the living room, so that it opens to the garden in a nice way and is in the position on the site where you most want to BE')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:6','Place a terrace','caption-manual:Put a terrace outside the living room, where it connects with the beauty of the garden')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:7','Complete the house volume','caption-manual:Now put in the rest of the house volume where you think it needs to be to surround the living room')
+                          </script>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class='superstep'>Establish basic structure of house</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul>
+                        <li>
+                          <script>
+                          setup_step('movie:8','Place the entrance','caption-manual:Place the front door and entrance to the house in a position which commands and draws you to it')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:9','Put in staircase','caption-manual:If the house is two story, put in the volume of the staircase and staircase hall and make this volume regular and nicely shaped')
+                          </script>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class='superstep'>Work on transition from street</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ul>
+                        <li>
+                          <script>
+                          setup_step('movie:10','Make path from street','caption-manual:Draw in a path from street to the front door enterin the site at a good place, and leading naturaly to the front door')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:11','Best place for garage','caption-manual:Put in a garage and its driveway, so that it is very unobtrusive even though convenient')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:12','Add trees along path','caption-manual:Trees along the path for beauty and shade, and to shield the garage')
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                          setup_step('movie:13','Make trellised walk','caption-manual:Build a trellised walk, or other kind of pleasant, well-marked walk, from the garage to the front door')
+                          </script>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center"><span class="h2class"><font color="#222222"><b>SMALL HOUSE SEQUENCE UNFOLDING TO CREATE A HOUSE PLAN</b></font></span></td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+      putCaptionsHere('A movie is loading.','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

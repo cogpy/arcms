@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatternLanguage.com - Please Log In</title>
+  <style>
+  H1 {font: 30pt "Times Roman"; font-weight: bold; line height: 36pt}
+  H2 {font: 20pt "Times Roman"; font-weight: normal; line height: 24pt}
+  H3 {font: 14pt "Times Roman"; font-weight: normal; line height: 22pt}
+  H4 {font: 12pt "Times Roman"; font-weight: normal; line height: 14pt}
+  H5 {font: 10pt "Times Roman"; font-weight: normal; line height: 12pt}
+  H6 {font: 10pt "Times Roman"; font-weight: normal; line height: 10pt}
+  </style>
+</head>
+<body alink="#0000FF" bgcolor="#BBBBFF" link="SKYBLUE" text="black" vlink="#AAAAFF">
+  <div align="center">
+    <a href="/sitemap/sitemap.htm"><img src="/images/blackemblem.gif" width="100"></a>
+  </div><br>
+  <table bgcolor="black" border="3" height="30" width="100%%">
+    <tr>
+      <td align="center">
+        <font color="#9999FF"></font>
+        <h4><font color="#9999FF">ARE YOU ALREADY A MEMBER? PLEASE LOG IN</font></h4>
+      </td>
+    </tr>
+  </table><br>
+  <table border="3" height="100" width="100%%" bgcolor="white">
+    <tr>
+      <td align="left" width="100%%" border="3">
+        <font face="Garamond"></font>
+        <h4><font face="Garamond">Welcome back to PatternLanguage.com!</font></h4>
+        <h4><font face="Garamond">Part of how we recognize you is a unique identification cookie in your computer. Right now, we cannot find that cookie in your computer. Perhaps you may be working from a new computer, or may have deleted your cookies.</font></h4>
+        <h4><font face="Garamond">Please help us find you in our records, by giving us your name, and email. Then you'll have access to the areas you had access to previously. Thank you!</font></h4>
+      </td>
+    </tr>
+  </table>
+  <form name="login" method="post" action="/cgi-bin/patternl/setcookie.py" id="login">
+    <table border="0" cellpadding="5" cellspacing="0" width="100%%">
+      <tr>
+        <td width="44%%">&nbsp;</td>
+        <td width="1%%">&nbsp;</td>
+        <td width="1%%">&nbsp;</td>
+        <td width="54%%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td align="left" colspan="4"><font face="Helvetica, Arial" color="yellow" size="3"><b></b></font></td>
+      </tr>
+      <tr>
+        <td align="left"><font face="Helvetica, Arial" size="2">First Name:</font></td>
+        <td align="left" colspan="2"><input type="text" name="fname" size="41" maxlength="50" value=""></td>
+        <td align="left"><font face="Helvetica, Arial" size="2"></font></td>
+      </tr>
+      <tr>
+        <td align="left"><font face="Helvetica, Arial" size="2">Last Name:</font></td>
+        <td align="left" colspan="2"><input type="text" name="lname" size="41" maxlength="50" value=""></td>
+        <td align="left"><font face="Helvetica, Arial" size="2"></font></td>
+      </tr>
+      <tr>
+        <td align="left"><font face="Helvetica, Arial" size="2">Email:</font></td>
+        <td align="left" colspan="2"><input type="text" name="email" size="41" maxlength="50" value=""></td>
+        <td align="left"><font face="Helvetica, Arial" size="2"></font></td>
+      </tr>
+    </table>
+    <hr size="1">
+    <br>
+    <input type="hidden" name="process" value="1">
+    <div align="center">
+      <input type="submit" value="I'm Already a Member - Log in">
+    </div><input type="hidden" name="redirect" value="/commentary/commentary.htm">
+  </form>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archived Sites - Archivarix Restoration Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .site-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .site-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        .site-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        .site-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .site-card .meta {
+            font-size: 0.9em;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        .site-card .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            text-align: center;
+            flex: 1;
+        }
+        .btn:hover {
+            background: #764ba2;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e9ecef;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .code {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Archived Sites Portal</h1>
+            <p>Restored through Archivarix - Preserving Digital History</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to the Archive</h2>
+                <p>This portal hosts websites restored from archives using Archivarix technology. Each site has been carefully preserved and deployed for exploration and research.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="siteCount">0</div>
+                    <div class="stat-label">Restored Sites</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">🔄</div>
+                    <div class="stat-label">Automated Deployment</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">🌟</div>
+                    <div class="stat-label">Preserved History</div>
+                </div>
+            </div>
+
+            <div class="sites-grid" id="sitesGrid">
+                <!-- Sites will be populated here -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by <a href="https://archivarix.com" target="_blank">Archivarix CMS</a> |
+            <a href="https://github.com/cogpy/arcms" target="_blank">GitHub Repository</a></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                To add a new site, update <span class="code">.github/archivarix_sites.json</span> with your Archivarix restoration code
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Site data will be injected here
+        const sites = [{"url":"livingneighborhoods.org","code":"R6IO-2MK4-OEI0-WO26","status_url":"https://archivarix.com/en/status/R6IO2MK4OEI0WO26/","enabled":true,"description":"Living Neighborhoods - Archive of community design and pattern language resources"},{"url":"patternlanguage.com","code":"DICS-IEES-IQSU-MW0K","status_url":"https://archivarix.com/en/status/DICSIEESIQSUMW0K/","enabled":true,"description":"Pattern Language - Christopher Alexander's pioneering work on architectural patterns"},{"url":"iwritewordsgood.com","code":"SUCE-8ASG-E6AG-MWO2","status_url":"https://archivarix.com/en/status/SUCE8ASGE6AGMWO2/","enabled":true,"description":"I Write Words Good - Creative writing and literary archive"}];
+
+        // Populate site count
+        document.getElementById('siteCount').textContent = sites.length;
+
+        // Generate site cards
+        const sitesGrid = document.getElementById('sitesGrid');
+        sites.forEach(site => {
+            const card = document.createElement('div');
+            card.className = 'site-card';
+            card.onclick = () => window.location.href = `sites/${site.url}/`;
+
+            card.innerHTML = `
+                <h3>${site.url}</h3>
+                <p>${site.description}</p>
+                <div class="meta">
+                    <span class="code">${site.code}</span>
+                </div>
+                <div class="actions">
+                    <a href="sites/${site.url}/" class="btn" onclick="event.stopPropagation()">Visit Site</a>
+                    <a href="${site.status_url}" class="btn btn-secondary" target="_blank" onclick="event.stopPropagation()">Status</a>
+                </div>
+            `;
+
+            sitesGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

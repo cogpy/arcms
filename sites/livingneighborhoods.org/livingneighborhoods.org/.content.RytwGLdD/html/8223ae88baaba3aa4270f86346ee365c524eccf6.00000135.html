@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACTION LIST</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <script language="JavaScript">
+  function increment(number) { 
+  return(number+1) 
+  } 
+
+  var packnumber=0;
+  var unfoldnumber=0;
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+
+  .h1greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 008833;
+  }
+  .h1yellowclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: FFFF22;<!-- eeee33; -->
+  }
+  .h1darkgreenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 004400;
+  }
+  .h2greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: 005522;
+  }
+
+  .h3greenclass {
+        FONT-WEIGHT: bold; <!-- FONT-DECORATION: italic; --> FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h4greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-SPACING: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h5greenclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000; FONT-DECORATION: none;
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+
+
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+
+  .bigtext { 
+        FONT-WEIGHT: bold; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman";  color: 5555ff; FONT-STYLE: underline;}
+  *******************************************
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  195px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#000000" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="540" align="center" border="1">
+      <tr>
+        <td align="center" width="540" colspan="2" bgcolor="#FF3333" valign="middle">
+          &nbsp;<br>
+          <center>
+            <a href="action.htm"><img src="../images/bln-red.jpg" width="265" height="29" border="0"></a><br>
+            <span class="h6class" style="color:white;"><a href="action.htm"><span style="color:blue">BACK TO ACTION PAGE</span></a></span>
+            <p><span class="h1darkgreenclass"><span style="color:yellow">ACTION LIST</span></span><br>
+            PARTIAL LIST OF CURRENTLY<br>
+            AVAILABLE UNFOLDINGS (to be extended)</p>
+            <p></p>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" width="540" valign="top" bgcolor="#FFFFFF">
+          <blockquote>
+            <span class="h3greenclass"><i>To lay out a neighborhood, or any portion of a neighborhood, we suggest you use the following steps, or "unfoldings," one at a time. The process of using these unfoldings will allow the design, layout, and structure of the neighborhood to take form gradually until it is complete.</i></span>
+            <p><span class="h3greenclass"><i>Please read through the unfoldings and select those which seem most interesting and useful for your project.</i></span></p>
+            <p><span class="h3greenclass"><i>Choose the unfoldings you want to use, and download them for your workbook. You and your colleagues can then refer to them in the workbook when you are working on the site, or meeting elsewhere.</i></span></p>
+            <p><span class="h3greenclass"><i><a name="startup" id="startup"></a>The unfoldings you have chosen will help you to implement a chain of actions that allow a living neighborhood to grow step by step.</i></span></p>
+            <p><span class="h3greenclass"><span class="h6class">The unfoldings in the following table are listed in the approximate order they would normally be used</span></span></p>
+          </blockquote>
+        </td>
+      </tr>
+    </table>
+    <table width="540" align="center" border="1">
+      <tr>
+        <td align="center" colspan="3">
+          <hr height="10" color="#005511">
+        </td>
+      </tr>
+    </table>
+    <table width="450" align="center" border="1">
+      <tr>
+        <td align="center" colspan="3">
+          <hr height="10" color="#005511">
+        </td>
+      </tr>
+      <tr>
+        <td align="left" width="450" valign="top" bgcolor="#FFFFFF">
+          <span class="bigtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="position:relative; left:-0;"><u><span style="font-size:130%;">
+          <script>
+
+
+          packnumber=increment(packnumber);
+          document.write(packnumber,".0");
+          </script></span> STARTUP & VISION</u></span></span>
+          <blockquote>
+            <span style="position:relative; top:-20"></span>
+            <table width="450" align="left">
+              <tr>
+                <td align="right" width="50" valign="top"><span class="bigtext">
+                <script>
+
+                unfoldnumber=increment(unfoldnumber);
+                document.write(packnumber,".",unfoldnumber);
+                </script>&nbsp;&nbsp;</span></td>
+                <td align="left" width="400">
+                  <a href="../actions/worksheet.htm"><span class="h70class"><span style="color:5555ff">Worksheet:</span> Fill out a worksheet describing your idea</span></a><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" width="50" valign="top"><span class="bigtext">
+                <script>
+
+                unfoldnumber=increment(unfoldnumber);
+                document.write(packnumber,".",unfoldnumber);
+                </script>&nbsp;&nbsp;</span></td>
+                <td align="left" width="400">
+                  <a href="../actions/people.htm"><span class="h70class"><span style="color:5555ff">People:</span> Slowly and deliberately, bring in people you know, who want to be involved</span></a><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" width="50" valign="top">
+                  <a name="diagnosis" id="diagnosis"></a> <span class="bigtext">
+                  <script>
+
+                  unfoldnumber=increment(unfoldnumber);
+                  document.write(packnumber,".",unfoldnumber);
+                  </script>&nbsp;&nbsp;</span>
+                </td>
+                <td align="left" width="400">
+                  <a href="../actions/mapmaking.htm"><span class="h70class"><span style="color:5555ff">Basemap:</span> Make a detailed basemap of the area where your new neighborhood will be</span></a><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" width="50" valign="top"><span class="bigtext">
+                <script>
+
+                unfoldnumber=increment(unfoldnumber);
+                document.write(packnumber,".",unfoldnumber);
+                </script>&nbsp;&nbsp;</span></td>
+                <td align="left" width="400">
+                  <a href="../actions/vision.htm"><span class="h70class"><span style="color:5555ff">Vision:</span> Together, close your eyes, and imagine the neighborhood as in a true vision. You wait for it, and let it come of its own accord into your eyes-shut mind.</span></a><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" width="50" valign="top"><span class="bigtext">
+                <script>
+
+                unfoldnumber=increment(unfoldnumber);
+                document.write(packnumber,".",unfoldnumber);
+                </script>&nbsp;&nbsp;</span></td>
+                <td align="left" width="400">
+                  <a href="../actions/poeticpl.htm"><span class="h70class"><span style="color:5555ff">Poetry:</span> In words, write down your vision of the place, in the most emotional language</span></a><br>
+                </td>
+              </tr>
+            </table><br>
+            <a name="startup" id="startup"></a>
+            <table>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="400" valign="top" bgcolor="#FFFFFF">
+                  <span class="bigtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="position:relative; left:-0;"><u><span style="font-size:130%;">
+                  <script>
+
+
+                  packnumber=increment(packnumber);
+                  document.write(packnumber,".0");
+                  </script></span> DIAGNOSIS OF THE LAND</u></span></span>
+                  <blockquote>
+                    <span style="position:relative; top:-20"></span>
+                    <table width="450" align="left">
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/intro-diagnosis.htm"><span class="h70class"><span style="color:5555ff">Introduction:</span> Introduction to diagnosis</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/diagnosis.htm"><span class="h70class"><span style="color:5555ff">The whole:</span> Observe and sketch the deep configuration of the whole</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a name="generative" id="generative"></a><a href="../actions/preciousplaces.htm"><span class="h70class"><span style="color:5555ff">Precious places:</span> Identify the most beautiful and precious places</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/repair.htm"><span class="h70class"><span style="color:5555ff">Repair:</span> Identify spots and areas that most need repair</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/drawdiagnosis.htm"><span class="h70class"><span style="color:5555ff">Draw:</span> Draw diagnosis on your map</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/gps.htm"><span class="h70class"><span style="color:5555ff">GPS:</span> Use GPS for exact positioning, and transfer to the map</span></a><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </blockquote><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="450" valign="top" bgcolor="#FFFFFF">
+                  <span class="bigtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="position:relative; left:-0;"><u><span style="font-size:130%;">
+                  <script>
+
+
+                  packnumber=increment(packnumber);
+                  document.write(packnumber,".0");
+                  </script></span> CUSTOMIZE OUR GENERATIVE CODE TO FIT</u><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>YOUR PROJECT</u></span></span>
+                  <blockquote>
+                    <span style="position:relative; top:-20"></span>
+                    <table width="450" align="left">
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/entities.htm"><span class="h70class"><span style="color:5555ff">Entities:</span> Identify the most important entities and centers that will give the neighborhood its visionary character. These are not yet located, but identified and described, as to type.</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/codeitems.htm"><span class="h70class"><span style="color:5555ff">Items of code:</span> Write them up, as items of generative code, generic in nature, not specific to any one location, and having the emotional power of the visions established in #1.5 above.</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/locations.htm"><span class="h70class"><span style="color:5555ff">Locations:</span> Now -- separately -- consider possible locations in the neighborhood, where these special entities might be built</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/addtoworkbook.htm"><span class="h70class"><span style="color:5555ff">Workbook entries:</span> Insert the descriptions of these special entities, into this generative code you have downloaded to your workbook. These will need to be given special sheets, that you must make for yourselves inside your workbook.</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/publish.htm"><span class="h70class"><span style="color:5555ff">Publish:</span> If you feel that these entities your neighborhood has discovered, or pioneered, may be helpful to other neighborhoods, then add them to this website, for others to use as well.</span></a><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </blockquote><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <a name="public" id="public"></a>
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="500" valign="top" bgcolor="#FFFFFF">
+                  <span class="bigtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="position:relative; left:-0;"><u><span style="font-size:130%;">
+                  <script>
+
+
+                  packnumber=increment(packnumber);
+                  document.write(packnumber,".0");
+                  </script></span> PLACE, SIZE, AND SHAPE MAJOR PUBLIC SPACES</u></span></span>
+                  <blockquote>
+                    <span style="position:relative; top:-10"></span>
+                    <table width="450" align="left">
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/pedestriancenters.htm"><span class="h70class"><span style="color:5555ff">Pedestrians first:</span> A general proposition - Pedestrians first, cars later</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/maincenter.htm"><span class="h70class"><span style="color:5555ff">Main center:</span> Find and locate the main neighborhood center</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/magic.htm"><span class="h70class"><span style="color:5555ff">Paths:</span> Locate the most paths along beautiful spots and lines</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/minorcenters.htm"><span class="h70class"><span style="color:5555ff">Minor centers:</span> Locate minor public centers as far as makes sense</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/positivespace.htm"><span class="h70class"><span style="color:5555ff">Shaping centers:</span> Go back over all the public spaces you have located so far, and give each one a size and shape appropriate to its position. In doing this you are, step by step, to begining to shape the shared space of the community</span></a><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </blockquote><br>
+                  <a name="public" id="public"></a>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="3">
+                  <a name="public" id="public"></a>
+                  <hr height="10" color="#005511">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="500" valign="top" bgcolor="#FFFFFF">
+                  <span class="bigtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="position:relative; left:-0;"><u><span style="font-size:130%;">
+                  <script>
+
+
+                  packnumber=increment(packnumber);
+                  document.write(packnumber,".0");
+                  </script></span> BEGIN DECISIONS ABOUT BUILDING POSITIONS</u></span></span>
+                  <blockquote>
+                    <span style="position:relative; top:-10"></span>
+                    <table width="450" align="left">
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400" valign="top">
+                          <a href="../actions/buildingfronts.htm"><span class="h70class"><span style="color:5555ff">Building fronts:</span> Building fronts must be positioned to generate valuable, positive space between them</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/maincenter.htm"><span class="h70class"><span style="color:5555ff">Main center:</span> Find and locate the main neighborhood center</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/magic.htm"><span class="h70class"><span style="color:5555ff">Paths:</span> Locate the most paths along beautiful spots and lines</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/minorcenters.htm"><span class="h70class"><span style="color:5555ff">Minor centers:</span> Locate minor public centers as far as makes sense</span></a><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right" width="50" valign="top"><span class="bigtext">
+                        <script>
+
+                        unfoldnumber=increment(unfoldnumber);
+                        document.write(packnumber,".",unfoldnumber);
+                        </script>&nbsp;&nbsp;</span></td>
+                        <td align="left" width="400">
+                          <a href="../actions/positivespace.htm"><span class="h70class"><span style="color:5555ff">Shaping centers:</span> Go back over all the public spaces you have located so far, and give each one a size and shape appropriate to its position. In doing this you are, step by step, to begining to shape the shared space of the community</span></a><br>
+                        </td>
+                      </tr>
+                    </table>
+                  </blockquote>
+                </td>
+              </tr>
+            </table>
+            <center>
+              <br>
+              <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+            </center>
+          </blockquote>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

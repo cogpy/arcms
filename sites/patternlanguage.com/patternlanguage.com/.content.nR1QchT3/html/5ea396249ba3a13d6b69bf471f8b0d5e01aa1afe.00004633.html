@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ORNAMENT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="javascript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman";
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman";
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; 
+        line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman";
+        margin-bottom: 0;       
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman";
+  }
+
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepb() function) */
+  -->
+
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+  .unhighlightedSlideMarker {visibility:hidden}
+  .highlightedSlideMarker {visibility:visible}
+
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 240px;
+  visibility: hidden;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   250px;
+  width   : 350px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    350px;
+                left:   50px;
+  <!--
+  /* set the width and height of loadingmsg as parameters to writeMessageDiv below */
+  /* width        : 300px; */
+  /* height : 100px; */
+  -->
+  FONT-style: italic; 
+  FONT-SIZE: 14px; 
+  FONT-FAMILY: "Times Roman";
+  text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <script language="javascript">
+  // ******* set up handling slideshow and restart-button divs ***************
+  // *********************************************************************
+  // When reusing this, make sure the following settings are correct
+  // *********************************************************************
+  var showdiv = 'showdiv';   // name of div that holds just the slideshow 
+                             // itself (without the restart button)
+  var aftershowdiv = 'restartdiv';  // name of div to show after the slideshow
+
+  // Include the following to replace showdiv with aftershowdiv
+  //  when the slideshow is done
+  setDelayedCallWhenSlideshowDone(function () { changeState(showdiv, "hidden"); changeState(aftershowdiv, "visible", true); });
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tbody>
+                <tr>
+                  <td align="middle" bgcolor="#EEEEEE" height="30">
+                    <h3><a href="javascript:changeState(aftershowdiv,%20'hidden');changeState(showdiv,%20'visible',%20true);startRotate()"><span style="color:000000">Watch the slideshow again.</span></a></h3>
+                  </td>
+                </tr>
+                <tr align="middle">
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:460;height:400;visibility:visible">
+      <script language="JavaScript">
+      //ROTATE PIX
+      //  setupSlides("blank.jpg", 
+      //              1, "blank.jpg",
+      //                                2, "blankplus1.jpg", "blankplus2.jpg", "blankplus3.jpg",
+      //                                3, "blankplus4.jpg", "blankplus5.jpg",
+      //                                4, "blankplus6.jpg", "blankplus7.jpg",
+      //                                5, "blankplus8.jpg", "blankplus9.jpg",
+      //                                6, "blankplus10.jpg",
+      //                                7, "blankplus11.jpg",
+      //                                8, "blankplus12.jpg",
+      //                                9, "blankplus13.jpg", "blankplus14.jpg",
+      //                                10, "blankplus15.jpg", "college.jpg", "college.jpg", "college.jpg")
+
+      // don't show steps until all slides are loaded
+      setCallOnDocumentLoad(function () { emptyAllCaptions(); changeState('steps', "visible", true) });
+
+      // Right now can only have one call to setCallOnDocumentLoad until install fix
+      // to universal.js.  After it's fixed, it would probably be clearer to replace 
+      // the above call with the following two calls:
+      //   setCallOnDocumentLoad(emptyAllCaptions); // clears loading message
+      //   setCallOnDocumentLoad(function () { changeState('steps', "visible", true) });
+
+      // if uncommented out, this will start automatic slideshow
+      // setCallOnDocumentLoad(rotate); 
+
+      setCallOnDocumentLoad(preloadImages);
+      timePerSlide = 2000;
+      timeAfterLastSlide = 2000;
+      // showSetupCaptions = true;
+      </script>
+      <table align="center" bgcolor="#EEEEEE" width="434">
+        <tr>
+          <td bgcolor="#666666" align="center" width="432"><span style="font-size:14px;color:white">Using this sequence, anyone can make a good ornament and do it right</span></td>
+        </tr>
+        <tr height="100">
+          <td align="center">
+            <div style="position:relative;width:432;height:205;">
+              <script>
+              writeSlideDivs = true;
+              slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+              setupSlides("blank.jpg", 
+                     1, "blank.jpg",
+                                         2, "blankplus1.jpg", "blankplus2.jpg", "blankplus3.jpg",
+                                         3, "blankplus4.jpg", "blankplus5.jpg",
+                                         4, "blankplus6.jpg", "blankplus7.jpg",
+                                         5, "blankplus8.jpg", "blankplus9.jpg",
+                                         6, "blankplus10.jpg",
+                                         7, "blankplus11.jpg",
+                                         8, "blankplus12.jpg",
+                                         9, "blankplus13.jpg", "blankplus14.jpg",
+                                         10, "blankplus15.jpg", "college.jpg", "college.jpg", "college.jpg");
+              </script>
+            </div><br>
+            <h4><font color="#000000"><i>Placing the ornament on a building</i></font></h4>
+          </td>
+        </tr>
+      </table>
+      <script language='javascript'>
+      writeMessageDiv('stepDescriptionCaption',432,300,
+                  'align=left', 'A slideshow is loading.', 
+                                                'font-size:90%;top:300px;left:10px;');
+      setStepCaptionDiv('stepDescriptionCaption',2);
+      </script>
+    </div>
+  </div>
+  <div id="steps">
+    <table width="230" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1">
+          <h3><b><span style="color:000000">SLIDESHOW-TUTORIAL</span></b></h3>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:70%;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left" width="80%">
+          <h6 style='margin-bottom:0;font-size:80%'>The ornament-making process has many steps which go roughly along the following lines:</h6>
+          <ol style='margin-top:10;font-size:80%'>
+            <script>
+            // these must appear before stepb is first called
+            enableManualSlideshowViaStepb = true; 
+            setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+            setStepDescriptionToShowInline(1);
+            </script>
+            <li>
+              <script>
+              stepb(1,'Look, and find gaps','Look carefully at the building or building component which is to receive the ornament, and find the "gaps" in it.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(2,'Find overall gesture','Ask yourself what overall gesture in the whole seems to repair the empty gap-like feeling in the whole?');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(3,'Find repeating pattern','Find a simple repeating pattern which is consistent with this gesture and fits within it.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(4,'Make space positive','Now improve the ornament, by making the individual bits of space in the ornament more positive.  To do this, start giving better shape to individual repeating elements. "Better" means that the negative space between these elements, not only the elements themselves, become well-shaped and positive in shape.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(5,'Make boundaries','Make appropriate boundaries, which help to unify the ornament, and its relation to its surroundings.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(6,'Add second level','Once you have this clear, try adding a second level of scale, of other smaller shapes, which make the ornament whole, and which increase the unity of its interior space-- what this means is that the space between element become more positive because of these small elements you have added.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(7,'Add third level','Do what you may need to, to add a third level of detail, thus embellishing the centers you have just created with small centers. They should be chosen to create both large centers and small ones. (check tutorial to understand wehat this means).');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(8,'Make space positive','Once again sharpen these smallest ones, and make them more positive.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(9,'Increase contrast','If it is helpful, increase contrast, to make the ornament more vivid.');
+              </script>
+            </li>
+            <li>
+              <script>
+              stepb(10,'Make harmonious','In any case make sure it is not too extreme: it should end up subdued and harmonious.');
+              </script>
+            </li>
+          </ol>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

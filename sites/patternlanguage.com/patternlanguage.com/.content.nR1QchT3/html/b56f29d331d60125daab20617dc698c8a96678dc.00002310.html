@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript">
+  function newWindow(file,window) {
+
+
+
+       msgWindow=open(file,window,'resizable=yes,scrollbars=1,width=535,height=380,left=150,top=100,border=0');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  //clearID=msgWindow.setTimeout("self.close()",1500)//
+                     }
+
+                     //-->
+
+
+
+  myLetters = new Array("../lettercycle/wow.htm","../lettercycle/mikewilliams.htm","../lettercycle/janie.htm","../lettercycle/sandifer.htm","../lettercycle/bwhite.htm","../lettercycle/carrie.htm","../lettercycle/education.htm","../lettercycle/kuchtjak.htm","../lettercycle/carolyn.htm");
+
+
+  function picksite2()
+   {
+     now=new Date();
+     num=Math.floor(now.getTime()/(24*3600*1000)) % myLetters.length;
+     location.href = myLetters[num]
+   }
+
+  </script>
+</head>
+<body bgcolor="#6666FF" text="#D9F892" link="#FF0000" alink="#FF0000" vlink="#FF0000">
+  <table>
+    <tr>
+      <td width="85%" bgcolor="#CC3333" align="center">
+        <h6><a href="../welcome/pleasecoffee.htm"><span style="color:D9F892;font-size:150%">PLEASE JOIN US. WE REALLY NEED YOU AS A MEMBER OF THE ASSOCIATION</span></a></h6>
+      </td>
+    </tr>
+    <tr height="20">
+      <td width="85%">
+        <h6></h6>
+      </td>
+    </tr>
+    <tr>
+      <td width="85%" bgcolor="#CC3333" align="center">
+        <h6><a href="javascript:newWindow('../welcome/powerful.htm','window2')"><span style="color:D9F892;font-size:150%">HERE ARE SOME ADDITIONAL THINGS WE THINK YOU OUGHT TO LOOK AT BECAUSE THEY ARE POWERFUL AND NEW</span></a></h6>
+        <p></p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

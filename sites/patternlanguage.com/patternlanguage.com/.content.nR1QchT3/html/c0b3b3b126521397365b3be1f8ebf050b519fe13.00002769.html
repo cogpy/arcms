@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOUSE GROUP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+    .link { FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman";
+                 text-decoration: none;  }
+
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .link {
+       FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    .red_marker { list-style-image: url(red.jpg)}
+    .red_marker_highlighted { list-style-image: url(red-border.jpg)}
+    .green_marker { list-style-image: url(green.jpg)}
+    .green_marker_highlighted { list-style-image: url(green-border.jpg)}
+    .gray_marker { list-style-image: url(gray.jpg)}
+    .gray_marker_highlighted { list-style-image: url(gray-border.jpg)}
+    .black_marker { list-style-image: url(black.jpg)}
+    .black_marker_highlighted { list-style-image: url(black-border.jpg)}
+    .blue_marker { list-style-image: url(lightblue.jpg)}
+    .blue_marker_highlighted { list-style-image: url(lightblue-border.jpg)}
+
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() function) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#44bbdd; color:#ffffff; font-weight:normal}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+
+    #illuminate {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: visible;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    360px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+        FONT-style: italic; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman" ;
+        FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        // setAppletDrawingSize(600,400);
+        // setAppletDrawingSize(445,297);
+        setAppletDrawingSize(445,254);
+        slideImageAttributeString = 'width=445';  //// set size of slideshow images here
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        setScrollDiv('stepscrolldiv');
+        allowManualControlViaControlStrip(false);
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+    //////// DESCRIPTION OF THE SHOW ///////////////
+        setMovieFile('group1.gdraw');  
+         
+
+
+    // setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span><br>
+        <span style='font-size:80%'></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>First, let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp;click&nbsp;here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;height:255;overflow-y:scroll'>
+                  <span style='font-size:80%;line-height:1.2;'><br></span>
+                  <ul>
+                    <li style='list-style-type:none'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:0','beginning state','caption-manual:')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:1','Identify beautiful green spots','caption-manual:Diagnosis: identify the most beautiful places; these will become public places and gardens for houses')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:2','Identify main public square','caption-manual:The most beautiful place, roughly central, is chosen as a public square, to be shared by all')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:3','Place main path','caption-manual:This path, roughly in the middle, will become the main pedestrian route through the house group, connecting it to adjacent house groups. It will also carry cars, at low speeds.')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:4','Place path from square to farmland','caption-manual:This secondary path connects the core of pedestrian space in the house group to the agricultural land')
+                    </script></span></li>
+                    <li class='black_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:5','Focal point for public square','caption-manual:Identify a focal point for the public square')
+                    </script></span></li>
+                    <li class='blue_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:6','Gateway to farm land','caption-manual:Create a place for people to meet, where the secondary path meets the farm land')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:7','Set rough garden positions','caption-manual:Before deciding where houses will go, FIRST choose rough garden positions, for most of the houses')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:8','Set house volumes','caption-manual:Based on garden positions, begin setting houses: set two house volumes next to the gardens, which help shape the gardens')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:9','Finetune garden','caption-manual:Finetune the garden boundary and shape')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:10','Embellish public square','caption-manual: Further define and embellish the square, to make it a place where people are really comfortable')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:11','Set house volume','caption-manual:Set another house volume next to a garden, which helps shape the garden')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:12','Extend paths','caption-manual:Extend the path network, so as to reach possible house locations in the upper right of the site')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:13','Set house volume','caption-manual:Set another house volume next to a garden, which wraps around and defines the garden')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:14','Finetune garden','caption-manual: Finetune the garden boundary and shape, around one of the spots diagnosed as having great beauty')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:15','Set house volume','caption-manual: For the garden just defined, place the house to the north, so house and garden both get sun')
+                    </script></span></li>
+                    <li class='black_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:16','Set porch','caption-manual:On the south side of the house, set a porch with columns, a place to catch the sun')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:17','Define gardens','caption-manual:Two more gardens are defined, based on rough locations set earlier, which allow light and view for houses already defined, and houses to come')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:18','Set house volume','caption-manual: Add another house volume, based on garden locations')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:19','Define garden','caption-manual: define another garden, framed by these two houses')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:20','Set house volume','caption-manual:set another house volume')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:21','Extend pedestrian path','caption-manual:Extend pedestrian lane, to reach this new house, which is off the main path')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:23','Define gardens','caption-manual: Define the boundary of these gardens previously roughly located, and embellish them')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:24','Set house volume','caption-manual:Add new house volume, near the public square')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:25','Define garden','caption-manual:Add garden for the house just located')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:26','Set house volume','caption-manual: Based on the rough garden location, set a rough front line for the house facing this garden')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:27','Extend pedestrian path','caption-manual:Extend the path network to reach past this house')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:28','Define garden','caption-manual:Define the boundary of this houses garden, and embellish')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:29','Finalize house volume','caption-manual: For this house, finish the job: determine the rest of the house volume, to shape and frame the garden. Add a cottage across the garden, to help frame the garden')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:30','Define gardens','caption-manual: Three more gardens are embellished: the boundaries are set')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:31','Set house volume','caption-manual: Based on the last garden set, set a house volume to frame and reinforce it')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:32','Embellish the public square','caption-manual: Make places to be in the public square, perhaps with a beautifully tiled walking surface')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:33','Set house volume','caption-manual:Add a cottage, to fill in space and help frame the gardens around it- each garden ends up with a relatively simple and positive shape')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:34','Define garden','caption-manual:Extend the existing garden, to make best use of this space')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:35','Extend pedestrian paths',"caption-manual:Extend the path network, to reach this area which doesn't front onto the main path")
+                    </script></span></li>
+                    <li class='blue_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:36','Add water','caption-manual:At the end of the path, create a beautiful center; a small pool of water')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:37','Set house volume','caption-manual:Define the house volume which frames the water pool, at the end of the path')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:38','Define gardens','caption-manual:Define new gardens, and define boundary of previously roughly set gardens')
+                    </script></span></li>
+                    <li class='gray_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:39','Set house volumes','caption-manual:Based on these new gardens, set two house volumes which help shape the gardens')
+                    </script></span></li>
+                    <li class='red_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:40','Extend paths','caption-manual:Add a loose run of steps, another route leading from the path network into the farmland')
+                    </script></span></li>
+                    <li class='green_marker'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:41','Embellish gateway to farmland','caption-manual:Embellish the gateway place previously made; make it a comfortable place in its own right, a place part of both neighborhood and field')
+                    </script></span></li>
+                    <li style='list-style-type:none'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('movie:42','Final plan','caption-manual:Final Configuration')
+                    </script></span></li>
+                    <li style='list-style-type:none'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('image:gioja.jpg','Photo of an actual house group','caption-manual:')
+                    </script></span></li>
+                    <li style='list-style-type:none'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('image:texasfinishedspacebig.jpg','Another photo of a house group','caption-manual:')
+                    </script></span></li>
+                    <li style='list-style-type:none'><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                      setup_step('image:front2.jpg','Another photo of a house group','caption-manual:')
+                    </script></span></li>
+                  </ul><span style='font-size:80%;line-height:1.2;'></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>THE UNFOLDING OF A HOUSE GROUP</b></font></span>
+          <p><span class="h6class"><i>A process for laying out a group of houses and gardens, with fingers of agricultural land on either side</i></span></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+      putCaptionsHere('A movie is loading.','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatternLanguage.com</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="height=device-height">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="stylesheet" type="text/css" href="/sequences/otherinfo/otherinfo.css" title="external">
+  <link rel="stylesheet" type="text/css" href="/scripts/jquery.jscrollpane.css" title="external">
+  <link rel="stylesheet" type="text/css" href="/scripts/jquery.jscrollpane.lozenge.css" title="external">
+  <style type="text/css">
+  .scroll-pane, .scroll-pane-arrows {}
+  .jspVerticalBar {width: 12px;}
+  </style>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="/scripts/mwheelIntent.js"></script>
+  <script type="text/javascript" src="/scripts/jquery.jscrollpane.min.js"></script>
+  <script type="text/javascript">
+
+  var currVisibleId; 
+  function togVisible(id) { if(currVisibleId) document.getElementById(currVisibleId).style.visibility="hidden"; document.getElementById(id).style.visibility="visible"; currVisibleId=id; }
+
+  var currVisibleId2;
+  function togVisible2(id) { if(currVisibleId2) document.getElementById(currVisibleId2).style.visibility="hidden"; document.getElementById(id).style.visibility="visible"; currVisibleId2=id; }
+
+  </script>
+  <script type="text/javascript">
+  $(function()
+  {
+        $('.scroll-pane').jScrollPane();
+  });
+  </script>
+</head>
+<body>
+  <div id="header">
+    <div id="frameimage" class="h1classpadding">
+      <a href="/"><img src="/img/blackemblem.jpg" alt="~o0o~" height="38" width="61"></a>
+    </div>
+    <div id="frametitle" class="h1classpadding">
+      &nbsp;&nbsp;Sequences
+    </div>
+    <div id="frametree" class="h5class">
+      <a href="/">home page</a>&gt;&gt; <a href="/sequences/sequences.html">sequences</a>&gt;&gt; this page
+    </div>
+  </div>
+  <div id="maincontent" style="background-color: #603;">
+    <p style="font-variant: small-caps; margin: 0; padding: 20px 0 0 20px; font-size: 25px;">An Introduction to Pre-Geometry</p>
+    <p style="display: block; padding-left: 20px; padding-bottom: 4px; width: 800px; font-style: italic; font-size: 13px;">The way that a coherent form comes into a building, after the broad outline of the shape and plan has been sketched according to function, position, and need, is very interesting. Although it is, often, an inspired move, it is also something that can be subject to a well-defined process.</p>
+    <ul style="display: inline;">
+      <li style="display: inline;">
+        <div class="scroll-pane jspScrollable" style="float: left; width: 27%; height: 360px; overflow: scroll; text-align: left; padding: 0 20px 20px 20px; margin-right: 15px;">
+          <p style="font-variant: small-caps; font-size: 20px;">Steps From A Sketch To A Coherent Form</p>
+          <p>The whole process may be thought of as a gradual straightening and fitting of rectangles to the sketch which has been made, so that the sketch is straightened (90% but not 100%), and so that the rectangles which are formed form coherent positive space, and so that all boundaries, edges, joints, tops, bottoms, also become good centers in their own right.</p>
+          <p>Note: this straightening process is very different from the kind of thing that happens in Broderbund Home Architect, or in Chief Architect or in Autocad. In all these essentially CAD-like systems, the representation of a building is assumed to be specified by a series of geometric "slabs" (parallelapipeds or 3-D rectangles). This very bad assumption is what has driven much of the 20th century ugliness, and has also driven and been driven by the fabrication of slabs at all levels of modern mass-construction&mdash;prefabricated concrete walls, kitchen cabinets&hellip; windows, doors, roof planes, driveways, are all conceived, and made, as standardized slabs. That is where the harm comes from.</p>
+          <p>The sequence of steps:</p>
+          <ul>
+            <li>Identify candidates for largest rectangles</li>
+            <li>Draw tartan grid</li>
+            <li>Define corners</li>
+          </ul>
+        </div>
+      </li>
+      <li style="display: inline;">
+        <div class="scroll-pane jspScrollable" style="float: left; width: 27%; height: 360px; overflow: scroll; text-align: left; padding: 0 20px 20px 20px; margin-right: 15px;">
+          <p style="font-variant: small-caps; font-size: 20px;">Notes on an Algorithm for Making Buildable Drawings</p>
+          <p>Make a simple exterior wall plan. If the house can be one rectangle, great. A composition of several simple rectangles together is fine too.</p>
+          <p>What's the pecking order of the rooms (which should be biggest/most important/etc.)? Locate the rough center of each of these major rooms. Starting with the most important room, keeping in mind that each room should a simple shape, almost always rectangular, let the most important room rectangle together with its thick wall, grow out from the rough center point you identified, until it bumps against exterior wall(s). Then do the same with the next room until it bumps into an exterior wall(s), or the previously made room. then next, then next. The spaces left over form bathrooms, closets, laundry, thick walls, etc.</p>
+          <p>Using Nick's tartan grid generator, overlay a tartan grid onto the drawing so far. Drag and adjust the tartan lines, together with the walls below, until the plan is more regular and more beautiful. Not too regular, though.</p>
+          <p>Going room by room, draw in, define and solidify the following: * Room corners (already pretty clear as to position) * doorways (interior, and exterior) * fireplace (if applicable, or other major center) * banks of windows, divided by small columns as needed (align columns and jambs to tartan as much as possible.) * darken in walls between windows, doors, and corners * stairs into/out of room * fatten, embellish and solidify walls as needed, adjust window positions slightly as needed.</p>
+          <p>When done with all the major rooms, go through all the bits between, and fill in, closets, bathrooms, etc. following same steps.</p>
+          <p>Conversion to CAD-like drawing: Every one of the things described above, is an object/center in the mind of the program. They are the entities of which the drawing is built. The tartan grid should be visible, both literally, and in the organization of every entity within the whole.</p>
+        </div>
+      </li>
+      <li style="display: inline;">
+        <div class="scroll-pane jspScrollable" style="float: left; width: 27%; height: 360px; overflow: scroll; text-align: left; padding: 0 20px 20px 20px;">
+          <p style="font-variant: small-caps; font-size: 20px;">How do you get from a Sketch to a Hardline Working Drawing?</p>
+          <p>As output from a sequence, we get a sketch. The sketch may be very rough and freehand, as in a tracing paper case. Or it may be rather formal, with entities that are mainly squared off, as in the results of the kitchen SVG.</p>
+          <p>In both cases, though, there is still some further work needed to reach a plan that is dimensioned, accurate, and buildable.</p>
+          <p>What is the process of this transformation?</p>
+          <p>Broadly speaking, a formal drawing of a building will have walls that are of a definite thickness, and, with a few exceptions, they will meet at right angles. Windows and doors will be set into these rectangles. And they themselves will be rectangles.</p>
+          <p>If these rules were to be followed mindlessly, they would, far too often, create the very same mindless and soulless forms that are too familiar in the world of 20th-21st-century construction.</p>
+          <p>The reason for the soulless effect, is precisely that the walls, openings, window and door frames, corners, columns, have no form in themselves. That is to say, they are not, in themselves, centers.</p>
+          <p>And this has not only happened because of ways of drawing that are too simple. It has happened because the art of construction has taken the same direction. Mass production, high industry, and lower craft techniques advocated in the 20th century, as a result of Taylorism, led to a world where it was thought efficient or good, to make things out of massive ultra simple elements like huge prefabricated concrete panels, which would then be joined in the simplest ways, and without significant differentiation at the joints, thus leading to the type of geometry already discussed.</p>
+          <p>At another, smaller level the very same thing happens in kitchen layout, where prefabricated cabinets, or standard depth, standard height, and coming in standard segments of length, can only be arranged in a very small, and highly limited, number of combinations. The same happens in the layout of office furniture. The same happens in the construction of small buildings, roadways, and so on. In all cases, the general sketch plan form, has been grossly brutalized by transformations which simplify in the wrong way, as if the result COULD be made up of a few standard, big fat rectangles&hellip; and there was no refinement, or detail, or differentiation at any of the joints&hellip; nor was the whole allowed to make its parts reflect the whole. Instead the parts&mdash;these brutalized rectangles&mdash;were to determine the form and arrangement of the larger entities, like walls, rooms, kitchen cabinets, and windows.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diagnosis Phase</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  </style>
+  <style>
+  .h34class {
+        FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .mediumbig { 
+        FONT-WEIGHT: normal; FONT-SIZE: 42px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  .big { 
+        FONT-WEIGHT: normal; FONT-SIZE: 50px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  .h6blueclass { 
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial"; COLOR: black;  }
+
+  .h69class {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; 
+  }
+  .h75class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; 
+  }
+  .h71class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: red;
+  }
+  .deweyclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; COLOR: 666666;<!--  LINE-HEIGHT: 19px; -->
+  }
+
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  </style>
+  <style>
+  <!--
+
+  A.type2:link    {color:#000000; text-decoration:bold;}
+  A.type2:visited {color:#000000; text-decoration:bold;}
+  A.type2:active  {color:#000000; text-decoration:bold overline underline;}
+  A.type2:hover   {color:#0000ff; background-color:ff5555; text-decoration:underline;}
+  -->
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  200px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table align="center" width="560">
+      <tr>
+        <td colspan="3" align="center">
+          <center>
+            <a href="../ht-0/action.htm"><img src="../images/bln-red-yellow.jpg" width="200" border-color="blue"></a><br>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="red" align="center"><span class="h4class" style="color:yellow"><i><b>Section Two</b></i></span></td>
+      </tr>
+    </table>
+    <table width="560" border="1" align="center"></table>
+    <table width="560" border="1" align="center">
+      <tr>
+        <td width="560" bgcolor="white" colspan="3" align="center"><span class="h32class" style="color:black;font-size:18px">SECOND PHASE OF UNFOLDING</span></td>
+      </tr>
+    </table>
+    <table width="560" border="1" align="center" rules="none">
+      <tr>
+        <td width="200" bgcolor="white">&nbsp;</td>
+        <td bgcolor="white" width="360" align="center"><span class="h32class" style="color:black;font-size:13px;">INDIVIDUAL UNFOLDINGS</span></td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" rules="cols" background="../actions/pics/diagnosis/eishinfieldsmall.jpg">
+      <tr>
+        <td width="220" valign="top" align="center">
+          <table width="220">
+            <tr>
+              <td width="220" valign="top"><span class="big" style="color:5555ee"><span style="font-size:75%">Section 2</span><br>
+              <span style="font-size:90%">Diagnosis of the Land</span></span><br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <span class="h34class" style="color:ffffff">Looking for what the land tells you, so the new neighborhood can grow naturally from its surroundings</span></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table width="320">
+            <tr>
+              <td width="35" align="right" valign="top"><span class="deweyclass">2.1&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/thewhole.htm"><span class="h69class"><b>WHOLENESS</b></span></a><span class="h75class"><br>
+                Becoming aware of the deep wholeness which exists in the place.</span><br>
+              </td>
+            </tr>
+            <tr>
+              <td width="35" align="right" valign="top"><span class="deweyclass">2.2&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/diagnosis-intro.htm"><span class="h69class"><b>INTRODUCTION TO DIAGNOSIS</b></span></a><span class="h75class"><br>
+                Introduce yourself to the idea of diagnosis.</span><br>
+              </td>
+            </tr>
+            <tr>
+              <td width="35" align="right" valign="top"><span class="deweyclass">2.3&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/largestructure.htm"><span class="h69class"><b>THE LARGE STRUCTURE DIAGRAM</b></span></a><span class="h75class"><br>
+                Identify in a single sweep the overall geometric structure of the wholeness.</span><br>
+              </td>
+            </tr>
+            <tr>
+              <td width="35" align="right" valign="top"><span class="deweyclass">2.4&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/magic.htm"><span class="h69class"><b>PRECIOUS PLACES, MAGIC CONFIGURATIONS</b></span></a><span class="h75class"><br>
+                In detail, find the places of wonder, and delight, and pin everything on them, and on the process of supporting them and keeping them intact.</span><br>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="35" align="right" valign="top" border="1"><span class="deweyclass">2.5&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/repair.htm"><span class="h69class">REPAIRING DAMAGED SPACE</span></a><span class="h75class"><br>
+                Identify damaged places which urgently need repair.</span><br>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="35" align="right" valign="top" border="1"><span class="deweyclass">2.6&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/latentcenters.htm"><span class="h69class">CENTERS & LATENT CENTERS</span></a><span class="h75class"><br>
+                Identify the places where living centers are present and latent, and capable of growing into some larger whole</span><br>
+              </td>
+            </tr>
+            <tr valign="top">
+              <td width="35" align="right" valign="top" border="1"><span class="deweyclass">2.6&nbsp;</span><br></td>
+              <td width="285" valign="top" border="1">
+                <a class="type2" href="../actions/gps.htm"><span class="h69class">GIVING ACCURATE POSITIONS FOR ALL OF THE ABOVE</span></a><span class="h75class"><br>
+                Take readings from the stakes you have set in the land, to fix their position on your map.</span><br>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="550" border="1"></td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1">
+      <tr>
+        <td align="center"><br>
+        <span class="h31class"><span style="FONT-SIZE:130%">W</span>hat is the purpose of this phase of work? We establish an overall diagnosis of the area -- buildings, streets, and land -- as the basis for moving forward.</span></td>
+      </tr>
+      <tr>
+        <td width="560" align="justified" valign="top" border="1">
+          <br>
+          <span class="h4menuclass"></span>
+          <blockquote>
+            <span class="h4menuclass"></span>
+            <p class="Default"><span class="h4menuclass"><span lang="EN-US" style='color:#211D1E'>Throughout all the efforts at neighborhood building inspired by this website, we have one over arching purpose -- to maintain the wholeness of the living Earth in the place where we are working. This is a point of view that must be consistently applied to every step of building a neighborhood -- the way we conceeive it, lay it out, and build it physically. The primary task is healing the place and making it whole.</span></span></p>
+            <p class="Default"><span lang="EN-US" style='color:#211D1E'>Compared with standard 20th-century models of architecture, planning, and development, this is a very unusual way to view the task of building a neighborhood. We must therefore begin, from the very beginning, setting out clearly how we are to go about it.</span></p>
+            <p class="Default"><span lang="EN-US" style='color:#211D1E'>The wholeness of the site, as it stands today, is a structure made of strands of connection among parts and smaller wholes and the largest whole. This cohesion of these strands is undoubtedly (almost always) flawed. To attend to this, we:</span></p>
+            <p><span lang="EN-US" style='color:#211D1E'>(1) Identify those places which are damaged -- very badly flawed in their cohesion -- so that in rebuilding that place, we can improve the cohesion, and repair it.</span></p>
+            <p><span lang="EN-US" style='color:#211D1E'>(2) Most carefully catalogue all the places where cohesion <b>does</b> exist, and even if not perfect, still it may be halfway to being perfect, and therefore it is precious. We must hang on to these places for dear life, since it is SO hard to repeat and rebuild cohesion. Indeed, if we succumb to the hubris of thinking we can readily rebuild any wholeness we may find, we are doomed to failure.</span></p>
+            <p><span lang="EN-US" style='color:#211D1E'>(3) And there is a third type of situation, possibly the most important from the view of the artist. As we look at a site, there are certain places that invite action. They are imperfect or slightly formed centers, which have a potential for becoming more powerful and important centers. We call them "latent" centers. A latent center, is a place which seems to contain the potential for spreading out, and affecting a larger whole. It has the potential for becoming more than it is. These latent centers are the most important of all, because they are the ones which have the greatest chance of creating connections to the whole.</span></p>
+            <p><span lang="EN-US" style='color:#211D1E'><b>Wholeness only comes out of wholeness. We can not afford to waste even one particle that has it</b>.</span></p>
+            <p class="Default"><span lang="EN-US" style='color:#211D1E'>To carry out this program of action, we need to spend a great deal of time on the site before we start the diagnosis -- whether it is an urban site that is to be modified or rebuilt -- or whether it is a natural place -- a so-called "green" site. We need to build an accurate picture of these different places -- the good ones and the bad ones -- and be very exact about where they are. It is their specific locations, and the pattern of their locations, that will tell us how to grow a new wholeness from the one that is there now!</span></p>
+            <p class="Default"><span lang="EN-US" style='color:#211D1E'>Only by walking about, looking carefully, making notes, and making our notes very specific to individual bushes, walls, driveways and so on can we achieve the necessary appreciation of the place.</span></p>
+            <p class="Default"><span lang="EN-US" style='color:#211D1E'>We are searching for a comprehensive picture of the land and its buildings. This comprehensive picture shows:</span></p>
+            <ul>
+              <li><span lang="EN-US" style='color:#211D1E'>Centers and latent centers;</span></li>
+              <li><span lang="EN-US" style='color:#211D1E'>Places that need repair;</span></li>
+              <li><span lang="EN-US" style='color:#211D1E'>How the wholeness is faltering or defective;</span></li>
+              <li>
+                <span lang="EN-US" style='color:#211D1E'>How we can build a neighborhood so as to repair and heal the land.</span>
+                <p><span lang="EN-US" style='color:#211D1E'>This means, astonishingly, that we always aim to make the place <b>better</b> than it is at present. This may be obvious, if we are dealing with a ruined part of the city; but an extraordinary aim if we are faced with a place of great natural beauty. Yet there, too, we must make our target and our determination that when we are done, it will be more beautiful, and even better than it is today.</span></p>
+                <p class="Default"><span lang="EN-US" style='color:#211D1E'>First, to lay a basis for this work, it is necessary to make a sketch of the wholeness structure as it appears throughout the entire neighborhood. This is a way of understanding the largest pattern and structure of the place. It is illustrated and discussed in <a href="../actions/largestructure.htm">Wholeness Structure</a>.</span></p>
+                <p class="Default"><span lang="EN-US" style='color:#211D1E'>Next, we need to focus very carefully, on those places or areas where it may be said that there is some measure of wholeness there, glimpses of eternity, visible in the land. All these places need to be singled out and protected, so that we do not mistakenly destroy them. We can identify at least the following: Beautiful views; places that have a deep feeling; places where an ecological system is in good order and should only reluctantly be disturbed; buildings or structures which have the mark of the place in their bones; great trees; small businesses that have built the life of the place before. These are expanded in <a href="../actions/magic.htm">Precious Places</a>.</span></p>
+                <p class="Default"><span lang="EN-US" style='color:#211D1E'>We also need to make a map that identifies all the damaged areas, since in our effort at reconstruction we must <b>use</b> these damaged areas as the places where we build new things, and leave the precious places as far as possible intact.<a href="../actions/repair.htm">Repairing Damaged Places</a>.</span></p>
+                <p class="Default"><span lang="EN-US" style='color:#211D1E'>Possibly most important as a springboard for the future, we need to search out the latent centers which are the seeds of the new wholeness that can emerge. A variety of ways of doing this are discussed in <a href="../actions/latentcenters.htm">Centers & Latent Centers</a>.</span></p>
+                <p class="Default"><span lang="EN-US" style='color:#211D1E'>Finally, in order to use what has been established by the diagnosis, all of the elements described above must be accurately placed on the basemap. Otherwise they may be destroyed accidentally as the plan matures. We are developing a way to use a GPS system to transfer the findings of a diagnosis to the Drawing Pad basemap. Please consult the technique which addresses these things through an <a href="gps.htm">Accurate positioning system</a>.</span></p>
+              </li>
+            </ul>
+          </blockquote>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span>
+    </center>
+  </div>
+</body>
+</html>

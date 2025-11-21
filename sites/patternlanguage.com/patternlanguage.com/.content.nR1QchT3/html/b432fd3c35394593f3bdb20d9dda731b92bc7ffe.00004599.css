@@ -1,0 +1,272 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'myCaslon';
+	src: url('/fonts/acaslonpro.eot');
+	src: url('/fonts/acaslonpro.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/acaslonpro.woff') format('woff'),
+	     url('/fonts/acaslonpro.ttf')  format('truetype'),
+	     url('/fonts/acaslonpro.svg#svgFontName') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: 'myCaslon';
+	src: url('/fonts/acaslonpro-italic.eot');
+	src: url('/fonts/acaslonpro-italic.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/acaslonpro-italic.woff') format('woff'),
+	     url('/fonts/acaslonpro-italic.ttf')  format('truetype'),
+	     url('/fonts/acaslonpro-italic.svg#svgFontName') format('svg');
+	font-weight: normal;
+	font-style: italic;}
+
+@font-face {
+	font-family: 'myCaslon';
+	src: url('/fonts/acaslonpro-bold.eot');
+	src: url('/fonts/acaslonpro-bold.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/acaslonpro-bold.woff') format('woff'),
+	     url('/fonts/acaslonpro-bold.ttf')  format('truetype'),
+	     url('/fonts/acaslonpro-bold.svg#svgFontName') format('svg');
+	font-weight: bold;
+	font-style: normal;}
+
+@font-face {
+	font-family: 'myClarendon';
+	src: url('/fonts/clarebtrom.eot');
+	src: url('/fonts/clarebtrom.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/clarebtrom.woff') format('woff'),
+	     url('/fonts/clarebtrom.ttf')  format('truetype'),
+	     url('/fonts/clarebtrom.svg#svgFontName') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+
+@font-face {
+	font-family: 'myClarendon';
+	src: url('/fonts/clarebol.eot');
+	src: url('/fonts/clarebol.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/clarebol.woff') format('woff'),
+	     url('/fonts/clarebol.ttf')  format('truetype'),
+	     url('/fonts/clarebol.svg#svgFontName') format('svg');
+	font-weight: bold;
+	font-style: normal;}
+
+body {width: 500px; font-family: myCaslon, "Caslon", "Adobe Caslon", "Times New Roman", "Garamond", georgia, serif;
+	background-color: #fffcd4;
+	color: #000;}
+	
+a {color: #000;
+	font-weight: bold;}
+	
+/*a:hover {color: #99f;}*/
+
+img {border: none;}
+
+ul {margin: 0;
+	padding: 0;
+	line-height: 1.3;}
+
+li {list-style: none;}	
+
+#container {padding: 0 8px 0 0;}
+
+.membership-button {text-decoration: none; 
+	font-size: 1.4em; 
+	background-color: #FFF8A8; 
+	padding: 12px 80px;
+	margin: 0 auto; 
+	font-weight: normal; 
+	text-transform: uppercase; 
+	border: 1px solid #9f2214; 
+	color: #9f2214; 
+	font-family: frutiger, sans-serif;
+	border-radius: 4px;}
+
+#header {width: 500px;
+		height: 109px;
+		border: 0;
+		clear: left;
+		border-bottom: 1px solid #9f2214;
+		background-color: #fffac0;}
+		
+	#header a {color: #fff;
+		font-weight: normal;}	
+
+	#frametitle {float: left;
+		width: 385px;
+		padding-left: 16px;		
+		padding-top: 38px;
+		font-size: 35px; 
+		font-family: myClarendon, "Clarendon", "Rockwell", georgia, serif;}
+
+		#frametitle a {color: #9f2214;
+			font-weight: normal; 
+			text-decoration: none;}
+
+		#frametitle a:hover {text-decoration: underline;}
+		
+	#frameimage {float: left;
+		padding-left: 7px;
+		padding-top: 35px;}
+	
+		#frameimage img {border: none;}
+
+	#frametext {font-family: myClarendon, "Clarendon", "Rockwell", georgia, serif;
+		clear: left;
+		text-transform: uppercase;
+		line-height: 1.1;
+		letter-spacing: 3px;
+		text-align: center;
+		font-size: 14px;
+		padding-top: 26px;}
+
+#fiv {margin: 0 auto;
+	text-align: center;}
+
+	#fiv img {}		
+
+#maincontent {clear: left;
+	width: 500px;
+	height: auto;
+	margin: 0;
+	padding: 0;}
+	
+.arrow {display: block;
+	float: right;
+	position: relative;
+	background-image: url("/img/icon-down.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 17px;
+	width: 17px;
+	margin-top: 3px;}
+
+#group2 {
+	width: 450px; 
+	height: auto; 
+	font-size: 14px;
+	margin: 0 auto;
+	padding-bottom: 25px;}
+
+	#group2 div {}
+
+	#group2 img {}
+
+	#group2 a {text-decoration: none;
+		font-weight: normal;}
+
+	#group2 div ul li {border: 1px solid #9f2214;
+		display: inline-block;
+		vertical-align: top;
+		height: 86px;
+		width: 116px;
+		text-align: center;
+		margin: 14px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px; /* future proofing */
+		-khtml-border-radius: 4px; /* for old Konqueror browsers */}
+
+		#group2 div ul li:hover {/*background-color: #fffbdb;
+			box-shadow: 0px 0px 12px #fff inset;*/
+			/*background-image: url("/img/lfrp/thumbs/kingkitchen-2small.jpg");
+			opacity: 0.8;*/}
+
+		#aims:hover {background-image: url("/img/lfrp/thumbs/martinezbench-small.jpg");
+			opacity: 0.8;}	
+		#intro:hover {background-image: url("/img/lfrp/thumbs/woodenint2-small.jpg");
+			opacity: 0.8;}
+		#aplint:hover {background-image: url("/img/lfrp/thumbs/sullivankitchen-small.jpg");
+			opacity: 0.8;}
+		#ca:hover {background-image: url("/img/lfrp/thumbs/chris-small.jpg");
+			opacity: 0.8;}
+		#compsci:hover {background-image: url("/img/lfrp/thumbs/linzflowers-small.jpg");
+			opacity: 0.8;}
+
+		#seq:hover {background-image: url("/img/lfrp/thumbs/linzint-small.jpg");
+			opacity: 0.8;}
+		#patterns:hover {background-image: url("/img/lfrp/thumbs/linzgreen-small.jpg");
+			opacity: 0.8;}
+		#methods:hover {background-image: url("/img/lfrp/thumbs/fountain-small.jpg");
+			opacity: 0.8;}
+		#recipes:hover {background-image: url("/img/lfrp/thumbs/woodenint2-small.jpg");
+			opacity: 0.8;}
+		#design:hover {background-image: url("/img/lfrp/thumbs/linzflowers-small.jpg");
+			opacity: 0.8;}
+
+		#battle:hover {background-image: url("/img/lfrp/thumbs/battlecover.jpg");
+			opacity: 0.8;}
+		#gallery:hover {background-image: url("/img/lfrp/thumbs/linzint2-small.jpg");
+			opacity: 0.8;}
+		#books:hover {background-image: url("/img/lfrp/thumbs/woodenint-small.jpg");
+			opacity: 0.8;}
+		#projects:hover {background-image: url("/img/lfrp/thumbs/kingkitchen-small.jpg");
+			opacity: 0.8;}
+		#archive:hover {background-image: url("/img/lfrp/thumbs/salakbig-small.jpg");
+			opacity: 0.8;}
+		#ln:hover {background-image: url("/img/lfrp/thumbs/fountain-small.jpg");
+			opacity: 0.8;}
+		#nofo:hover {background-image: url("/img/lfrp/thumbs/greenbook3.jpg");
+			opacity: 0.8;}
+
+		#members:hover {background-image: url("/img/lfrp/thumbs/greenoff-small.jpg");
+			opacity: 0.8;}
+		#links:hover {background-image: url("/img/lfrp/thumbs/saalcove-small.jpg");
+			opacity: 0.8;}
+		#contact:hover {background-image: url("/img/lfrp/thumbs/blueoff-small.jpg");
+			opacity: 0.8;}
+		#spirit:hover {background-image: url("/img/lfrp/thumbs/linzint-small.jpg");
+			opacity: 0.8;}
+		#tp:hover {background-image: url("/img/lfrp/thumbs/pasadenaaerial-small.jpg");
+			opacity: 0.8;}
+		#struggle:hover {background-image: url("/img/lfrp/thumbs/kerala-small.jpg");
+			opacity: 0.8;}
+		#building:hover {background-image: url("/img/lfrp/thumbs/mart-small.jpg");
+			opacity: 0.8;}																								
+
+		#group2 div ul li a {display: block; padding: 20px 10px 10px 10px;}
+
+		#group2 div ul li a:hover {/*font-style: italic;*/}
+
+		#group2 div ul li img {height: 86px;
+			width: 116px;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			border-radius: 4px; /* future proofing */
+			-khtml-border-radius: 4px; /* for old Konqueror browsers */}
+
+/*#one {position: relative; top: 0;}
+#two {position: relative; top: 450px;}
+#thr {position: relative; top: 900px;}
+#fou {position: relative; top: 1350px;}*/
+
+#footer {clear: left;
+	width: 100%;
+	height: 60px;
+	line-height: 1.25;
+	padding-top: 12px;
+	border-top: 1px solid #9f2214;
+	font-family: "Times New Roman", "Times", "Garamond", serif;}
+
+	#footer span {font-size: 16px;}
+	
+	#footer a {font-size: 12px;}
+
+	#footer img {padding-bottom: 12px;}	
+
+.h4class {font-weight: normal; 
+	font-size: 12px; 
+	font-family: myClarendon, "Clarendon", "Rockwell", georgia, serif;
+	color: #9f2214;}
+
+#majortable {height: auto;
+	width: 900px;}	
+
+	.bigbox {
+		height: 160px;
+		width: 324px;
+		padding: 20px;
+		margin: 5px;
+		/* border: 1px solid #9f2214; */
+		background-color: #fffac0;}
+
+	#majortable ul {}

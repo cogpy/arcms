@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOUSE MOVIE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+  H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+  H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+  H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+  H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+  H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .superstep {
+   font-size: 21px; font-weight:bold; background-color:#888888;
+        color:#ffffff; padding-left:8px; padding-right:8px;
+  }
+  .stepnumber {
+   font-size: 21px; padding-left:16px; padding-right:8px; text-align:right;
+  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#55bbff; color:#ffffff; font-weight:normal}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #illuminate {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 330px;
+  visibility: visible;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   340px;
+  width   : 425px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #stepDescriptionCaption {
+                position: absolute;
+                top:    420;
+                left:   30px;
+  width   : 380px;
+  height : 300px;
+  FONT-style: italic; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <script>
+   function highlightCallback(step) { 
+           if (step <= 1) { 
+                   showElement('step0div');
+                        hideElement('movie');
+                }
+                else { 
+                   showElement('movie');
+                        hideElement('step0div');
+                }
+        }
+
+        addStepHighlightCallback(highlightCallback);
+        setCallOnDocumentLoad(function () { hideElement('movie'); showElement('step0div'); });
+
+
+        ////////// MOVIE SETTINGS ////////////
+
+        // these must appear before stepb is first called
+        enableMovieControlViaStepb = true; 
+        setStepDescriptionToShowInline(1); 
+
+   setAppletURL();
+        replayCab = "/gdrawreplay2-3-29.cab";
+        jarFile = "/gdrawreplay.jar";
+
+        //////// PARAMETERS TO SET /////////////
+        inputFileName = "chris2.gdraw";
+
+        // increasing this number slows the replay
+        replayDelay = 5;  
+
+        //file name, wait before photo
+        showSlideshowAfterReplayDone("",2000); 
+
+        SetDrawingSize(425,340);
+
+        // must be true unless there's some other way to start the replay
+        //  (for example, a button that calls requestReplay()  )
+        replayWhenLoaded = true;   
+
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallOnDocumentLoad(function () {showElement('illuminate');});
+        ////////////////////////////////////////
+
+        forReplay = true;
+        supplyCaptions = false;
+        pauseAfterNewCaptionTime = 500;
+        resizeIfNecessary = false;
+        //setCallOnDocumentLoad(updateCaption);
+
+        // Set up a slideshow to follow the movie
+        //  If there is no slideshow, leave this here,
+        //  but setupSlides should have no parameters
+        //  (creates an empty slide show)
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 6000;
+        timeAfterLastSlide = 6000;
+        showSetupCaptions = true;
+
+        // if set to 0, will be ignored (not specified in img tag)
+        slideWidth = 425; 
+
+        // if set to 0, will be ignored (not specified in img tag)
+        slideHeight = 0; 
+  </script>
+  <div id="slideshow">
+    <table height="60" width="80%" align="center" border="0">
+      <tr>
+        <td valign="top" align="center" colspan="3"><br>
+        <span class="h4class"><font color="#222222"><b>SMALL HOUSE SEQUENCE UNFOLDING TO CREATE A HOUSE PLAN: SESSION TWO</b></font></span></td>
+      </tr>
+    </table>
+    <div id='movie' style="position:absolute;left:0;top:70;width:425;height:400;visibility: visible">
+      <table align="center" bgcolor="#EEEEEE" border="0">
+        <tr height="400">
+          <td valign="top" align="left">
+            <script language="javascript">
+            // the following call generates the html for the movie and slideshow
+            // It should come after everything has been specified
+            drawapplet();
+            </script>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='step0div' style="position:absolute;left:3;top:73;width:425; height: 340; background-color: #000000; visibility: hidden">
+      <div style="position:absolute;left:0;top:48;width:425"><img width="425" src='chris1.jpg'></div>
+    </div>
+    <script language='javascript'>
+    writeMessageDiv('stepDescriptionCaption',380,300,'align=left','A movie is loading.');
+        setStepCaptionDiv('stepDescriptionCaption',2);
+    </script>
+  </div>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="320" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">SLIDESHOW-TUTORIAL</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:15px;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="h6class">The session two process has twelve steps</span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td class='stepnumber' valign="top">1.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(1,'Begin with the drawing from Session 1','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">2.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(2,'Make overlays','Make places to draw the upstairs plan and a front view')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Upstairs plan</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">3.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(3,'Draw bedroom','Draw the main bedroom, upstairs, in position with respect to view of the garden, and the staircase')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Front view</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">4.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(4,'Draw the front yard','Start drawing the main roof of the house. First the line of the ground and the grass in front')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">5.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(5,'Draw the roof','Then the shape and form and size and position of the roof. Work at the roof to make it large and give it feeling')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">6.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(6,'Make the roof good','Dont stop until the roof shape is really good')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">7.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(7,'Draw windows','Now start putting in the windows, first upstairs...')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">8.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(8,'Draw the front wall','Now draw the material of the main wall brick or wood or stone or concrete')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">9.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(9,'Draw columns','Put in columns of the terrace or porch')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">10.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(10,'Draw windows','Now the main windows of the downstairs')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">11.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(11,'Touch up','Touch up the drawing: front door, parapet, roof colors, sky,')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Upstairs plan</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">12.</td>
+              <td><span class="h6class">
+              <script>
+
+              stepb(12,'Show the roof','Now show the extent of the roof around the bedroom, on the upstairs plan')
+              </script></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

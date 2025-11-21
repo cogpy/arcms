@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BUILDING LIVING NEIGHBORHOODS</title>
+  <meta name="description" content="">
+  <meta name="KEYWORDS" content="Christopher Alexander, patterns, pattern language, order, nature of order, home, neighborhood, introduction, basics, implementation, generative, generative code, archive, services, community, creating community, example neighborhoods, planning, environmental, living neighborhoods, craftsmanship, construction, building, renewing, world, thriving, steps, ways, tools, processes, process, people, build, rebuild, belonging, health, well-being, place, live , work, useful, developers, planners, architects, designers, builders, public officials, local representatives, neighbors, business owners, commercial, commercial interests, cultural, wholeness, successful, geometric, sophisticated, generating systems, enhanced, deepen, money, craft, interactions, technical, straightforward, life, discussion, creating, human, hospitable, beautiful, places, practice, family, business, community organizer, leader, residents, city manager, decision-making, mayor, local official, city planner, vibrant, town, city, support, involved, beauty, contribution, engineer, teacher, student, academic, class instruction, research, student projects, teaching, academic papers, history, plans, discussion, photographs, communities, cooperating, help, theoretical, scientific, practical, evidence, world-wide, regions, improving, human environment, villages, lands, habitats, genetic, scripts, inhabitants, users, lay out, satisfaction, organic, need, terrain, computer, science, pedestrian, cars, play, children, gardens, houses, design, urban design, green, ecology, environment, ecological, new urbanism, CNU,">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <script language="JavaScript">
+
+  <!-- 
+  if (document.images) 
+  { 
+  pic15on= new Image(120,48); 
+  pic15on.src="../images/upaction.jpg"; 
+  pic15off= new Image(120,48); 
+  pic15off.src="../images/offaction.jpg"; 
+  pic15down=new Image(120,48); 
+  pic15down.src="../images/downaction.jpg"; 
+  } 
+
+  { 
+  pic16on= new Image(120,48); 
+  pic16on.src="../images/uptheory.jpg"; 
+  pic16off= new Image(120,48); 
+  pic16off.src="../images/offtheory.jpg"; 
+  pic16down=new Image(120,48); 
+  pic16down.src="../images/downtheory.jpg"; 
+  } 
+
+
+
+  function lightup(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOn=eval(imgName + "on.src"); 
+  document[imgName].src= imgOn; 
+  } 
+  } 
+
+  function turnoff(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOff=eval(imgName + "off.src"); 
+  document[imgName].src= imgOff; 
+  } 
+  } 
+
+  function clickdown(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgDown=eval(imgName + "down.src"); 
+  document[imgName].src=imgDown; 
+  } 
+  } 
+  //--> 
+  </script>
+  <script language="javascript">
+  function highlightButton(s) {
+  if ("INPUT"==event.srcElement.tagName)
+  event.srcElement.className=s
+  }
+
+  </script>
+  <style type="text/css">
+
+
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  .h1class {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; <!-- line-space:20px; -->
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h35class {
+        FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h36class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h37class {
+        FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h67class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h68class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .h70class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: red;
+  }
+
+
+
+  </style>
+  <style>
+
+  .h1greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 008833;
+  }
+  .h1yellowclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: FFFF22;<!-- eeee33; -->
+  }
+  .h1darkclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h2greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: 005522;
+  }
+
+  .h3greenclass {
+        FONT-WEIGHT: bold; <!-- FONT-DECORATION: italic; --> FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h4greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-SPACING: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h5greenclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000; FONT-DECORATION: none;
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+
+
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+
+  .bigtext { 
+        FONT-WEIGHT: bold; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman";  color: 5555ff; FONT-STYLE: underline;
+  }
+
+  </style>
+  <style type="text/css">
+
+  INPUT {
+  height: 50px;
+  width: 150px;
+  background-color: #ff0000;
+  border-size: 2;
+  border-color: #cccccc;
+  color: BLACK;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+  }
+  </style>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  175px;
+  visibility: visible;
+  width=560px;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  }
+
+
+
+  #fresno {
+                position: absolute;
+                top:   5px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #travis {
+                position: absolute;
+                top:   5px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+
+  #mexicali {
+                position: absolute;
+                top:   5px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+  #eishin {
+                position: absolute;
+                top:   5px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+
+  #heisey {
+                position: absolute;
+                top:   1120px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #archway {
+                position: absolute;
+                top:   1120px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #party {
+                position: absolute;
+                top:   1400px;
+                left:  220px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #arcade {
+                position: absolute;
+                top:   1120px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #couple {
+                position: absolute;
+                top:   1120px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+  #backterrace {
+                position: absolute;
+                top:   770px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #sitting {
+                position: absolute;
+                top:   770px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #yellow {
+                position: absolute;
+                top:   1620px;
+                left:  325px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #layout {
+                position: absolute;
+                top:   1400px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #snowtree {
+                position: absolute;
+                top:   1400px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #agate {
+                position: absolute;
+                top:   770px;
+                left:  200px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #medlock {
+                position: absolute;
+                top:   1850px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #upham {
+                position: absolute;
+                top:   1850px;
+                left:  300px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #medlockblue {
+                position: absolute;
+                top:   1850px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index:4;
+        }
+
+
+
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  width=600px;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+
+
+
+  #fresno {
+                position: absolute;
+                top:   50px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #travis {
+                position: absolute;
+                top:   50px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+
+  #mexicali {
+                position: absolute;
+                top:   50px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+  #eishin {
+                position: absolute;
+                top:   50px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+
+  #heisey {
+                position: absolute;
+                top:   1120px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #archway {
+                position: absolute;
+                top:   1120px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #party {
+                position: absolute;
+                top:   1400px;
+                left:  220px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #arcade {
+                position: absolute;
+                top:   1120px;
+                left:  350px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #couple {
+                position: absolute;
+                top:   1120px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+
+  #backterrace {
+                position: absolute;
+                top:   770px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #sitting {
+                position: absolute;
+                top:   770px;
+                left:  250px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #yellow {
+                position: absolute;
+                top:   1620px;
+                left:  325px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #layout {
+                position: absolute;
+                top:   1400px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #snowtree {
+                position: absolute;
+                top:   1400px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #agate {
+                position: absolute;
+                top:   770px;
+                left:  200px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #medlock {
+                position: absolute;
+                top:   1850px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #upham {
+                position: absolute;
+                top:   1850px;
+                left:  300px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index: 4;
+        }
+
+  #medlockblue {
+                position: absolute;
+                top:   1850px;
+                left:  230px;
+  height  : 300px;
+  visibility: hidden;
+  background-color:#ffffff;
+  border: 3px solid #0000ff;
+  z-index:4;
+        }
+
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="900"></div>
+  <div id="object2">
+    <table width="560" align="center" border="1" bordercolor="#005544">
+      <tr>
+        <td width="560" bgcolor="#005544" align="center">
+          <table width="540" align="center" bgcolor="#005544" border="0">
+            <tr>
+              <td align="left" width="220" bgcolor="#005544" valign="top"><span class="h5class" style="color:ffffdd"></span></td>
+              <td align="center" width="100" bgcolor="#005544"><img src="../images/noonew5-r.jpg" height="69"><br></td>
+              <td align="right" width="220" bgcolor="#005544"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#005544">
+      <tr>
+        <td align="center" width="560">
+          <form method="link" action="../ht-0/bln-exp.htm">
+            <input type="submit" value="Building Living Neighborhoods" style="font-size:16px;font-family:serif;font-style:italic;background-color:#ff0000;border-color:#000000;color:#ffff00;height:29px;width:375px;"><br>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="560" bgcolor="#FFFFDD"><span class="h33class" style="FONT-SIZE:85%"><b>WELCOME</b></span><br></td>
+      </tr>
+      <tr>
+        <td align="center" width="560" bgcolor="#FFFFDD">
+          <span class="h32class"><span style="FONT-SIZE:140%">W</span>HEREVER <span style="FONT-SIZE:140%">Y</span>OU ARE IN THE <span style="FONT-SIZE:140%">W</span>ORLD, IF YOU ARE <span style="FONT-SIZE:140%">I</span>NTENT ON <span style="FONT-SIZE:140%">P</span>LANNING AND <span style="FONT-SIZE:140%">B</span>UILDING A <span style="FONT-SIZE:140%">T</span>HRIVING <span style="FONT-SIZE:140%">N</span>EIGHBORHOOD,</span>
+          <p><span style="FONT-SIZE:140%">T</span>HIS WEBSITE IS FOR <span style="FONT-SIZE:140%">Y</span>OU.</p>
+          <p></p>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('fresno');" onmouseout="javascript:togglePic('fresno');"><img src="../pics/fresno/money644-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('travis');" onmouseout="javascript:togglePic('travis');"><img src="../pics/texas/viewoverlaketravis-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('mexicali');" onmouseout="javascript:togglePic('mexicali');"><img src="../pics/mexicali/womanlean-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('eishin');" onmouseout="javascript:togglePic('eishin');"><img src="../pics/eishin/eishinrainandstudents-110.jpg" height="110"></a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" border="0">
+          <center>
+            <span class="h6class" style="color:blue;">Depicted here are some places we have built. Mouseover to enlarge.</span>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td colspan="4" style="padding: 10px; text-align: center;"><img src="../pics/decorationbonw.png" height="16">&nbsp;&nbsp;<span style="font-weight: bold;">Building Beauty: Ecologic Design &amp; Construction Process,</span> a post-graduate diploma in architecture that continues the legacy of Christopher Alexander.<br>
+        <i>www.buildingbeauty.org</i><br>
+        <b>Registration for the 2020-21 online session is open, including the new Beautiful Software Initiative</b></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" cellpadding="8" bgcolor="#FFFFDD">
+      <tr>
+        <td width="80%" valign="top">
+          <center>
+            <span class="h33class"></span>
+          </center>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class">If you are one of <b>a group of friends</b> who are talking about building a new place to live a better life, this website can show you ways of working that are inspiring and related to the things which matter in your lives. The ACTION & PRACTICE pages will guide you.</span></p>
+          <p><span class="h4class">If you are a <b>developer</b> or <b>landowner</b>, this website can show you ways of working that are more capable of creating healthy, hospitable and beautiful places for people to live, than present forms of practice typically allow. It does not cost more. See the DEVELOPER'S PAGE.</span></p>
+          <p><span class="h4class">If your <b>family</b> or <b>business</b> is helping to rebuild an old neighborhood, or moving to a new one, this website will give you tools and a voice which will be heard, so you can genuinely influence what happens.</span></p>
+          <p><span class="h4class">If you are a <b>community organizer</b>, or a <b>leader</b> in a local community, this website will give you tools to be sure that residents and local businesses can play an effective and practical part in decision making, which will be heard.</span></p>
+          <p><span class="h4class">If you are a <b>mayor</b>, <b>city manager</b>, <b>local official</b> or <b>city planner</b> who wants to help create a vibrant addition to your town or city, the ACTION & PRACTICE pages will show you how to support and become involved in such a process so it can be effective.</span></p>
+          <p><span class="h4class">If you are a <b>builder</b> or a <b>craftsperson</b>, this site will show you a way of offering your services that allows the making of beauty in buildings to be a fundamental part of your contribution -- more so than is typically allowed in the present commercial context.</span></p>
+          <p><span class="h4class">If you are an <b>architect</b> or <b>engineer</b>, this site will show you how working with a community, when done well, is likely to create a neighborhood with real beauty and spirit.</span></p>
+          <p><span class="h4class">If you are a <b>teacher</b> or a <b>student</b> or an <b>academic</b> you will find material throughout this website that naturally forms a basis for class instruction, research, and student projects. To consider teaching the use of generative codes, visit the THEORY & EXAMPLES section. The archive page provides academic papers, history and background of how generative codes were developed.</span></p>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('backterrace');" onmouseout="javascript:togglePic('backterrace');"><img src="../pics/westdean/back-terrace-2crop-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('agate');" onmouseout="javascript:togglePic('agate');"><img src="../pics/agate/four-crop-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('sitting');" onmouseout="javascript:togglePic('sitting');"><img src="../pics/westdean/sitting-110.jpg" height="110"></a>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8">
+      <tr>
+        <td colspan="3" align="justify">
+          <span class="h4class"><b>Our goal is to help everyone make our neighborhoods places of belonging, places of health and well-being, and places where people will want to live and work. This has become possible through the use of Generative Codes, Christopher Alexander's latest work in the effort to make possible conception and construction of living, beautiful communities that have real guts -- not the sugary sweetness of pseudo-traditional architecture.</b></span>
+          <p><span class="h4class">The tools offered are intended for the use of ordinary people, families, communities, developers, planners, architects, designers and builders; public officials, local representatives, and neighbors; business owners and people who have commercial interests. The processes here are expressed in the belief that the common-sense, plain truth about laying out a neighborhood, or repairing one, is equally valid for all comers, amateurs and professionals. They help people build or rebuild neighborhoods in ways that contribute something to their lives. Many of the tools have their origin in 30 years of work published in Alexander's <a href="../ht-0/natureoforder.htm"><i>The Nature of Order</i></a>.<br></span></p>
+          <p><span class="h4class"></span></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('archway');" onmouseout="javascript:togglePic('archway');"><img src="../pics/eishin/archway-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('heisey');" onmouseout="javascript:togglePic('heisey');"><img src="../pics/texas/heiseyporch4-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('couple');" onmouseout="javascript:togglePic('couple');"><img src="../pics/westdean/couple-walkingout-110.jpg" height="110"></a>
+        </td>
+        <td width="120" align="right" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('arcade');" onmouseout="javascript:togglePic('arcade');"><img src="../pics/eishin/arcadeumbrella-110.jpg" height="110"></a>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD" cellpadding="8">
+      <tr>
+        <td colspan="3" align="justify">
+          <span class="h4class"></span>
+          <p><span class="h4class"><b>In our view, almost any part of the environment may be viewed as a neighborhood.</b> A neighborhood can be very small (less than an acre), or quite large (hundreds of acres). It can be a hospital, a business, a group of workshops, a place where people live and work. A neighborhood is any group of people and their activities, animals, buildings, plants, and public space. Neighborhoods of different sizes are usually nested inside one another.</span></p>
+          <p><span class="h4class"></span></p>
+          <center>
+            <span class="h4class"><b>In this spirit, piece by piece, we of our generation, and the next generations, may be able to rebuild the world.</b></span>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('snowtree');" onmouseout="javascript:togglePic('snowtree');"><img src="../pics/eishin/snowtree2-110.jpg" height="110"></a>
+        </td>
+        <td width="560" valign="top" colspan="3" align="center">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('party');" onmouseout="javascript:togglePic('party');"><img src="../pics/mexicali/party-in-mexico-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('layout');" onmouseout="javascript:togglePic('layout');"><img src="../pics/santarosa/layout-110.jpg" height="110"></a>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" bgcolor="#FFFFDD">
+      <tr>
+        <td colspan="3" align="center">
+          <center>
+            <span class="h6class"><i>This website is written by Chris Alexander, Maggie Moore Alexander, Randy Schmidt, Nick Littlestone,<br>
+            with Bev Behrman and Howard Davis.</i></span>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center" colspan="2"><span class="h35class"><span style="FONT-SIZE:140%">C</span>ENTER FOR <span style="FONT-SIZE:140%">E</span>NVIRONMENTAL <span style="FONT-SIZE:140%">S</span>TRUCTURE established 1967<br>
+        and<br>
+        <span class="h36class"><span style="FONT-SIZE:140%">C</span>ENTRE FOR <span style="FONT-SIZE:140%">E</span>NVIRONMENTAL <span style="FONT-SIZE:140%">S</span>TRUCTURE, EUROPE established 2005</span></span></td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="560" valign="top" align="center">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('yellow');" onmouseout="javascript:togglePic('yellow');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="../pics/eishin/yellowboatcrop-110.jpg" height="110"></span></a>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" cellpadding="8" bgcolor="#FFFFDD">
+      <tr>
+        <td bgcolor="#FFFFDD" align="left">
+          <span class="h5class"></span>
+          <center>
+            <span class="h5class">There is a great deal of material posted on this website, especially under the headings of ACTION & PRACTICE and THEORY & EXAMPLES -- more than one would expect to find on a typical website. We are using this medium so that we can make these generative codes and building practices available to a world-wide audience quickly, and at as low a cost as possible. Our efforts to write and organize the material for easy use continue.<br>
+            <span class="h5class"></span></span>
+            <p><span class="h5class">&nbsp;If you would like information, please</span> <span class="h37class"><b><a href="contact.htm">CONTACT</a></b></span> <span class="h5class">us<br>
+            If you would like help, please check our</span> <span class="h37class"><b><a href="services.htm">SERVICES</a></b><span><span class="h5class">.<br>
+            If you represent a <b>community organization</b> or a <b>professional developer</b>, and would like to consider applying the methods described on this website, to one of your projects,<br>
+            please</span> <span class="h37class"><b></b></span> , <span class="h5class">and tell us what kind of help you might need.<br></span></span></span></p>
+          </center>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('medlock');" onmouseout="javascript:togglePic('medlock');"><img src="../pics/medlock/medlock-110.jpg" height="110"></a>
+        </td>
+        <td width="560" valign="top" colspan="3" align="center">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('upham');" onmouseout="javascript:togglePic('upham');"><img src="../pics/upham/uphamlivingroom-110.jpg" height="110"></a>
+        </td>
+        <td width="120" valign="top">
+          <a href="javascript:void(0)" onmouseover="javascript:togglePic('medlockblue');" onmouseout="javascript:togglePic('medlockblue');"><img src="../pics/medlock/whidbeylivingblue-110.jpg" height="110"></a>
+        </td>
+      </tr>
+    </table><br>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+    </center>
+  </div>
+  <div id="fresno"><img src="../pics/fresno/money644.jpg" height="300px" name="fresno1" border="0" id="fresno1"></div>
+  <div id="travis"><img src="../pics/texas/viewoverlaketravis.jpg" height="300px" name="texas1" border="0" id="texas1"></div>
+  <div id="mexicali"><img src="../pics/mexicali/womanlean.jpg" height="300px" name="woman1" border="0" id="woman1"></div>
+  <div id="eishin"><img src="../pics/eishin/eishinrainandstudents.jpg" height="300px" name="eishin1" border="0" id="eishin1"></div>
+  <div id="archway"><img src="../pics/eishin/archway.jpg" height="300px" name="arch1" border="0" id="arch1"></div>
+  <div id="heisey"><img src="../pics/texas/heiseyporch4.jpg" height="300px" name="heisey1" border="0" id="heisey1"></div>
+  <div id="couple"><img src="../pics/westdean/couple-walkingout.jpg" height="300px" name="couple1" border="0" id="couple1"></div>
+  <div id="arcade"><img src="../pics/eishin/arcadeumbrella.jpg" height="300px" name="arcade1" border="0" id="arcade1"></div>
+  <div id="party"><img src="../pics/mexicali/party-in-mexico-250.jpg" height="300px" name="party1" border="0" id="party1"></div>
+  <div id="agate"><img src="../pics/agate/four-crop-300.jpg" height="300px" name="agate1" border="0" id="agate1"></div>
+  <div id="yellow"><img src="../pics/eishin/yellow-300.jpg" height="300px" name="yellow1" border="0" id="yellow1"></div>
+  <div id="snowtree"><img src="../pics/eishin/snowtree2-300.jpg" height="300px" name="snowtree1" border="0" id="snowtree1"></div>
+  <div id="layout"><img src="../pics/santarosa/layout-300.jpg" height="300px" name="layout1" border="0" id="layout1"></div>
+  <div id="sitting"><img src="../pics/westdean/sitting-300.jpg" height="300px" name="sitting1" border="0" id="sitting1"></div>
+  <div id="backterrace"><img src="../pics/westdean/back-terrace-2crop-300.jpg" height="300px" name="backterrace1" border="0" id="backterrace1"></div>
+  <div id="medlock"><img src="../pics/medlock/medlock-300.jpg" height="300px" name="medlock1" border="0" id="medlock1"></div>
+  <div id="upham"><img src="../pics/upham/uphamlivingroom-300.jpg" height="300px" name="upham1" border="0" id="upham1"></div>
+  <div id="medlockblue"><img src="../pics/medlock/whidbeylivingblue-300.jpg" height="300px" name="blue1" border="0" id="blue1"></div>
+</body>
+</html>

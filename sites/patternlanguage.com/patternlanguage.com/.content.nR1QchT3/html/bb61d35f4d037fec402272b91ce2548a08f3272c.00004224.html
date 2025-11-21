@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Design</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+  H1 {font-size: 56px; font-family: "Times Roman";
+  font-weight: normal;  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: arial;  
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space:15px;
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "galleria"
+  }
+  H3  {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+
+        #sp {
+                position: absolute;
+                top:   105px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+
+        #color {
+                position: absolute;
+                top:   105px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+
+        #positive {
+                position: absolute;
+                top:   105px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+
+        #unique {
+                position: absolute;
+                top:   105px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+  </style>
+  <script language="javaScript">
+  <!--
+  ///ONLY TOGGLE PICTURES///
+
+        function togglePic(picture_id){
+                
+                if (document.layers) { // for Netscape
+                                
+                        var thisPicture = document.layers[picture_id];
+                        var hidden     = "hide";        
+                        var visible    = "show";        
+                }
+                if (document.all)    { //for IE
+                
+                        var thisPicture = eval("document.all." + picture_id + ".style");
+                        var hidden     = "hidden";      
+                        var visible    = "visible";     
+                }
+                                
+                if ( thisPicture.visibility == visible) {
+                // it was ON, now turn it OFF
+        
+                        thisPicture.visibility = hidden;
+                } else {                
+                // it was OFF, now turn it ON
+                
+                        thisPicture.visibility = visible;
+                }
+        }
+
+
+
+  -->
+  </script>
+  <script src='../scripts/nav.js'></script>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+  <div id="methods-main">
+    <table width="100%">
+      <tr>
+        <td align="left"><img src="../greg/nickfront/blueband3.gif" width="750" height="7"></td>
+      </tr>
+    </table>
+    <table width="100%" align="left">
+      <tr>
+        <td align="left">
+          <p></p>
+          <h1>Design</h1>
+        </td>
+        <td>
+          <table width="500" height="10" align="left" bgcolor="#222222">
+            <tr>
+              <td align="left">
+                <h4><a href="../front/ca12.htm">front page</a> &gt;&gt; design</h4>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="30%" align="center">
+          <img src="../archimages/tepotzlan.jpg" width="240">
+          <p></p>
+          <p><font face="Times New Roman, Times, serif" size="1">&copy; 2001 <a href=".">patternlanguage.com</a></font></p>
+          <p>&nbsp;</p>
+        </td>
+        <td width="70%">
+          <table align="right">
+            <tr>
+              <td width="34%" align="left">
+                <h2></h2>
+                <ul>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../silverpages/uniqueness.htm')" onmouseover="javascript:togglePic('unique1');" onmouseout="javascript:togglePic('unique1');">Uniqueness</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../natureoforder/natureoforder.htm')" onmouseover="javascript:togglePic('color1');" onmouseout="javascript:togglePic('color1');">Using color in building design</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../natureoforder/natureoforder.htm')" onmouseover="javascript:togglePic('positive1');" onmouseout="javascript:togglePic('positive1');">Positive space</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../natureoforder/natureoforder.htm')" onmouseover="javascript:togglePic('sp1');" onmouseout="javascript:togglePic('sp1');">Structure-preserving transformations</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../corral/centers-one.htm')" onmouseover="javascript:togglePic('sp1');" onmouseout="javascript:togglePic('sp1');">Centers</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../corral/centers-two.htm')" onmouseover="javascript:togglePic('sp1');" onmouseout="javascript:togglePic('sp1');">More on Centers</a></h2>
+                  </li>
+                  <li>
+                    <h2><a href="javascript:goToInFrame('designframe.htm','../corral/differentiation.htm')" onmouseover="javascript:togglePic('sp1');" onmouseout="javascript:togglePic('sp1');">Differentiation</a></h2>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="color"><img src="../archimages/traditional/tibetan.jpg" name="color1" height="120" alt="traditional tibetan capital" border="0" id="color1"></div>
+  <div id="positive"><img src="../archimages/paintings/timurid3.jpg" name="positive1" height="120" alt="timurid carpet" border="0" id="positive1"></div>
+  <div id="sp"><img src="../archimages/traditional/copenhagen.jpg" name="sp1" height="120" alt="traditional courtyard" border="0" id="sp1"></div>
+  <div id="unique"><img src="../movie/embryo9.jpg" name="unique1" height="120" alt="traditional courtyard" border="0" id="unique1"></div>
+</body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generative Codes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <script language="JavaScript">
+
+  <!-- 
+  if (document.images) 
+  { 
+  pic1on= new Image(62,28); 
+  pic1on.src="../images/uphome.jpg"; 
+  pic1off= new Image(62,28); 
+  pic1off.src="../images/offhome.jpg"; 
+  pic1down=new Image(62,28); 
+  pic1down.src="../images/downhome.jpg"; 
+  } 
+
+  { 
+  pic2on= new Image(62,28); 
+  pic2on.src="../images/upintro.jpg"; 
+  pic2off= new Image(62,28); 
+  pic2off.src="../images/offintro.jpg"; 
+  pic2down=new Image(62,28); 
+  pic2down.src="../images/downintro.jpg"; 
+  } 
+
+  { 
+  pic3on= new Image(62,28); 
+  pic3on.src="../images/upgen.jpg"; 
+  pic3off= new Image(62,28); 
+  pic3off.src="../images/offgen.jpg"; 
+  pic3down=new Image(62,28); 
+  pic3down.src="../images/downgen.jpg"; 
+  }
+
+  { 
+  pic4on= new Image(62,28); 
+  pic4on.src="../images/upimplem.jpg"; 
+  pic4off= new Image(62,28); 
+  pic4off.src="../images/offimplem.jpg"; 
+  pic4down=new Image(62,28); 
+  pic4down.src="../images/downimplem.jpg"; 
+  }
+
+  { 
+  pic5on= new Image(62,28); 
+  pic5on.src="../images/upphotos.jpg"; 
+  pic5off= new Image(62,28); 
+  pic5off.src="../images/offphotos.jpg"; 
+  pic5down=new Image(62,28); 
+  pic5down.src="../images/downphotos.jpg"; 
+  }
+
+  { 
+  pic6on= new Image(62,28); 
+  pic6on.src="../images/upnbds.jpg"; 
+  pic6off= new Image(62,28); 
+  pic6off.src="../images/offnbds.jpg"; 
+  pic6down=new Image(62,28); 
+  pic6down.src="../images/downnbds.jpg"; 
+  }
+
+  { 
+  pic7on= new Image(62,28); 
+  pic7on.src="../images/uparchive.jpg"; 
+  pic7off= new Image(62,28); 
+  pic7off.src="../images/offarchive.jpg"; 
+  pic7down=new Image(62,28); 
+  pic7down.src="../images/downarchive.jpg"; 
+  }
+
+  { 
+  pic8on= new Image(62,28); 
+  pic8on.src="../images/upcontact.jpg"; 
+  pic8off= new Image(62,28); 
+  pic8off.src="../images/offcontact.jpg"; 
+  pic8down=new Image(62,28); 
+  pic8down.src="../images/downcontact.jpg"; 
+  }
+
+  { 
+  pic9on= new Image(62,28); 
+  pic9on.src="../images/upservices.jpg"; 
+  pic9off= new Image(62,28); 
+  pic9off.src="../images/offservices.jpg"; 
+  pic9down=new Image(62,28); 
+  pic9down.src="../images/downservices.jpg"; 
+  } 
+
+  { 
+  pic11on= new Image(62,28); 
+  pic11on.src="../images/upcom.jpg"; 
+  pic11off= new Image(62,28); 
+  pic11off.src="../images/offcom.jpg"; 
+  pic11down=new Image(62,28); 
+  pic11down.src="../images/downcom.jpg"; 
+  } 
+
+  { 
+  pic13on= new Image(62,28); 
+  pic13on.src="../images/upunfold.jpg"; 
+  pic13off= new Image(62,28); 
+  pic13off.src="../images/offunfold.jpg"; 
+  pic13down=new Image(62,28); 
+  pic13down.src="../images/downunfold.jpg"; 
+  }
+
+  function lightup(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOn=eval(imgName + "on.src"); 
+  document[imgName].src= imgOn; 
+  } 
+  } 
+
+  function turnoff(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOff=eval(imgName + "off.src"); 
+  document[imgName].src= imgOff; 
+  } 
+  } 
+
+  function clickdown(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgDown=eval(imgName + "down.src"); 
+  document[imgName].src=imgDown; 
+  } 
+  } 
+  //--> 
+  </script>
+  <style>
+
+  .base {color:blue; font-weight:normal; font-size:100%; background-color:eeeeee}
+  .bigChange {color:blue; font-weight:normal; font-size:100%; background-color:yellow}
+  .blackChange {color:black; font-weight:BOLD; font-size:100%; background-color:ffFFFF}
+  .smallChange {color:white; font-size:100%; background-color:66ddaa}
+  .start {color:ffffdd;background-color:6699cc; text-decoration:none}
+  .blustart {color:ffffdd;background-color:6699ff; text-decoration:none}
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h35class {
+        FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h36class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h405class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"; color:0000ff; background-color:eeeeee; text-decoration:none
+  }
+  .h406class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"; color:ffffdd; background-color:6699cc; text-decoration:none
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial";
+  }
+
+  .h8class {
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial"; LINE-HEIGHT: 9px; COLOR: 000000;
+  }
+
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .caption {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; text-decoration: italic;  }
+
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  195px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#000000" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="500" align="center" border="1" bgcolor="#3333FF">
+      <tr>
+        <td align="center">
+          <img src="../images/bln-blue-livingneighborhoods.jpg" width="160" height="23" border="0"><br>
+          <img src="../images/bln-blue-theory-background.jpg" height="43" border="0">
+          <p></p>
+        </td>
+      </tr>
+    </table><br>
+    <table width="500" align="center" bgcolor="#FFFFDD" border="1">
+      <tr>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="center">
+          <p><span class="h5class"><a href="#anchor">jump</a></span> <span style="color:red"></span></p>
+          <h1><span style="color:red">GENERATIVE CODES</span></h1><img src="../images/noo.gif" height="50">
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <p><span class="h32class"><span style="FONT-SIZE:140%"></span><span style="FONT-SIZE:140%">G</span>ENERATIVE <span style="FONT-SIZE:140%">C</span>ODES HAVE EVOLVED FROM <span style="FONT-SIZE:140%">P</span>ATTERN <span style="FONT-SIZE:140%">L</span>ANGUAGES, BUT ARE MUCH MORE <span style="FONT-SIZE:140%">S</span>OPHISTICATED <span style="FONT-SIZE:140%">G</span>ENERATING <span style="FONT-SIZE:140%">S</span>YSTEMS.<br>
+          <br></span></p>
+        </td>
+      </tr>
+    </table>
+    <table width="500" align="center" bgcolor="#FFFFDD" border="1">
+      <tr>
+        <td align="left">
+          <blockquote>
+            <a name="#anchor" id="#anchor"></a><span class="h32class"><span style="font-size:80%;">A generative code is a system of unfolding steps that enable people in a community to create a wholesome and healthy neighborhood. The steps are governed by rules of unfolding that are not rigid, but depend on context, and on what came before. The rules work in a way that is similar to the rules that nature follows to unfold an organism or a natural landscape, but these particular rules unfold a neighborhood and its buildings.</span></span>
+            <ul>
+              <li><span class="h32class">The rules tell you how to take specific steps, in a certain way that allows unfolding to proceed.</span></li>
+              <li><span class="h32class">Like patterns, the rules cover a great range of scales -- all of the major features of the neighborhood, down to the finer details, including open spaces, buildings, connecting paths, rooms, window sills, etc.</span></li>
+              <li><span class="h32class">The rules are ordered – sequenced – to unfold each part of the environment being created, smoothly and coherently.</span></li>
+              <li><span class="h32class">Also, in the generative code, each rule is specifically tied to a certain group of individuals, whose job it is to undertake that part of the unfolding together; the roles needed for each one are specified.</span></li>
+              <li><span class="h32class">Finally, in order to make the process succeed, the overall operation of the unfolding, which goes forward step by step, is accompanied by a general set of practical specifications for the conditions governing land tenure, cash flow, and human organization, and the community in which the process is being carried out. These conditions are stated <a href="#conditions">at this bottom of this page</a>.</span></li>
+            </ul>
+          </blockquote>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="500" border="0" bgcolor="#FFFFDD">
+      <tr>
+        <td width="125" align="left"><span class="h5class"><b>TOPIC</b></span></td>
+        <td width="250" align="center"><span class="h5class"><b>Details of Document</b></span></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">THE BIRTH OF FORM<br>
+        (morpho=form genesis=birth)<br>
+        MORPHOGENESIS</span></td>
+        <td align="left" width="250">
+          <span class="h4class">The essence of a harmonious neighborhood is that it flows from the land, is harmonious with the land, and enhances the global structure of the land. This is true in rural areas, and it is true in urban areas. To understand how this process works, we ask you to study a short memo called <a href="morphogenesis-two.htm">The Birth of Form</a>. It explains how a very simple process can generate large scale patterns in such a way as to be harmonious with a piece of land.<br>
+          <a href="../noorefs/morphogenesis.htm"><span class="h8class"></span>
+          <p><span class="h4class"><img src="../images/nooref.gif" height="48" alt="Extended references on morphogenesis" border="white"></span></p></a></span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">RULES THAT MAKE MORPHOGENESIS WORK</span></td>
+        <td align="left" width="250">
+          <span class="h4class">Please look back at the <a href="morphogenesis-two.htm#rules">five rules for terraces</a> in the Birth of Form memo. They allow people to generate agricultural terraces for hundreds of square miles, Each of these rules makes you DO something, it is extremely simple, and it is expressed in a way that makes what you do depend on the configuration of the land and place, so that you are -- almost without effort -- in harmony with it.</span>
+          <p><span class="h4class">This system of rules is a <b>generative system</b>.<br>
+          <a href="../noorefs/sequences.htm"><span class="h8class"></span>
+          <p><span class="h4class"><img src="../images/nooref.gif" height="48" alt="Extended references on sequences" border="white"></span></p></a></span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">START APPLYING GENERATIVE THINKING TO A TYPICAL NEIGHBORHOOD</span></td>
+        <td align="left" width="250">
+          <span class="h4class">To start thinking about a neighborhood in generative terms, please look at the <a href="../library/three-rules.htm">three rules for starting a neighborhood</a> by clicking this link.</span>
+          <p><span class="h4class">Again, these simple rules are <b>generative</b> rules. You will find they generate something that is more in keeping with the land, or with existing buildings around the area: and you will find, too, that if you do it well, it will be more in keeping with the feeling in your heart.</span></p>
+          <p><span class="h4class">If you continue the generative way of thinking when you go through detailed design, procurement, and construction, the neighborhood will still have that quality years later, when it is built and used!<br>
+          <a href="../noorefs/nbdcenter.htm"><span class="h8class"></span>
+          <p><span class="h4class"><img src="../images/nooref.gif" height="48" alt="References on formation of neighborhood centers" border="white"></span></p></a></span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class" style="color:red">WATCH A NEIGHBORHOOD PLAN UNFOLDING</span></td>
+        <td align="left" width="250">
+          <span class="h4class"><b>It is exciting to watch.</b> Please look at <a href="../unfoldingmovies/strood-cumulative/strood-unfold.htm"><b>THE UNFOLDING OF STROOD IN KENT</b></a> by clicking this link. You will see the geometric structure of the new neighborhood arising step by step, under the impact of some thirty generative rules. You may visit other parts of the site to get more information about the way this process works, in practice.</span>
+          <p><span class="h4class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">WRITING GENERATIVE CODE</span></td>
+        <td align="left" width="250">
+          <span class="h4class">A paper describing the first steps of a typical generative code, which shows you how to get started, and also gives you a feel, immediately, for the huge difference between this generative kind of code, and the urban codes being used today, which are little more than rigid rule-books.<a href="../library/writing-generative-code.htm">Writing Generative Codes</a> &nbsp; &nbsp; <span class="h5class">5 pages</span></span>
+          <p><span class="h4class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class" style="color:red">A COMPLETED GENERATIVE CODE AS AN EXAMPLE</span></td>
+        <td align="left" width="250">
+          <span class="h4class">Here is a complete generative code for a new community of 1200 houses on a square mile of land, on the Oregon coast.<a href="../library/brook-2.pdf">The Generative Master Plan for Harbor Hills, Oregon</a>&nbsp; &nbsp; <span class="h5class">137 pages &nbsp;&nbsp; 40 pictures. Published January 2005.</span></span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">A FLEDGLING GENERATIVE CODE WHILE IT IS STILL BEING THOUGHT OUT</span></td>
+        <td align="left" width="250">
+          <span class="h4class">An example of an early stage in the process of writing a generative code. It is a complete code for a new neighborhood, very rough, which was written in two or three days. It contains many errors and omissions but is typical of the kind of work which can get you started, and which then begins to give a feel for the whole neighborhood that will be generated by this code. <a href="../library/stroodcode-v13.pdf">Creating a new Generative Code for a neighborhood of houses and businesses in Strood</a>&nbsp; &nbsp; <span class="h5class">32 pages &nbsp;&nbsp; 10 pictures.</span></span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+    </table>
+    <table width="500" align="center" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center" colspan="3">
+          <span class="h4class">Below,</span> <span class="caption"><i>a house in California created with a generative code: the house fits the land, it seems loose, and more complex than a typically "designed" house. Yet it is made of highly ordered, locally symmetrical parts, so that one sees and experiences a rich hierarchy of enjoyable parts, each of which enriches the larger whole around it, and connects to it.</i></span>
+          <p><img src="../pics/givens-upham.jpg" width="300"><br></p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="3">
+          <hr height="10" color="#FF0000">
+          <p>FURTHER READING</p>
+          <p></p>
+        </td>
+        <td align="center" colspan="2">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">DEFINITION OF GENERATIVE CODES</span></td>
+        <td align="left" width="375">
+          <span class="h4class"><a href="../library/generativecodesv10.pdf">What is a Generative Code?</a> A paper discussing the nature of generative codes and the reasons why they work:</span> &nbsp; <span class="h5class">25 pages &nbsp;&nbsp;</span>
+          <p><span class="h5class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">MORPHOGENESIS AND SUSTAINABILITY</span></td>
+        <td align="left" width="375">
+          <span class="h4class">A longer paper discussing the unfolding of neigborhoods in the environment, in a way that parallels the unfolding of organisms and organic structures. This is shown to be the origin of true sustainability.<a href="../library/schumacher-v16.pdf">Sustainability and Morphogenesis</a><span class="h5class">&nbsp; &nbsp; 69 pages &nbsp;&nbsp; 70 color pictures.</span></span>
+          <p><span class="h4class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top"><span class="h404class">PATTERN LANGUAGES: RELATION TO GENERATIVE CODES<br></span></td>
+        <td align="left" width="375">
+          <span class="h4class">Pattern languages are very useful, but do not place sufficient emphasis on the dynamic component of <b>unfolding</b>, which does the hard work of creating and generating living form. This short memo (<a href="patternlanguages.htm">The evolution of generative codes from pattern languages and sequences.</a> ) explains the relation of pattern languages, the sequences presented in <i>The Nature of Order</i>, and the new Generative Codes.</span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="125" valign="top">
+          <a name="conditions" id="conditions"></a><span class="h404class">NECESSARY PRACTICAL CONDITIONS<br></span>
+        </td>
+        <td align="left" width="375">
+          <span class="h4class"><a href="mainsteps.htm">Here you can see a List of the necessary practical features which allow unfolding to occur</a></span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+    </table>
+    <table width="500" align="center" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td bgcolor="#EEEEEE" colspan="2">
+          <span class="h5class"><span style="color:000000"></span></span>
+          <p><span class="h5class">&nbsp;<br>
+          Please note: in order to allow us to make new results available as quickly as possible, many of the available papers are in draft form; others are in final form or in published form. If you need further information, please contact us by e-mail at</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" colspan="7" align="right"><span class="h5class"><span style="color:000000"><a href="generative.htm">Back to Top</a></span></span></td>
+      </tr>
+      <tr>
+        <td>
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+    </table>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+    </center>
+  </div>
+</body>
+</html>

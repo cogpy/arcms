@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script src='../universal/universal.js'></script>
+  <script src='lndrawtest.js'></script>
+  <style>
+      .button{border:3px solid #444444}
+      .buttonActive{border:3px solid #ffffff}
+      .buttonActiveOLD{border:23x inset #000044}
+      .buttonActiveALT {border:3px inset #cccccc}
+      .buttonInactiveALT{border:3px solid #444444}
+      .buttonInactiveOLD{border:3px solid #99eeff}
+      .buttonInactive{border:3px solid #000044}
+      .buttonHover {border:3px outset #cccccc}
+      .buttonDown {border:3px inset #cccccc}
+      .h6bold 
+  {font-size:12px;font-family:arial;font-weight:bold;color:ffff77;background-color:005544;line-height:20px;} 
+      .h6 
+  {font-size:13px;font-family:arial;} 
+      .h6class 
+  {font-size:11px;font-family:arial;} 
+
+      .h7 
+  {font-size:11px;font-family:arial;background-color:ccccff;line-height:20px;color:005522;font-weight:bold;} 
+      .h8 
+  {font-size:9px;font-family:arial;color:ffffff;line-height:8px;} 
+
+      .highlight
+  {color:ffff00;background-color:009977;font-size:11px;font-family:arial;font-weight:bold;}
+      .regiona {background-color:#000044;padding:6px;position:absolute}
+      .regionb {background-color:#ffffbb;color:#000044;border:4px ridge #ffffbb;-moz-border-radius:10px}
+
+     <!--  .regionb2 {background-color:#ffffff;color:#000044;border:4px ridge #ff0000;-moz-border-radius:10px} -->
+
+      .regionc {background-color:#000044;color:#ffffff;padding-left:6px;padding-top:6px;padding-bottom:6px;padding-right:6px}
+       
+       .regionTitle {padding-left:6px;padding-right:6px;font-family:arial;font-size:20px;font-weight:bold} <!-- font-size:100% -->
+      
+  .statusText {padding-left:6px;padding-right:6px;font-family:arial;font-size:11px;color:ffffdd;} 
+
+  #windowRegion {left:0;top:0;width:110;height:180}
+
+  #viewRegion {left:140;top:0;width:160;height:100}
+      
+  <!-- #stepRegion {left:0;top:205;width:110;height:200} -->
+
+  #layerRegion {left:0;top:400;width:110;height:200}
+
+  <!-- #textControlRegion {left:0;top:340;width:110;height:80} -->
+
+
+  #drawingOperationRegion {left:300px;top:0px;width:530px;height:90px}
+
+  #buttonRegion {left:140;top:100;width:690;height:75;}
+
+  #statusBar {left:130;top:600;width:700;height:40;z-index:+5}
+
+  <!-- #appletRegion {left:130;top:110} -->
+
+  #appletRegion {left:130;top:150; width=530px;height:450px}
+
+  #startInstructions {left:140;top:130; width=690px;height:450px}
+
+  #message  {left:130;top:0;width=530px;height:20px}   
+  </style>
+  <script>
+            setCallOnDocumentLoad(drawingPadLoaded);
+            // var demoURL = 'http://livingneighborhoods.org/drawing-pad/demo-drawfilea.lndraw';
+  </script>
+  <title></title>
+  <style>
+
+  #textRegion {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:5px;padding-top:3px;padding-bottom:3px;padding-right:4px;font-weight:bold;font-size:15px;font-family:arial}
+
+  #stepname {position:absolute;left:0;top:700;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:5px;padding-top:3px;padding-bottom:3px;padding-right:4px;font-weight:bold;font-size:15px;font-family:arial}
+
+  #basemap {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:4px;padding-top:3px;padding-bottom:3px;padding-right:4px;visibility:hidden;}
+
+  #basemapcorrections {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:4px;padding-top:3px;padding-bottom:3px;padding-right:4px;visibility:hidden;}
+
+  #diagnosis {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:4px;padding-top:3px;padding-bottom:3px;padding-right:4px;visibility:hidden;}
+
+  #wholeness {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:4px;padding-top:3px;padding-bottom:3px;padding-right:4px;visibility:hidden;}
+
+  #maincenter {position:absolute;left:130;top:0;width:700;height:85;background-color:#005544;color:#ffff77;padding-left:4px;padding-top:3px;padding-bottom:3px;padding-right:4px;visibility:hidden;}
+
+  #startinstructions {position:absolute;left:130;top:150;width:700;height:450;background-color:#ffffff;color:#000000;padding-left:4px;padding-top:4px;padding-bottom:3px;padding-right:4px;visibility:visible;}
+
+  <!-- <TR><td width=70 align=left valign=bottom bgcolor=005544><span class=h6bold><a href="javascript:void(0)"     
+  onmouseover="changeState('startInstructions','visible');  changeState('appletRegion','hidden');" onmouseout="changeState('startInstructions','hidden');changeState('appletRegion','visible');" >
+  <SPAN onmouseover = "changeClass(this,'highlight')" class=h6bold style=bgcolor:red;>Start Instructions</span></td> -->
+
+
+  <!-- <td width=110 align=left valign=bottom bgcolor=ccccff><span class=h7>Map corrections layer</span></td><td width=20 align=left valign=bottom bgcolor=005544><img src=buttons/no-eye5.jpg height=18 valign=bottom></td></tr> -->
+
+  </style>
+</head>
+<body bgcolor="#000044" onload='universalDocumentLoaded()'>
+  <div id='windowRegion' class='regiona'>
+    <div class='regionb'>
+      <span class='regionTitle'>Current<br>
+      &nbsp;Project</span>
+      <div class='regionc'>
+        <table width="96" border="1">
+          <tr>
+            <td bgcolor="#000044"><span class="h6" style='color:ff0000;font-weight:bold;' id='fileName'>DEMO</span></td>
+          </tr>
+        </table>
+        <table width="96" border="1">
+          <tr>
+            <td bgcolor="#000044"><span class="h6" style='color:ff0000;font-weight:bold;' id='projectName'>project name</span></td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td align="center"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id='stepRegion' class='regiona'>
+    <span style="color:red;font-size:12px;font-family:arial;"><b>Caution. DEMO ONLY. This part of the website is not yet working properly. You can play with it, and see what it can soon bring you, but it is not yet ready for serious use.<br></b></span><br>
+    <p><span style="color:FFFFDD;font-size:12px;font-family:arial;"><b>To edit the step list right click the steps or the layer. This will give you options that allow you to edit the list, rename them, create them, and move items,<br></b></span></p>
+  </div>
+  <div id='buttonRegion' style="position:absolute;top:100;left:140;z-index:10">
+    <table bgcolor="#000044" border="0">
+      <tr>
+        <td width="700" align="left" valign="top"><img src="buttons/lynx-hand.jpg" alt="move drawing across the screen" border="1" width="31" height="31" class='buttonInactive' onmouseover='activityButtonMouse(this,"over")' onmouseout='activityButtonMouse(this,"out")' onmousedown='activityButtonMouse(this,"down")' onmouseup='activityButtonMouse(this,"up")' onclick='activityButtonClicked(this,"pan")'> <img id='zoom_in_button' src="buttons/lynx-zoomplus.jpg" class='button' alt="zoom + to enlarge" border="1" width="31" height="31" onmouseover='lndMouseOverButton(this,true)' onmousedown='lndButtonDepressed(this,true)' onmouseup='lndButtonDepressed(this,false)' onmouseout='lndMouseOverButton(this,false)' onclick='document.all.lndraw_applet.zoomIn()'> <img id='zoom_out_button' src="buttons/lynx-zoomminus.jpg" class='button' alt="zoom + to enlarge" border="1" width="31" height="31" onmouseover='lndMouseOverButton(this,true)' onmousedown='lndButtonDepressed(this,true)' onmouseup='lndButtonDepressed(this,false)' onmouseout='lndMouseOverButton(this,false)' onclick='document.all.lndraw_applet.zoomOut()'> &nbsp;&nbsp; <img src="buttons/lynx-color2.jpg" alt="select color for pen or fill or text" border="1" width="31" height="31" onclick='document.all.lndraw_applet.chooseAColor()'> <img id="penColorSwatch" src="buttons/color-light-whitering4.gif" alt="this is the currently selected color" border="1" height="31"> <img src="buttons/lynx-thickness.jpg" alt="set line thickness" border="1" width="31" height="31" onclick='document.all.lndraw_applet.setLineThickness()'> &nbsp;&nbsp; <img src="buttons/lynx-pencil2.jpg" alt="start to draw" border="1" width="28" height="28" class='buttonInactive' onmouseover='activityButtonMouse(this,"over")' onmouseout='activityButtonMouse(this,"out")' onmousedown='activityButtonMouse(this,"down")' onmouseup='activityButtonMouse(this,"up")' onclick='activityButtonClicked(this,"pen")'> <img src="buttons/lynx-lasso.jpg" alt="fill with selected color" border="1" width="28" height="28" class='buttonInactive' onmouseover='activityButtonMouse(this,"over")' onmouseout='activityButtonMouse(this,"out")' onmousedown='activityButtonMouse(this,"down")' onmouseup='activityButtonMouse(this,"up")' onclick='activityButtonClicked(this,"lasso")'> <img src="buttons/text-button.jpg" alt="type statement at cursor" border="1" width="31" height="31"> <img src="buttons/lynx-erase.jpg" alt="erase" border="1" width="28" height="28" class='buttonInactive' onmouseover='activityButtonMouse(this,"over")' onmouseout='activityButtonMouse(this,"out")' onmousedown='activityButtonMouse(this,"down")' onmouseup='activityButtonMouse(this,"up")' onclick='activityButtonClicked(this,"eraser")'> <img src="buttons/positive-space.jpg" alt="check and repair positive space in the selected area" border="1" width="31" height="31"> &nbsp;&nbsp; <img src="buttons/lynx-undo.jpg" alt="undo the previous act" border="1" width="31" height="31" onclick='document.all.lndraw_applet.undo()'> <img src="buttons/lynx-redo.jpg" alt="redo the undo" border="1" width="31" height="31" onclick='document.all.lndraw_applet.redo()'> &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="WIZARD" style="font-size:14px;font-family:arial;font-weight:bold;background-color:#FFffff;valign=top;color:#ff0000;height:31px;width:60px;border-color:#ffffff;alt:'Get help by choosing from FAQs';" onclick="wizardButtonClicked()"></td>
+      </tr>
+    </table>
+  </div>
+  <div style='position:absolute;top:600;left:0'>
+    <input type='button' value='reset cookies' onclick='resetCookies()'>
+  </div>
+  <div id='statusBar' class='regiona'>
+    <table width="700" border="0" bgcolor="#FFFFFF">
+      <tr>
+        <td width="120"><span class="h6class" style="color:ffffdd">project</span></td>
+        <td width="120"><span class="h6class" style="color:ffffdd">project file</span></td>
+        <td width="120"><span class="h6class" style="color:ffffdd">selected step</span></td>
+        <td width="120"><span class="h6class" style="color:ffffdd">selected layer</span></td>
+        <td width="140"><span class="h6class" style="color:ffffdd">current map width in feet</span></td>
+      </tr>
+    </table>
+  </div>
+  <div id='appletRegion' style='position:absolute'>
+    <script>
+      // putAppletHere(700,450,"paramsbeside.txt");
+      putAppletHere(700,450,"paramsinter.txt");
+    </script>
+  </div>
+  <div id='stepname' style='position:absolute;top:0;left:140;bgcolor:#005544;visibility:visible;'></div>
+  <div id='basemap'>
+    <span class="h6bold" style="font-size:14px">BASEMAP &nbsp; First find an aerial photograph of the area where the future neighborhood will be. You can get it from many sources, save it as a jpg in your file for the project. It is the reality of this photograph, with trees, water, roads, buildings, that will make it possible to conceive a place that grows naturally from the details of the land itself.</span>
+  </div>
+  <div id='basemapcorrections'>
+    <span class="h6bold" style="font-size:14px">BASEMAP CORRECTIONS &nbsp; Now improve the detail of the background map to include details and dimensions that are important, or that will be important to have in exactly the right place during the unfolding. You can draw this on a separate layer, and continue to improve these details, while your overall process goes forward.</span>
+  </div>
+  <div id='diagnosis'>
+    <span class="h6bold" style="font-size:14px">DIAGNOSIS &nbsp; Now look for places, all over the neighborhood area, where beautiful things need to be protected and enhanced, and bad places where improvements need to be made. Draw these in, on this map layer. The places you identify and draw on the maplayer, should be in the following categories:<br></span>
+    <ul>
+      <li><span class="h6bold" style="font-size:14px">Beautiful views, which give you pleasure standing there.</span></li>
+      <li><span class="h6bold" style="font-size:14px">Spots that are inherently lovely, or fun, or pleasant, which should be protected and enhanced.</span></li>
+      <li><span class="h6bold" style="font-size:14px">Places where latent centers exist, that have the potential for being made more beautiful.</span></li>
+    </ul>
+  </div>
+  <div id='wholeness'>
+    <span class="h6bold" style="font-size:14px">WHOLENESS &nbsp; Try to make a diagram which captures the most important pattern or wholeness of the place: a structure which comes from that place, is of that place, and embraces the whole extent of the neighborhood.</span>
+  </div>
+  <div id='maincenter'>
+    <span class="h6bold" style="font-size:14px">MAIN CENTER &nbsp; Find the main center of the neighborhood: that place in the land, or among the existing built places, which is the most natural and magnetic center, which will have the quality that people in the neighborhood will be drawn to it, and without thinking, will go there all the time.</span>
+  </div><iframe id='startinstructions' src='wizard.htm' scrolling='no' name="startinstructions"></iframe>
+</body>
+</html>

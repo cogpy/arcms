@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ST MARKS</title>
+  <meta name="KEYWORDS" content="st mark's, venice, st mark's square, historical evolution of urban space, slow groth of an urban square, Christopher Alexander, patterns, A Pattern Language, participatory planning, architecture, building, construction, design, community planning, urban design, green design, ecological design, empowerment, timeless way of building, Nature of Order, user-centered construction, centers, coherence, form and function, craftmanship">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="javascript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; line-height:25px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman"
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   125px;
+  width   : 350px;
+  visibility: hidden;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   440px;
+  width   : 350px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #slideshowcontroldiv {
+                position: absolute;
+                top:    40px;
+                left:   10px;
+                width: 50px;
+                text-align: right;
+                visibility: hidden;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    280;
+                left:   30px;
+  width   : 300px;
+  height : 100px;
+  FONT-style: italic; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman" ;font-weight:bold; color:555555; text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="310" align="center" bgcolor="#EEEEEE" cellspacing="3" cellpadding="5" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="left" width="80%" border="1"><span class="h3class"><b><font color="#000000">WATCH A SLIDESHOW</font></b></span><br>
+        <span style="font-size:18px; font-style: italic">Slowly run your mouse along the multi-colored strip to the left to view the slideshow at your own pace.</span></td>
+      </tr>
+      <tr>
+        <td align="left" width="80%">
+          <h6>The step-by-step process that formed the square essentially repeated just one instruction, many times:</h6>
+          <ul>
+            <li style='color:#ff0000'>
+              <script>
+              stepa(1,'Look at the current overall configuration of the plan as a whole.')
+              </script>
+              <p></p>
+            </li>
+            <li style='color:#ffff00'>
+              <script>
+              stepa(2,'Identify a weak center which lacks coherence')
+              </script>
+              <p></p>
+            </li>
+            <li style='color:#00ff00'>
+              <script>
+              stepa(3,'Find a center which can be created, to enhance, and strengthen the existing weak center.')
+              </script>
+              <p></p>
+            </li>
+            <li style='color:#0000ff'>
+              <script>
+              stepa(4,'Get that thing built.')
+              </script>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+   // ******* set up handling slideshow and restart-button divs ***************
+   // *********************************************************************
+   // When reusing this, make sure the following settings are correct
+   // *********************************************************************
+
+        // name of div that holds just the slideshow (without the restart button)   
+        var showdiv = 'showdiv';
+        // name of div to show after the slideshow
+   var aftershowdiv = 'restartdiv';
+
+        // Include the following to replace showdiv with aftershowdiv
+        //  when the slideshow is done
+        setDelayedCallWhenSlideshowDone(
+         function () { hideElement(showdiv); showElement(aftershowdiv); }
+        );
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30">
+                  <h3><a href="javascript:hideElement(aftershowdiv);showElement(showdiv);startRotate()"><font color="#000000">Watch the slideshow again.</font></a></h3>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <script language="javascript">
+
+      setupSlides("sm1.jpg",
+                    1, "caption:Before 800 AD", "sm1.jpg",
+                                        2, "sm1-1.jpg",
+                                        3, "sm1-2.jpg",
+                                        4, "sm1-3.jpg",
+                                        1, "caption:900 AD", "sm1-3.jpg",
+                                        2, "sm1-4.jpg",
+                                        3, "sm1-5.jpg",
+                                        4, "sm1-6.jpg",
+                                        1, "caption:About 1000 AD", "sm1-6.jpg",
+                                        2, "sm1-7.jpg",
+                                        3, "sm1-8.jpg",
+                                        4, "sm2.jpg",
+                                        1, "caption:1100 AD", "sm2.jpg",
+                                        2, "sm2-1.jpg",
+                                        3, "sm2-2.jpg",
+                                        4, "sm2-3.jpg",
+                                        1, "sm2-4.jpg",
+                                        2, "sm2-5.jpg",
+                                        3, "sm2-6.jpg",
+                                        4, "sm2-7.jpg",
+                                        1, "caption:1300 AD", "sm2-8.jpg",
+                                        2, "sm2-9.jpg",
+                                        3, "sm2-10.jpg",
+                                        4, "sm2-11.jpg",
+                                        1, "caption:1400 AD", "sm2-11.jpg",
+                                        2, "sm2-12.jpg",
+                                        3, "sm2-14.jpg",
+                                        4, "sm2-15.jpg",
+                                        1, "sm3.jpg",
+                                        2, "sm3-1.jpg",
+                                        3, "sm3-2.jpg",
+                                        4, "sm3-3.jpg",
+                                        1, "caption:1500 AD", "sm3-3.jpg",
+                                        2, "sm3-5.jpg",
+                                        3, "sm3-6.jpg",
+                                        4, "sm3-7.jpg",
+                                        1, "caption:1600 AD", "sm3-7.jpg",
+                                        2, "sm3-8.jpg",
+                                        3, "sm3-10.jpg",
+                                        4, "sm3-11.jpg",
+                                        0, "caption:More or less the final state of the great Square of St Marks", "sm4.jpg", "sm4.jpg", "sm4.jpg", "sm4.jpg",
+                                        0, "caption:We believe that anyone, using the same tools, can do something almost as good -- though whether they will be around for 900 years to do it, remains to be seen.", "postcard.jpg", "people.jpg", "stmarks.jpg");
+
+      // setCallOnDocumentLoad(rotate);
+
+        // clears loading message
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallOnDocumentLoad(function () {showElement('steps')});
+        setCallOnDocumentLoad(function () {showElement('slideshowcontroldiv')});
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 2000;
+        timeAfterLastSlide = 5000;
+        showSetupCaptions = true;
+      </script>
+      <table align="center" bgcolor="black" width="300">
+        <tr>
+          <td bgcolor="black" align="center" width=""><font color="white"><span class="h4class">St Mark's square was formed, essentially, by using the tools available in this sequence, and repeating them again,...and again,... and again.</span></font></td>
+        </tr>
+        <tr height="100">
+          <td align="center"><img src="sm1.jpg" width="230" height="200" name="adBanner" alt="You?" id="adBanner"></td>
+        </tr>
+      </table>
+      <div id="loadingmsg" align="center">
+        A slideshow is loading.
+      </div>
+    </div>
+  </div>
+  <div id='slideshowcontroldiv'>
+    <script>
+    writeVerticalSlideshowStripForCycling(40,300,['../images/slidecontroltilecyana.gif','../images/slidecontroltilereda.gif','../images/slidecontroltileyellowa.gif','../images/slidecontroltilegreena.gif','../images/slidecontroltilebluea.gif']);
+    </script>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

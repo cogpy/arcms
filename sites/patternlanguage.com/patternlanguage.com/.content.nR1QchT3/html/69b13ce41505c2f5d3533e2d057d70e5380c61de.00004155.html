@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Archives</title>
+  <script language="javaScript" src='../universal/universal.js'></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+        @font-face {
+        font-family: 'myClarendon';
+        src: url('/fonts/clarebtrom.eot');
+        src: url('/fonts/clarebtrom.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/clarebtrom.woff') format('woff'),
+             url('/fonts/clarebtrom.ttf')  format('truetype'),
+             url('/fonts/clarebtrom.svg#svgFontName') format('svg');
+        font-weight: normal;
+        font-style: normal;}
+
+  @font-face {
+        font-family: 'myClarendon';
+        src: url('/fonts/clarebol.eot');
+        src: url('/fonts/clarebol.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/clarebol.woff') format('woff'),
+             url('/fonts/clarebol.ttf')  format('truetype'),
+             url('/fonts/clarebol.svg#svgFontName') format('svg');
+        font-weight: bold;
+        font-style: normal;}
+
+  H1 {font-size: 52px; font-family: myClarendon, "Clarendon", serif;
+  font-weight: normal;  padding-top: 0px; padding-left: 14px; vertical-align: middle;}
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; FONT-FAMILY: arial;  
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space:15px;
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "galleria"
+  }
+  H3  {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+
+
+
+
+        #bricks {
+                position: absolute;
+                top:   235px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+
+
+        #transparent {
+                position: absolute;
+                top:   235px;
+                left:  530px;
+  height  : 120px;
+  visibility: hidden;
+        }
+  </style>
+  <script language="javaScript">
+  <!--
+  ///ONLY TOGGLE PICTURES///
+
+        function togglePic(picture_id){
+                
+                if (document.layers) { // for Netscape
+                                
+                        var thisPicture = document.layers[picture_id];
+                        var hidden     = "hide";        
+                        var visible    = "show";        
+                }
+                if (document.all)    { //for IE
+                
+                        var thisPicture = eval("document.all." + picture_id + ".style");
+                        var hidden     = "hidden";      
+                        var visible    = "visible";     
+                }
+                                
+                if ( thisPicture.visibility == visible) {
+                // it was ON, now turn it OFF
+        
+                        thisPicture.visibility = hidden;
+                } else {                
+                // it was OFF, now turn it ON
+                
+                        thisPicture.visibility = visible;
+                }
+        }
+
+
+
+  -->
+  </script>
+</head>
+<body bgcolor="#FFFAC0" text="#9F2214" link="#9F2214" vlink="#9F2214" alink="#9F2214">
+  <div id="methods-main" style="padding-top: 15px;">
+    <table width="750" cellspacing="0" cellpadding="0">
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+    <table width="850" align="left" cellspacing="0" style="padding-top: 19px; padding-left: 6px;">
+      <tr>
+        <td align="left" valign="top" style="position: absolute;">
+          <a href="/" target="_top"><img src="/img/apllogo2.jpg" width="48" height="48"></a>
+        </td>
+        <td align="left" width="568" style="position: relative; top: -9px; left: 63px;"><span style="font-size: 52px; font-family: myClarendon, clarendon, serif; font-weight: normal;"><a href="/archives/archive.html" target="_top" style="text-decoration: none;">Archive</a></span></td>
+        <td>
+          <table width="250" height="10" align="left" bgcolor="#FFF8A8" style="padding-top: 3px;">
+            <tr>
+              <td align="middle">
+                <h4>&nbsp;<a href="/" target="_top">home page</a> &gt;&gt; <a href="/archives/archive.html" target="_top">archive</a> &gt;&gt; this page</h4>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

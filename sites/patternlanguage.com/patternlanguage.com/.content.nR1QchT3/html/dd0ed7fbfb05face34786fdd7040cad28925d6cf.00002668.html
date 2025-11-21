@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GARDEN GATE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .link {
+       FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the slide_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#44bbdd; color:#ffffff; font-weight:normal}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+
+    #illuminate {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: visible;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        // width        : 350px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    430;
+        left:   320px;
+        width   : 445px;
+        height : 500px;
+        FONT-style: italic; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+        visibility: visible;
+    }
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(445,299);
+        // slideImageAttributeString = 'width=426 height=284';  //// set size of slideshow images here
+        slideImageAttributeString = '';  //// set size of slideshow images here
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // They are taken from three different places:
+        //   captions included in the parameters to setupShow
+        //   captions included as an extra, final, parameter 
+        //        to movie_step or slide_step when creating the step list
+        //        (This parameter follows the parameter that gives the label of the
+        //        step that appears in the list.)
+        //   for movies, captions that appear in the gdraw file
+        // If necessary, calls can be added here to suppress some of the captions
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+    //////// DESCRIPTION OF THE SHOW ///////////////
+        setMovieFile('sophienoeraseshort.gdraw');  
+
+
+
+    // setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span><br>
+        <span style='font-size:80%'>This gate-design process used by Sophie uses eight of the eighteen generic steps available</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>First, let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp; click here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <span style='font-size:80%;line-height:1.2;'><br></span>
+                <ul>
+                  <script>
+                  //setup_step('movie:1','Set up context','caption-manual:')
+                  </script>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:2','Gate Position','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:3','Gateway Opening','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:6','Gateposts or sides','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:7','The Wall and its Openings','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:8','Space Above The Gate','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:9','Space Above The Wall','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:16','The Gate Itself','caption-manual:')
+                  </script> 
+                  <script>
+
+                  //setup_step('movie:17','Gatepost Base','caption-manual:')
+                  </script> 
+                  <script>
+
+                  //setup_step('movie:19','Fine-tune and check','caption-manual:')
+                  </script></span></li>
+                  <li><span style='font-size:80%;line-height:1.2;'>
+                  <script>
+
+                  setup_step('movie:20','Ornament','caption-manual:')
+                  </script></span></li>
+                </ul><span style='font-size:80%;line-height:1.2;'></span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>WATCH THE UNFOLDING OF A GATE DESIGN</b></font></span>
+          <p><span class="h2class"><font color="#222222"><span class="h6class"><i>Done by Sophie, a thirteen year old girl using the gate sequence</i></span></font></span></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+      putCaptionsHere('A movie is loading.','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

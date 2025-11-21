@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MATISSE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 350px;
+  visibility: visible;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   380px;
+  width   : 350px;
+  height : 500px;
+  visibility: visible;
+        }
+
+
+  </style>
+  <script language="javascript" src="../corral/nickb/slideshow8-22.js"></script>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='rotate()'>
+  <div id="steps">
+    <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="left" width="80%" border="1">
+          <h3><b><span style="color:000000">A FILM OF MATISSE PAINTING</span></b></h3>
+        </td>
+      </tr>
+      <tr>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="left" width="80%">
+          <p></p>
+          <h6><span style="color:000000">This seven-step sequence allows you to draw a face.<br>
+          <br>
+          The individual face has a unique character, which must be captured.</span></h6>
+          <p></p>
+          <table width="80%" align="center" bgcolor="#EEEEEE">
+            <tr>
+              <td align="left">
+                <h6>The drawing process has these steps<br>
+                <script>
+
+                stepa(1,'Step 1: First draw the hair, within the background, in such a way that within the space formed by the hair, you indirectly create the shape of the face.  ')
+                </script><br>
+                <script>
+
+                stepa(2, 'Step 2: Expand the face and correct its shape')
+                </script><br>
+                <script>
+
+                stepa(3,'Step 3: Put in the nose-eyes figure in such a way as to make the cheeks and forehead the right shape.')
+                </script><br>
+                <script>
+
+                stepa(4,'Step 4: Correct the eyes and nose to make thee shapes and proportion (of cheeks, cheekbones, and forehead)  have the right shape exactly to convey the character of the face.') 
+                </script><br>
+                <script>
+
+                stepa(5,'Step 5: Draw the mouth, so that the chin has the right size, shape, and position, and correct the mouth to be the right shape, exactly.')
+                </script><br>
+                <script>
+
+                stepa(6,'Step 6: Draw the ringlets of hair, in a better color now, to surround the face and complement it in the right way.')
+                </script><br>
+                <script>
+
+                stepa(7,'Step 7: Reconstruct the expression of the eyes -- eyelids, eyebrows, and lower part of the eye.')
+                </script></h6>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="slideshow" style='position:relative'>
+    <div id='restartdiv' style="position:absolute;left:0;top:0width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tbody>
+                <tr>
+                  <td align="middle" bgcolor="#EEEEEE" height="30">
+                    <h3><a href="javascript:restartShow()"><span style="color:000000">Watch the film again.</span></a></h3>
+                  </td>
+                </tr>
+                <tr align="middle">
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <script language="JavaScript">
+      //ROTATE PIX
+        setupSlides(0,"matisse1.jpg",1,"matisse2.jpg",2,"matisse3.jpg",3,"matisse4.jpg",4,"matisse5.jpg",5,"matisse6.jpg",0,"matisse7.jpg",0,"matisse8.jpg",1,"matisse9.jpg",2,"matisse10.jpg",3,"matisse11.jpg",4,"matisse12.jpg",5,"matisse13.jpg",0,"matisse14.jpg",0,"matisse15.jpg",0,"cloakfake.jpg",0,"cloakfake.jpg",0,"cloakfake.jpg",0,"femme2.jpg",0,"femme2.jpg",0,"femme2.jpg",0,"femme2.jpg")
+        timePerSlide = 2000;
+        callWhenSlideshowDone = function () {document.all.showdiv.style.visibility='hidden';
+          document.all.restartdiv.style.visibility='visible';}
+        function restartShow() 
+            { document.all.restartdiv.style.visibility='hidden';
+              document.all.showdiv.style.visibility='visible';
+               startRotate();}
+      </script>
+      <table align="center" bgcolor="#EEEEEE" width="250" border="1">
+        <tr>
+          <td bgcolor="#EEEEEE" valign="top" align="left" width="80%" border="1">
+            <h3><b><span style="color:000000">MATISSE'S HAND AND BRUSH WHILE PAINTING</span></b></h3>
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor="#66CCDD" align="center"><span style="color:white;background-color:66ccdd;font-size:16px;"><i>With the help of such a sequence , anyone may be able to paint a person's face</i></span></td>
+        </tr>
+        <tr height="100">
+          <td align="center">
+            <img src="matisse1.jpg" height="320" name="adBanner" alt="You can do this" id="adBanner"><br>
+            <h4><font color="#CCCCCC"><i></i></font></h4>
+          </td>
+        </tr>
+      </table>
+      <div id="loadingmsg" style="position:relative visibility:visible" align="center">
+        <ilayer id="loadingmsglayer" visibility="show">A slideshow is loading.</ilayer>
+      </div>
+      <script>
+      preloadImages();
+      </script>
+    </div>
+  </div>
+  <p></p>
+</body>
+</html>

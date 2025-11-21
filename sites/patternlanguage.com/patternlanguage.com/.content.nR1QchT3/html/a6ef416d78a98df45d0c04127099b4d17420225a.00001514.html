@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TEACHERS</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <style type="text/css">
+  .h1class {
+  font-size: 40px; font-family: "Times Roman", "Times", "Times New Roman"; 
+  font-weight: normal; line-space: 56px; 
+  }
+  .h5class {
+  FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+  FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman"; 
+  line-space:22px;
+  }
+  .h2class {
+  FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Arial";
+  }
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#DDDDFF" vlink="#DDDDFF">
+  <table width="750">
+    <tr>
+      <td align="left" width="550"><span class="h1class">Start a Study Group for<br>
+      Group Purchase of Books</span></td>
+      <td width="300"><span class="h4class"><font color="red"></font><br>
+      <font color="red"></font></span></td>
+    </tr>
+  </table><br>
+  <table>
+    <tr>
+      <td>
+        <span class="h3class">Instructions for making a new web page that will allow the members of your study group or class to buy their books cheaply</span>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td height="10">
+        <span class="h3class"></span>
+        <p><span class="h3class">Please enter the following information:</span></p>
+        <p>
+        <script langauge="javascript">
+
+
+        var submitted = false;
+        function suppressDuplicateSubmission()
+        { if (submitted)
+         { alert("Only the first click of the submit button is processed. Please wait for acknowledgment of your submission.");
+           return false;
+         }
+        else
+          { submitted = true;
+            return true;
+          }
+        }
+        </script></p>
+        <form name="natureoforder" action="/cgi-bin/patternl/order_fg.py" method="post" onsubmit="return suppressDuplicateSubmission();" id="natureoforder">
+          <input type='hidden' name='finish_template' value='createpage.htm'><span class="h3class"></span><input type='hidden' name='country_code' value='us'>
+          <table>
+            <tr>
+              <td width="40%"><span class="h3class">Name of Group</span></td>
+              <td><input type="text" name="order_group" size="20" maxlength="15" value=''></td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td colspan="3">(Limit of 15 characters, must be unique. Do not use spaces. Hint: try school name and class number; for example "oregon201")</td>
+            </tr>
+            <tr>
+              <td colspan="3">Contact person who will receive the shipment and distribute the books</td>
+            </tr>
+            <tr>
+              <td align="left">First Name:</td>
+              <td align="left" colspan="1"><input type="text" name="fname" size="41" maxlength="19" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td align="left">Last Name:</td>
+              <td align="left" colspan="1"><input type="text" name="lname" size="41" maxlength="20" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td colspan="3">Address the books should be shipped to</td>
+            </tr>
+            <tr>
+              <td align="left">Address line 1:</td>
+              <td align="left" colspan="1"><input type="text" name="address_street" size="41" maxlength="40" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td align="left">Address line 2:</td>
+              <td align="left" colspan="1"><input type="text" name="address_line2" size="41" maxlength="40" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td colspan="3" style='color:#ff0000'>NOTE: Orders cannot be shipped to Post Office Boxes</td>
+            </tr>
+            <tr>
+              <td align="left">City:</td>
+              <td align="left"><input type="text" name="address_city" size="16" maxlength="25" value="">&nbsp;&nbsp;&nbsp;State:&nbsp;<input type="text" name="address_state" size="6" maxlength="2" value=""></td>
+              <td align="left"><b><br></b></td>
+            </tr>
+            <tr>
+              <td align="left">Country: United States</td>
+              <td>Zip Code: <input type="text" name="address_zip" size="10" maxlength="12" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td colspan="3">To arrange a foreign order, please</td>
+            </tr>
+            <tr>
+              <td colspan="3">Book or Books you want to order. Each student order will include all of the books that you select below.</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <table>
+                  <tr>
+                    <td width="10%" align="center"><input type="checkbox" name="book1"></td>
+                    <td width="30%">Book 1</td>
+                    <td>The Phenomenon of Life</td>
+                  </tr>
+                  <tr>
+                    <td width="10%" align="center"><input type="checkbox" name="book2"></td>
+                    <td width="30%">Book 2</td>
+                    <td>The Process of Creating Life</td>
+                  </tr>
+                  <tr>
+                    <td width="10%" align="center"><input type="checkbox" name="book3"></td>
+                    <td width="30%">Book 3</td>
+                    <td>A Vision of a Living World</td>
+                  </tr>
+                  <tr>
+                    <td width="10%" align="center"><input type="checkbox" name="book4"></td>
+                    <td width="30%">Book 4</td>
+                    <td>The Luminous Ground</td>
+                  </tr>
+                </table>
+              </td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td>School or organization</td>
+              <td><input type="text" name="school" size="41" value=''></td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td>Name of teacher or organizing student</td>
+              <td><input type="text" name="teacher" size="41" value=''></td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td>Email address</td>
+              <td align="left" colspan="1"><input type="text" name="email" size="41" maxlength="50" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td>Please retype the email address to confirm it</td>
+              <td align="left" colspan="1"><input type="text" name="email_confirm" size="41" maxlength="50" value=""></td>
+              <td align="left"><b></b></td>
+            </tr>
+            <tr>
+              <td>Telephone number</td>
+              <td><input type="text" name="phone" size="41" value=''></td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td>Hoped for number of students</td>
+              <td><input type="text" name="expected_group_size" size="8" maxlength="4" value=''></td>
+              <td><b></b></td>
+            </tr>
+            <tr>
+              <td>Target date for shipment to close</td>
+              <td><select name="closing_month">
+                <option value="--">
+                  month
+                </option>
+                <option value="01">
+                  Jan
+                </option>
+                <option value="02">
+                  Feb
+                </option>
+                <option value="03">
+                  Mar
+                </option>
+                <option value="04">
+                  Apr
+                </option>
+                <option value="05">
+                  May
+                </option>
+                <option value="06">
+                  Jun
+                </option>
+                <option value="07">
+                  Jul
+                </option>
+                <option value="08">
+                  Aug
+                </option>
+                <option value="09">
+                  Sep
+                </option>
+                <option value="10">
+                  Oct
+                </option>
+                <option value="11">
+                  Nov
+                </option>
+                <option value="12">
+                  Dec
+                </option>
+              </select> <select name="closing_day">
+                <option value="--">
+                  day
+                </option>
+                <option value="01">
+                  1
+                </option>
+                <option value="02">
+                  2
+                </option>
+                <option value="03">
+                  3
+                </option>
+                <option value="04">
+                  4
+                </option>
+                <option value="05">
+                  5
+                </option>
+                <option value="06">
+                  6
+                </option>
+                <option value="07">
+                  7
+                </option>
+                <option value="08">
+                  8
+                </option>
+                <option value="09">
+                  9
+                </option>
+                <option value="10">
+                  10
+                </option>
+                <option value="11">
+                  11
+                </option>
+                <option value="12">
+                  12
+                </option>
+                <option value="13">
+                  13
+                </option>
+                <option value="14">
+                  14
+                </option>
+                <option value="15">
+                  15
+                </option>
+                <option value="16">
+                  16
+                </option>
+                <option value="17">
+                  17
+                </option>
+                <option value="18">
+                  18
+                </option>
+                <option value="19">
+                  19
+                </option>
+                <option value="20">
+                  20
+                </option>
+                <option value="21">
+                  21
+                </option>
+                <option value="22">
+                  22
+                </option>
+                <option value="23">
+                  23
+                </option>
+                <option value="24">
+                  24
+                </option>
+                <option value="25">
+                  25
+                </option>
+                <option value="26">
+                  26
+                </option>
+                <option value="27">
+                  27
+                </option>
+                <option value="28">
+                  28
+                </option>
+                <option value="29">
+                  29
+                </option>
+                <option value="30">
+                  30
+                </option>
+                <option value="31">
+                  31
+                </option>
+              </select></td>
+              <td align="left"><b><br></b></td>
+            </tr>
+            <tr>
+              <td><input name='create_class_master_order' type="submit" value="Create your Webpage"></td>
+              <td></td>
+            </tr>
+          </table>
+          <p></p>
+          <p><span class="h4class">Here's the way it works. Once you submit the information given above, to register your group, your group receives its own webpage and order form. Each individual then visits the website, and pays for his or her own copy. When the target date is reached, the books are shipped, with additional savings in group shipment.</span></p>
+          <p><span class="h4class">The price is reduced for each student who joins, so the more students are in the group, the lower the overall price. Initial discounted price will start at $60, and may go as low as $54, depending on number of students. Shipping costs and state tax (if applicable) are additional, and will be figured in the price.</span></p>
+          <p><span class="h4class">The students vsiit the web page, once it is running, and each student pays with his/her own credit card. The final price charged is the price shown at the hour when the shipment closes.</span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+        </form>
+      </td>
+    </tr>
+  </table><span class="h2class"><br>
+  Contact:<span class="h2class"><b>CES Publishing</b></span><br>
+  <span class="h2class"></span><br>
+  <span class="h2class">2701 Shasta Road, Berkeley, CA 94708<br>
+  Phone (510) 841-6166 Fax: (510) 841-8668<br>
+  <br></span></span>
+</body>
+</html>

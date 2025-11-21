@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Making a basemap for your project</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+
+
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+
+  .h31class {
+        FONT-WEIGHT: normal; FONT-SIZE: 26px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h414class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 15px; FONT-FAMILY: "Arial"; COLOR: GREEN;
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h69class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69medclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69bigwhiteclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: WHITE;
+  }
+
+  .h69biggrayclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: 222222;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+
+  .caption {
+        FONT-WEIGHT: normal; FONT-STYLE: italic; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: black; text-decoration: none;  }
+
+  #liffey {
+                position: absolute;
+                top:   25 px;
+                left:  75 px;
+  z-index: -5;
+  height  : 400 px;
+  visibility: "visible";
+        }
+
+  #top {
+                position: absolute;
+                top:   0 px;
+                left:  75 px;
+  height  : 200 px;
+        }
+
+  #mainmenu {
+                position: absolute;
+                top:   300 px;
+                left:  45 px;
+  height  : 600 px;
+
+        }
+
+  #virginia {
+                position: absolute;
+                top:   442px;
+                left:  193px;
+  z-index: 5; 
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+  #dartington {
+                position: absolute;
+                top:   442 px;
+                left:  193 px;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #shorashim {
+                position: absolute;
+                top:   642 px;
+                left:  193 px;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+
+
+
+
+  #urbanmenu {
+                position: absolute;
+                top:   0px;
+                left:  200px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #baptistery {
+                position: absolute;
+                top:   160px;
+                left:  180px;
+  height  : 160px;
+  visibility: hidden; 
+        }
+
+
+
+  #nicksplace {
+                position: absolute;
+                top:   792px;
+                left:  193px;
+  height  : 160px;
+  visibility: hidden; 
+
+
+  </style>
+</head>
+<body text="#000000" vlink="#0000FF" link="#0000FF" bgcolor="#FFFFFF">
+  <table width="650" align="center">
+    <tr>
+      <td align="center"><span class="h4class" style="font-family:Times"><span style="FONT-SIZE:140%">A F</span>ragment of the <span style="FONT-SIZE:140%">G</span>enerative <span style="FONT-SIZE:140%">C</span>ode for <span style="FONT-SIZE:140%">N</span>eighborhoods</span></td>
+    </tr>
+    <tr>
+      <td width="650" align="center">
+        <center>
+          <img src="pics/mapmaking/liffey-words.jpg" width="650px" name="liffey1" alt="a hand-drawn site plan" border="0" id="liffey1">
+        </center>
+      </td>
+    </tr>
+  </table>
+  <table width="500" align="center" border="1">
+    <tr>
+      <td align="left" width="140" valign="top">
+        <center>
+          <form method="link" action="../drawing-pad/drawingpad.htm">
+            <input type="submit" value="GO TO DRAWING PAD" style="font-size:13px;font-family:serif;font-weight:bold;background-color:#ffff66;border-color:#cccccc;color:#000000;height:29px;width:140px;"><br>
+          </form>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('virginia1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('virginia1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/mapmaking/virginia-siteplan.jpg" width="130"><br>
+        <span class="h6class" style="color:blue;">Example 1: A hand-drawn base map</span></span></a><br>
+        <table width="140" height="500" align="left" border="1">
+          <tr>
+            <td>
+              <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('dartington1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('dartington1');"><span onmouseover="changeClass(this,'start')" class="bigchange"><img src="pics/mapmaking/dartington.jpg" width="130"><br>
+              <span class="h6class" style="color:blue;">Example 2: A base map downloaded from the web</span></span></a><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('shorashim1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('shorashim1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/mapmaking/shorashim.jpg" width="130"><br>
+              <span class="h6class" style="color:blue;">Example 3: A base map made by a surveyor</span></span></a><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('nick1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('nick1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/mapmaking/nicksplacemed.jpg" width="130"><br>
+              <span class="h6class" style="color:blue;">Example 4: A more elaborate base map made by one of our clients</span></span></a><br>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td width="360" valign="top">
+        <span class="h404class">WHY YOU NEED A BASE MAP</span>
+        <p><span class="h404class"><span class="h4class" style="background-color:white">In order to achieve a successful unfolding of your neighborhood design, you will in due course need to make a sequence of drawings, each defining one aspect of the whole, as it unfolds. These drawings will need to be made on a semi-accurate base map that is roughly to scale. To get such a map, you can draw it yourself, or get it off the web, or have someone make it for you. You may get such a map (1) by sketching a rough freehand map by yourself, (2) downloading or copying an aerial photo or a map of the area from the internet, or (3) having the land surveyed professionally. You can also use these different approaches in combination.</span></span></p>
+        <p><span class="h404class">If you have no other way to do it, at the very least make a rough pencil sketch of the land on an ordinary sheet of paper, take it to Kinkos or any other place with a scanner, and have them make a jpg of it. Then you can use the physical sketch as an underlay of your work, and use the jpg in your computer.</span></p>
+        <p><span class="h404class"><br>
+        <span class="h404class">WHAT NEEDS TO BE ON THE DRAWING<br></span></span></p>
+        <p><span class="h404class"><span class="h4class">Here are the things you need on your drawing.</span></span></p>
+        <ul>
+          <li><span class="h404class">The drawing should be made at 1:200 scale, or 1/16th inch to a foot.</span></li>
+          <li><span class="h404class">On an A4 sheet, at this scale you will have room for a piece of land about 200 feet long and 150 feet wide. If your land is bigger, draw it at a smaller scale.</span></li>
+          <li><span class="h404class">You must put a scale on the drawing, so you always know how big the things are, that you are drawing.</span></li>
+          <li><span class="h404class">It should include buildings, and physically built features on the site.</span></li>
+          <li><span class="h404class">It should include major trees with trunk position, including the approximate size and position of the crown.</span></li>
+          <li><span class="h404class">It should include existing paths and driveways.</span></li>
+          <p><span class="h404class">EXAMPLE (1) SKETCHING IT YOURSELF<br></span></p>
+          <p><span class="h404class"><span class="h4class">If you look at the frist example Here are the things you need.</span></span></p>
+          <li><span class="h404class">The drawing should be made at 1:200 scale, or 1/16th inch to a foot.</span></li>
+          <li><span class="h404class">It should include buildings, and physically built features on the site.</span></li>
+          <li><span class="h404class">It should include major trees with trunk position, including the approximate size and position of the crown.</span></li>
+          <li><span class="h404class">It should include existing paths and driveways.</span></li>
+          <p><span class="h404class">EXAMPLE (2) DOWNLOADING OR COPYING AN AERIAL PHOTO OR A MAP FROM THE INTERNET<br></span></p>
+          <p><span class="h404class"><span class="h4class">Here are the things you need.</span></span></p>
+          <li><span class="h404class">The drawing should be made at 1:200 scale, or 1/16th inch to a foot.</span></li>
+          <li><span class="h404class">It should include buildings, and physically built features on the site.</span></li>
+          <li><span class="h404class">It should include major trees with trunk position, including the approximate size and position of the crown.</span></li>
+          <li><span class="h404class">It should include existing paths and driveways.</span></li>
+          <p><span class="h404class">EXAMPLE (3) HAVING A SURVEYOR DO IT</span><br></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class">It is not always easy to get this kind of map from a surveyor, since the items which should be present are very specific, and not typical. Here are the things you need to ask for.</span></p>
+          <li><span class="h4class">The drawing should be made at 1:200 scale, or 1/16th inch to a foot.</span></li>
+          <li><span class="h4class">It should include buildings, huts, and physical built features on the site.</span></li>
+          <li><span class="h4class">It should include all trees with trunk position and tree type, including the approximate size and position of the crown.</span></li>
+          <li><span class="h4class">It should include all existing paths and driveways.</span></li>
+          <li><span class="h4class">Contours should be shown at 2 foot intervals, and steps and ramps should be shown.</span></li>
+          <p><span class="h4class">Some of these items may be charged at what seems to you an unnecessary amount, so before starting you should negotiate the total price of the survey and make it reasonable in price while giving you the essentials. An "essential" is any feature which is likely to play a physical role in the layout you make, and must be known in regard to size and position. You can save money by simply missing out the minor features which are unlikely to enter in to your design.</span></p>
+          <p><span class="h4class">A FEW IMPORTANT DETAILS</span></p>
+          <li><span class="h4class">Ask for the drawing to be provided as a computer file.</span></li>
+          <li><span class="h4class">Ask for one version to include the contours and another without the contours.</span></li>
+          <li><span class="h4class">Ask for one print at full size 1:200.</span></li>
+          <li><span class="h4class">Ask for another file which allows you to print the whole thing out on an A4 or American 8.5 x 11 sheet, with a graphic scale. A small, accurately scaled sheet like this is invaluable for drawing the result of a diagnosis, of a possible arrangement of house positions, or later more refined steps of unfolding.</span></li>
+          <p></p>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3">
+        <hr height="10" color="#005511">
+      </td>
+    </tr>
+  </table>
+  <table align="center" width="500" border="1">
+    <tr>
+      <td align="left" width="200">
+        <a href="javascript:history.go(-1)"><span class="h5class" style='font-weight:normal; color:green'>Back</span></a>
+        <p></p>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3">
+        <hr height="10" color="#005511">
+      </td>
+    </tr>
+  </table>
+  <div id="dartington"><img src="pics/mapmaking/dartington.jpg" width="400px" name="dartington1" alt="a hand-drawn site plan" border="0" id="dartington1"></div>
+  <div id="shorashim"><img src="pics/mapmaking/shorashim.jpg" width="400px" name="shorashim1" alt="a hand-drawn site plan" border="0" id="shorashim1"></div>
+  <div id="virginia"><img src="pics/mapmaking/virginia-siteplan.jpg" width="400px" name="virginia1" alt="example of a hand-drawn site plan" border="0" id="virginia1"></div>
+  <div id="nicksplace" z-index="10"><img src="pics/mapmaking/nicksplacemed.jpg" width="400px" name="nick1" alt="example of a hand-drawn site plan" border="0" id="nick1"></div>
+</body>
+</html>

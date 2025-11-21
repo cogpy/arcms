@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STROOD UNFOLDING</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"; }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"; }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; margin-bottom: 0;      }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+  .h68class {
+       FONT-WEIGHT: bold; FONT-SIZE: 10px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+    }
+
+    .clickon:link {
+        color:#0000ff; background-color:#ffffff;
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#0000ff; background-color:#ffffff;
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#0000ff; background-color:#ffffff;
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal; font-size:14px;}
+    .highlighted {background-color:#EEEEEE; color:#000000; font-weight:bold; font-size:14px;}
+    .unhighlightedSlideMarker {visibility:hidden}
+    .highlightedSlideMarker {visibility:visible}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+    #steps {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+  <!-- background-color:#66ccdd;  FONT-style: italic; 
+    FONT-SIZE: 12px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        COLOR: RED; -->
+        visibility: hidden;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    460px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+    FONT-style: italic; 
+    FONT-SIZE: 16px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+    showWhenReady('steps'); // We hide the steps until images are loaded
+                                     // so user sees whole show
+                                     //  This call tells how to make them visible
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(445,299);
+        // slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+        slideImageAttributeString = 'width=445 name="adBanner"';
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        setScrollDiv('stepscrolldiv');  // The name of the div holding the step list that will be scrolled
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");  // for displaying a marker such as a blue triangle
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">THERE ARE 34 STEPS IN THE UNFOLDING. WATCH THESE STEPS AND STUDY THE UNFOLDING</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i>To control the playback yourself,</i> <b><span style="color:blue">very slowly mouse-over the list of steps below to view the unfolding at your own pace.</span></b></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span> <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;height:270;overflow-y:scroll'>
+                  <span style='font-size:80%;line-height:1.2;'></span>
+                  <ul>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:strood-river-photo2.jpg','<b>Setup info: a photograph of the Strood waterfront looking towards the river Medway</b>','caption-manual:Looking across the river.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-1-aerial.jpg','<b>Setup info: an aerial photograph of the site itself, outlined in red</b><br>','caption-manual:The river is at the bottom of the picture. South is down.');
+                    </script><br></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>&nbsp;&nbsp;&nbsp;<b>The code itself follows:</b></span></li>
+                  </ul><span style='font-size:80%;line-height:1.2;'></span>
+                  <ol>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-2-siteboundary.jpg','First, set the boundary of the site','caption-manual:A first drawing establishing the boundary of the site.');
+                    </script><br></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-3-fixedpoints.jpg','Locate key fixed points of the community','caption-manual:The train station is at the top, the pier pushes out into the water, and the tavern is to the right of the pier: a good pub with an outdoor terrace looking over the water.');
+                    </script><br></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-4-preciousplaces.jpg','Identify <!-- the most  -->precious spots and views','caption-manual:These are identified by walking around, seeing them, and noting them carefully on a map as one goes around. Arrows represent especially beautiful views.');
+                    </script><br></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-5-pedestrianpromenade.jpg','Identify the most important walking center','caption-manual:The waterfront and shoreline give the most obvious and natural walking center<!--  place to walk -->, a place to walk up and down with a beautiful view across the river.');
+                    </script><br></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-6-businesses.jpg','Protect <!--Find all the --> flourishing small businesses which can begin the growth of real community','caption-manual:These businesses must NOT be bulldozed on the grounds that they are ugly or "not housing." On the contrary they are the sparks of genuine life in the community, and will start from the first day with a community of committed business people who are grateful that their businesses have been left intact.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-7-pedestrianareas.jpg','Identify (in broad terms) <!-- the --> areas that will work well as primary pedestrian areas','caption-manual:These areas need to leave the places for small business with good vehicle access; they also need to look ahead to the very bad public housing project (the green square on the left) so as to repair it and make it normal and consistent with the new construction. In the remaining places the pedestrian areas are the place where large numbers of houses can successfully be built.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-8-linkstoneighborhoods.jpg','Survey <!-- all the --> points of connection to <!-- the --> surrounding neighborhoods<!--  and town -->.','caption-manual:Along the upper right boundary, there are small connections to pedestrian paths leading between neighbors gardens to a street. At the top of the drawing there is a railway bridge leading to the main square of Strood. And on the left there is a major connection to the underpass of the railway bridge to Rochester.<!-- It is drawing to reflect that part which is most important.Once again sharpen these smallest ones, and make them more positive. -->');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-9-endofcycle.jpg','<!-- <span style=color:blue> --><!-- End of cycle.  -->Take stock and refine shapes.<!-- </span> -->','caption-manual:More or less the same as the previous step, but with certain features emphasized to make spaces more positive and more definite. Note, for example, that the blue area at the top (part of an existing square) is now better shaped as a result of more careful observation and measurement on the ground.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-10-roughmorphology.jpg','Get a feeling for the rough overall morphology of house layout.','caption-manual:The view to the water, and the desire to have the southern sunshine come into the spaces between houses, suggest an arrangement in which all houses are forming trumpet shaped positive space, all pointing towards the water.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-11-straighttrumpets.jpg','sketch a more realistic layout of positive space.','caption-manual:In anticipation of positive space needing to be formed between buildings, and providing lanes and paths, a possibility more nearly consistent with the linear shapes of buildings is checked out.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-12-viewtorochester.jpg','Establish  the best angle for the buildings along main view.','caption-manual:The view to the ancient castle of Rochester, across the water, establish most definitely the alignment of the spaces and buildings.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-13-firstbuildings.jpg','Place buildings to be consistent with the views.','caption-manual:The spaces are laid out so that every house has a view to the water, and access to southern sun.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-14-gardens.jpg','Place long public gardens between the houses as the main access to each house.','caption-manual:These gardens contain public gardens, pedestrian paths, and private terraces. They are not open to cars, except for emergency vehicles. ');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-15-crosspaths.jpg','Cut in cross paths (across the buildings) to make a network of looped paths.','caption-manual:These cross paths will cut through the long buildings, and connect to the paths from the neighborhood on the right. They go across towards the railway station.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-16-mainavenues.jpg','Shape and form the avenues in to define the main public spaces.','caption-manual:The long public gardens are planted with avenues of trees down the middle forming the public part of the space.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-17-refinemainavenues.jpg','Refine the diagram of paths.','caption-manual:The breaks between buildings needed to make cross paths have been established, and the paths no longer need to be so visible and diagrammatic.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-18-purple.jpg','Now start a diagnosis of the worst places on the site so they can be fixed.','caption-manual:The recently built but half-derelict public housing project (shown purple) is the worst place on the site. The people who live there are in very bad shape. Steps must be taken to help these families and their houses become part of the neighborhood as a whole.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-19-fixpublichousing.jpg','Have a good look to see what is wrong.','caption-manual:It is too enclosed, the cars fill the space, the homes do not invited any sense of personal ownership, the children have nowhere to go.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-20-modifiedpublichousing.jpg','Take the first steps to fix the problem.','caption-manual:Remove houses which obstruct the common space, make it green, and remove houses which keep it so enclosed that it feels like a jail. With these openings to connect it to the existing neighborhood outside the walls, the situation will be more friendly, and socially more positive.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:cum-21-modifiedpublichousing2.jpg','Complete the fix. ','caption-manual:This can be done by adding two rows of houses to the right, and green space between them, so that the public housing is genuinely incorporated into the new neighborhood which is being formed, and feels like part of it.');
+                    </script></span></li>
+                    <li>
+                      <span style='font-size:80%;line-height:1.2;'>
+                      <script>
+
+
+                      setup_step('image:cum-22-cycleends.jpg','Take a breather.','caption-manual:Note that even as late in the game as this, we still have made no provision for cars. we have only left a vaguely define series of patches around the edge, and potential lanes along the back of the houses. <b>Cars take a back seat</b>. This is necessary to allow successful unfolding.');
+                      </script></span>
+                      <p><span style='font-size:80%;line-height:1.2;'></span></p>
+                    </li>
+                  </ol><span style='font-size:80%;line-height:1.2;'></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table border="1">
+            <tr>
+              <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000">If you prefer, you may also make the computer run the playback of the unfolding automatically, by <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'><b><u>clicking this link</u></b></a>. You can then see the rhythmic step-by-step unfolding dynamically. <i>While the automatic is running, keep the cursor on the right hand side of the screen, or it will not run at all.</i>.</span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center"><span class="h2class"><font color="#222222"><b>CREATING THE LAYOUT OF THE STROOD RIVERSIDE NEIGHBORHOOD BY UNFOLDING</b><br>
+        <span class="h6class" style="color:red;font-weight:bold">Set screen to full view (F11) for maximum enjoyment.</span><br>
+        <span class="h68class">In order to get the maximum benefit from this demonstration, you must manipulate the two scroll bars so you can see the instruction on the left, and the full wording of the caption on the right. <b>In addition it is important to keep going back and forth from one step to the previous step a few times until you understand exactly what happened in that step.</b></span><br></font></span></td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+       putCaptionsHere('<center>A slideshow is loading.</center>','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

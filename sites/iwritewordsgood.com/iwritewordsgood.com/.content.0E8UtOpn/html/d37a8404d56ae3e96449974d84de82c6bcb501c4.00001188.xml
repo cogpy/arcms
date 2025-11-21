@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en-US"
+  xml:base="http://iwritewordsgood.com/wp-atom.php"
+   >
+	<title type="text">iwritewordsgood.com</title>
+	<subtitle type="text"></subtitle>
+
+	<updated>2009-12-26T21:03:20Z</updated>
+
+	<link rel="alternate" type="text/html" href="/" />
+	<id>http://iwritewordsgood.com/?feed=atom</id>
+	<link rel="self" type="application/atom+xml" href="/?feed=atom" />
+
+	<generator uri="https://wordpress.org/" version="4.6.14">WordPress</generator>
+	<entry>
+		<author>
+			<name>ahartman</name>
+					</author>
+		<title type="html"><![CDATA[The Word Made Flesh]]></title>
+		<link rel="alternate" type="text/html" href="/?p=1" />
+		<id>http://iwritewordsgood.com/?p=1</id>
+		<updated>2009-12-26T21:03:20Z</updated>
+		<published>2009-12-13T19:03:13Z</published>
+		<category scheme="http://iwritewordsgood.com" term="Uncategorized" />		<summary type="html"><![CDATA[[See post to watch Flash video] The body. Can the body disobey? This is the film I made for my thesis about a lot of things, but in particular, it speaks through art, music and poetry about how the body is interpreted, and hideously misinterpreted, by Western culture. 33 min.]]></summary>
+		<content type="html" xml:base="http://iwritewordsgood.com/?p=1"><![CDATA[<p><DIV ALIGN=CENTER><br />
+[See post to watch Flash video]</div>
+<blockquote><p>The body. Can the body disobey? This is the film I made for my thesis about a lot of things, but in particular, it speaks through art, music and poetry about how the body is interpreted, and hideously misinterpreted, by Western culture. 33 min. </p></blockquote>
+]]></content>
+			<link rel="replies" type="text/html" href="/?p=1#comments" thr:count="1"/>
+		<link rel="replies" type="application/atom+xml" href="/?feed=atom&#038;p=1" thr:count="1"/>
+		<thr:total>1</thr:total>
+		</entry>
+	</feed>

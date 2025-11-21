@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ENTRANCE SEQUENCE</title>
+  <style>
+
+  h1 {font-size: 12px; font-family: "Times Roman";
+
+  font-weight: bold}
+
+  h2 {font-size: 23px; font-family: "Times Roman";
+
+  font-weight: normal}
+
+  h3 {font-size: 18px; font-family: "Times Roman";
+
+  font-weight: bold}
+
+  h4 {font-size: 13px; font-family:"Times Roman";
+
+  font-weight: normal}
+
+  h6 {font-size: 18px; font-family: "Times Roman";
+
+  font-weight: normal}
+
+  p  {font-size: 13px; font-family: "Times Roman";
+
+  font-weight: normal}
+
+  .bigChange {color:blue; font-size:100%; background-color:yellow}
+  .start {color:CCcccc; background-color:9999FF; text-decoration:none}
+
+
+
+  </style>
+</head>
+<body bgcolor="#003300" text="#E3E5C9" link="paleblue" vlink="paleblue" onload="universalDocumentLoaded();">
+  <basefont size="5">
+  <table width="650" border="0" align="center">
+    <tr height="20">
+      <td width="650" bgcolor="#009999" align="center">
+        <h1><b><span style="color:ffffff;background-color:00ccff">STEP 1</span>&nbsp;&nbsp;&nbsp;<font color="#DDDDDD">HERE'S WHAT THE COMPUTER TELLS YOU</font></b></h1>
+      </td>
+    </tr>
+    <tr>
+      <td width="650" bgcolor="#000033">
+        <h6><font color="#EEEEEE">1.&nbsp; Try to imagine a single, bounded, almost room-like zone which extends from front door to street, and includes them both.</font></h6>
+      </td>
+    </tr>
+  </table>
+  <table align="center">
+    <tr>
+      <td width="650" bgcolor="#009999" align="center">
+        <h1><font color="#DDDDDD">HERE'S THE SITUATION AS IT PRESENTS ITSELF TO THE USER</font></h1>
+      </td>
+    </tr>
+    <tr>
+      <td width="650" bgcolor="#000033">
+        <h6><font color="#EEEEEE">As it stands, the entrance of this house is pretty ratty. The job for step 1 is -- above all -- to work out what might be a beautiful place between street and house.</font></h6>
+      </td>
+    </tr>
+  </table>
+  <p>
+  <script language="JavaScript" src="../universal/universal.js"></script> 
+  <script language="JavaScript">
+
+
+  setAppletURL();
+
+  forReplay = true;
+  replayWhenLoaded = false;
+  supplyCaptions = true;
+  setCallOnDocumentLoad(updateCaption);
+  resizeIfNecessary = false;
+  // replayOnly = "true";
+  </script></p>
+  <table width="650" align="center" bgcolor="#009999" border="0">
+    <tr>
+      <td width="650" align="center"></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <h1><font color="#DDDDDD">HERE IS WHAT THE USER ACTUALLY DOES</font></h1>
+      </td>
+    </tr>
+  </table>
+  <script language="JavaScript">
+
+
+  //==============================
+  // caption parameters to set
+  captionStart = "<h6>";
+  captionEnd = "";
+  // end of parameters to set
+  //==============================
+
+  captionApplet = "drawApplet1";
+  // captionApplet1 = "drawApplet1";
+  // captionApplet2 = "drawApplet2";
+  captionAreaName = "captionArea";
+  captionLayerName = "captionLayer";
+  showCaptionCaptions = true;
+
+
+
+
+  if (document.all)
+     captionArea= document.all[captionAreaName];
+  else if (document.layers)
+    // captionArea= document.layers[captionLayerName];
+    captionArea= document.captionILayer.document.captionLayer;
+  </script>
+  <table width="650" align="center" bgcolor="#000000" border="2">
+    <tr height="200">
+      <td width="150" bgcolor="#333366">
+        <table width="150" cellpadding="0" cellspacing="0" align="center" border="0">
+          <tr height="10">
+            <td bgcolor="#000033" align="center">
+              <form action="../business/business.htm">
+                <input type="button" value="GO" onclick="document.drawApplet1.requestReplay();document.drawApplet2.requestReplay();">
+              </form>
+            </td>
+          </tr>
+          <tr height="170">
+            <td>
+              <div id="captionArea">
+                <ilayer id="captionILayer"></ilayer>
+                <layer id="captionLayer" visibility="hide">
+                  <ilayer id="captionILayer"></ilayer>
+                  <p><ilayer id="captionILayer"></ilayer></p>
+                  <table width="150" cellpadding="0" cellspacing="0" align="center" border="0">
+                    <tr height="100">
+                      <td height="170" bgcolor="#000033" align="center">
+                        <h4>When the images to the right have loaded, please press the GO button.</h4>
+                      </td>
+                    </tr>
+                  </table>
+                </layer>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td width="350" align="center">
+        <table width="130" align="center" valign="middle">
+          <tr>
+            <td bgcolor="#333366">
+              <script language="JavaScript">
+
+              //      drawingWidth = 350; drawingHeight = 246;
+              SetDrawingSize(350,246);
+              inputFileName="photo1.gdraw"; replayDelay=15;
+              appletName = "drawApplet1";
+              drawapplet();
+              </script>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td width="130" align="center">
+        <table width="130" align="center" valign="middle">
+          <tr>
+            <td bgcolor="#333366">
+              <script language="JavaScript">
+
+              SetDrawingSize(130,148);
+              // drawingWidth = 130; drawingheight = 148;
+              inputFileName="plan1.gdraw"; replayDelay=15;
+              appletName = "drawApplet2";
+              drawapplet();
+              </script>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

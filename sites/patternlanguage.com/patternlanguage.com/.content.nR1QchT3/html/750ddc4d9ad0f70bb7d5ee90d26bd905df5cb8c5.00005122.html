@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PatternLanguage.com</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="height=device-height">
+  <link rel="stylesheet" type="text/css" href="/sequences/sequences.css" title="external">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=2">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=2">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=2">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=2">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=2">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=2">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=2">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=2">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png?v=2" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=2" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=2" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png?v=2" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#9f2214">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=2">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <script src='/universal/universal.js'></script>
+  <script type="text/javascript">
+
+  function doOnLoad()
+  { // alert('do on load');
+    var c = GetCookie('sequences_state');
+    if (!c)
+        c = '';
+    var h = c.split('_');
+    if (h.length == 5)
+      { // alert('setting...');
+        togVisible(h[1]);
+        togVisible2(h[2]);
+        togVisible3(h[3]);
+        togVisible4(h[4]);
+      }
+    else
+      { togVisible('one');
+      }
+           
+  }
+  function setSequencesState()
+  { //alert( "at_hi" + "_" + currVisibleId2 + "_" + currVisibleId3 + "_" + currVisibleId4);
+    if (currVisibleId || currVisibleId2 || currVisibleId3 || currVisibleId4)
+      { var c = "at_" + currVisibleId + "_" + currVisibleId2 + "_" + currVisibleId3 + "_" + currVisibleId4;
+        SetCookie('sequences_state',c);
+      }
+  }
+
+  var currVisibleId = ''; 
+  function togVisible(id) { if(currVisibleId) document.getElementById(currVisibleId).style.visibility="hidden"; document.getElementById(id).style.visibility="visible"; currVisibleId=id; setSequencesState();}
+
+  var currVisibleId2 = '';
+  function togVisible2(id)
+  { if (id == currVisibleId2)
+        return;
+    if(currVisibleId2)
+        document.getElementById(currVisibleId2).style.visibility="hidden";
+    document.getElementById(id).style.visibility="visible";
+    currVisibleId2=id;
+    togVisible3('');
+    togVisible4('');
+    setSequencesState();
+  }
+
+  var currVisibleId3 = '';
+  function togVisible3(id) { if(currVisibleId3) document.getElementById(currVisibleId3).style.visibility="hidden"; if (id) document.getElementById(id).style.visibility="visible"; currVisibleId3=id; setSequencesState();}
+
+  var currVisibleId4 = '';
+  function togVisible4(id) { if(currVisibleId4) document.getElementById(currVisibleId4).style.visibility="hidden"; if (id) document.getElementById(id).style.visibility="visible"; currVisibleId4=id; setSequencesState();}
+
+  </script>
+</head>
+<body onload="doOnLoad()">
+  <div id="header">
+    <div id="frameimage">
+      <a href="/"><img src="/img/apllogo2.jpg" height="48" alt="~o0o~"></a>
+    </div>
+    <div id="frametitle">
+      <a href="/sequences/sequences.html">Sequences</a>
+    </div>
+    <div id="frametree" class="h5class">
+      <a href="/">home page</a> &gt;&gt; this page
+    </div>
+  </div>
+  <div id="buttons">
+    <ul>
+      <li onmouseover="togVisible('one'),togVisible2('one1')">Urban Areas</li>
+      <li onmouseover="togVisible('two'),togVisible2('two1')">Wilderness and Nature</li>
+      <li onmouseover="togVisible('tre'),togVisible2('tre1')">Streets and Space</li>
+      <li onmouseover="togVisible('fou'),togVisible2('fou1')">Neighborhoods</li>
+      <li onmouseover="togVisible('fiv'),togVisible2('fiv1')">Public Buildings</li>
+      <li onmouseover="togVisible('six'),togVisible2('six1')">Houses &amp; Housing</li>
+      <li onmouseover="togVisible('sev'),togVisible2('sev1')">Rooms</li>
+      <li onmouseover="togVisible('eig'),togVisible2('eig1')">Offices &amp; Work</li>
+      <li onmouseover="togVisible('nin'),togVisible2('nin1')">Dynamic Construction</li>
+      <li onmouseover="togVisible('ten'),togVisible2('ten1')">Windows and Doors</li>
+      <li onmouseover="togVisible('ele'),togVisible2('ele1')">Details &amp; Ornaments</li>
+    </ul>
+    <ul style="line-height: 0.9; padding-top: 10px;">
+      <li onmouseover="togVisible4('fyx3')"><span style="font-size: 15px; line-height: 0.8;">Before you get started:<br>
+      Some Important Introductions</span></li>
+    </ul>
+  </div>
+  <div id="group0">
+    <div id="one"><img src="/img/givens-6a.jpg" alt="A view of the garden of the Widbey-Medlock house"></div>
+    <div id="two"><img src="/img/sibleyfromroundtop.jpg" alt="A view of Sibley National Park, Oakland, California"></div>
+    <div id="tre"><img src="/img/cafe2.jpg" alt="A small coffee shop with outdoor seating"></div>
+    <div id="fou"><img src="/img/oldmansitting.jpg" alt="A man enjoying his neighborhood"></div>
+    <div id="fiv"><img src="/img/stockholmtownhallext.jpg" alt="Stockholm town hall"></div>
+    <div id="six"><img src="/img/givens-4a.jpg" alt="A view of the Widbey-Medlock house"></div>
+    <div id="sev"><img src="/img/bawastair.jpg" alt="Bawa stair"></div>
+    <div id="eig"><img src="/img/work.jpg" alt="A pottery studio"></div>
+    <div id="nin"><img src="/img/19.jpg" alt="Construction in progress"></div>
+    <div id="ten"><img src="/img/giojawindows.jpg" alt="Windows from the Gioja house, Lake Travis, Texas"></div>
+    <div id="ele"><img src="/img/orn.jpg" alt="Tiles"></div>
+  </div>
+  <div id="group1">
+    <div id="one1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('one2'),togVisible4('one3')">Downtown areas</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('two2'),togVisible4('two3')">Neighborhood Regeneration</a>
+        </li>
+      </ul>
+    </div>
+    <div id="two1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('tre2'),togVisible4('tre3')">Making meadows</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fou2'),togVisible4('fou3')">Interweaving nature, water, city</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fiv2'),togVisible4('fiv3')">The Water's Edge</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('six2'),togVisible4('six3')">Creating the Wild</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tre1">
+      <ul style="line-height: 1;">
+        <li>
+          <a href="#" onmouseover="togVisible3('sev2'),togVisible4('sev3')">St Marks Square: Formation of a great public square</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('eig2'),togVisible4('eig3')">Pedestrian Network</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('nin2'),togVisible4('nin3')">Yellow-green-gray-red</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ten2'),togVisible4('ten3')">Shaping urban space</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ele2'),togVisible4('ele3')">Pedestrian street</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('twe2'),togVisible4('twe3')">Bridges</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('thi2'),togVisible4('thi3')">Shape of a street</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fou1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('fon2'),togVisible4('fon3')">High density Indian housing and community</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('sin2'),togVisible4('sin3')">Growing a community</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('sen2'),togVisible4('sen3')">Neighborhood green</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ein2'),togVisible4('ein3')">Local shops and coffee</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fiv1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('nit2'),togVisible4('nit3')">Sketching an outline of a major public building</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('twy2'),togVisible4('twy3')">Homeless Shelter</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ton2'),togVisible4('ton3')">College Campus</a>
+        </li>
+      </ul>
+    </div>
+    <div id="six1">
+      <ul style="line-height: 1.2; font-size: 15px;">
+        <li>
+          <a href="#" onmouseover="togVisible3('ttw2'),togVisible4('ttw3')">100 Houses and Gardens</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ttr2'),togVisible4('ttr3')">House Group</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tfo2'),togVisible4('tfo3')">Placing a house volume on a piece of land</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tfi2'),togVisible4('tfi3')">Small house</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tsi2'),togVisible4('tsi3')">Family house</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tse2'),togVisible4('tse3')">Streets of Cottages</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tei2'),togVisible4('tei3')">Ultra low-cost housing</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tni2'),togVisible4('tni3')">2-3 story apartments</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('thy2'),togVisible4('thy3')">4-5 story apartments</a>
+        </li>
+      </ul>
+    </div>
+    <div id="sev1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyo2'),togVisible4('tyo3')">Kitchen</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyt2'),togVisible4('tyt3')">Kitchen Cost Game</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyr2'),togVisible4('tyr3')">Entrance Transition</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyf2'),togVisible4('tyf3')">Entrance room</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyv2'),togVisible4('tyv3')">Bedroom</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tys2'),togVisible4('tys3')">Generic room-making sequence</a>
+        </li>
+      </ul>
+    </div>
+    <div id="eig1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyn2'),togVisible4('tyn3')">Offices and Office Layout</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('tye2'),togVisible4('tye3')">Human Organizations</a>
+        </li>
+      </ul>
+    </div>
+    <div id="nin1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('tyi2'),togVisible4('tyi3')">Cost optimizing process</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('ffy2'),togVisible4('ffy3')">Pre-geometry</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyo2'),togVisible4('fyo3')">Dynamic construction process</a>
+        </li>
+      </ul>
+    </div>
+    <div id="ten1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyt2'),togVisible4('fyt3')">Placing windows</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyr2'),togVisible4('fyr3')">Window pane design</a>
+        </li>
+      </ul>
+    </div>
+    <div id="ele1">
+      <ul>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyf2'),togVisible4('fyf3')">Gates and Gateways</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyv2'),togVisible4('fyv3')">Fireplace</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fys2'),togVisible4('fys3')">Floors</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fyn2'),togVisible4('fyn3')">Making ornament</a>
+        </li>
+        <li>
+          <a href="#" onmouseover="togVisible3('fye2'),togVisible4('fye3')">Matisse Painting</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="group4">
+    <div id="one2"><img src="/img/aerial.jpg" alt="An aerial view of downtown Seoul, Korea"></div>
+    <div id="two2"><img src="/img/baptisteryflorence.jpg" alt="Exterior of the Baptistery, Florence"></div>
+    <div id="tre2"><img src="/img/mcclung3.jpg" alt="Making a meadow"></div>
+    <div id="fou2"><img src="/img/iceland2.jpg" alt="A harbour in Iceland"></div>
+    <div id="fiv2"><img src="/img/bridge-boat.jpg" alt="Pier and boat"></div>
+    <div id="six2"><img src="/img/polar2.jpg" alt="Polar bear"></div>
+    <div id="sev2"><img src="/img/stmarks.jpg" alt="St Mark's cathedral, Venice"></div>
+    <div id="eig2"><img src="/img/turkmini5.jpg" alt="Detail from Turkish miniature"></div>
+    <div id="nin2"><img src="/img/yggr.jpg" alt="Yellow-green-gray-red"></div>
+    <div id="ten2"><img src="/img/southconc.jpg" alt="Model of proposed museum interior"></div>
+    <div id="ele2"><img src="/img/market2.jpg" alt="A covered market"></div>
+    <div id="twe2"><img src="/img/bridge.jpg" alt="Proposed design for the San Francisco Bay Bridge"></div>
+    <div id="thi2"><img src="/img/eishinpedestrianstreet.jpg" alt="A pedestrian street from the Eishin campus"></div>
+    <div id="fon2"><img src="/img/mansitting2.jpg" alt="Man sitting"></div>
+    <div id="sin2"><img src="/img/turkmini5.jpg" alt="Detail from Turkish miniature"></div>
+    <div id="sen2"><img src="/img/howard.jpg" alt="The green outside of the visitor's center, West Dean, England"></div>
+    <div id="ein2"><img src="/img/codys1.jpg" alt="Telegraph Avenue, Berkeley"></div>
+    <div id="nit2"><img src="/img/cathedral.jpg" alt="Chichester cathedral"></div>
+    <div id="twy2"><img src="/img/julian.jpg" alt="Exterior of the homeless shelter, San Jose, California"></div>
+    <div id="ton2"><img src="/img/students.jpg" alt="Students on the roof at Eishin"></div>
+    <div id="ttw2"><img src="/img/housesandlots.jpg" alt="A layout of a neighborhood"></div>
+    <div id="ttr2"><img src="/img/norwegian.jpg" alt="A Norwegian village"></div>
+    <div id="tfo2"><img src="/img/meadow2.jpg" alt="Surveying the land"></div>
+    <div id="tfi2"><img src="/img/exterior-3.jpg" alt="The Martinez house"></div>
+    <div id="tsi2"><img src="/img/poppy.jpg" alt="Exterior of the Upham house"></div>
+    <div id="tse2"><img src="/img/shr4.jpg" alt="Drawing of a narrow lane between houses"></div>
+    <div id="tei2"><img src="/img/colombia2.jpg" alt="Working on the Colombia project"></div>
+    <div id="tni2"><img src="/img/agate.jpg" alt="Agate housing"></div>
+    <div id="thy2"><img src="/img/emoto2.jpg" alt="An apartment building in Emoto, Japan"></div>
+    <div id="tyo2"><img src="/img/kitchen.jpg" alt="Kitchen"></div>
+    <div id="tyt2"><img src="/img/kitchen2.jpg" alt="Kitchen"></div>
+    <div id="tyr2"><img src="/img/entrance3.jpg" alt="Entranceway"></div>
+    <div id="tyf2"><img src="/img/poppyhall.jpg" alt="Entrance hall"></div>
+    <div id="tyv2"><img src="/img/whidbeybedrm.jpg" alt="Whidbey bedroom"></div>
+    <div id="tys2"><img src="/img/apl223photo.jpg" alt="Living room with windows"></div>
+    <div id="tyn2"><img src="/img/plantin-bookshop.jpg" alt="An office with built-in bookshelves"></div>
+    <div id="tye2"><img src="/img/charli.jpg" alt="An outdoor meeting"></div>
+    <div id="tyi2"><img src="/img/dollar.gif" alt="&#36;"></div>
+    <div id="ffy2"><img src="/img/linzgrid.gif" alt="Grid of the Linz cafe"></div>
+    <div id="fyo2"><img src="/img/kyri6.jpg" alt="Kyriakos working"></div>
+    <div id="fyt2"><img src="/img/poppylr.jpg" alt="Entrance way"></div>
+    <div id="fyr2"><img src="/img/greenoff2.jpg" alt="An office"></div>
+    <div id="fyf2"><img src="/img/redgate.jpg" alt="Red gate"></div>
+    <div id="fyv2"><img src="/img/poppyfireplace.jpg" alt="Completed fireplace"></div>
+    <div id="fys2"><img src="/img/salafloor2.jpg" alt="Floor of the Sala house"></div>
+    <div id="fyn2"><img src="/img/college.jpg" alt="View of the visitor's center at West Dean, England"></div>
+    <div id="fye2"><img src="/img/femme2.jpg" alt="Matisse drawing of a woman"></div>
+  </div>
+  <div id="group5">
+    <div id="one3">
+      <h1>Downtown</h1>
+      <h2>Introduction</h2>
+      <p>We aim at a city vibrant with life&mdash;a city which, above all, belongs to us. It belongs to the people who are walking and driving there. We feel our ownership, and because we feel our ownership, all the human beings are able to participate, enjoy, live life.</p>
+      <p>One of the ways in which we do this is focus on the interactions of pedestrians and cars. In the ideal interaction, cars are vibrant, pedestrians are vibrant, the two zones are separate, but touch everywhere. There are at least five ways this can happen, which you will see in the following sequence.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/downtown-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Papers</h2>
+      <ul>
+        <li>
+          <a href="/downtown/whitepaper2.htm">Rebuilding Thessaloniki</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="two3"><img src="/img/oldmansitting.jpg" alt="A man enjoying his neighborhood"></div>
+    <div id="tre3">
+      <h1>Making Meadows</h1>
+      <h2>Introduction</h2>
+      <p>The urban fringe is a huge area of major importance in modern cities. It provides the area where nature is most accessible. Yet it is often not natural, partly derelict, not park, yet not agricultural&mdash;too often a zone of devastation. A process for continuous, piecemeal, management of these areas, to create man-made wild and natural land, has been shown by McClung to work effectively.</p>
+      <ul style="font-weight: normal;">
+        <li>Keep topography as it is, and keep or enhance spots that are beautiful NOW</li>
+        <li>Leave major trees as centers and clear around them</li>
+        <li>Respect habitat of wildlife, bushes, swamps, rocks, tall grasses</li>
+        <li>Use boundaries and enhance them, as habitat and as ways of strengthening the meadows</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/meadow-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/meadows-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fou3"><img src="/img/thames.jpg" alt="A view of the Thames, London"></div>
+    <div id="fiv3"><img src="/img/stmarks1.jpg" alt="St Mark's square, Venice, and the mouth of the river"></div>
+    <div id="six3"><img src="/img/apl1photo.jpg" alt="A flying goose"></div>
+    <div id="sev3">
+      <h1>St Mark's Square</h1>
+      <h2>Introduction</h2>
+      <p>This is a very powerful sequence which suggests how, over a twelve-hundred year period, the great St Mark's square took shape, and what were the rather simple factors that went into shaping it. Even though it spans centuries, with different culture, economics, political climate, and so forth, one thing alone shaped the steps (in the 9th century as in the 15th century): <u>the formation of strong centers</u>. That, and that alone, governed the transformations which generated such a great result.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/stmarks-slides.html">The Sequence</a>
+        </li>
+        <li>
+          <a href="/stmarks/slideshow-canl2.htm">The Sequence in Action</a>
+        </li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/stmarks-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="eig3">
+      <h1>Pedestrian Network</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions in the right order when you lay out (or improve) a pedestrian network in a neighborhood has major impact on the quality of community life in the neighborhood. In some cases the "right" order is unexpected. Here are some of the aspects of the action sequence which are most important:</p>
+      <ul style="font-weight: normal;">
+        <li>Keep new pedestrian paths in spots that are beautiful NOW</li>
+        <li>Start with segments that form the "spine" of the neighborhood&mdash;ie. to places which everyone in the neighborhood naturally gets to</li>
+        <li>Use even little tiny bits&mdash;if they are feasible NOW, they will do much to help the spirit, and encourage other bits to happen in future</li>
+        <li>Keep thinking about the connectivity of the neighborhood network as a whole.</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/pnetwork-slides.html">The Sequence</a>
+        </li>
+        <li>
+          <a href="/network/slideshow-rsnl2.htm">The Sequence in Action</a>
+        </li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="nin3">
+      <h1>YGGR</h1>
+      <h2>Introduction</h2>
+      <p>This is a VERY POWERFUL SEQUENCE which allows people to manage the simultaneous, step by step growth of space and volume, in such a way that pedestrians, buildings, gardens, and cars, remain in balance.</p>
+      <p>The step-by-step process repeats one cycle of four instructions, many times over. It may be visualized as a process of placing first YELLOW (pedestrian), then GREEN (garden), then GRAY (building), and then RED (parking and narrow looped roads).</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/yggr-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>
+          <a href="/yggr/movie-new-ca-rs.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="ten3"><img src="/img/stmarks1.jpg" alt="St Mark's square, Venice"></div>
+    <div id="ele3">
+      <h1>Pedestrian Street</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions in the right order when you lay out (or improve) a pedestrian street controls the resulting liveliness. In some cases the "right" order is highly unexpected. Here are some of the aspects of the design sequence which must be done very early on:</p>
+      <ul style="font-weight: normal;">
+        <li>The position of the parking serving the pedestrian street</li>
+        <li>The presence of an active center which draws people to it</li>
+        <li>The location of the street with respect to the lines between the parking and the active center</li>
+      </ul>
+      <p>If you start by doing these steps early on, and in the right order, there is a good chance the street will become lively. The active center and the parking dominate everything.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/pstreet-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/pstreet-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="twe3">
+      <img src="/img/bridge.jpg" alt="Proposed design for the San Francisco Bay Bridge"><br>
+      <br>
+      <h2>Papers</h2>
+      <ul>
+        <li>
+          <a href="/bridge/bridge.htm">Bay Bridge Proposal</a>
+        </li>
+      </ul>
+    </div>
+    <div id="thi3"><img src="/img/street2.jpg" alt="A pedestrian street intersecting major roads"></div>
+    <div id="fon3">
+      <h1>High Density<br>
+      Indian Housing</h1>
+      <h2>Introduction</h2>
+      <p>These sequences are based on the pioneering work of B.V.Doshi and his associates at Vastu Shilpa Foundation, and in particular on the pioneering project of Aranya which they built in Indore about 1989. That work was a limited success, but paved the way for great changes. In this work we hope to have corrected some weaknesses , set in place new and inspiring opportunities, and improved the approach to the problem, with a new set of tools developed over the last thirty years at the Center for Environmental Structure and PatternLanguage.com in Berkeley, California.</p>
+      <p><span style="text-decoration: underline;">The Indian housing sequence is much more extensive &ndash; there are 5 separate phases of sequences, to be done in sessions.</span></p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="sin3"><img src="/img/party-in-mexico.jpg" alt="A party in Mexico"></div>
+    <div id="sen3">
+      <h1>Neighborhood Green</h1>
+      <h2>Introduction</h2>
+      <p>The urban fringe is a huge area of major importance in modern cities. It provides the area where nature is most accessible. Yet it is often not natural, partly derelict, not park, yet not agricultural&mdash;too often a zone of devastation.</p>
+      <p>A process for continuous, piecemeal, management of these areas, to create man-made wild and natural land, has been shown by McClung to work effectively.</p>
+      <ul style="font-weight: normal;">
+        <li>Keep topography as it is, and keep or enhance spots that are beautiful NOW</li>
+        <li>Leave major trees as centers and clear around them</li>
+        <li>Respect habitat of wildlife, bushes, swamps, rocks, tall grasses</li>
+        <li>Use boundaries and enhance them, as habitat and as ways of strengthening the meadows</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/nbdgreen-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="ein3"><img src="/img/cafe2.jpg" alt="A small coffee shop with outdoor seating"></div>
+    <div id="nit3">
+      <h1>Public Building</h1>
+      <h2>Introduction</h2>
+      <p>A shape in harmony with the surroundings, and making positive space are what control the quality of all public buildings. Above all, the shape of the building must spring from the land, and buildings around, like a tree springing from a coppice&mdash;it fits perfectly, from the moment of its inception.</p>
+      <ul style="font-weight: normal;">
+        <li>The volume and the space around it are inspiring: they correspond to a vision of the whole which emerges, without artifice, and without ego, from what is there, and, as if in a dream, enhances these surroundings making them better than they were before.</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>The Sequence in Action</li>
+        <li>
+          <a href="/public/church-nl2.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="/sequences/examples/homelessshelter-pics.html">Examples of a Homeless Shelter</a>
+        </li>
+        <li>Examples of a College Campus</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="twy3"><img src="/img/sanjoseext.jpg" alt="The exterior of the homeless shelter in San Jose, California"></div>
+    <div id="ton3"><img src="/img/eishinrainandstudents.jpg" alt="The Eishin campus in the rain"></div>
+    <div id="ttw3">
+      <h1><span style="font-size: 22px;">100 Houses and Gardens</span></h1>
+      <h2>Introduction</h2>
+      <p>Doing things in the right order when you decide the way the community of houses will sit on the land controls the wholeness of the new community. In some cases the "right" order is highly unexpected.</p>
+      <p>This sequence will show you some of the aspects of the design sequence which must be done very early on.</p>
+      <p>If you only follow the sequence, the community&mdash;and, probably, its surrounding neighborhoods too&mdash;will be much, much, better.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/100houses-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="ttr3">
+      <h1>Group of Houses</h1>
+      <h2>Introduction</h2>
+      <p>The main purpose of this house-group process, and its associated sequence of operations, is to create a living structure instead of a "subdivision" for a small group of houses, say 5-15 houses.</p>
+      <p>Houses and lots are to be placed in such a way that each one takes its unique position in the land, and enhances the nature.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/housegroup-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>
+          <a href="/housegroup/movie-nl5.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/housegroup-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tfo3">
+      <h1><span style="font-size: 22px">Placing House Volume on a Piece of Land</span></h1>
+      <h2>Introduction</h2>
+      <p>Doing things in the right order when you decide the way a house sits on the land&mdash;controls the resulting harmony and beauty almost more than any other single process. Here are some of the aspects of the sequence which we discuss:</p>
+      <ol>
+        <li>We start with a special diagnostic of looking at the land, to get the most important issues clear.</li>
+        <li>We emphasize the finding of the most beautiful and valuable spot</li>
+        <li>We also give great emphasis to the idea of using the pieces of the land which are currently damaged, so that your investment in construction also helps to heal the land.</li>
+        <li>Possibly the most critical issue is that you place the body of the house in a way that helps to shape and make coherent, that bit of outdoors that you like best.</li>
+      </ol><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/housevolume-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tfi3">
+      <h1>Small House</h1>
+      <h2>Introduction</h2>
+      <p>Doing things in the right order when you shape a small house controls the resulting comfort of the house more than any other aspect of the design process. Here are some of the aspects of the design sequence which MUST be done in the right order:</p>
+      <ol>
+        <li>The position of the main room in relation to the land</li>
+        <li>The character of this room as it relates to the sky and trees and houses nearby</li>
+        <li>The opportunity for a small outdoors which extends the useful area of the house</li>
+        <li>The roof, as an embracing emblem of the house</li>
+        <li>Relation to a single tree.</li>
+        <li>What happens inside the main room and how big is the room</li>
+      </ol>
+      <p><span style="text-decoration: underline;">The small house sequence is much more extensive &ndash; there are 5 separate phases of sequences, to be done in sessions.</span></p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>
+          <span style="text-decoration: underline;">The Sequence in Action</span>&nbsp;&nbsp;<a href="/sequences/slideshows/gray/smallhouse1-unfolding.html">I</a>&nbsp; | &nbsp;<a href="/sequences/slideshows/gray/smallhouse2-unfolding.html">II</a>
+        </li>
+        <li>
+          <span style="text-decoration: underline;">A Movie of Someone Using the Sequence</span>&nbsp;&nbsp;<br>
+          <a href="/smallhouse/chris1-movie-nl2.htm">I</a>&nbsp; | &nbsp;<a href="/smallhouse/chris2-movie-nl2.htm">II</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/smallhouse-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tsi3">
+      <h1>Family House</h1>
+      <h2>Introduction</h2>
+      <p>Getting things in the right order&mdash;that controls the quality of the house design more than anything else. Here are some of the aspects of the sequence which you will find on these pages:</p>
+      <ol>
+        <li>The shape of the house, as a whole, and the beauty and restfulness of the overall form. That affects the way you feel every day, when you live there.</li>
+        <li>Emphasis on the outdoors as a place where you live; it adds enormously to the useful space of a house.</li>
+        <li>A critical issue is that you place the main rooms, in the order that will make the house coherent for you.</li>
+      </ol>
+      <p>The small spaces of a home&mdash;when added in in just the right order, and in the right amounts, make all the difference.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/familyhouse-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Papers</h2>
+      <ul>
+        <li>
+          <a href="/archives/ingridsmemo.htm">A Memo Written During the Process</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/familyhouse-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tse3"><img src="/img/copenhagen.jpg" alt="Building front in Copenhagen"></div>
+    <div id="tei3"><img src="/img/santarosadecabal.jpg" alt="Lost-cost housing in Colombia"></div>
+    <div id="tni3">
+      <h1>2-3 Story<br>
+      Apartments</h1>
+      <h2>Introduction</h2>
+      <p>This ten-step sequence allows you to design an apartment building which is friendly to the neighborhood.</p>
+      <p>If you get these steps in the right order, there is a good chance the kitchen will have a unique character. The light, space and gardens dominate everything.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>
+          <span style="text-decoration: underline;">The Sequence in Action</span>&nbsp;&nbsp;<a href="/sequences/slideshows/gray/apt1-unfolding.html">I</a>&nbsp; | &nbsp;<a href="/sequences/slideshows/gray/apt2-unfolding.html">II</a>
+        </li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/apt-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="/sequences/examples/aptlarge-pics.html">Examples of a 4-5 Story Apartment Building</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="thy3"><img src="/img/imaginaryneighborhood.jpg" alt="A layout plan for a neighborhood"></div>
+    <div id="tyo3">
+      <h1>Kitchen</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions in the right order when you lay out a kitchen controls the resulting comfort of the kitchen. In some cases the "right" order is highly unexpected. Here are some of the aspects of the design sequence which must be done in the right order:</p>
+      <ul style="font-weight: normal;">
+        <li>The position of the table in the kitchen</li>
+        <li>The character of the kitchen and kitchen windows as they relate to the sky and trees and houses nearby</li>
+        <li>A vital secondary center which provides the room with a human focus</li>
+        <li>Placing the counter in a good relation to the first three centers</li>
+      </ul>
+      <p>If you get these steps in the right order, there is a good chance the kitchen will be comfortable. The windows and the table dominate everything.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/kitchen-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/kitchen-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tyt3">
+      <h1>Kitchen Cost Game</h1>
+      <h2>Introduction</h2>
+      <p>In a kitchen, as in almost anything you build, what ultimately matters almost more than anything, is how how spend your money, how, in short, the resources you have are allocated to the things you care about. This is surprising, because money seems different from "heart" or "feeling."</p>
+      <p>Yet it is the way you give money to things you care about most, which requires that you depart from established ways of doing things, and have a very fresh approach to the way you decide what to spend money on.</p>
+      <p>In the game which is attached you will be able to see how a choice of spending money on things you care about, not on what convention dictates, can give you something fare more lovely, and far more suitable to you wish, you desires, your life style.</p><br>
+      <h2 style="text-decoration: underline;"><a href="/kgame/pinkfourteen.htm">Play the Game</a></h2>
+    </div>
+    <div id="tyr3">
+      <h1>Entrance Transition</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions in the right order when you lay out (or improve) an entrance for your house has major impact on the quality of the transition between outside and inside. In some cases the "right" order is unexpected. Here are some of the aspects of the sequence which are most important:</p>
+      <ul style="font-weight: normal;">
+        <li>You are trying to create a place which changes your mood, frame of mind, makes you happy to be home, is like a gentle mental and emotional "wash" as you come in from the busy not so private street, to the shelter and comfort of your own home.</li>
+        <li>The entrance area creates a place which lies between the house and the neighborhood street; it is a place for gathering, mixing, taking it easy.</li>
+        <li>MAINLY it should be a beautiful place, with sights, smells, colors, perhaps flowers, water&hellip;</li>
+        <li>And it should be contained, partly enclosed!</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/entrance-slides.html">The Sequence</a>
+        </li>
+        <li>
+          <a href="/entrance/movie-nl-rs2.htm">The Sequence in Action</a>
+        </li>
+        <li>
+          <a href="/entrance/examplestep1.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/entrance-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tyf3"><img src="/img/bawastair.jpg" alt="Bawa stair"></div>
+    <div id="tyv3"><img src="/img/bedroom.jpg" alt="A bedroom"></div>
+    <div id="tys3">
+      <h1>Generic Room</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions in the right order when you lay out a room controls the resulting comfort of the room. In some cases the "right" order is highly unexpected. Here are some of the aspects of the design sequence which must be done in the right order:</p>
+      <ul style="font-weight: normal;">
+        <li>The position of the window and connection to the light</li>
+        <li>The location of the principal center of the room</li>
+        <li>Position of doors so that they leave the main center alone, and make natural paths stay away from the deepest center</li>
+        <li>A secondary center which beats against the first</li>
+      </ul>
+      <p>If you get these steps in the right order, there is a good chance the room will be comfortable. The windows and the shape of the room and its ceiling dominate everything.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/genericroom-slides.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="/sequences/examples/bedroom-pics.html">Examples of Bedrooms</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tyn3">
+      <h1>Office</h1>
+      <h2>Introduction</h2>
+      <p>In the carpenters workshop, each piece is gradually built and fitted, over many years, until each tool fits just where it belongs, and each surface is just the right size and height for the carpenters work.</p>
+      <p>Many modern offices do not have this quality. Typically, there is a more haphazard arrangement of available pieces of furniture. The process of work is not reflected deeply in the layout of the office. It is not a truly comfortable place to work. And, certainly, it is not a deeply efficient place to work.</p>
+      <p>In this sequence we shall try to help you discover, for yourself, what it takes to make your own workplace completely comfortable and efficient, in this way.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/office-slides.html">The Sequence</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>A Movie of Someone Using the Sequence</li>
+        <li>
+          <a href="/sequences/otherinfo/officelayoutedit.htm">A Detailed, Written Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/office-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="tye3">
+      <h1>Human<br>
+      Organizations</h1>
+      <h2>Introduction</h2>
+      <p>The goal is to build an organization where human stability, pleasantness, and day-to-day effectiveness&mdash;and above all, a humane existence&mdash;all matter.</p>
+      <p>Daily, visualize a work environment, with behavior, relationships, actions, and rewards, which work and make sense, and nourish you. You are more alive at the end of the day, when you get home, than when you went to work.</p>
+      <p>This process allows you and your colleagues to build, in your minds, and in actuality, a nearly complete picture of an organization which stays alive and which perpetuates itself.</p>
+    </div>
+    <div id="tyi3">
+      <h1>Cost-Optimizing Process</h1>
+      <h2>Introduction</h2>
+      <p>Getting the money distributed in the best way&mdash;that is essential and controls the quality of every project.</p>
+      <p>But the essence of life has always been a sober awareness that we cannot have everything, and that a worthwhile life will be lived if some of the things around us are precious, while others are very ordinary, even cheap. It is then that we shall be practically able to afford what we want. And it is then that we shall be made alive by our awareness of the common and ordinary, mingled with the supremely beautiful.</p>
+    </div>
+    <div id="ffy3">
+      <h1>Pre-Geometry</h1>
+      <h2><span style="text-decoration: underline; font-size: 75%;">WHERE DOES BEAUTY OF FORM COME FROM?</span></h2>
+      <p>The way that a coherent form comes into a building, after the broad outline of the shape and plan has been sketched according to function, position, and need, is very interesting. Although it is, often, an inspired move&mdash;it is also something that can be subject to a well-defined process.</p>
+      <p>The idea of pre-geometry aims to help you with such a process, by beginning with rough sketches and shaping them, gradually, into polished, rectangular spaces.</p>
+      <p>The sequences can give you freedom, efficiency, effectiveness and productivity&mdash;and they are derived from your own preferences and a detailed examination of the way that structural order is introduced into a building, so as to preserve its social spaces.</p><br>
+      <h2><a href="/sequences/otherinfo/pre-geometry.html"><span style="text-decoration: underline; font-size: 18px; font-weight: normal;">An Introduction to Pre-Geometry</span></a></h2>
+    </div>
+    <div id="fyo3">
+      <h1>Dynamic<br>
+      Construction Process</h1>
+      <h2>Introduction</h2>
+      <p>The main idea of all building that makes beautiful things, is that at each moment, you are making&mdash;actually shaping with your own mind and hands&mdash;beautiful strong centers, and making positive space. Every part, and every whole, and every part of every part, is done like this. You do it every day, and every hour. It takes years to learn it; but this is the secret of all good building.</p><br>
+      <h2><a href="/sequences/otherinfo/construction-contract.html"><span style="text-decoration: underline; font-size: 18px; font-weight: normal;">A Detailed Construction Sequence for a House</span></a></h2>
+    </div>
+    <div id="fyt3">
+      <h1>Window Placement</h1>
+      <h2>Introduction</h2>
+      <p>You can place and design windows uniquely suited to your house, using the simple process explained in the sequence.</p>
+      <p>Consider the subtle nature of placing windows in a building. What are the issues that govern this placement?</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/windowplacing-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>
+          <a href="/sequences/slideshows/gray/windowplacing-unfolding.html">The Sequence in Action</a>
+        </li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>Successful Examples</li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fyr3">
+      <h1>Window&nbsp;Pane&nbsp;Design</h1>
+      <h2>Introduction</h2>
+      <p>This is a sequence for shaping and designing individual windows once the openings are determined.</p>
+      <p>It is based on the idea that the panes and subdivision of the window are to be as harmonious with the room, and grow out of the opening naturally.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/windowdesign-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>The Sequence in Action</li>
+        <li>
+          <a href="/windowdesign/movie-nl-rs4.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/windowdesign-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fyf3">
+      <h1>Gates &amp; Gateways</h1>
+      <h2>Introduction &ndash; <span style="font-size: 14px">WHAT IS THE NATURE OF A GATE?</span></h2>
+      <p>If you have two separated realms which meet, there is passage from one realm to the other.</p>
+      <ul style="font-weight: normal;">
+        <li>The gate is an entity which both emphasizes that passage, and at the same time emphasizes the separateness of the two realms.</li>
+        <li>It unifies the two, yet keeps them separate, yet also permits passage between the two.</li>
+        <li>Within this gate, there is a passage, so that the entity which separates and marks, contains within it, a smaller entity which connects and permits connection.</li>
+      </ul>
+      <p>In psychological terms that is the nature of every gate. Sometimes it needs to be more emphasized; at others times less emphasized.</p>
+      <p>It is, above all, a thing which unifies&mdash;through the functions described above, it makes the world of these adjoining realms, more unified.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>The Sequence in Action</li>
+        <li>
+          <span style="text-decoration: underline;">A Movie of Someone Using the Sequence</span>&nbsp;&nbsp;<br>
+          <a href="/gate/eishinmovie-nl2.htm">I</a>&nbsp; | &nbsp;<a href="/gate/japanmovie.htm">II</a>&nbsp; | &nbsp;<a href="/gate/sophiemovieshort-nl3.htm">III</a>&nbsp; | &nbsp;<a href="/gate/northgatemovie.htm">IV</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/gates-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fyv3">
+      <h1>Fireplace</h1>
+      <h2>Introduction</h2>
+      <p>Making decisions well when you design a fireplace controls the resulting comfort of the room.</p>
+      <p>Here are some of the most vital aspects of the process:</p>
+      <ul style="font-weight: normal;">
+        <li>The size of the hearth</li>
+        <li>The position of the fireplace in the room</li>
+        <li>Shape of the overall center</li>
+        <li>Height of the mantel shelf</li>
+        <li>Ornament and color of the fireplace</li>
+      </ul>
+      <p>If you get these things right, the fireplace will very likely give you pleasure.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>The Sequence</li>
+        <li>
+          <a href="/sequences/slideshows/gray/fireplace-unfolding.html">The Sequence in Action</a>
+        </li>
+        <li>
+          <a href="/fireplace/movie-nl4.htm">A Movie of Someone Using the Sequence</a>
+        </li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/fireplace-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fys3"><img src="/img/poppyfloor1.jpg" alt="The checkered floor from the Upham house"></div>
+    <div id="fyn3">
+      <h1>Ornament</h1>
+      <h2>Introduction</h2>
+      <p>The fine detail of the environment&mdash;what is needed to complete it, to make it whole, consists of fine structure, arising naturally from the larger scale structure.</p>
+      <p>It is what we commonly call ornament.</p>
+      <p>Ornament, though, is a funny way to think about it. It might be more accurate to call it the atoms and molecules of buildings.</p><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/ornament-slides.html">The Sequence</a>
+        </li>
+        <li>
+          <a href="/sequences/slideshows/gray/ornament-unfolding.html">The Sequence in Action</a>
+        </li>
+        <li>A Movie of Someone Using the Sequence</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/ornament-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="/sequences/examples/floors-pics.html">Examples of Floors</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fye3">
+      <h1>Matisse Painting</h1>
+      <h2>Introduction</h2>
+      <p>Making positive space is what controls all painting. If you watch the film of Matisse painting, you see how every act does these things:</p>
+      <ul style="font-weight: normal;">
+        <li>It creates positive space, somewhere in the painting, often by using the positive color from the one which forms the figures: the figures are created by drawing the space next to them</li>
+        <li>It is the positive space which does the most to help bring harmony into the picture and force, at the next step</li>
+        <li>The process always forms a local center</li>
+        <li>It always forms a large center in the picture and forms centers around that larger center to support it and make it fresh.</li>
+      </ul><br>
+      <h2>Slideshows</h2>
+      <ul>
+        <li>
+          <a href="/sequences/slideshows/multipage/matisse-list.html">The Sequence &#40;list only&#41;</a>
+        </li>
+        <li>
+          <a href="/sequences/slideshows/gray/matisse-unfolding.html">The Sequence in Action</a>
+        </li>
+        <li>A Movie of Matisse Painting &#40;Youtube&#41;</li>
+      </ul><br>
+      <h2>Useful Information</h2>
+      <ul>
+        <li>
+          <a href="/sequences/examples/matisse-pics.html">Successful Examples</a>
+        </li>
+        <li>
+          <a href="#">Helpful Patterns (Members Only)</a>
+        </li>
+      </ul>
+    </div>
+    <div id="fyx3">
+      <h2>Introduction</h2>
+      <p>The essence of all the material on this website, and our hope that we may be able to influence landscape, cities, neighborhoods, buildings, building structure, gardens, rooms, and details, all over the world, hinges on the idea of a GENERATIVE SEQUENCE.</p>
+      <p>Equally as important, the sequences available on this web site all rely on the concept of a CENTER. We believe that to achieve a deeply satisfying result in any task of making, or designing, or planning, you must work with what we call centers. The phenomenon of life, in human constructions as well as in nature, can be understood in terms of the dynamic interplay of spaces and life-giving values. This is true in a Matisse painting, in a teacup, and it will be true in your office or in a public park.</p><br>
+      <h2><a href="/sequences/otherinfo/intro.html"><span style="text-decoration: underline; font-size: 18px; font-weight: normal;">An Introduction to Generative Sequences</span></a></h2><br>
+      <h2><a href="/sequences/otherinfo/centers.html"><span style="text-decoration: underline; font-size: 18px; font-weight: normal;">An Introduction to Centers</span></a></h2><br>
+      <h2><a href="/sequences/otherinfo/diagnosis.html"><span style="text-decoration: underline; font-size: 18px; font-weight: normal;">An Introduction to Land Diagnosis and Survey</span></a></h2><br>
+    </div>
+  </div>
+  <div id="footer">
+    <span><i>These tools allow anyone, and any group of people, to create beautiful, functional, meaningful places.</i><br>
+    <i>You</i> can <i>create a living world.</i></span><br>
+    <span class="h4class" style="font-size: 12px; color: #9f2214;">&copy;2001-2013 <a href="/contact/contactus.html" style="color: #9f2214;">patternlanguage.com</a></span>
+  </div>
+</body>
+</html>

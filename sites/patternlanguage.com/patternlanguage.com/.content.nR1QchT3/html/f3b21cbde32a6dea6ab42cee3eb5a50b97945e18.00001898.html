@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEQUENCE AGREEMENT</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="javascript">
+  var host='%%HOST%%';
+  var path='%%PATH%%';
+  var timedelta = Math.round((new Date()).getTime()/1000)-parseInt('%%CURTIME%%');
+  var agreementkey='%%AGREEMENTKEYPREFIX%%' + timedelta;
+  var prefix = "/clickagreement/";
+  if (host == "%%" + "HOST" + "%%")
+    { prefix = "";
+    }
+
+  //////////////////////////////////////
+  var banner="banner.htm";
+  var agreementtext="agreementtextmember.htm";
+  var buttons="buttonsmember.htm";
+  //////////////////////////////////////
+  var bannerpath= prefix+banner;
+  var agreementtextpath= prefix+agreementtext;
+  var buttonspath= prefix+buttons;
+  </script>
+  <script>
+  document.write('<FRAMESET rows="15%,70%,15%">');
+        document.write('<FRAME SRC="' + bannerpath + '" NAME="A" scrolling="no">');
+        document.write('<FRAME SRC="' + agreementtextpath + '" NAME="C" >');
+        document.write('<FRAME SRC="' + buttonspath + '" NAME="D" scrolling="no">');
+  document.write('</FRAMESET>');
+  </script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080">
+</body>
+</html>

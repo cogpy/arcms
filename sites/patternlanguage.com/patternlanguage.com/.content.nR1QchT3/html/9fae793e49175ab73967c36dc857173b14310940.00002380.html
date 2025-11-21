@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <title>DUNCANVILLE FRAME</title>
+  <script src='../universal/universal.js'></script>
+  <script>
+  function oldcheckBackToMenusLink()
+  { var s = frames.picture.location.href;
+    if (s && /opener/.test(s))
+      { frames.banner.hideElement('backToMenuLink');
+      }
+    else
+      { frames.banner.showElement('backToMenuLink');
+      }
+  }
+
+
+  function checkBackToMenusLink()
+  { 
+    var s;
+    try
+      { s = frames.picture.location.href;
+      }
+    catch (e)
+      { s = '';
+      }
+    if (s && /opener/.test(s))
+      { frames.banner.hideElement('backToMenuLink');
+      }
+    else
+      { frames.banner.showElement('backToMenuLink');
+      }
+  }
+  </script>
+</head>
+<frameset rows="100,*,30" border="2" onload='setInterval(checkBackToMenusLink,500)'>
+  <frame src="duncanvillebanner.htm" name="banner" scrolling="no" border="0" noresize frameborder="0">
+  <frame name="picture" src="duncanvilleopener.htm" border="0" frameborder="0">
+  <frame src='../patternforum/copyrightfooter.htm' name="bottom" scrolling="no" border="0" noresize frameborder="0">
+  <noframes>
+    <body bgcolor="white" text="black" link="black" vlink="green" alink="blue" border="navy">
+    </body>
+  </noframes>
+</frameset>
+</html>

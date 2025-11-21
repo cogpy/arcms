@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <title>DUNCANVILLE OPENER</title>
+  <script src='../universal/universal.js'></script>
+  <script>
+  function floatWindow(file,window) {
+       msgWindow=open(file,window,'resizable=no,scrollbars=0,width=390,height=250,left=185,top=185,border=2');
+              if (msgWindow.opener == null) msgWindow.opener = self;
+              msgWindow.focus();
+  clearID=msgWindow.setTimeout("self.close()",9000)
+                     };
+
+  /*
+  var group_identifier='salem';
+  var grouplogins = GetCookieX('grouplogins');
+  // var rxs = group_identifier + '\\s*\\{[^}]*\\blevel\\s*:\\s*(\\d*)';
+  var rxs = '\\{[^}]*\\blevel\\s*:\\s*(\\d*)';
+  var rx = new RegExp(rxs);
+  var level;
+  if (location.protocol=='file:')
+  { level = 3;
+  }
+  else if (grouplogins.match(rx))
+  { level = RegExp.$1-0;
+  }
+  else
+  { level = 0;
+  }
+  // var level=1;
+  */
+
+  /*
+  function getClearanceString() {
+   var clearance;
+
+        if (level == 0)
+           clearance = "FREE TOOLS FOR VISITORS";
+        else if (level == 1)
+           clearance = "FREE TOOLS AND LEVEL 1";
+        else if (level == 2)
+           clearance = "FREE TOOLS AND LEVELS 1 AND 2";
+        else if (level == 3)
+           clearance = "FREE TOOLS AND LEVELS 1, 2, AND 3";
+
+   document.write("YOU ARE CLEARED FOR ACCESS TO " + clearance);
+  }
+  */
+
+  function tierLink(target, string, tier) {
+   var stringColor;
+
+        // make all links live now
+        // if (tier <= level) {
+        if (true) {
+           document.writeln("<a href='" + target + "' target='picture'>");
+           stringColor = "ffcc66";
+        }
+        else {
+           document.writeln("<a href=javascript:floatWindow('../cities/need-level" + tier + ".htm','window2')>");
+           stringColor = "999999";
+        }
+
+        document.writeln("<span style='color: " + stringColor + ";'>" 
+                         + string + "</span>");
+        document.writeln("</a>");
+  }
+  </script>
+  <style type="text/css">
+  .h1class {
+   font-size: 20px; font-family: "Times New Roman"; font-weight: normal; color:ffcc66; align=center;
+  }
+  .h2class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times New Roman"; margin-bottom: 0;
+  }
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times New Roman"; margin-bottom: 0;
+  }
+
+  H4{
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom: 0;color:ffcc66; 
+  }
+
+  .h4class{
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom: 0;
+  }
+
+  .change{
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "arial"; 
+        background-color:000000; 
+  }
+
+  .newchange{
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Arial"; 
+        background-color:000000; line-height:16px;
+  }
+
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFCC66" link="#99CCFF" vlink="#99CCFF" alink="blue" border="navy">
+  <table width="770" border="1" align="center">
+    <tr>
+      <td colspan="4" align="center" bgcolor="#330000"><span class="h4class"><span style="COLOR:ffcc66;font-size:150%;font-weight:bold">THE TOOLS TO IMPLEMENT OUR MAIN STREET VISION</span></span><br></td>
+    </tr>
+    <tr>
+      <td width="200" bgcolor="#330000">
+        <span class="h2class" style="COLOR:ffcc66">Welcome to our citizen and business-guided beta-site for Main Street in Duncanville,Texas.<br>
+        <br>
+        It is a process that is,<br>
+        in principle, valid for<br>
+        all Main Streets, <a href="generic.htm" target="picture">everywhere</a>.</span>
+        <p></p>
+        <center>
+          <img src="texasflag.jpg" width="90">
+        </center>
+        <p></p>
+      </td>
+      <td width="570">
+        <table width="100%" border="1">
+          <tr>
+            <td width="100%" valign="top" align="center" colspan="4"><span class="newchange">" 
+            <script>
+
+            tierLink("../duncanville/workshopcomments-poem.htm", "This is Our Town", 0);
+            </script></span><br>
+            <br></td>
+          </tr>
+          <tr height="300">
+            <td width="25%" valign="top">
+              <center>
+                <span class="change">OUR TOWN: A PLACE ROOTED IN OUR OWN COMMUNITY<br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("../duncanville/workshopcomments-poem.htm", "This is Our Town", 0);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/valuable.htm", "Examples of<br>&nbsp;&nbsp;&nbsp; what we value", 0);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/humanspirit.htm", "The human <br>&nbsp;&nbsp;&nbsp;atmosphere <br>&nbsp;&nbsp;&nbsp;we cherish", 0);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/valuable.htm", "A small town in a<br>&nbsp;&nbsp;&nbsp; 21st century<br>&nbsp;&nbsp;&nbsp; metropolis", 0);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/coming.htm", "Making it both <br>&nbsp;&nbsp;&nbsp;small, and big,<br>&nbsp;&nbsp;&nbsp; and beautiful", 0);
+              </script><br></span>
+            </td>
+            <td width="25%" valign="top">
+              <table bgcolor="#993300">
+                <tr>
+                  <td width="25%">
+                    <center>
+                      <span class="change">MAKING MAIN STREET A PLACE WHERE PEOPLE WANT TO GO<br></span>
+                    </center>
+                    <hr>
+                    <span class="newchange">" 
+                    <script>
+
+                    tierLink("../duncanville/economicengine-4.htm", "An economic <br>&nbsp;&nbsp;&nbsp; engine", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/aplacetogo-4.htm", "The Trunk of the <br>&nbsp;&nbsp;&nbsp; Oak Tree", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/water.htm", "What makes it <br>&nbsp;&nbsp;&nbsp; The Place to Go", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/vision-4jqca.htm", "A Vision", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/customers.htm", "More customers", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/families.htm", "A place for<br>&nbsp;&nbsp;&nbsp; families", 0);
+                    </script><br>
+                    " 
+                    <script>
+
+                    tierLink("../duncanville/businesses-2jq.htm", "A place for <br>&nbsp;&nbsp;&nbsp;businesses", 0);
+                    </script><br></span>
+                  </td>
+                </tr>
+              </table>
+              <p></p>
+              <center>
+                <span class="change" style="COLOR:ddeeff;"><br>
+                <br></span>
+              </center><span class="newchange"></span>
+              <p><span class="newchange"></span></p>
+            </td>
+            <td width="25%" valign="top">
+              <center>
+                <span class="change">SKETCHES OF A NEW PROCESS FOR DUNCANVILLE<br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("../duncanville/invitation.htm", "Invitation", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/smallsteps.htm", "Small steps", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/generic.htm", "Innovation", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/transformingtest.htm", "Transformation", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/top20patterns.htm", " Using Patterns", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/patternsduncan.htm", " Which Patterns?", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/farmersmarket.htm", "Farmers Market", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/4thstreet.htm", "Successes ", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/how.htm", "Process", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/diagnosis.htm", "Diagnosis", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/deal-new-ca.htm", "The Deal", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/synergy.htm", "Synergy", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/team.htm", "Team", 1);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/currentvisitorbook.htm", "Please sign our<br>&nbsp;&nbsp;&nbsp; Visitor Book", 0);
+              </script><br></span>
+            </td>
+            <td width="25%" valign="top">
+              <center>
+                <span class="change">TOOLS FOR RESIDENTS AND BUSINESSES<br></span>
+              </center>
+              <hr>
+              <span class="newchange">" 
+              <script>
+
+              tierLink("../duncanville/yourchoices.htm", "Choose the <br>&nbsp;&nbsp;&nbsp;businesses you<br>&nbsp;&nbsp;&nbsp; want", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../businessconnector/businessconnector.htm","Connector Tool", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../yggr/cartoon.htm", "Sketchtool to <br>&nbsp;&nbsp;&nbsp;plan a project", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/possibilitiesnl.htm", "Take ideas from<br>&nbsp;&nbsp;&nbsp; other cities", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../duncanville/obstacles.htm", "Overcoming<br>&nbsp;&nbsp;&nbsp;obstacles", 2);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../patternforum/twopanelforum-dunc.htm", "Vote on patterns", 2);
+              </script><br>
+              <br>
+              " 
+              <script>
+
+              tierLink("contribution.htm", "Point System", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../construction/operationsframe.htm", "Construction", 3);
+              </script><br>
+              " 
+              <script>
+
+              tierLink("../contracts/general-contract.htm", "New forms of <br>&nbsp;&nbsp;&nbsp;construction <br>&nbsp;&nbsp;&nbsp;contract", 3);
+              </script><br></span><br>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

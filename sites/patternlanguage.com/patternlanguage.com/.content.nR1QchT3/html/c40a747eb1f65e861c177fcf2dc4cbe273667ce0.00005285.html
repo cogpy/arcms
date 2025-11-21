@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMALL HOUSE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"; }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"; }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; margin-bottom: 0;      }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+    .unhighlightedSlideMarker {visibility:hidden}
+    .highlightedSlideMarker {visibility:visible}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+    #steps {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: hidden;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: hidden;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    365px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+    FONT-style: italic; 
+    FONT-SIZE: 16px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+    //showWhenReady('steps'); // We hide the steps until images are loaded
+                                     // so user sees whole show
+                                     //  This call tells how to make them visible
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(300,202);
+        // slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+        slideImageAttributeString = 'width=300 name="adBanner"';
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        setScrollDiv('stepscrolldiv');  // The name of the div holding the step list that will be scrolled
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+        //setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");  // for displaying a marker such as a blue triangle
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id='steps'>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span><br>
+        <span style='font-size:80%'>The small-house design process has five main steps</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>You can let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp;click&nbsp;here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span> <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;height:255;overflow-y:scroll'>
+                  <ul>
+                    <span style='font-size:80%;line-height:1.2;'><br></span>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:howard/piece1.jpg','Position of garden, house, and living room',"caption-manual:He starts by placing the garden. It is an unusual place, to the west, not to the south, since Howard knows this site, and knows that trees and buildings create shadow from south sun.");
+                    </script></span> <span style='font-size:70%;'><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece2.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Best spot as garden',"caption-manual:He starts by placing the garden. It is an unusual place, to the west, not to the south, since Howard knows this site, and knows that trees and buildings create shadow from south sun.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece3.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terrace position',"caption-manual:He starts by placing the garden. It is an unusual place, to the west, not to the south, since Howard knows this site, and knows that trees and buildings create shadow from south sun.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece5.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Living room position',"caption-manual:He starts by placing the garden. It is an unusual place, to the west, not to the south, since Howard knows this site, and knows that trees and buildings create shadow from south sun.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece4.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position of house',"caption-manual:He starts by placing the garden. It is an unusual place, to the west, not to the south, since Howard knows this site, and knows that trees and buildings create shadow from south sun.");
+                    </script></span> <span style='font-size:80%;line-height:1.2;'></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>House volume and inside of living room</span> <span style='font-size:70%;'><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece6.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Latent structure of the place','caption-manual:Now he starts the living room, looking into the garden. It is a long room, fireplace at one end, eating and kitchen at the other, with french doors opening to the garden to the left.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece7.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main room contents','caption-manual:Now he starts the living room, looking into the garden. It is a long room, fireplace at one end, eating and kitchen at the other, with french doors opening to the garden to the left.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece8.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two main centers','caption-manual:Now he starts the living room, looking into the garden. It is a long room, fireplace at one end, eating and kitchen at the other, with french doors opening to the garden to the left.');
+                    </script></span> <span style='font-size:80%;line-height:1.2;'></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>Walls, entrance, roof: the building's substance</span> <span style='font-size:70%;'><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece9.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thick walls',"caption-manual:A thick wall separates the living room from the entrance area; The entrance from the street is a very nice room -- comfortable and generous -- leading after a couple of turns into the living room. He has also placed his studio so that it opens from the kitchen into the other part of the house.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece10.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary and recap',"caption-manual:A thick wall separates the living room from the entrance area; The entrance from the street is a very nice room -- comfortable and generous -- leading after a couple of turns into the living room. He has also placed his studio so that it opens from the kitchen into the other part of the house.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece11.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;House entrance',"caption-manual:A thick wall separates the living room from the entrance area; The entrance from the street is a very nice room -- comfortable and generous -- leading after a couple of turns into the living room. He has also placed his studio so that it opens from the kitchen into the other part of the house.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece12.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The roof',"caption-manual:A thick wall separates the living room from the entrance area; The entrance from the street is a very nice room -- comfortable and generous -- leading after a couple of turns into the living room. He has also placed his studio so that it opens from the kitchen into the other part of the house.");
+                    </script></span> <span style='font-size:80%;line-height:1.2;'></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>Establish building structure</span> <span style='font-size:70%;'><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece13.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place small rooms',"caption-manual:Now the design gets squared off with rectangular rooms and beams placed for each room -- forming the main structure of the building");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece14.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stair (if needed)',"caption-manual:Now the design gets squared off with rectangular rooms and beams placed for each room -- forming the main structure of the building");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece15.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building structure as a whole',"caption-manual:Now the design gets squared off with rectangular rooms and beams placed for each room -- forming the main structure of the building");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece16.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beam pattern in each room',"caption-manual:Now the design gets squared off with rectangular rooms and beams placed for each room -- forming the main structure of the building");
+                    </script></span> <span style='font-size:80%;line-height:1.2;'></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>Outdoor spaces, doors, windows and ornament</span> <span style='font-size:70%;'><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece17.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Outdoor positive spaces',"caption-manual:The garden at the back is broken into a series of small positive room like gardens, the windows and doors are shaped, and their rhythm made into an ornament.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece18.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Doors and windows',"caption-manual:The garden at the back is broken into a series of small positive room like gardens, the windows and doors are shaped, and their rhythm made into an ornament.");
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:howard/piece19.jpg','&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ornament',"caption-manual:The garden at the back is broken into a series of small positive room like gardens, the windows and doors are shaped, and their rhythm made into an ornament.");
+                    </script></span></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>DESIGNING A SMALL HOUSE STEP BY STEP</b></font></span>
+          <p><span class="h2class"><font color="#222222"><span class="h6class"><i></i></span></font></span></p>
+        </td>
+      </tr>
+    </table>
+    <table width="150">
+      <tr height="400">
+        <td valign="top" align="center">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+       putCaptionsHere('<center>A slideshow is loading.</center>','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script language='javascript'>
+   setCallOnDocumentLoad(function () { 
+                                 setTimeout(function () {
+                                                                            hideElement('comment'); showElement('showdiv'); showElement('steps'); },5000) });
+  </script>
+  <div id='comment' style="position:absolute;left:390;top:30;width:350;height:400;background-color:black;color:white;padding:10px;visibility:visible">
+    <span class="h4class">It seems amazing, but in about an hour, I designed a beautiful house: The design seemed to come almost by itself; it was leaping ahead of me, and going so naturally and so amazingly fast. My students would take weeks to make a thing like this, and I would normally take much much longer than I did. Yet it is just what I wanted to design.</span>
+    <p><span class="h4class">And above all, it really is a beautiful house.</span></p>
+    <p><span class="h4class"></span></p>
+    <div align="right">
+      <span class="h4class">Howard Davis</span>
+    </div>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>

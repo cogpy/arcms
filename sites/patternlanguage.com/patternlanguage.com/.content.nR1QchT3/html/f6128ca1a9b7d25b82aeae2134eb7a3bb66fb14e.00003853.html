@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KITCHEN</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../corral/nickb/drawfunctions8-21.js"></script>
+  <script language="JavaScript" src="../corral/nickb/slideshow8-22.js"></script>
+  <script language="JavaScript">
+
+  drawAppletFolder                  = "../corral/nickb";
+  // *******************************
+  // So that the gdraw applet can be found, set the variable drawAppletFolder to point to the folder
+  // the applet is in. This is currently the same as the folder that the drawfunctions script file is in.
+  // *******************************
+  </script>
+  <script language="JavaScript">
+  <!--
+  ///ONLY TOGGLE PICTURES///
+
+        function togglePic(picture_id){
+                
+                if (document.layers) { // for Netscape
+                                
+                        var thisPicture = document.layers[picture_id];
+                        var hidden     = "hide";        
+                        var visible    = "show";        
+                }
+                if (document.all)    { //for IE
+                
+                        var thisPicture = eval("document.all." + picture_id + ".style");
+                        var hidden     = "hidden";      
+                        var visible    = "visible";     
+                }
+                                
+                if ( thisPicture.visibility == visible) {
+                // it was ON, now turn it OFF
+        
+                        thisPicture.visibility = hidden;
+                } else {                
+                // it was OFF, now turn it ON
+                
+                        thisPicture.visibility = visible;
+                }
+        }
+
+
+
+  -->
+  </script>
+  <script src='../scripts/nav.js'></script>
+  <script type="text/javascript" language="JavaScript1.2">
+  <!--
+    // Check to see if this is a Navigator brower
+    if(navigator.userAgent.indexOf("MSIE") == -1){
+      alert("This menu is supported in Internet Explorer");
+      window.back();
+    }
+
+    // Declare global variables
+    var layer = new String();
+    var style = new String();
+    var visibleMenus = new Array();
+
+    // Set the layer and style variables.
+    function checkBrowser(){
+      layer = ".all";
+      style = ".style";
+    }
+
+    function hideVisibleMenus()
+      { for (var i = 0; i < visibleMenus.length; i++)
+          changeState(visibleMenus[i],'hidden');
+        visibleMenus.length = 0;
+      }
+
+    // Take the state passed in, and change it.
+    function changeState(layerRef, state){
+      if (!eval("document" + layer + "['" + layerRef + "']"))
+          return;
+      if (state == 'visible')
+        { hideVisibleMenus();
+          visibleMenus[visibleMenus.length] = layerRef;
+        }
+      eval("document" + layer + "['" + layerRef + "']" + style +
+        ".visibility = '" + state + "'");
+    }
+
+  //-->
+
+  </script>
+  <script language="JavaScript">
+  <!--
+
+  function SampleWindow(file,window) {
+      msgWindow=open(file,window,'resizable=no,scrollbars=1,width=650,height=400,left=135,top=85,border=2');
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+
+  clearID=msgWindow.setTimeout("self.close()",10000)
+
+                     }
+
+                     //-->
+
+  <!--
+
+  function valueWindow(file,window) {
+      msgWindow=open(file,window,'resizable=no,scrollbars=1,width=350,height=400,left=135,top=85,border=2');
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+
+  clearID=msgWindow.setTimeout("self.close()",10000)
+
+                     }
+
+                     //-->
+
+  <!--
+
+  function bigWindow(file,window) {
+      msgWindow=open(file,window,'resizable=no,scrollbars=1,width=850,height=600,left=0,top=0,border=2');
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+
+  //clearID=msgWindow.setTimeout("self.close()",10000)
+
+                     }
+
+                     //-->
+  </script>
+  <script language="JavaScript">
+  <!--
+
+
+
+  function aplWindow(file,window) {
+
+
+
+       msgWindow=open(file,window,'resizable=yes,scrollbars=1,width=500,height=500,left=150,top=50,border=2');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+  //onClick (clearID=msgWindow.setTimeout("self.close()",11100)) //
+                     }
+
+                     //-->
+  </script>
+  <style type="text/css">
+  H1 {    FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"}
+  H2 {    FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"}
+  H3 {    FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; line-height:22px;}
+  H4 {    FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"}
+  H5 {    FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";}
+  H6 {    FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  .unhighlighted {background-color:000000; color:dddddd; font-weight:normal}
+  .highlighted {background-color:aaaaaa; color:ffffff; font-weight:normal; font-size:100%}
+
+
+
+  #menu {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  height  : 250px;
+  visibility: visible;
+        }
+
+  #keyissues {
+                position: absolute;
+                top:    0px;
+                left:   180px;
+  width   : 600px;
+  visibility: visible;
+        }
+
+  #geometry {
+                position: absolute;
+                top:   0px;
+                left:  180px;
+  height  : 600px;
+  visibility: hidden;
+        }
+
+  #movie {
+                position: absolute;
+                top:   0px;
+                left:  180px;
+  height  : 600px;
+
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:   400px;
+                left:  380px;
+  height  : 50px;
+  visibility: hidden;
+        }
+
+  #detail {
+                position: absolute;
+                top:    0px;
+                left:  180px;
+  height  : 600px;
+  visibility: hidden;
+        }
+
+  #help {
+                position: absolute;
+                top:    0px;
+                left:  180px;
+  height  : 600px;
+  visibility: hidden;
+        }
+
+  #illuminate {
+                position: absolute;
+                top:    0px;
+  left    :   600px;
+  height  : 250px;
+
+        }
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" onload="checkBrowser();hideVisibleMenus();updateCaption();changeState('movie','hidden');" onmouseup="hideVisibleMenus();">
+  <div id="keyissues">
+    <table width="400" align="left">
+      <tr>
+        <td align="center">
+          <hr height="5" color="#9999CC">
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#000000" valign="top" align="left" width="80%" border="1">
+          <h3><b>KEY ISSUES</b></h3>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <hr height="5" color="#9999CC">
+        </td>
+      </tr>
+      <tr>
+        <td align="left" width="80%">
+          <p></p>
+          <h6>Making decisions in the right order when you lay out a kitchen controls the resulting comfort of the kitchen.</h6>
+          <hr height="5" color="#9999CC">
+          <h6><span style="color:dddddd;background-color:003399">In some cases the "right" order is highly unexpected.</span> Here are some of the aspects of the design sequence which must be done in the right order:</h6>
+          <p></p>
+          <ol>
+            <li><span style="color:dddddd;background-color:3366cc">The position of the table in the kitchen</span></li>
+            <li><span style="color:dddddd;background-color:3366cc">The character of the kitchen and kitchen windows as they relate to the sky and trees and houses nearby</span></li>
+            <li><span style="color:dddddd;background-color:3366cc">A vital secondary center which provides the room with a human focus</span></li>
+            <li><span style="color:dddddd;background-color:3366cc">Placing the counter in a good relation to the first three centers</span></li>
+          </ol>If you get these steps in the right order, there is a good chance the kitchen will be comfortable. The windows and the table dominate everything
+          <p></p>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td align="center" width="100%">
+          <table width="100%" align="center">
+            <tr>
+              <td align="center" bgcolor="#000000">
+                <h6><a href="kitchendetail.htm"><span style="color:dddddd;background-color:003399">Study the detailed sequence</span>&nbsp;&nbsp;&nbsp;<img src="../images/m.jpg" width="15"></a></h6>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

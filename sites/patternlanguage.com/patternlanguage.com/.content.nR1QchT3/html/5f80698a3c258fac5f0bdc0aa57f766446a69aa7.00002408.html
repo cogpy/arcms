@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duncanville</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <script language='javascript'>
+  if (location.href.match(/^(.*patternlanguage.com)\/cgi-bin/))
+   { var prefix =  RegExp.$1;
+     document.write("<base href='"+prefix+"/duncanville'>");
+   }
+
+  function doWhenLoaded()
+  { if (location.href.match(/^(.*patternlanguage.com)/) && !location.href.match(/cgi-bin/))
+    document.forms.voteform.submit();
+  }
+  </script>
+  <style type="text/css">
+  .rankedChartTitle {font-size:15px;color:#0000ff}
+  .rankedChartVotes {font-size:15px;color:#00ff00;padding-left:20px;}
+  .rankedChartBarHolder {padding-left:30px;display:block}
+  .standardChartTitle {font-size:18px;color:#ff00ff}
+  .standardChartVotes {font-size:18px;color:#ff00ff;padding-left:20px}
+  .standardChartBarHolder {padding-left:30px;display:block}
+
+  .h1class {
+   font-size: 36px; font-family: "Times New Roman"; font-weight: normal;
+  }
+
+  H1 {
+   font-size: 36px; font-family: "Times Roman"; font-weight: normal; margin-bottom:0; 
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman";
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "arial"; margin-bottom:0;
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space:15px;
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "galleria";
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman";
+  }
+
+  .bigChange {color:ffff99; text-decoration:none }
+  .start {color:ffffff;background-color:000000; text-decoration:none}
+
+
+  </style>
+  <script language='javascript'>
+  function checkVoteCount(category,maxVotes)
+  { var aa = document.all['vote_'+category];
+    count = 0;
+    for (var i = 0; i < aa.length; i++)
+      { var a = aa[i];
+        if (a.checked)
+          { count++;
+          }
+      }
+    if (count > maxVotes)
+      { alert('You have voted for more than ' + maxVotes + ' choices. Please modify your votes and resubmit.');
+        return false;
+      }
+    else
+       return true;
+  }
+  </script>
+</head>
+<body bgcolor="#FFFFFF" text="#222222" link="#2222FF" vlink="#2222FF" alink="#0000FF" onload='doWhenLoaded()'>
+  <table width="600" align="center">
+    <tr>
+      <td align="left"><span class="h1class">Ideas from other Cities</span><br>
+      <br></td>
+    </tr>
+    <tr>
+      <td>
+        <h3>We are so used to the present development in America, so used to shopping malls, parking lots, food chains.... that we are almost unaware of what is possible, and of what kinds of thing have been done in other places, to make life friendly, fulfilling, worthwhile, in the city we live it.</h3>
+        <p>To make sensible choices and decisions, it is helpful to start by summarizing some of the major kinds of things which <i>can</i> be done, but are not being done in "Edge City," today:</p>
+        <p>Here, for illustration, are some good places in contemporary urban settings today. Have a look at these pictures, and then, <a href="../duncanville/possibilitiesnl.htm#vote"><b>DOWN BELOW</b></a>, vote your choices, as to which of these kinds of things you would like to see, happening somewhere, in downtown Duncanville, tomorrow</p>
+        <p>You may see the current tally of votes by clicking <a href="../duncanville/possibilitiesnl.htm#tally"><b>TALLY OF ALL VOTES TO DATE</b><br>
+        <p></p></a></p>
+        <ul>
+          <li><img src="../urbanpictures/tokyo-pano0207t.jpg" height="180"><br>
+          A walkway with gorgeous blooms</li>
+          <li>
+            <a href="javascript:explanation"><img src="../urbanpictures/dupont-sittingcircle.jpg" height="180"></a><br>
+            A sitting circle in Washington DC
+          </li>
+          <li><img src="../urbanpictures/violins-dupontcircle.jpg" height="180"><br>
+          Children, violins, music outdoors</li>
+          <li><img src="../urbanpictures/dupont-xandos.jpg" height="180"><br>
+          Heavily populated outdoor cafe and restaurant with lots of people</li>
+          <li><img src="../urbanpictures/marunouchi.jpg" height="180"><br>
+          Save beautiful trees and make something out of them</li>
+          <li><img src="../urbanpictures/dupontcircle-townhouse.jpg" height="180"><br>
+          Front steps on a townhouse to let it help the street</li>
+          <li><img src="../urbanpictures/dupontcircle-chess.jpg" height="180"><br>
+          Places for chessplayers</li>
+          <li><img src="../archimages/eishin/walking.jpg" height="180"><br>
+          Purely pedestrian worlds</li>
+          <li><img src="../archimages/eishin/arcade.jpg" height="180"><br>
+          Covered and protected arcade as a place to sit,talk, and walk</li>
+          <li><img src="../urbanpictures/nycnightskyline.jpg" height="240"><br>
+          Excitement of a great city downtown at night</li>
+          <li><img src="../urbanpictures/tivoli.jpg" height="180"><br>
+          Tivoli -- the gardens, Copenhagen</li>
+          <li><img src="../urbanpictures/strogetsquare.jpg" height="180"><br>
+          Small pedestrian quare in the middle of Stroget</li>
+          <li><img src="../urbanpictures/strogetsidestreet.jpg" height="180"><br>
+          Small pedestrian square in the middle of Stroget</li>
+        </ul><a name="#vote" id="#vote"></a>
+        <p></p>
+        <h2></h2>
+        <align center="">
+          Vote Your Choices by checking your top five choices on the list below The computer keeps a running total of the number of times each picture has been chosen by people in Duncanville, and the results are accumulated and made visible in the bar chart and ranked list presented below.
+          <p>Please check five boxes. The computer will not allow you to check more than five.<br>
+          ( <a href="../duncanville/possibilitiesnl.htm#tally">Current tally of all votes cast to date</a>).<br></p>
+          <p></p>
+          <p><span style="color:red"></span></p>
+          <form name='voteform' method='post' action='/cgi-bin/patternl/duncanville/vote.py/duncanville/possibilitiesnl.htm' onsubmit="return checkVoteCount('possibilities',5)" id="voteform">
+            <span style="color:red"><input type="checkbox" name="vote_possibilities" value="walkway"> Walkway with gorgeous flowers <input type="hidden" name="title_possibilities_walkway" value="Walkway with gorgeous flowers"><br>
+            <input type="checkbox" name="vote_possibilities" value="sitting"> Sitting circle <input type="hidden" name="title_possibilities_sitting" value="Sitting circle"><br>
+            <input type="checkbox" name="vote_possibilities" value="violins"> Children making music&nbsp;&nbsp; <input type="hidden" name="title_possibilities_violins" value="Children making music&nbsp;&nbsp;"><br>
+            <input type="checkbox" name="vote_possibilities" value="xandos"> People eating outdoors <input type="hidden" name="title_possibilities_xandos" value="People eating outdoors"><br>
+            <input type="checkbox" name="vote_possibilities" value="autumnleaves"> Beautiful trees protected and preserved&nbsp;&nbsp; <input type="hidden" name="title_possibilities_autumnleaves" value="Beautiful trees protected and preserved&nbsp;&nbsp;"><br>
+            <input type="checkbox" name="vote_possibilities" value="townhouse"> Front steps on buildings in the important places and streets&nbsp;&nbsp; <input type="hidden" name="title_possibilities_townhouse" value="Front steps on buildings in the important places and streets&nbsp;&nbsp;"><br>
+            <input type="checkbox" name="vote_possibilities" value="chess"> People playing chess in the open air <input type="hidden" name="title_possibilities_chess" value="People playing chess in the open air"><br>
+            <input type="checkbox" name="vote_possibilities" value="pedestrian"> People walking in a purely pedestrian world <input type="hidden" name="title_possibilities_pedestrian" value="People walking in a purely pedestrian world"><br>
+            <input type="checkbox" name="vote_possibilities" value="arcade"> Covered and protected arcade as a place to sit, talk, and walk <input type="hidden" name="title_possibilities_arcade" value="Covered and protected arcade as a place to sit, talk, and walk"><br>
+            <input type="checkbox" name="vote_possibilities" value="skyline"> Excitement of a great city downtown at night <input type="hidden" name="title_possibilities_skyline" value="Excitement of a great city downtown at night"><br>
+            <input type="checkbox" name="vote_possibilities" value="tivoli"> The famous urban garden of Copenhagen <input type="hidden" name="title_possibilities_tivoli" value="The famous urban garden of Copenhagen"><br>
+            <input type="checkbox" name="vote_possibilities" value="square"> Small urban square, pedestrian <input type="hidden" name="title_possibilities_square" value="Small urban square, pedestrian"><br>
+            <input type="checkbox" name="vote_possibilities" value="side"> Pedestrian side streets <input type="hidden" name="title_possibilities_side" value="Pedestrian side streets"><br>
+            <input type='submit' name='submit_vote' value='SUBMIT VOTE'></span>
+          </form><span style="color:red"></span>
+          <p></p>
+          <h1>Tally of All Votes to Date</h1>
+          <h2></h2>
+          <align center="">
+            <span style="color:ff0000">Below you see the ongoing tally of votes, showing choices currently made by people in Duncanville, as they are currently ranking them, shown in order of pictures most often chosen as beneficial to Duncanville. The ideas receiving most votes are listed at the top, the ones getting least votes are at the bottom.</span> <a name="#tally" id="#tally"></a> Possibilities in rank order of potential value to Duncanville, as seen by its citizens:
+            <p><span style="font-size"></span></p>
+            <table>
+              <tr>
+                <td>%(ranked_possibilities)s</td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+            </table>
+            <p></p>
+            <h2></h2>
+            <p></p>
+          </align>
+        </align>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

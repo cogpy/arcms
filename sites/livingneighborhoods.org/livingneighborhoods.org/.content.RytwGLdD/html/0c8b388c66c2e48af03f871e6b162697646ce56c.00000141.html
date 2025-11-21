@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Building Living Neighborhoods - Creating Community</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <script language="JavaScript">
+
+  <!-- 
+  if (document.images) 
+  { 
+  pic1on= new Image(62,28); 
+  pic1on.src="../images/uphome.jpg"; 
+  pic1off= new Image(62,28); 
+  pic1off.src="../images/offhome.jpg"; 
+  pic1down=new Image(62,28); 
+  pic1down.src="../images/downhome.jpg"; 
+  } 
+
+  { 
+  pic2on= new Image(62,28); 
+  pic2on.src="../images/upintro.jpg"; 
+  pic2off= new Image(62,28); 
+  pic2off.src="../images/offintro.jpg"; 
+  pic2down=new Image(62,28); 
+  pic2down.src="../images/downintro.jpg"; 
+  } 
+
+  { 
+  pic3on= new Image(62,28); 
+  pic3on.src="../images/upgen.jpg"; 
+  pic3off= new Image(62,28); 
+  pic3off.src="../images/offgen.jpg"; 
+  pic3down=new Image(62,28); 
+  pic3down.src="../images/downgen.jpg"; 
+  }
+
+  { 
+  pic4on= new Image(62,28); 
+  pic4on.src="../images/upimplem.jpg"; 
+  pic4off= new Image(62,28); 
+  pic4off.src="../images/offimplem.jpg"; 
+  pic4down=new Image(62,28); 
+  pic4down.src="../images/downimplem.jpg"; 
+  }
+
+  { 
+  pic5on= new Image(62,28); 
+  pic5on.src="../images/upphotos.jpg"; 
+  pic5off= new Image(62,28); 
+  pic5off.src="../images/offphotos.jpg"; 
+  pic5down=new Image(62,28); 
+  pic5down.src="../images/downphotos.jpg"; 
+  }
+
+  { 
+  pic6on= new Image(62,28); 
+  pic6on.src="../images/upnbds.jpg"; 
+  pic6off= new Image(62,28); 
+  pic6off.src="../images/offnbds.jpg"; 
+  pic6down=new Image(62,28); 
+  pic6down.src="../images/downnbds.jpg"; 
+  }
+
+  { 
+  pic7on= new Image(62,28); 
+  pic7on.src="../images/uparchive.jpg"; 
+  pic7off= new Image(62,28); 
+  pic7off.src="../images/offarchive.jpg"; 
+  pic7down=new Image(62,28); 
+  pic7down.src="../images/downarchive.jpg"; 
+  }
+
+  { 
+  pic8on= new Image(62,28); 
+  pic8on.src="../images/upcontact.jpg"; 
+  pic8off= new Image(62,28); 
+  pic8off.src="../images/offcontact.jpg"; 
+  pic8down=new Image(62,28); 
+  pic8down.src="../images/downcontact.jpg"; 
+  }
+
+  { 
+  pic9on= new Image(62,28); 
+  pic9on.src="../images/upservices.jpg"; 
+  pic9off= new Image(62,28); 
+  pic9off.src="../images/offservices.jpg"; 
+  pic9down=new Image(62,28); 
+  pic9down.src="../images/downservices.jpg"; 
+  } 
+
+  { 
+  pic11on= new Image(62,28); 
+  pic11on.src="../images/upcom.jpg"; 
+  pic11off= new Image(62,28); 
+  pic11off.src="../images/offcom.jpg"; 
+  pic11down=new Image(62,28); 
+  pic11down.src="../images/downcom.jpg"; 
+  } 
+
+  { 
+  pic13on= new Image(62,28); 
+  pic13on.src="../images/upunfold.jpg"; 
+  pic13off= new Image(62,28); 
+  pic13off.src="../images/offunfold.jpg"; 
+  pic13down=new Image(62,28); 
+  pic13down.src="../images/downunfold.jpg"; 
+  }
+
+  function lightup(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOn=eval(imgName + "on.src"); 
+  document[imgName].src= imgOn; 
+  } 
+  } 
+
+  function turnoff(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgOff=eval(imgName + "off.src"); 
+  document[imgName].src= imgOff; 
+  } 
+  } 
+
+  function clickdown(imgName) 
+  { 
+  if (document.images) 
+  { 
+  imgDown=eval(imgName + "down.src"); 
+  document[imgName].src=imgDown; 
+  } 
+  } 
+  //--> 
+  </script>
+  <style>
+
+  .base {color:blue; font-weight:normal; font-size:100%; background-color:eeeeee}
+  .bigChange {color:blue; font-weight:BOLD; font-size:100%; background-color:ffFFFF}
+  .blackChange {color:black; font-weight:normal; font-size:13px; background-color:ffFFFF}
+  .smallChange {color:white; font-size:100%; background-color:66ddaa}
+  .start {color:ffffdd;background-color:6699cc; text-decoration:none}
+  .blustart {color:ffffdd;background-color:6699ff; text-decoration:none}
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h35class {
+        FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h36class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  195px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#000000" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="500" align="center" border="1" bgcolor="#1111FF">
+      <tr>
+        <td align="center">
+          <img src="../images/bln-blue-livingneighborhoods.jpg" width="160" height="23" border="0"><br>
+          <img src="../images/bln-blue-theory-background.jpg" height="43" border="0">
+          <p></p>
+        </td>
+      </tr>
+    </table><br>
+    <table width="500" align="center" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center">
+          <span class="h5class"><a href="#anchor">jump</a></span><span style="color:red"></span>
+          <h1><span style="color:red">CREATING HUMAN COMMUNITY</span></h1>
+        </td>
+      </tr>
+      <tr>
+        <td align="center"><img src="../images/noo.gif" height="50"></td>
+      </tr>
+      <tr>
+        <td width="100%" align="center">
+          <a name="anchor" id="anchor"></a><span class="h32class"><span style="FONT-SIZE:140%">I</span>F ONE THING, MORE THAN ANY OTHER, distinguishes a real neighborhood from the corporate machine-architecture of the 20th-century developer, it is the fact that real people have -- together -- conceived it, planned it, and built it. It is this human reality which makes it worth living in, pleasant to be there, and valuable.</span>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">
+          <blockquote>
+            <span class="H32CLASS"><span style="font-size:80%">&nbsp;</span></span>
+            <p><span class="H32CLASS">This means that the entire adventure of building a neighborhood – whether rebuilding an existing one, or building an entirely new one from scratch – can only be done successfully by reversing the usual process. The corporate procedure is to build the houses first, and then fill them with people later. Those houses inevitably remain box-like because they were mass produced without human engagement. It is building a human community and the physical buildings gradually and, above all <b>together</b>, that produces a living neighborhood. As the buildings are thought of, planned, and built, so the involvement of the people who are going to inhabit them and use them – the community – is also thought of, and planned, and built. They are delicately and sensitively allowed to grow, so that buildings and people – or people and buildings – <b>grow together</b>.</span></p>
+            <p><span class="H32CLASS">We can only build thriving neighborhoods by first building the human community that will create them with inspiration, heart and passion. When people know that they will live in the physical environment they are making together, and it is being made to support their way of living, they invest themselves in a remarkable way, and the place they create becomes one of belonging. There is no shortcut to achieving this outcome. The process cannot be faked.</span></p>
+          </blockquote>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <hr height="10" color="#FF0000">
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="500" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td width="100" valign="top"><span class="h404class">THE BENEFIT OF TAKING TIME<br></span></td>
+        <td width="400" valign="top">
+          <span class="h4class">The capacity to generate life in a neighborhood, comes in part, from slowness. People need a chance to adapt to one another's actions. This does not mean that it takes 100 years to build a neighborhood. We have done it effectively in two or three years, and in our experience that can allow enough time for some mutual adaptation to occur step by step.</span>
+          <p><span class="h4class">But it does mean that it is important not to be obsessed by speed. The desire to build at once comes from issues of banking, interest rates, and the desire for profit. Surely these matters can be brought under control, so that they no longer interfere with the birth of community -- a more significant issue.</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="100" valign="top"><span class="h404class">PLANNING AND BUILDING TOGETHER AS A SOURCE OF FRIENDSHIP AND LIFE-ENHANCING COOPERATION<br></span></td>
+        <td width="400" valign="top">
+          <span class="h4class">Our emotions are deeply rooted in our surroundings. Our social and personal connections to one another are connected to the shape and character of our environment and our individual relationships with the environment. When we create the physical substance of our environment, as a personal matter, we then become rooted in that world that we create, and in doing so we then become joined together with the fellows, friends, family and colleagues with whom we do it.</span>
+          <p><span class="h4class">Thus, the environment cannot be regarded merely as an object. It is the manifestation of our love for the earth, of our desires, of our affection for one another, and of our understanding of the universe. Of course an abstract, developer-built neighborhood cannot do this for us. And indeed, we are now surrounded by buildings which cannot do it - and so, small wonder - the bond to the universe and to our fellows has been weakened.</span></p>
+          <p><span class="h4class">To allow this inner essence of the world, to be reborn, we must both create the world, and do it together with our fellows.</span></p>
+          <p><span class="h4class">When partners in a community engage in making a generative code, planning, and building together, they embrace a living process that brings with it the deepest kind of community building. They create both a social structure and a physical structure that holds the community together because, along with the contributions of all the people in various roles, the deeply held values and culture of the neighborhood are built into the physical form. The outcome – the physical form – serves to reinforce on a daily basis an appreciation for what can be built out of shared vision and commitment, an appreciation for one another, and the restoration of mental and emotional health in the inhabitants as well as the physical surroundings.</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="100" valign="top"><span class="h404class">VITAL SPECIFICATION<br></span></td>
+        <td width="400" valign="top">
+          <span class="h4class">All the materials and processes described on this site emphasize the need for people to be partners in a <u>true</u> sense -- that means, that they are to be taken seriously, each one of them, <b><u>as a part of</u></b> the proceedings and creative effort. Please take this specification seriously!</span>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="100" valign="top"><span class="h404class">PERSONAL FEELING<br></span></td>
+        <td width="400" valign="top">
+          <span class="h4class">This short <a href="relationships5.htm">Note from Chris</a> describes the human under-structure of community, and the way this under-structure liberates the possibility of unfolding and morphogenesis, then allowing a <span style="color:blue"><b>real</b></span> neighborhood to form itself in human and geometric terms.</span>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+    <table width="500" align="center" bgcolor="#FFFFDD" border="1">
+      <tr>
+        <td colspan="3" width="500" align="center">
+          <hr height="10" color="#FF0000">
+          <br>
+          <span class="h35class"><span style="FONT-SIZE:140%">C</span>ENTER FOR <span style="FONT-SIZE:140%">E</span>NVIRONMENTAL <span style="FONT-SIZE:140%">S</span>TRUCTURE established 1967<br>
+          and<br>
+          <span class="h36class"><span style="FONT-SIZE:140%">C</span>ENTRE FOR <span style="FONT-SIZE:140%">E</span>NVIRONMENTAL <span style="FONT-SIZE:140%">S</span>TRUCTURE, EUROPE established 2005</span></span>
+        </td>
+      </tr>
+    </table><br>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+      <br>
+    </center>
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+.jspHorizontalBar,
+.jspVerticalBar,
+.jspTrack
+{
+	background: transparent;
+	    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	    /* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+
+}
+
+.jspDrag
+{
+	background:  transparent;
+		    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+			-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	    /* For IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+		/* For IE 5.5 - 7 */
+		filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.jspTrack .jspActive,
+.jspTrack .jspHover,
+.jspDrag:hover
+{
+	
+
+}
+
+
+.jspArrow
+{
+	background: url(../image/ui-icons_222222_256x240.png) no-repeat;
+	
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.jspVerticalBar>.jspActive,
+.jspArrow:hover
+{
+	background-image: url('../image/ui-icons_cd0a0a_256x240.png');
+}
+
+.jspVerticalBar>.jspDisabled,
+.jspVerticalBar>.jspDisabled:hover,
+.jspHorizontalBar>.jspDisabled,
+.jspHorizontalBar>.jspDisabled:hover
+{
+	background-color: transparent;
+	background-image: url('../image/ui-icons_888888_256x240.png');
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 15px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 15px;
+}
+
+.jspArrowUp
+{
+	background-position: 0 0;
+}
+
+.jspArrowDown
+{
+	background-position: -64px 0 !important; 
+}
+
+.jspArrowLeft
+{
+	background-position: -96px 0 !important;
+}
+
+.jspArrowRight
+{
+	background-position: -32px 0 !important;
+}

@@ -1,0 +1,463 @@
+// There is an entry that begins with OBJECT in this file for
+// each object whose appearance or behavior can be set.
+// (The lines beginning with the word OBJECT should be left
+// as they are.)
+//*****COLORS********
+// In the following section, we define the colors we use
+// for both the pen colors and for the buttons.
+//  You can make up new colors to use elsewhere in this file.
+COLORS
+// The first few colors in the list are being
+// used only to set the colors of buttons and panels.
+  "button grey"		200 200 200
+  "panel dark blue"	88 145 250
+  "panel light blue"	172 200 252
+  "panel light ivory"   255 255 200
+  "navy blue"   125 125 200
+  "deep blue"    0 0 68
+// They can be changed here to adjust those colors.
+// The first few colors in the list are being
+// The rest of the colors are being used as pen colors.
+
+  "background grey"	200 200 200
+
+  "Pedestrian space"	255 255 0
+  "Green space"		0 255 0
+  "Buildings"		80 80 80
+  "Parking space"	200 0 0
+  "Trees"       0 65 35
+  "Water"       0 201 236
+  //"Water"       0 182 168
+ "black"		0 0 0
+  "white"		255 255 255
+  "light yellow"    255 255 80
+  "blue"		0 0 255
+  "red"			255 0 0
+  "Brick"		214 48 24
+  "Green"		0 255 150
+  "Magenta"		255 0 255
+  "Cyan"		0 255 255
+  "Blue"		0 0 255
+  "Red"			255 0 0
+  "Yellow"		255 255 0
+  "Leaf Green"		0 204 130
+// "Brown"		120 90 40
+  "Brown"		150 110 65 
+  "Light Brown"		189 135 97
+  "Light Grey"		161 161 161
+  "Grey"		128 128 128
+  "Dark Grey"		99 99 99
+  "Lilac"		224 148 255
+  "Mustard"		204 207 0
+  "Slate"		99 99 145
+  "Sky Blue"		128 196 255
+  "Painted Wood"	218 224 238
+  "Wood1"		172 133 100
+  "Wood2"		145 132 113
+  "Wood3"		198 164 113
+  "Blue White"		217 232 255
+
+// Each arrangment section tells what buttons are to
+// appear on a panel, and how they are arranged.
+//  (A button will appear only if it is specified in an
+// arrangement section as well as in an OBJECT section.)
+//  The vertical and horizontal subsections produce nested
+// arrangements, with the effect of nested single column
+// and single row tables.
+//   Numbers followed by 'px' specify the gap between
+// objects, in pixels.  (This is a vertical or horizontal
+// gap for vertical or horizontal specifications,
+// respectively.) If no gap is specified the default gap
+// associated with the panel is used.
+
+ARRANGEMENT main_button_row
+
+ { vertical
+   // The entries of a vertical specification
+   // are arranged one above the other.
+
+     // The following horizontal specification gives
+     // the top row of buttons
+     { horizontal pen_label 0px pen_width_choice
+	    pen_color_choice erase_button
+	    20px move_drawing_button
+	    choose_zoom_button zoom_back_button1
+     }
+
+     // This gives the separation between the rows:
+     7px 
+
+     // The following specification
+     // gives the second row of buttons
+
+     { horizontal rename_layer_button new_layer_button 100px undo_button
+       redo_button edit_text_button 20px
+       new_drawing_button open_button
+     }
+
+     // for now, a copy of the new_drawing_button
+     // and open_button are being put on the
+     // starting_instruction_panel by gdraw.java
+     // A second copy is available to be placed here
+  }
+
+ARRANGEMENT startup_arrangement
+  { vertical
+     { horizontal starting_instructions
+     }
+     { horizontal startup_new_drawing_button
+		  startup_open_button
+     }
+  }
+	 
+// GROUPs give properties held in common by a number of
+// objects. You can create as many groups as you want.
+
+//  Currently all of the buttons and choices
+// (for choosing pen color, etc.)
+//  are in the group normal_button.
+// Thus they will all have the following properties (except
+// where other values are specified for particular buttons).
+
+GROUP normal_button
+  background "button grey"    // This is button color
+  foreground "black"          // color of button's text
+  font_size 11
+  font helvetica
+  font_style plain  // other possibilities: bold and italic
+       // one can also specify both: font_style bold italic
+
+// This group is used for text (such as the label "pen:"
+// that appears to the left of the pen width and color
+// choices)
+// that is closely associated with buttons
+
+GROUP text_accompanying_buttons
+  foreground black
+  font_size 11
+  font helvetica
+  font_style plain
+  align center  
+   // This says that the text is to be centered on the button
+
+// This is used for other text on button panels
+GROUP instruction
+  foreground black
+  font_size 11  // was 14
+  font helvetica
+  // font_style bold
+  font_style plain
+  align center
+
+GROUP top_text
+  foreground white
+  background black
+  font_size 13
+  font arial
+  font_style bold
+  align left
+
+
+// This sets properties of the panels on which
+//  the buttons reside.
+GROUP button_panel
+  width 2000
+  height 92
+  inter_button_gap 7 
+  background "panel light ivory"
+
+    // If the width or height are increased, it may be
+    // necessary to make the applet window bigger by
+    // changing the parameters
+    // appletMinusDrawingWidth and appletMinusDrawingHeight.
+    //  (Currently these parameters are set in the file
+    // drawfunctions.js)
+
+OBJECT applet
+  background "deep blue"
+// background "panel light ivory"
+      // this sets the color used for the strip
+      // at the top of the applet
+
+OBJECT separate_window
+  width 700
+  height 540
+  use_separate_window false
+
+OBJECT canvas_holder
+  background "navy blue"
+  // this sets the color of the border
+  // around the drawing canvas
+  // background "background grey"
+
+OBJECT drawing_canvas1
+background green
+// this is the background color if there is no photo image
+width 600
+height 300
+
+OBJECT outer_layer_panel
+  display yes
+  // background "navy blue"
+  background "panel light ivory"
+     // this sets the background of the panel
+     // on which the layers are listed
+
+OBJECT layer_scroll_panel// length of layers
+  width 250
+  height 400
+
+OBJECT inner_layer_panel
+  background #000044
+  first_step_at "top"
+     // this sets the color of the lines between
+     // the layers in the layer list
+
+OBJECT layer_row
+   //background #a0a0a0
+//background #d0d0ff//PLAIN BACKGROUND
+background #00bbaa//PLAIN BACKGROUND
+hover_background #00bbaa//MOUSEOVER BACKGROUND
+//hover_background #eeeeff//MOUSEOVER BACKGROUND
+// hover_background #b0b0ff
+   foreground black
+active_background #eeeeff//SELECTED LAYER bbbbff
+//active_background #0099BB//SELECTED LAYER
+active_hover_background #eeeeff//MOUSEOVER SELECTED
+//active_hover_background #0099BB//MOUSEOVER SELECTED
+ //  active_background #007799
+//   active_foreground white
+ active_foreground black
+//   hover_color #005577
+  //hover_color #909090
+   // width is set during layout - set width of  step_panel
+   height 30
+   width 100
+   image "buttons/eye5.jpg"
+   alt_image "buttons/no-eye5.jpg"
+   thumbnail_width 30
+   thumbnail_height 20
+   thumbnail_padding 0 
+   gap 5 // horizontal gap between parts
+
+OBJECT step_name_panel  // step word itself
+   //foreground white
+   shape rectangle  // value: tab or rectangle
+   round_width 10 
+   round_height 6
+   background_selected #007766
+   //background #004433
+background #00ff00
+foreground #ffff77//TEXT OF STEP NAME
+   width 200
+
+OBJECT step_panel //  step surround and background
+   // layout "side by side"
+   //background #b1b1b1
+   background #000044
+   border_color #005544//BASIC GREEN OF STEP PANEL
+ //  active_border_color #007755// SELECTED STEP PANEL
+active_border_color #118866// SELECTED STEP PANEL
+//  hover_border_color #116655//MOUSEOVER NON SELECTED STEP
+hover_border_color #118866//MOUSEOVER NON SELECTED STEP
+   active_hover_border_color #118866//MOUSEOVER SELECTED PANEL
+   width 200
+   round_width 10 
+   round_height 6 
+   gap 3 // vertical gap
+
+// The following objects are for the main button panel.
+
+  OBJECT main_button_panel
+    display no
+    is button_panel
+	// The "is" property tells what group an object is in
+    background "deep blue"
+	// This overrides the background color choice
+	//  specified for group button_panel.
+
+  OBJECT pen_label
+    is text_accompanying_buttons
+    text "pen:"
+       
+  OBJECT pen_width_choice
+    choices 1 2 3 4 6 8 10 12 15 20
+     width 110   // width of choice list region
+     height 320   // height of choice list region
+    initial_choice 3
+
+   OBJECT new_layer_step_choice
+     width 160
+     height 300
+	 
+//PEN COLORS
+   OBJECT pen_color_choice
+     choices "Pedestrian space" "Green space" "Buildings" "Parking space" "Trees" "Water"
+     choices "Black" "White" "Light Yellow" "Brick"
+     choices "Leaf Green" "Light Brown" "Brown" 
+     choices "Dark Grey" "Lilac" "Mustard" "Slate" 
+     choices "Red" "Blue" "Green" "Yellow"
+     choices "Blue White" "Light Grey" "Sky Blue"
+     choices "Painted Wood" "Wood1" "Wood2" "Wood3"
+     initial_choice "Black"
+     width 200   // width of color list region
+     height 400   // height of color list region
+
+   OBJECT initial_step_list
+     steps "basemap:Basemap"
+     steps "basemapcorrections:Basemap corrections"
+     steps "diagnosis:Diagnostic map"
+     steps "wholeness:Wholeness"
+     steps "maincenter:Main center"
+     steps "preciousplaces:Precious places"
+     steps "views:Views"
+     steps "pathplaces:Path places"
+     steps "minorcenters:Minor centers"
+ 	 // steps "aaa:xx"
+     // steps "bbb"
+     // steps "ccc"
+     // steps "ddd"
+     // steps "eee"
+     // steps "fff"
+  
+  OBJECT erase_button
+     is normal_button
+     text "      Erase     "
+	// padding here is to make the button wide
+	// enough to hold "Stop Erasing"
+     active_text "Stop Erasing"
+       // this is the label of the button when
+       // erasing is in progress
+
+   OBJECT move_drawing_button
+     is normal_button
+     text "      Move Drawing     "
+     active_text "Stop Moving Drawing"
+
+   OBJECT new_layer_button
+     is normal_button
+     text "New Layer"
+
+   OBJECT rename_layer_button
+     is normal_button
+     text "Rename Layer"
+
+   OBJECT choose_zoom_button
+     is normal_button
+     text "Zoom In" 
+     // OLD: active_background "white"
+	// this is the color of the button
+	// when zooming is in progress
+
+   OBJECT zoom_back_button1
+     is normal_button
+     text "Zoom Out" 
+
+   OBJECT undo_button
+     is normal_button
+     text "Undo"
+
+   OBJECT redo_button
+     is normal_button
+     text "Redo"
+
+// the following objects are for the panel
+//       starting_instruction_panel
+   OBJECT startup_panel
+     is button_panel
+
+OBJECT starting_instructions
+  is instruction
+  font_size 12
+  text "To start drawing, create a new drawing or open an existing one."
+
+OBJECT how_to_start
+  is instruction
+  rows 3
+  columns 20
+  background white
+  font_size 12
+  text "To start drawing, choose an operation by clicking on one of the buttons above"
+
+OBJECT finish_layer_or_step_move
+  is instruction
+  rows 3
+  columns 20
+  background white
+  font_size 12
+  text "Choose a location for the layer or step using the list to the left"
+
+OBJECT new_drawing_button
+  is normal_button
+  // text "Close drawing"
+  text "New drawing"
+
+OBJECT startup_new_drawing_button
+  is normal_button
+  // text "Close drawing"
+  text "New drawing"
+
+OBJECT open_button
+  is normal_button
+  text "Open"
+
+OBJECT startup_open_button
+  is normal_button
+  text "Open"
+
+OBJECT save_as_button
+  is normal_button
+  text "Save as"
+
+OBJECT edit_text_button
+  is normal_button
+  text "Text"
+
+OBJECT text_style_choice
+  is normal_button
+  choices "Plain" "Bold" "Italic"
+  initial_choice "Plain"
+
+OBJECT text_size_choice
+  is normal_button
+  choices 8 9 10 12 14 18
+  initial_choice 10
+
+//TEXT COLORS
+
+OBJECT text_color_choice
+  choices "Black" "White" "Brick" "Leaf Green"
+  choices "Light Brown" "Light Grey"
+  choices "Dark Grey" "Lilac" "Mustard" "Slate" "Sky Blue"
+  choices "Red" "Blue" "Green" "Yellow"
+  choices "Painted Wood" "Wood1" "Wood2" "Wood3"
+  initial_choice "Black"
+
+OBJECT text_start_instructions
+  is instruction
+  text "Choose a location for a new annotation, move an annotation, or select an annotation to edit."
+
+OBJECT text_edit_instructions
+  is instruction
+  text "Edit the selected annotation.  Then select \"Done\" or go on to work on another annotation."
+
+OBJECT text_start_panel
+  is button_panel
+
+OBJECT text_edit_panel
+  is button_panel
+
+OBJECT annotation_done_button
+  is normal_button
+  text "Done"
+
+// the following are used when the applet uses a
+// separate window
+OBJECT invocation_button
+ is normal_button
+ text "DRAW"
+
+OBJECT hide_button
+ is normal_button
+ text "STOP DRAWING"
+

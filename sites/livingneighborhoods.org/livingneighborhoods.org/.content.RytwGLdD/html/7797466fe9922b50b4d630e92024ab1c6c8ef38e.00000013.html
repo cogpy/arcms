@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Diagnosis</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+
+  .h31class {
+        FONT-WEIGHT: normal; FONT-SIZE: 26px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h414class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 15px; FONT-FAMILY: "Arial"; COLOR: GREEN;
+  }
+
+  H6 {
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR:0000ff;
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h69class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69medclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69bigwhiteclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: 7777ff; 
+  BACKGROUND-COLOR: 000000; } 
+
+  .h69biggreenclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial";
+  }
+
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+
+  .caption {
+        FONT-WEIGHT: normal; FONT-STYLE: italic; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: black; text-decoration: none;  }
+
+
+
+  #splash {
+                position: absolute;
+                top:   25 px;
+                left:  75 px;
+  width   : 650 px;
+  z-index: -5;
+  visibility: "visible";
+        }
+
+  #top {
+                position: absolute;
+                top:   0 px;
+                left:  75 px;
+  z-index: 2;
+  height  : 400 px;
+        }
+
+  #headline {
+                position: absolute;
+                top:   400 px;
+                left:  75 px;
+  height  : 600 px;
+  z-index: 2;
+        }
+
+
+  #maintext {
+                position: absolute;
+                top:   1030 px;
+                left:  220 px;
+  height  : 600 px;
+  z-index: 2
+        }
+
+  #pictable {
+                position: absolute;
+                top:   1040 px;
+                left:  45 px;
+  height  : 600 px;
+  z-index: 2
+        }
+
+  #color {
+                position: absolute;
+                top:   1000px;
+                left:  220px;
+  z-index: 5; 
+  width   : 400 px;
+  visibility: hidden; 
+        }
+
+  #twopeople {
+                position: absolute;
+                top:   910 px;
+                left:  220 px;
+  z-index: 5; 
+  width   : 400 px;
+  visibility: hidden
+        }
+
+  #walking {
+                position: absolute;
+                top:   1060 px;
+                left:  220 px;
+  z-index: 5; 
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #discussion {
+                position: absolute;
+                top:   920 px;
+                left:  220 px;
+  z-index: 5; 
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #looking {
+                position: absolute;
+                top:   1060 px;
+                left:  220 px;
+  z-index: 5; 
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #working {
+                position: absolute;
+                top:   1210 px;
+                left:  220 px;
+  z-index: 5; 
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #urbanmenu {
+                position: absolute;
+                top:   0px;
+                left:  200px;
+  height  : 200px;
+  visibility: hidden; 
+        }
+
+  #drawpad {
+                position: absolute;
+                top:   550px;
+                left:  100px;
+  height  : 500px;
+  width: 600px;
+  bgcolor: 7777ff
+  z-index: 6;
+  visibility: visible; 
+        }
+
+
+
+  </style>
+</head>
+<body text="#000000" vlink="#0000FF" link="#0000FF" bgcolor="#FFFFFF">
+  <div id="top">
+    <table width="650" align="center">
+      <tr>
+        <td align="center"><span class="h4class" style="font-family:Times"><span style="FONT-SIZE:140%">A F</span>ragment of the <span style="FONT-SIZE:140%">G</span>enerative <span style="FONT-SIZE:140%">C</span>ode for <span style="FONT-SIZE:140%">N</span>eighborhoods</span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <a href="javascript:history.go(-1)"><span class="h5class" style='font-weight:normal;color:blue'>Back</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td align="center"><span class="h69biggreenclass"><span style="font-size:40px"><b>DIAGNOSIS</b></span></span></td>
+      </tr>
+    </table>
+  </div>
+  <div id="headline">
+    <table width="650" align="center">
+      <tr>
+        <td align="center">
+          <hr height="10" color="white">
+          <span class="h69biggreenclass" style="font-weight:bold;"><span style="FONT-SIZE:130%">O</span>bserve, in the land, the vital structure of the whole, which must be extended, preserved, and repaired.</span><br>
+          <hr height="10" color="white">
+          <p></p>
+          <center>
+            <a href="#drawpad"><span style="color:005511">Work on your drawing</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#maintext"><span style="color:005511">Detailed explanation of what to do</span></a>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="pictable">
+    <table width="165" align="left" border="1">
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('color1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('color1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/diagnosis/cropped-colorfeelingmap.jpg" width="150"><br>
+          <span class="h6class">Example 1: Good and bad places in a neighborhood of San Francisco</span><span></span></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('twopeople1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('twopeople1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/people/twopeople.jpg" width="150"><br>
+          <span class="h6class">Example 2: Thinking together</span></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('walking1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('walking1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/people/maggiesophie-inthesnow.jpg" width="150"><br>
+          <span class="h6class">Example 3: Walking the land</span></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('discussion1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('discussion1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/people/listening-to-oneanother.jpg" width="150"><br>
+          <span class="h6class">Example 4: Listening</span></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('looking1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('looking1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/people/looking3.jpg" width="150"><br>
+          <span class="h6class">Example 5: Looking at the land together</span></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="javascript:void(0)" onmouseover="changeState('urbanmenu','visible');togglePic('working1');" onmousedown="changeState('urbanmenu','hidden');" onmouseout="javascript:togglePic('working1');"><span onmouseover="changeClass(this,'bigChange')" class="start"><img src="pics/people/working.jpg" width="150"><br>
+          <span class="h6class">Example 6: Working together</span></span></a><br>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="maintext">
+    <table align="center" width="450" border="0">
+      <tr>
+        <td width="450" valign="top" align="left">
+          <span class="h404class">GENERAL INTRODUCTION TO DIAGNOSIS</span>
+          <p><span class="h404class"></span><span class="h4class"></span></p>
+          <p class="Default"><span class="h4class"><span lang="EN-US" style='color:#211D1E'>The most fundamental way to treat the land-- whether it is an open field, or an existing village, or a street in a town -- is to respect what is there, protect it, continue it, make it better. Heal it, make it more whole.</span></span></p>
+          <p class="Default"><span lang="EN-US" style='color:#211D1E'>The great towns and villages have always been built this way, and it is this process which gave them their beauty. It takes skill. It requires a loving attention to what is there.</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="450" valign="top">
+          <span class="h404class">WHAT IS THE "IT" THAT HAS TO BE PRESERVED AND EXTENDED?<br></span>
+          <p><span class="h404class"></span><span class="h4class"></span></p>
+          <p class="Default"><span class="h4class">What is the "it" that is being preserved and extended, during these kinds of actions? It is the configuration of the whole. In every place there are deep seeds of structure running in the place, in its geometry, its colors, its smells and sounds. It lies in the hills of the land, in the stands of trees and hedges; in the gullies; in the outcrops of rock.</span></p>
+          <p class="Default"><span class="h4class">In an existing town, too, the "it" that has to be preserved is the deep structure, the seeds of loveliness that are present there, and these seeds of loveliness are in the wholeness. It is this wholeness, the larger, deeper structure which matters most. Although it is in the wholeness, it may nevertheless be caused by small details. A corner store, with two tables on the sidewalk that forms a corner, and also in turn forms a larger center in the neighborhood. This is an example of what must be preserved, protected, and extended. You cannot extend it by making it larger - -but by honoring it and respecting it. It means making sure that the larger structure which ripples out from these two tables is extended and strengthened by whatever other things are built in the nearby areas. .</span></p>
+          <p class="Default"><span class="h4class">In order to do this, we need to walk around the place many times, with others, and alone, asking ourselves which place has the natural magnetism to pull us to go there, which makes us want to stay there, which has the power (potentially) to give us life merely from <b>being</b> there.</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="450" valign="top">
+          <span class="h404class">ON A GREEN FIELD SITE<br></span>
+          <p><span class="h404class"></span><span class="h4class"></span></p>
+          <p class="Default"><span class="h4class">On a green field site, where a neighborhood does not exist, this feeling will most likely be generated by a view, by the form of the land which has a natural protected area, a declivity, or by a high spot which looks out. Great trees, are also capable of giving us such a place, naturally occurring water, the edge of a forest, the bottom of a cliff. It is impossible to predict with any general principles, what feature of a particular piece of land will have this character. Each piece of land is different, and will tell you, in its own way, what unique feature, on that land, is best suited to become the spiritual center of a future neighborhood built there.</span></p>
+          <p class="Default"><span class="h4class">The way to achieve this is to spend time, gazing on the land, at the place where the building is to be, or at the space itself, as a place and as a beautiful entity in itself. Ask yourself -- standing there, and closing your eyes -- how high it is, what line will enhance the place, where you would most expect to find the front edge of the building, if it is a peaceful and gentle place.</span></p>
+          <p class="Default"><span class="h4class">It will not be out of place, either, to ask childish things, of your inner eye. What color is it? When you close your eyes, what color do you see? What kind of windows does it have? When you close your eyes, what shape are the windows, what figure gives them inspiration, and makes the place worth being in?</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="450" valign="top">
+          <span class="h404class">IN AN EXISTING COMMUNITY WHERE YOUR WORK IS FITTING IN A HELPING TO HEAL IT AND EXTEND ITS WELL-BEING<br></span>
+          <p><span class="h404class"></span><span class="h4class">If the group of you has meetings around a table, gradually fruitful discussion will emerge, just from your common knowledge of the land, and a slow sense of common ideals that will emerge, in relation to the land. Look at the animated picture of a group of families working with us in Nagoya, Japan.</span></p>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="450" valign="top">
+          <span class="h404class">ON A BROWN FIELD SITE</span>
+          <p><span class="h4class">As you can see, in this picture people are just resting together, taking it all in, developing their communal feeling for the place, getting to know it, perhaps getting to know the bushes, or the flowers, or the insects and birds.</span></p>
+          <p><span class="h4class">It doesnt sound like much, but it makes a big difference.</span></p>
+          <p><span class="h4class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="450" valign="top">
+          <span class="h404class">WORK TOGETHER AND WRITE SOME THINGS DOWN ABOUT YOUR NEIGHBORHOOD, SO THEY CAN BE BETTER SHARED</span>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p><span class="h4class"></span></p>
+          <p></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="drawpad">
+    <center>
+      <span class="h6class" style="color:005511">Your unfolding drawing is active just below, and has been carried forward from your previous unfoldings.</span><br>
+      <applet code='gdraw.class' archive='gdraw2006-9-5.jar' mayscript="" width="600" height="400">
+      </applet>
+    </center>
+  </div>
+  <div id="splash">
+    <center>
+      <img src="pics/diagnosis/centersinland.jpg" width="450px" name="arusha1" border="0" id="arusha1">
+    </center>
+  </div>
+  <div id="twopeople"><img src="pics/people/twopeople.jpg" width="400px" name="twopeople1" border="0" id="twopeople1"></div>
+  <div id="color"><img src="pics/diagnosis/cropped-colorfeelingmap.jpg" width="400px" name="color1" border="0" id="color1"></div>
+  <div id="walking" z-index="10"><img src="pics/people/maggiesophie-inthesnow.jpg" width="400px" name="walking1" border="0" id="walking1"></div>
+  <div id="discussion" z-index="10"><img src="pics/people/listening-to-oneanother.jpg" width="400px" name="discussion1" border="0" id="discussion1"></div>
+  <div id="looking" z-index="10"><img src="pics/people/looking3.jpg" width="400px" name="looking1" border="0" id="looking1"></div>
+  <div id="working" z-index="10"><img src="pics/people/working.jpg" width="400px" name="working1" border="0" id="working1"></div>
+</body>
+</html>

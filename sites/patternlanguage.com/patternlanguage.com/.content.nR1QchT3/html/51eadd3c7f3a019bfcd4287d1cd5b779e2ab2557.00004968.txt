@@ -1,0 +1,306 @@
+// There is an entry that begins with OBJECT in this file for each object whose
+// appearance or behavior can be set.
+// (The lines beginning with the word OBJECT should be left as they are.)
+
+// In the following section, we define the colors we use for both the
+// pen colors and for the buttons.
+//  You can make up new colors to use elsewhere in this file.
+COLORS
+  "button grey"		200 200 200  // The first few colors in the list are being
+  "panel dark blue"	88 145 250   // used only to set the colors of buttons and panels.
+  "panel light blue"	172 200 252  // They can be changed here to adjust those colors.
+  "dim panel light blue"	130 150 190
+  "text light grey"	200 200 200
+  // "panel dark grey"	90 90 90
+  "panel dark grey"	70 70 70
+  "panel deep blue"	40 80 120   // used only to set the colors of buttons and panels.
+
+  "black"		0 0 0         // The rest of the colors are being used as pen colors.
+  "white"		255 255 255
+  "blue"		0 0 255
+  "red"			255 0 0
+  "Brick"		214 48 24
+  "Green"		0 255 0
+  "Magenta"		255 0 255
+  "Cyan"		0 255 255
+  "Blue"		0 0 255
+  "Red"			255 0 0
+  "Yellow"		255 255 0
+  "Leaf Green"		0 204 130
+  "Light Brown"		189 135 97
+  "Light Grey"		161 161 161
+  "Grey"		128 128 128
+  "Dark Grey"		99 99 99
+  "Lilac"		224 148 255
+  "Mustard"		204 207 0
+  "Slate"		99 99 145
+  "Sky Blue"		128 196 255
+  "Painted Wood"	218 224 238
+  "Wood1"		172 133 100
+  "Wood2"		145 132 113
+  "Wood3"		198 164 113
+
+
+// GROUPs give properties held in common by a number of objects
+// You can create as many groups as you want.
+
+//  Currently all of the buttons and choices (for choosing pen color, etc.)
+//  are in the group normal_button. Thus they will all have the following properties
+//  (except where other values are specified for particular buttons).
+GROUP normal_button
+  background "button grey"    // This is the color of the button.
+  foreground "black"          // This is the color of the text of the button.
+  font_size 11
+  font helvetica
+  font_style plain            // other possible choices are bold and italic
+                              // one can also specify both: font_style bold italic
+
+// This group is used for text (such as the label "pen:"
+// that appears to the left of the pen width and color choices)
+// that is closely associated with buttons
+GROUP text_accompanying_buttons
+  foreground black
+  font_size 11
+  font helvetica
+  font_style plain
+  align center               // This says that the text is to be centered on the button
+
+// This is used for other text on button panels
+GROUP instruction
+  foreground black
+  font_size 11  // was 14
+  font helvetica
+  // font_style bold
+  font_style plain
+  align center
+
+// This sets properties of the panels on which the buttons reside.
+GROUP button_panel
+  instantiate_as "ButtonPanel" // default instantiation if not otherwise instantiated by applet
+  // width 450  // If the width or height are increased, it may be necessary to make
+  width 600  // If the width or height are increased, it may be necessary to make
+  height 92  // the applet window bigger by changing the parameters
+	     // appletMinusDrawingWidth and appletMinusDrawingHeight.
+	     //  (Currently these parameters are set in the file drawfunctions.js)
+  inter_button_gap 7 
+  background "panel light blue"
+
+
+
+OBJECT applet
+  background "panel dark blue" // this used to set the color used for the strip
+                               // at the top of the applet
+// OBJECT separate_window
+  // width 800
+  // height 100
+  // use_separate_window true
+
+OBJECT canvas_holder
+  background "black" // this sets the color used for border around the drawing canvas
+
+OBJECT main_canvas
+  background white  // this is the background color if there is no photo image
+  width 700
+  height 600
+
+// The following objects are for the main button panel.
+
+     OBJECT main_button_panel
+       is button_panel                // The "is" property tells what group an object is in
+       background "panel dark blue"   // This overrides the background color choice
+                                      //  specified for group button_panel.
+
+     OBJECT top_border_panel
+       is button_panel                
+       background "panel dark blue"  
+       width 765
+       height 20
+
+     OBJECT replay_button
+       is normal_button
+       text "Replay"
+       active_background "white"  // this is the color of the button when replay is in progress
+       delay 5  // this adjusts the speed of replay - larger numbers are slower
+
+     OBJECT pen_label
+       is text_accompanying_buttons
+       text "pen:"
+	 
+     OBJECT pen_width_choice
+       choices 1 3 5  // The only pen widths currently available are 1, 3, and 5
+       initial_choice 3
+	 
+     OBJECT pen_type_choice
+       choices 10 20 30 40 50 100
+       initial_choice "50"
+
+     OBJECT pen_color_choice
+       choices "Black" "White" "Brick" "Leaf Green" "Light Brown" "Light Grey"
+       choices "Dark Grey" "Lilac" "Mustard" "Slate" "Sky Blue"
+       choices "Red" "Blue" "Green" "Yellow"
+       choices "Painted Wood" "Wood1" "Wood2" "Wood3"
+       initial_choice "white"
+
+     OBJECT erase_button
+       is normal_button
+       text "      Erase     "  // padding here is to make the button wide enough to hold "Stop Erasing"
+       active_text "Stop Erasing"  // this is the label of the button when erasing is in progress
+
+     OBJECT compare_invocation_button
+       is normal_button
+       text "Compare"
+
+// Each arrangment section tells what buttons are to appear on a panel, and
+//  how they are arranged.
+//  (A button will appear only if it is specified in in arrangement section
+//   as well as in an OBJECT section.)
+//  The vertical and horizontal subsections produce nested arrangements,
+//   with the effect of nested single column and single row tables.
+//   Numbers followed by 'px' specify the gap between objects, in pixels.
+//   (This is a vertical or horizontal gap for vertical or horizontal specifications, respectively.)
+//   If no gap is specified the default gap associated with the panel is used.
+
+     ARRANGEMENT main_container_layout
+       { vertical top_border_panel
+        	  0px
+                  { horizontal caption_area 20px main_canvas }
+       }
+     ARRANGEMENT main_button_row
+
+	 { vertical   // The entries of a vertical specification are arranged one above the other.
+
+	     // The following horizontal specification gives the top row of buttons
+	     //------------------------------------------------------------------------------
+	     // ***** Change this to change the arrangement of the main row of buttons. *****
+	     //------------------------------------------------------------------------------
+	     { horizontal replay_button }
+	     }
+	     // { horizontal replay_button 20px pen_label 0px pen_width_choice pen_color_choice pen_type_choice
+	       // erase_button compare_invocation_button}
+
+	     // 10px  // This gives the separation between the rows.
+
+	     // The following specification gives the second row of buttons
+	     // { horizontal 200px edit_text_button open_button save_as_button}}
+	     // { horizontal 300px open_button save_as_button}}
+
+	     // the open and save-as buttons will only appear if one is
+	     // running a signed applet from a local file.
+          
+// Much of the rest of this file is not yet functional.
+
+// the following objects are for the panel compare_draw_lasso_panel
+
+     OBJECT compare_draw_lasso_panel
+       is button_panel
+
+     OBJECT compare_start_instructions
+       is instruction
+       text "Tightly surround that which you would like to remove."
+
+     OBJECT compare_lasso_ready_button
+       is normal_button
+       text "Done"
+
+// the following objects are for the panel compare_choose_panel
+
+     OBJECT compare_choose_panel
+       is button_panel
+
+     OBJECT compare_switch_button  // this button is used to swap between the new drawing, with an area erased,
+				      // and the original drawing
+       is normal_button
+       text "Compare"
+
+     OBJECT compare_choose_text
+       is instruction
+       text "until you are ready to"
+
+     OBJECT compare_choose_button
+       is normal_button
+       text "Choose"
+
+OBJECT open_button
+  is normal_button
+  text "Open"
+
+OBJECT save_as_button
+  is normal_button
+  text "Save as"
+
+OBJECT update_button
+  is normal_button
+  text "Update"
+
+OBJECT jpeg_button
+  is normal_button
+  text "Save drawing and exit"
+
+OBJECT cancel_button
+  is normal_button
+  text "Cancel"
+
+OBJECT edit_text_button
+  is normal_button
+  text "Text"
+
+OBJECT todo_list
+  rows 20
+  columns 50
+
+OBJECT caption_area
+  // rows 12
+  // columns 20
+  // font_size 16
+  rows 10
+  columns 18
+  font_size 18 
+  // background "dim panel light blue"
+  // background "panel light blue"
+  // background "black"
+  // foreground "text light grey"
+  // background "panel dark grey"
+  background "panel deep blue"
+// background "panel deep blue"
+   foreground "text light grey"
+  // active_background "panel light blue"
+  font TimesRoman
+  font_style italic            // other possible choices are bold and italic
+  // delay 600
+  blank_time 750
+  new_caption_pause 1000
+
+OBJECT text_style_choice
+  is normal_button
+  choices "Plain" "Bold" "Italic"
+  initial_choice "Plain"
+
+OBJECT text_size_choice
+  is normal_button
+  choices 8 9 10 12 14 18
+  initial_choice 10
+
+OBJECT text_color_choice
+  choices "Black" "White" "Brick" "Leaf Green" "Light Brown" "Light Grey"
+  choices "Dark Grey" "Lilac" "Mustard" "Slate" "Sky Blue"
+  choices "Red" "Blue" "Green" "Yellow"
+  choices "Painted Wood" "Wood1" "Wood2" "Wood3"
+  initial_choice "black"
+
+OBJECT text_start_instructions
+  is instruction
+  text "Choose a location for a new annotation, move an annotation, or select an annotation to edit."
+
+OBJECT text_edit_instructions
+  is instruction
+  text "Edit the selected annotation.  Then select \"Done\" or go on to work on another annotation."
+
+OBJECT text_start_panel
+  is button_panel
+
+OBJECT text_edit_panel
+  is button_panel
+
+OBJECT annotation_done_button
+  is normal_button
+  text "Done"

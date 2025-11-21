@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script language="JavaScript">
+  <!--
+
+  function setit()
+  { // top.location = "help.htm";
+   document.column.location = "help.htm";
+  //   setTimeout(sett,500);
+  }
+  function gethelp()
+  {
+   if (document && document.drawApplet 
+        // && document.drawApplet.isThere())
+        && document.drawApplet.getBackBuffer() != null)
+        // && document.drawApplet.getImageCanvas().somethingToLookAt)
+        // && document.drawApplet.getImageCanvas() != null)
+        document.column.location= "help.htm";
+    // else if (document && document.column)
+        // document.column.location = "help.htm";
+    else
+         setTimeout('gethelp()',10);
+         // setTimeout(gethelp,100);
+         // document.column.location = "help.htm";
+
+  }
+
+  function sett()
+  { document.column.location = "helpwait.htm";
+    setTimeout(setit,500);
+  }
+
+  function newWindow(file,window) {
+
+
+
+       msgWindow=open(file,window,'resizable=yes,scrollbars=0,width=350,height=300,left=200,top=100,border=2');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  clearID=msgWindow.setTimeout("self.close()",4000)
+                     }
+
+                     //-->
+  </script>
+  <title>1a IDENTIFY TRANSITION SPACE</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <style>
+  h1 {font: 24pt "Times Roman";
+  font-weight: bold; line height: 30pt}
+  h2 {font: 18pt "Times Roman";
+  font-weight: normal; line height: 24pt}
+  h3 {font: 14pt "Times Roman";
+  font-weight: normal; line height: 22pt}
+  h4 {font: 10pt "Times Roman";
+  font-weight: bold; line height: 14pt}
+  h6 {font: 10pt "Times Roman";
+  font-weight: normal; line height: 10pt}
+  </style>
+</head>
+<body bgcolor="#669999" text="#E3E5C9" onload="gethelp();" onunload="SetFileName();">
+  <table width="100%" border="2" bgcolor="#441100">
+    <tr>
+      <td align="center">
+        <font color="#66CC66"></font>
+        <h4><font color="#66CC66"><i>Step 1 drawing process: DRAW THE SHAPE OF THE TRANSITION ZONE.</i></font></h4>
+      </td>
+    </tr>
+  </table>
+  <table width="100%" border="0">
+    <tr>
+      <td valign="top">
+        <table width="60%">
+          <tr>
+            <td align="center" colspan="6">
+              <script language="JavaScript" src="drawfunctions.js"></script> 
+              <script language="JavaScript">
+
+
+              initialImage = GetCookieX("InitialImage");
+              </script> 
+              <script language="JavaScript" src="drawapplet.js"></script>
+              <table width="100%" align="center">
+                <tr>
+                  <td><iframe src="helpwait.htm" name="column" width="100%" height="70" align="center" id="column"></iframe></td>
+                </tr>
+                <tr>
+                  <td align="center"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table cellpadding="1" cellspacing="0" border="2" width="100%">
+    <tr>
+      <td height="30" bgcolor="#66CC66" align="right">
+        <a href="entr2.htm" target="_top">
+        <h4><span style="color:E3E5C9;">When you have drawn what you want, go to step 2: CHANGES OF LEVEL AND DIRECTION</span></h4></a>
+      </td>
+    </tr>
+    <tr align="center">
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>

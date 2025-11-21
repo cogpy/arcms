@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A PATTERN LANGUAGE</title>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+  H1 {FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; margin: 0;}
+
+  H2 {FONT-WEIGHT: bold; FONT-SIZE: 27px; FONT-FAMILY: "Times Roman"; margin: 0;}
+
+  H3 {FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman";}
+
+  H4 {FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman";}
+
+  H5 {FONT-WEIGHT: bold; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; margin: 0;}
+
+  H6 {FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman";}
+
+  .h1class {
+   FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+
+  .h2class {
+   FONT-WEIGHT: bold; FONT-SIZE: 27px; FONT-FAMILY: "Times Roman";
+  }
+
+  .salestext {
+   color: #dddddd; font-size: 80%;
+  }
+
+  .nuggettext {
+   color: red; font-size: 80%;
+  }
+
+  #stewbrand {
+   position: absolute;
+        left: 160; 
+        top: 100;
+   visibility: hidden;
+  }
+
+  #sales {
+   position: absolute; 
+        left: 160; 
+        top: 100;
+   visibility: hidden;
+  }
+
+  #nuggets {
+   position: absolute; 
+        left: 580;
+        top: 280;
+  }
+
+  </style>
+</head>
+<body bgcolor="#FFEE88" text="black" link="#CCCCFF" vlink="#CCCCFF">
+  <div id="main">
+    <script language='javascript'>
+    document.write("<FORM NAME='apl_form' METHOD=POST action='https://"+location.host+"/cgi-bin/patternl/orderc.py'>");
+    </script> <input type='hidden' name='pricelist' value='/bookstore/bookpricelist.txt'> <input type='hidden' name='calculate' value='1'> <input type='hidden' name='category' value='Pattern Language'> <input name="select_apl" type="hidden" value="Order Pattern Language">
+    <table align="center" width="80%" border="0">
+      <tr>
+        <td width="30%">
+          <table width="140" height="60" bgcolor="#993333" align="center" border="2">
+            <tr>
+              <td align="center">
+                <a href='javascript:document.apl_form.submit()'><font color="#339966"></font>
+                <h1><font color="#339966">HOW TO BUY THE BOOK</font></h1></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="40%" align="center"><img src="apllogo.jpg" width="200"></td>
+        <td width="30%" align="center">
+          <a href='javascript:document.apl_form.submit()'><img src="aplcover.gif"></a>
+        </td>
+      </tr>
+    </table>
+    <table width="100%" border="0">
+      <tr valign="bottom" align="center">
+        <td width="100%" bgcolor="#993333" align="center">
+          <font color="#CCCC66"></font>
+          <h2><font color="#CCCC66">A PATTERN LANGUAGE</font></h2>
+        </td>
+      </tr>
+    </table>
+    <p></p>
+    <table cellpadding="0" cellspacing="0" width="85%" align="center" border="0">
+      <tr>
+        <td height="30" width="35%"></td>
+        <td height="30" width="30%">
+          <table width="100%" height="30" bgcolor="#993333" align="center" border="2">
+            <tr>
+              <td align="center">
+                <a href="reviews.htm"><font color="#339966"></font>
+                <h1><font color="#339966">BOOK REVIEWS</font></h1></a>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td height="30" width="35%"></td>
+      </tr>
+    </table>
+    <p></p>
+    <table cellpadding="0" cellspacing="0" border="2" width="100%">
+      <tr height="120">
+        <td height="120" bgcolor="#339966" align="center"><img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"> <img src="aplcover.gif" height="100"></td>
+      </tr>
+    </table>
+  </div>
+  <div id="nuggets">
+    <table border="0" align="center">
+      <tr bgcolor="#FFEE88" valign="middle" height="20">
+        <td align="center" bgcolor="#FFEE88">
+          <h5><span class="nuggettext">Nuggets</span></h5>
+        </td>
+        <td width="30">
+          <a href='javascript:document.apl_form.submit()' onmouseover="javascript:changeState('stewbrand', 'visible')" onmouseout="javascript:changeState('stewbrand', 'hidden')"><img src="../images/bluebox.jpg" width="15" height="15"></a>
+        </td>
+        <td>
+          <a href='javascript:document.apl_form.submit()' onmouseover="javascript:changeState('sales', 'visible')" onmouseout="javascript:changeState('sales', 'hidden')"><img src="../images/bluebox.jpg" width="15" height="15"></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="sales">
+    <table border="1" cellpadding="3">
+      <tr>
+        <td bgcolor="#9900FF"><span class="salestext">Since this book was first published in 1977, sales have increased every year</span></td>
+      </tr>
+    </table>
+  </div>
+  <div id="stewbrand">
+    <table border="1" cellpadding="3">
+      <tr>
+        <td bgcolor="#9900FF"><font color="#DDDDDD">&quot;The best book in the Whole Earth Catalog&quot; -- Stewart Brand</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

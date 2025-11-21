@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PATTERN DISCUSSION</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {mso-style-parent:"";
+        margin:.5in;
+        margin-bottom:.0001pt;
+        mso-pagination:none;
+        mso-layout-grid-align:none;
+        punctuation-wrap:simple;
+        text-autospace:none;
+        font-size:12.0pt;
+        mso-bidi-font-size:10.0pt;
+        font-family:"Book Antiqua";
+        mso-fareast-font-family:"Times New Roman";
+        mso-bidi-font-family:"Times New Roman";
+  color:222222; background-color:ffeeaa;}
+
+  </style>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language='javascript'>
+  if (location.href.match(/^(.*patternlanguage.com)\/cgi-bin/))
+   { var prefix =  RegExp.$1;
+     document.write("<base href='"+prefix+"/duncanville'>");
+   }
+
+  function doWhenLoaded()
+  { if (location.href.match(/^(.*patternlanguage.com)/) && !location.href.match(/cgi-bin/))
+    document.forms.voteform.submit();
+  }
+  </script>
+  <style>
+  .rankedChartTitle {font-size:15px;color:#0000ff}
+  .rankedChartVotes {font-size:15px;color:#00ff00;padding-left:20px;display:block}
+  .rankedChartBarHolder {padding-left:30px;display:block}
+  .standardChartTitle {font-size:18px;color:#ff00ff}
+  .standardChartVotes {font-size:18px;color:#ff00ff;padding-left:20px}
+  .standardChartBarHolder {padding-left:30px;display:block}
+  </style>
+  <script language='javascript'>
+  function checkVoteCount(category,maxVotes)
+  { var aa = document.all['vote_'+category];
+    count = 0;
+    for (var i = 0; i < aa.length; i++)
+      { var a = aa[i];
+        if (a.checked)
+          { count++;
+          }
+      }
+    if (count > maxVotes)
+      { alert('You have voted for more than ' + maxVotes + ' choices. Please modify your votes and resubmit.');
+        return false;
+      }
+    else
+       return true;
+  }
+
+  function setFormActionAnchor(formname,anchor)
+  { document.forms[formname].action = document.forms[formname].action.replace(/#.*$/,'')+'#'+anchor;
+  }
+  </script>
+  <script language="JavaScript">
+  <!--
+
+
+  function commentWindow(file,window) {
+        var url = makeAbsolute(file).replace(/\/cgi-bin\/.*\.py/,'');
+        
+
+
+
+       msgWindow=open(url,window,'resizable=yes,scrollbars=1,width=500,height=300,left=155,top=300,border=2');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  //clearID=msgWindow.setTimeout("self.close()",16000)//
+                     }
+
+                     //-->
+  </script>
+</head>
+<body>
+  <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+    <tr>
+      <td align="middle" bgcolor="#000000">
+        <h2><span style="color:ffcc66">THE DUNCANVILLE COMMUNITY<br>
+        MINI-FORUM</span></h2>
+      </td>
+    </tr>
+    <tr align="middle">
+      <td align="center">
+        <h6><span style="color:ffcc66">A chance for searching, talking, and making agreements about what we all want along Main Street. Perhaps this can guide the conduct of the master plan, and nourish idealism (and some family power) in the developmental process.</span></h6>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+  <p><font color="#E3E5C9"><span style="font-size:120%;color:66ee66"></span></font></p>
+  <p><font color="#E3E5C9"><span style="font-size:120%;color:66ee66">These factors should influence the whole, and also make their appearance in every individual business and public function along main street.</span></font></p>
+  <table cellspacing="0" cellpadding="0" width="200">
+    <tr>
+      <td bgcolor="#000000" height="30">
+        <span style="color:ffcc66;"></span>
+        <h6><span style="color:ffcc66;"><a href="explanation-dunc.htm" target="text"><span style="font-size:130%">Explanation</span></a></span></h6>
+        <p><a href="currentlist-dunc.htm" target="text"><span style="font-size:130%">Current List of Patterns</span></a></p>
+        <p><span style="color:ddeeff">Click below for the pattern you would like to review, work on or think about</span></p>
+        <p><a href="trafficflow.htm#pattern1" target="text">Pattern 1: Keep cars moving, yet create pedestrian space</a> &nbsp; <a href="park.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+        <p><a href="pedestrian.htm#pattern2" target="text">Pattern 2: Coherence of pedestrian as the greatest good</a>&nbsp; <a href="density.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+        <p><a href="synergy.htm#pattern3" target="text">Pattern 3: Combination of businesses in synergetic bundles</a> &nbsp; <a href="lotsize.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+        <p><a href="buildings.htm#pattern4" target="text">Pattern 4: Use buildings to form pedestrian space</a>&nbsp; <a href="lotsize.htm#vote" target="text"><span style="color:11bbdd">Discussion</span></a></p>
+      </td>
+    </tr>
+  </table>
+  <p><font color="#E3E5C9"></font></p>
+</body>
+</html>

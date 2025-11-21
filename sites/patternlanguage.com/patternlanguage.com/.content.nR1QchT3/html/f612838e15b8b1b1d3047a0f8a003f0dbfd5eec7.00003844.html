@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <title>CALCULATOR</title>
+  <style>
+  h1 {font: 18pX "Times Roman";
+  font-weight: bold;  line height: 30pX; }
+  h2 {font: 18pX "Times Roman";
+  font-weight: normal; line height: 24pX}
+  h3 {font: 14pX "Times Roman";
+  font-weight: normal; line height: 22pX}
+  h4 {font: 10pX "Times Roman";
+  font-weight: bold; line height: 14pX}
+  h6 {font: 10pX "Times Roman";
+  font-weight: normal; line height: 10pX}
+
+
+  #alertdiv {
+                position: relative;
+                top:    0px;
+                left:   0px;
+        
+  width   : 400px;
+  height  : 50px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  #ok {
+                position: relative;
+                top:    0px;
+                left:   0px;
+        
+  width   : 400px;
+  height  : 50px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  #black {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  #feeling {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  #intuitive {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 750px;
+  visibility: hidden;
+        }
+
+  #main {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 750px;
+  visibility: hidden;
+        }
+
+  #money {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+
+  #preamble {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 750px;
+  visibility: visible; //xxxxxxxxxxxx
+        }
+
+  #quantities {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden; //xxxxxxxxx
+        }
+
+  #remember {
+                position: absolute;
+                top:    310px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  #result {
+                position: absolute;
+                top:    0px;
+                left:   0px;
+  width   : 800px;
+  height  : 600px;
+  background:ff9999;
+  visibility: hidden;
+        }
+
+  <!-- #status {
+                position: absolute;
+                top:    150px;
+                left:   180px;
+  width   : 500px;
+  height  : 140px;
+  background:ff6666;
+  visibility: hidden;
+        } -->
+
+
+  #table1 {
+                position: absolute;
+                top:    240px;
+                left:   59px;
+  width   : 650px;
+  background:000000;
+  visibility: hidden;
+        }
+
+  #table2 {
+                position: absolute;
+                top:    240px;
+                left:   59px;
+  width   : 650px;
+  background:000000;
+  visibility: hidden;
+        }
+
+  #table3 {
+                position: absolute;
+                top:    160px;
+                left:   59px;
+  width   : 650px;
+  background:770077;
+  visibility: hidden;
+        }
+
+
+  #table4 {
+                position: absolute;
+                top:    150px;
+                left:   75px;
+  width   : 650px;
+  background:ffffff;
+  visibility: hidden;
+        }
+
+  .Change {color:e3e5c9;   font-size:100%; background-color:6699cc}
+  .start {color:993399;background-color:222222; text-decoration:none}
+
+  </style>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript" src="kgamefunctions.js"></script>
+  <script language="JavaScript" src="kgamenl1.js"></script>
+  <script language="JavaScript">
+  var itemnumber=0
+  guessArray = new Array()
+
+  function alertWindow(file,window) {
+      msgWindow=open(file,window,'resizable=no,scrollbars=1,width=500,height=200,left=185,top=85,border=2');
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+
+  //clearID=msgWindow.setTimeout("self.close()",5000)//
+
+                     }
+  </script>
+</head>
+<body bgcolor="#FF9999" text="#000000" link="black" vlink="green" alink="blue" border="navy">
+  <form name="orderform" method="post" action="/htbin/generic" id="orderform">
+    <div id="preamble">
+      <table align="center">
+        <tr height="300">
+          <td align="center" valign="middle">
+            <table width="650">
+              <tr>
+                <td align="center" colspan="3" valign="middle">
+                  <h1>THE RULES OF THE GAME</h1>
+                  <p></p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" align="left">
+                  <h2></h2>
+                  <p>You can put anything you want into your kitchen, at whatever size you say.<br>
+                  Each thing you put in costs you money.</p>
+                </td>
+                <td align="right"><img src="colorblo.jpg" height="70"></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <h2>Try to make a combination of things which makes the best kitchen. The game will not allow you to go over the cost you set as your maximum: $10,000, $30,000, $5,000 -- whatever you say. You keep adjusting quantities, until you have the best kitchen you can figure out</h2>
+                  <p>Show yourself what is the <font color="blue">most <font color="red">beautiful <font color="yellow">and <font color="white">practical <font color="blue">kitchen</font> you can make for what you can afford!!!</font></font></font></font></p>
+                </td>
+              </tr>
+            </table>
+            <table border="1" width="650">
+              <tr>
+                <td colspan="3" align="center"><span style="color:white">How large is your kitchen or the kitchen you want to build?<br>
+                <span style="color:CC33CC;" font-weight:bold="">Type here the area you contemplate in <input name="squarefootage" size="7" value='' onchange="document.orderform.targetbudget2.value=document.orderform.targetbudget.value">&nbsp;square feet</span></span></td>
+              </tr>
+              <tr>
+                <td colspan="3" align="center"></td>
+              </tr>
+              <tr>
+                <td><img src="dollar.gif" height="40px"></td>
+                <td border="1" align="center"><span style="color:white">How much do you want to spend?</span><br>
+                <span style="color:CC33CC;" font-weight:bold="">Type here the amount of money you want to spend &nbsp;in &nbsp;$<input name="targetbudget" size="7" value='' onchange="document.orderform.targetbudget2.value=document.orderform.targetbudget.value">&nbsp;dollars &nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+                <td><img src="dollar.gif" height="40px"></td>
+              </tr>
+              <tr>
+                <td><img src="dollar.gif" height="40px"></td>
+                <td cellpadding="0" cellspacing="0" align="center"><span style="color:cc33cc;" font-weight:bold="">Now start. &nbsp; When you press <input type='button' value='PLAY' onclick='hideAll();showElement("money");'> the game begins</span></td>
+                <td><img src="dollar.gif" height="40px"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="money">
+      <table align="center" width="650">
+        <tr height="3">
+          <td align="center" valign="middle"></td>
+        </tr>
+        <tr height="1">
+          <td align="center"></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <img src="border6.jpg" width="212"><img src="border6.jpg" width="212"><img src="border6.jpg" width="212">
+            <table width="650" bgcolor="#EE8888" align="center">
+              <tr height="50">
+                <td align="center" colspan="3" valign="middle" bgcolor="#770000" border="2">
+                  <h1><span style="color:ffCC33">VERY NEW WAYS OF THINKING ABOUT MONEY</span></h1>
+                  <p></p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" align="left">
+                  <h2><span style="color:ffCC33"></span></h2>
+                  <p><span style="color:ffCC33">Wabi to Sabi. The rough with the smooth. What the Japanese call "rusty beauty."<br>
+                  <span style="color:ffdd44">The essence of true beauty, and adherence to life, is that the very beautiful and very careful comes hand in hand with the very rough and almost careless.</span></span></p>
+                  <p></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center">
+            <h3><span style="color:770000"></span></h3>
+            <ul>
+              <li><span style="color:770000">Think of a marble floor combined with roughly painted wooded shelving</span></li>
+              <li><span style="color:770000">Think of luxurious big windows and a gleaming polished walnut counter top, combined with old appliances and cheap utility shelves</span></li>
+              <li><span style="color:770000">Think of a very roughly painted concrete floor but a beautiful table surrounded by beautiful glass enclosed shelves, and bare light bulbs.</span></li>
+            </ul><span style="color:770000">These things sound strange to our ears because we are used to developer-images of middle class homogeneity and "what the neighbors might think."</span>
+            <p><span style="color:770000">But the essence of life has always been a sober awareness that we cannot have everything, and that a worthwhile life will be lived if some of the things around us are precious, while others are very ordinary, even cheap. It is then that we shall be practically able to afford what we want. And it is then that we shall be made alive by our awareness of the common and ordinary, mingled with the supremely beautiful.</span></p>
+            <table border="1" width="650" align="center">
+              <tr>
+                <td colspan="3" align="center"></td>
+              </tr>
+              <tr>
+                <td cellpadding="0" cellspacing="0" align="center" colspan="3"><span style="color:cc33cc;" font-weight:bold=""><input type='button' value='START THINKING' onclick='hideAll();showElement("intuitive");'></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="intuitive">
+      <table align="center" width="650">
+        <tr height="300">
+          <td align="center" valign="middle">
+            <table width="650">
+              <tr>
+                <td align="center" valign="middle" bgcolor="#FFDD00">
+                  <h1><span style="color:000099;font-size:20px;">START WITH INTUITION<br>
+                  <span style="color:000099;font-size:15px;">Decide how you want to spend your money according to your comfort and true desires</span></span></h1>
+                  <p></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" bgcolor="#EEEEEE">
+                  <h3></h3>
+                  <p>One of the craziest things about kitchen remodeling is that there are a few ferocious ASSUMPTIONS people make: "I must have expensive new appliances, lots of counters and cabinets... "<br>
+                  But these are not the things that make you COMFORTABLE, for God's sake! These are simply things that salesmen and magazines make money by PUSHING AND SELLING. Is that YOUR COMFORT????</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+              <tr>
+                <td align="left" bgcolor="#EEEEEE">
+                  <h3></h3>
+                  <p>There are far better ways to spend your money: Windows with beautiful daylight and sunshine. A comfortable table which you and your family and friends can sit around; a fireplace; a small garden; good practical lights; thick walls which make the kitchen truly feel like home;</p>
+                </td>
+              </tr>
+              <tr>
+                <td align="center"><img src="kitchen2.jpg" height="160"></td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" bgcolor="eeeee">
+                  <h3><input type='button' value='NOW TRY IT FOR YOURSELF' onclick="hideAll();showElement('feeling');showElement('table4');"></h3>
+                  <p>Start by getting clear what means a lot to you, and what does not.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="5" color="#00BBFF">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="feeling">
+      <table align="center" width="650">
+        <tr height="200">
+          <td align="center" valign="middle">
+            <table align="center" width="650">
+              <tr>
+                <td align="center" valign="middle" bgcolor="#FFDD00">
+                  <h1><span style="color:000099;font-size:20px;">ASK YOURSELF ABOUT YOUR FEELINGS<br>
+                  <span style="color:000099;font-size:15px;">WHICH THINGS IN THE KITCHEN WILL MAKE THE BIGGEST DIFFERENCE IN HOW ENJOYABLE YOUR LIFE IS?</span></span></h1>
+                  <p></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <hr height="50" color="#00BBFF">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="result">
+      <table align="center" width="650">
+        <tr>
+          <td align="center" colspan="3" valign="middle" bgcolor="#FF9999">
+            <h1><span style="color:ff9999;font-size:20px;">NOW YOU HAVE SET A BASIS IN INTUITION<br>
+            <span style="color:ff9999;font-size:15px;">In rough terms you have decided how you want to spend your money according to your comfort and true desires</span></span></h1>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr height="5" color="#00BBFF">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <h2>OK. <font color="blue">Now you have an <font color="yellow">intuitive idea about roughly where in the kitchen you want to put your money, to make it the <font color="blue">most <font color="red">beautiful <font color="yellow">and <font color="white">practical <font color="blue">kitchen</font> you can make for what you can afford!!!</font></font></font></font></font></font></h2>
+          </td>
+        </tr>
+      </table>
+      <table border="1" width="650" align="center">
+        <tr>
+          <td border="1"><img src="dollar.gif" height="30px"></td>
+          <td border="1" cellpadding="0" cellspacing="0" align="center" bgcolor="#FFDD00">
+            <span style="color:000099;font-size:12px;">You are ready to go on to start thinking about the detailed distribution of your money to match the feelings you have expressed</span>
+            <p><input type='button' value='CALCULATE YOUR QUANTITIES' onclick='hideAll();showElement("quantities");'>&nbsp;</p>
+          </td>
+          <td align="right" border="1"><img src="dollar.gif" height="30px"></td>
+        </tr>
+      </table>
+    </div>
+    <div id="quantities">
+      <table align="center" width="650">
+        <tr>
+          <td>
+            <hr height="150" color="#660099">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle" bgcolor="#FFDD00">
+            <h1><span style="color:ee0000;font-size:20px;">NOW FOR THE BASIC QUANTITIES<br>
+            <span style="color:ee00ee;font-size:15px;">To lay a basis for cost you need to say VERY ROUGHLY how much of each thing you expect or want in your new kitchen. You can always change these numbers later, but for now rough numbers will give a basis for starting to calculate</span></span></h1>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr height="50" color="#00BBFF">
+            <span style="color:660099;font-size:16px">Consider the items one by one, and make a guess about the amount of that item you may want to have in your kitchen. Pay attention to the units, as each item comes up, and make a rough guess about the size, or amount of the item, expressed in those units!</span>
+            <p><span style="color:660099;font-size:16px">Write your guess about each item in the Amount box, then press NEXT to go on to the next item. Please do all fifteen items before pressing the NOW LET THE COMPUTER button below.</span></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr height="5" color="#00BBFF">
+          </td>
+        </tr>
+        <tr>
+          <td align="center">Item <input name="item" size="20"> Units <input name="units" size="20"> Amount <input name="amount" size="20" onchange=""></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <input type='button' value='NEXT' onclick="nextItem();">
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <hr height="5" color="#00BBFF">
+            <table border="1" width="650" align="center">
+              <tr>
+                <td border="1"><img src="dollar.gif" height="30px"></td>
+                <td border="1" cellpadding="0" cellspacing="0" align="center" bgcolor="#FFDD00">
+                  <span style="color:000099;font-size:12px;">Now go on to work out a more detailed detailed distribution of money in your new kitchen, based on more careful analysis of sizes and QUALITY of each item</span>
+                  <p><input type='button' value='NOW LET THE COMPUTER GIVE YOU A FIRST APPROXIMATION' onclick='hideAll();showElement("main"); Monster();startupMain()'>&nbsp;</p>
+                </td>
+                <td align="right" border="1"><img src="dollar.gif" height="30px"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="main">
+      <span style="font-size:14px;color=dddddd"></span>
+      <table align="center" border="1" width="750">
+        <tr>
+          <td align="center" valign="middle" bgcolor="#330033" colspan="3">
+            <hr height="3">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr color="#00FFFF" height="5">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle" colspan="3" bgcolor="#DDDDDD"><span style="color:bb00bb;font-size:20px;line-height:14px;"><b>NOW FOR THE BALANCING ACT!</b></span></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr color="#00FFFF" height="5">
+          </td>
+        </tr>
+        <tr>
+          <td align="left" width="150"><span style="COLOR:6699CC;background-color:CCFF66;">CURRENT STATUS</span></td>
+          <td align="left" width="200"><span style="COLOR:6699CC;background-color:CCFF66;">TARGET BUDGET <input name="yellowbudget" size="6"></span><br>
+          <span style="COLOR:6699CC;background-color:CCFF66;">CURRENT TOTAL<input name="yellowtotal" size="6"></span></td>
+          <td align="left" width="400">
+            <div id="ok">
+              <span style="font-size:20px;font-weight:bold;color=ffffaa;background-color:navy">YOU ARE ON BUDGET</span>
+            </div>
+            <div id="alertdiv" align="center">
+              <span style="font-size:20px;font-weight:bold;color=white;background-color:red">YOU ARE OVERBUDGET</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="middle" colspan="3" bgcolor="#0033EE">
+            <span style="color:ff6633;font-size:18px;line-height:18px;" font-weight:normal="">Based on your sizes, your budget, and the relative emotional importance you have given to different items, the computer has tried to balance things out to meet your budget. It has achieved this by using higher quality items for the items you care about most, and lower quality for the items you care about less. In some cases items you care about enormously have been given a luxury kind of quality. In other cases items you care about very little have been given an almost rudimentary quality.</span>
+            <p>Obviously the result is mechanical, and not as good as you can do yourself. Also, no effort has yet been made to change quantities, another powerful way of changing the distribution of money within your budget and achieving balance.</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr color="#00FFFF" height="5">
+          </td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle" colspan="3" bgcolor="#AA00AA"><span style="color:eeeeee">THIS IS NOW ALL UP TO YOU</span></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <hr color="#00FFFF" height="5">
+          </td>
+        </tr>
+      </table>
+      <table align="center" border="1" width="750">
+        <tr>
+          <td align="center" valign="middle" bgcolor="#330033" colspan="7">
+            <hr height="3">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="7" bgcolor="#0033EE"><span style="color:ff6633;font-size:18px;line-height:18px;" font-weight:normal="">Now adjust quantities and levels of quality, until the grand total meets your target total cost, and also try to match the actual percentage of cost spent on each item, to the intuitive guides you have set in column 2 &nbsp;</span></td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle" bgcolor="#330033" colspan="7">
+            <hr height="3">
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor="#FF9999" width="150">ITEM</td>
+          <td bgcolor="#000000" colspan="2">
+            <span style="color:ffbb99;font-size:12px;font-weight:bold">HOW PERCENTAGES OF TOTAL MONEY ARE TO BE SPENT</span><br>
+            <table>
+              <tr>
+                <td width="100" align="left"><span style="color:ffffff;font-size:10px;font-weight:bold">YOUR<br>
+                INTUITIVE<br>
+                GUIDE</span></td>
+                <td width="100" align="left"><span style="color:ffffff;font-size:10px;font-weight:bold">CURRENT CALCULATION</span></td>
+              </tr>
+            </table>
+          </td>
+          <td bgcolor="#FF9999" width="100" align="center"><img src="adjust.gif" width="60"><br>
+          QUANTITY</td>
+          <td bgcolor="#FF9999" width="150" align="center"><img src="adjust.gif" width="60"><br>
+          QUALITY</td>
+          <td bgcolor="#FF9999" width="100" align="center"><img src="choice.jpg" width="60"><br>
+          UNIT<br>
+          PRICE</td>
+          <td align="center" bgcolor="#000000" width="180"><span style="color:ffbb99;font-size:12px;font-weight:bold">CURRENT<br>
+          TOTALS</span></td>
+        </tr>
+        <tr>
+          <td valign="top">Kitchen floor</td>
+          <td valign="top" bgcolor="#770077"><input name="pc1" onblur="CalculatePercent()" size="3"><span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc1" onchange="CalculatePercent()" size="3" background-color="yellow"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf1" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">SF</span></td>
+          <td valign="top"><select name="floortypes" onclick="document.orderform.floorprices.value=document.orderform.floortypes.options[document.orderform.floortypes.selectedIndex].value">
+            <option value="35.00">
+              marble
+            </option>
+            <option value="15.00">
+              mexican colored tile
+            </option>
+            <option value="7.00">
+              plain red tile
+            </option>
+            <option value="4.00">
+              pine boards
+            </option>
+            <option value="2.00">
+              vinyl tile
+            </option>
+            <option value="1.00">
+              paint over old surface
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="floorprices" size="4" onclick="document.orderform.floorprices.value=document.orderform.floors.options[document.orderform.floortypes.selectedIndex].value"> <span style="font-size:12px">$/SF</span></td>
+          <td valign="top" align="center">$ <input name="total1" size="8" onfocus="document.orderform.sf2.select(); document.orderform.sf2.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">New Windows</td>
+          <td valign="top" bgcolor="#770077"><input name="pc2" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc2" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf2" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">SF</span></td>
+          <td valign="top"><select name="windowtypes" onclick="document.orderform.windowprices.value=document.orderform.windowtypes.options[document.orderform.windowtypes.selectedIndex].value">
+            <option value="80.00">
+              top custom handmade
+            </option>
+            <option value="40.00">
+              custom wood
+            </option>
+            <option value="25.00">
+              standard vinyl-covered wood
+            </option>
+            <option value="12.00">
+              custom aluminum
+            </option>
+            <option value="6.00">
+              standard aluminum
+            </option>
+            <option value="3.00">
+              glass between 2x4s
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="windowprices" onblur="check()" size="4"> <span style="font-size:12px">$/SF</span></td>
+          <td valign="top" align="center">$ <input name="total2" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Kitchen table</td>
+          <td valign="top" bgcolor="#770077"><input name="pc3" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc3" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf3" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">SF</span></td>
+          <td valign="top"><select name="tabletypes" onclick="document.orderform.tableprices.value=document.orderform.tabletypes.options[document.orderform.tabletypes.selectedIndex].value">
+            <option value="155.00">
+              top antique
+            </option>
+            <option value="95.00">
+              top quality new wood
+            </option>
+            <option value="50.00">
+              standard wood
+            </option>
+            <option value="25.00">
+              used good
+            </option>
+            <option value="15.00">
+              any old
+            </option>
+            <option value="7.00">
+              repainted salvage
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="tableprices" onblur="check()" size="4"> <span style="font-size:12px">$/SF</span></td>
+          <td valign="top" align="center">$ <input name="total3" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Counter top</td>
+          <td valign="top" bgcolor="#770077"><input name="pc4" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc4" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf4" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="countertoptypes" onclick="document.orderform.countertopprices.value=document.orderform.countertoptypes.options[document.orderform.countertoptypes.selectedIndex].value">
+            <option value="260.00">
+              polished walnut
+            </option>
+            <option value="130.00">
+              corian
+            </option>
+            <option value="55.00">
+              hand painted tile
+            </option>
+            <option value="25.00">
+              hardwood
+            </option>
+            <option value="15.00">
+              formica
+            </option>
+            <option value="8.00">
+              painted plywood
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="countertopprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total4" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">New walls</td>
+          <td valign="top" bgcolor="#770077"><input name="pc5" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc5" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf5" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="walltypes" onclick="document.orderform.wallprices.value=document.orderform.walltypes.options[document.orderform.walltypes.selectedIndex].value">
+            <option value="300.00">
+              thick masonry
+            </option>
+            <option value="150.00">
+              thin masonry
+            </option>
+            <option value="70.00">
+              sheetrock over 2x6
+            </option>
+            <option value="32.00">
+              sheetrock over 2x4
+            </option>
+            <option value="16.00">
+              2 inch boards
+            </option>
+            <option value="10.00">
+              plywood
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="wallprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total5" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Small Garden</td>
+          <td valign="top" bgcolor="#770077"><input name="pc6" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc6" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf6" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">SF</span></td>
+          <td valign="top"><select name="gardentypes" onclick="document.orderform.gardenprices.value=document.orderform.gardentypes.options[document.orderform.gardentypes.selectedIndex].value">
+            <option value="300.00">
+              walled and paved garden
+            </option>
+            <option value="160.00">
+              walled garden
+            </option>
+            <option value="80.00">
+              flowers and paving
+            </option>
+            <option value="40.00">
+              flower garden
+            </option>
+            <option value="20.00">
+              level and fenced
+            </option>
+            <option value="12.00">
+              barebones
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="gardenprices" onblur="check()" size="4"> <span style="font-size:12px">$/SF</span></td>
+          <td valign="top" align="center">$ <input name="total6" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Fireplace</td>
+          <td valign="top" bgcolor="#770077"><input name="pc7" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc7" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf7" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">#</span></td>
+          <td valign="top"><select name="fireplacetypes" onclick="document.orderform.fireplaceprices.value=document.orderform.fireplacetypes.options[document.orderform.fireplacetypes.selectedIndex].value">
+            <option value="15000.00">
+              highest quality brick
+            </option>
+            <option value="7000.00">
+              cast tile and concrete
+            </option>
+            <option value="3500.00">
+              built up plaster
+            </option>
+            <option value="2000.00">
+              visible flame cast iron
+            </option>
+            <option value="1000.00">
+              low budget stove
+            </option>
+            <option value="500.00">
+              used stove
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="fireplaceprices" onblur="check()" size="4"> <span style="font-size:12px">$/#</span></td>
+          <td valign="top" align="center">$ <input name="total7" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Thick walls</td>
+          <td valign="top" bgcolor="#770077"><input name="pc8" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc8" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf8" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="thickwalltypes" onclick="document.orderform.thickwallprices.value=document.orderform.thickwalltypes.options[document.orderform.thickwalltypes.selectedIndex].value">
+            <option value="700.00">
+              hand made cabinets
+            </option>
+            <option value="400.00">
+              adobe
+            </option>
+            <option value="200.00">
+              painted pine
+            </option>
+            <option value="100.00">
+              repainted used furniture
+            </option>
+            <option value="50.00">
+              particle board
+            </option>
+            <option value="25.00">
+              plywood and 2x4
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="thickwallprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total8" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Appliances</td>
+          <td valign="top" bgcolor="#770077"><input name="pc9" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc9" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf9" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">#</span></td>
+          <td valign="top"><select name="stovetypes" onclick="document.orderform.stoveprices.value=document.orderform.stovetypes.options[document.orderform.stovetypes.selectedIndex].value">
+            <option value="1200.00">
+              top quality
+            </option>
+            <option value="550.00">
+              middle quality
+            </option>
+            <option value="340.00">
+              budget type
+            </option>
+            <option value="180.00">
+              low-end
+            </option>
+            <option value="100.00">
+              refurbished
+            </option>
+            <option value="50.00">
+              use what you have
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="stoveprices" onblur="check()" size="4"> <span style="font-size:12px">$/#</span></td>
+          <td valign="top" align="center">$ <input name="total9" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Cabinets low</td>
+          <td valign="top" bgcolor="#770077"><input name="pc10" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc10" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf10" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="cabinetslowtypes" onclick="document.orderform.cabinetslowprices.value=document.orderform.cabinetslowtypes.options[document.orderform.cabinetslowtypes.selectedIndex].value">
+            <option value="300.00">
+              high quality custom
+            </option>
+            <option value="155.00">
+              middle range custom
+            </option>
+            <option value="85.00">
+              low budget standard
+            </option>
+            <option value="30.00">
+              painted pine with doors
+            </option>
+            <option value="20.00">
+              open pine shelves
+            </option>
+            <option value="10.00">
+              open mdf shelves
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="cabinetslowprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total10" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Cabinets high</td>
+          <td valign="top" bgcolor="#770077"><input name="pc11" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc11" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf11" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="cabinetshightypes" onclick="document.orderform.cabinetshighprices.value=document.orderform.cabinetshightypes.options[document.orderform.cabinetshightypes.selectedIndex].value">
+            <option value="200.00">
+              high quality custom
+            </option>
+            <option value="100.00">
+              middle range custom
+            </option>
+            <option value="55.00">
+              low budget standard
+            </option>
+            <option value="30.00">
+              painted pine with doors
+            </option>
+            <option value="15.00">
+              open pine shelves
+            </option>
+            <option value="6.00">
+              open mdf shelves
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="cabinetshighprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total11" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Lighting</td>
+          <td valign="top" bgcolor="#770077"><input name="pc12" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc12" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf12" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">#</span></td>
+          <td valign="top"><select name="lightingtypes" onclick="document.orderform.lightingprices.value=document.orderform.lightingtypes.options[document.orderform.lightingtypes.selectedIndex].value">
+            <option value="150.00">
+              wall fix custom high quality
+            </option>
+            <option value="75.00">
+              wall fix high
+            </option>
+            <option value="35.00">
+              ceiling spots
+            </option>
+            <option value="20.00">
+              wall fix low end
+            </option>
+            <option value="10.00">
+              utility
+            </option>
+            <option value="5.00">
+              bare bulb
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="lightingprices" onblur="check()" size="4"> <span style="font-size:12px">$/#</span></td>
+          <td valign="top" align="center">$ <input name="total12" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Wall surfaces</td>
+          <td valign="top" bgcolor="#770077"><input name="pc13" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc13" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf13" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">SF</span></td>
+          <td valign="top"><select name="wallsurfacetypes" onclick="document.orderform.wallsurfaceprices.value=document.orderform.wallsurfacetypes.options[document.orderform.wallsurfacetypes.selectedIndex].value">
+            <option value="30.00">
+              real gypsum plaster
+            </option>
+            <option value="14.00">
+              painted wood panel
+            </option>
+            <option value="8.00">
+              wood panel
+            </option>
+            <option value="5.00">
+              painted sheetrock
+            </option>
+            <option value="2.00">
+              professional paint
+            </option>
+            <option value="1.00">
+              do-it-yourself paint
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="wallsurfaceprices" onblur="check()" size="4"> <span style="font-size:12px">$/SF</span></td>
+          <td valign="top" align="center">$ <input name="total13" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">New chairs</td>
+          <td valign="top" bgcolor="#770077"><input name="pc14" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc14" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf14" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">#</span></td>
+          <td valign="top"><select name="chairstypes" onclick="document.orderform.chairsprices.value=document.orderform.chairstypes.options[document.orderform.chairstypes.selectedIndex].value">
+            <option value="600.00">
+              soft high quality
+            </option>
+            <option value="250.00">
+              wood high quality
+            </option>
+            <option value="150.00">
+              wood cheap
+            </option>
+            <option value="135.00">
+              plastic
+            </option>
+            <option value="65.00">
+              cheap plastic
+            </option>
+            <option value="35.00">
+              goodwill
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="chairsprices" onblur="check()" size="4"> <span style="font-size:12px">$/#</span></td>
+          <td valign="top" align="center">$ <input name="total14" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Garden stuff</td>
+          <td valign="top" bgcolor="#770077"><input name="pc15" onblur="CalculatePercent()" size="3"> <span style="font-size:12px;color:ffffff">Importance</span></td>
+          <td valign="top"><input name="actpc15" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">%</span></td>
+          <td valign="top"><input name="sf15" onblur="CalculateTotals()" size="4"> <span style="font-size:12px">LF</span></td>
+          <td valign="top"><select name="stufftypes" onclick="document.orderform.stuffprices.value=document.orderform.stufftypes.options[document.orderform.stufftypes.selectedIndex].value">
+            <option value="60.00">
+              brick
+            </option>
+            <option value="30.00">
+              block
+            </option>
+            <option value="15.00">
+              wooden
+            </option>
+            <option value="6.00">
+              metal
+            </option>
+            <option value="3.00">
+              salvage etc
+            </option>
+            <option value="2.00">
+              plastic
+            </option>
+          </select><span style="font-size:12px"></span></td>
+          <td valign="top"><input name="stuffprices" onblur="check()" size="4"> <span style="font-size:12px">$/LF</span></td>
+          <td valign="top" align="center">$ <input name="total15" size="8" onfocus="document.orderform.sf3.select(); document.orderform.sf3.focus();"><span style="font-size:12px"></span></td>
+        </tr>
+      </table>
+      <table align="center" border="1" width="750">
+        <tr>
+          <td align="center" valign="middle" bgcolor="#330033" colspan="7">
+            <hr height="3">
+          </td>
+        </tr>
+        <tr>
+          <td><span style="color:ffbb99;font-size:12px;background-color:000000;"><b>TOTALS</b></span></td>
+          <td valign="top"><input name="percenttotal" onchange="CalculatePercent()" size="3"> <span style="font-size:12px">Percent</span></td>
+          <td valign="top"><input name="actpercenttotal" onblur="Current()" size="3"> <span style="font-size:12px">Percent</span></td>
+          <td valign="top" colspan="3" align="right"><span style="color:ffbb99;font-size:12px;font-weight:bold;background-color:000000">GRAND TOTAL</span></td>
+          <td valign="top" align="center">$ <input name="grandtotal" size="8" onmousedown="CalculateTotals()"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr>
+          <td align="center" valign="middle" bgcolor="#330033" colspan="7">
+            <hr height="3">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td valign="top" colspan="5" align="right" bgcolor="#0033EE"><span style="font-size:12px;font-weight:bold;color:ff9966">THE BUDGET LIMIT YOU HAVE CHOSEN</span></td>
+          <td valign="top" align="center">$ <input name="targetbudget2" size="8" onchange="document.orderform.targetbudget2.value=document.orderform.targetbudget"><span style="font-size:12px"></span></td>
+        </tr>
+        <tr height="50">
+          <td colspan="7">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <div id="black">
+      <table width="800" height="600" align="center" bgcolor="#FF9999">
+        <tr>
+          <td align="center" colspan="4" bgcolor="purple"><br>
+          <span style="font-size:18px;color:white;font-weight:bold">COMPARISONS</span></td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" width="800" valign="top">
+            <table width="600" align="center">
+              <tr>
+                <td width="150" align="left" valign="top">
+                  <input type='button' value='CURRENT' onclick='hideAll();showElement("black");showElement("table3");'>
+                  <p><span style="font-size:14px;color:white">Percentages based on your chosen levels of importance.</span></p>
+                </td>
+                <td width="150" align="left" valign="top">
+                  <input type='button' value='COMPARE' onclick='hideAll();showElement("black");showElement("table1");'>
+                  <p><span style="font-size:14px;color:white">Check back to look at today's standard ways of allocating percentages. They are not very enlighted.</span></p>
+                </td>
+                <td width="150" align="left" valign="top">
+                  <input type='button' value='A GUIDE' onclick='hideAll();showElement("black");showElement("table2");'>
+                  <p><span style="font-size:14px;color:white">Have a look at new ways of allocating percentages we have developed in the kitchens we build. They are closer to what people need to live ordinary, real-life, working lives.</span></p>
+                </td>
+                <td width="150" align="left" valign="top"><input type='button' value='REMEMBER' onmouseover='hideAll();showElement("black");showElement("remember");' onmouseout='hideAll();showElement("black");showElement("table3");'></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="remember">
+      <table width="500" align="center">
+        <tr>
+          <td align="center" bgcolor="#FF0099"><span style="color:white;font-weight:bold;background-color:ff0099;font-size:24px">Remember -- the point is to make a kitchen which you love being in, where you can be yourself -- not to impress someone with what the contractor or the magazines told you to do!!!!</span></td>
+        </tr>
+      </table>
+    </div>
+    <p></p>
+    <div id="table1">
+      <table width="650" border="2">
+        <tr>
+          <td colspan="5" align="center"><span style="color:white;font-weight:bold;background-color:55ccff;font-size:14px;">NOT VERY ENLIGHTENED<br>
+          <span style="background-color:000000"><b>Widespread common practice today. Disstribution of money in a typical kitchen remodel<br>
+          Notice that many items have NO money spent on them and that most of the money is concentrated in cabinets ad appliances</b></span></span></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="4" valign="middle" bgcolor="#000000" color="#EEEEEE"></td>
+        </tr>
+        <tr>
+          <td align="right" width="130"><span style="color:eeeeee;font-size:12px">kitchen table<input name="present3" size="3" onblur="check()"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">windows<input name="present2" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">small garden<input name="present6" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">thick walls<input name="present8" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">fireplace<input name="present7" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new walls<input name="present5" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">wall surfaces<input name="present13" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">counter top<input name="present4" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">appliances<input name="present9" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">kitchen floor<input name="present1" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">low cabinets<input name="present10" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">high cabinets<input name="present11" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">lighting<input name="present12" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new chairs<input name="present14" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">garden stuff<input name="present15" size="3"> %</span></td>
+        </tr>
+        <tr height="40px">
+          <td align="center" colspan="5"><span style="color:eeeeee;font-size:12px">...</span></td>
+        </tr>
+      </table>
+    </div>
+    <div id="table2">
+      <table width="650" border="2">
+        <tr>
+          <td colspan="5" align="center"><span style="color:white;font-weight:bold;background-color:55ccff;font-size:14px;">A MORE ENLIGHTENED APPROACH<br>
+          <span style="background-color:000000">Relatively more money is spent on things that truly matter to your comfort.<br>
+          These are approximately the proportions we typically use in kitchens we build for our clients. People feel comfortable and happy in these kinds of kitchens. They can live in them.</span></span></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="4" valign="middle" bgcolor="#000000" color="#EEEEEE"></td>
+        </tr>
+        <tr>
+          <td align="right" width="130"><span style="color:eeeeee;font-size:12px">kitchen table<input name="ces3" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">windows<input name="ces2" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">small garden<input name="ces6" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">thick walls<input name="ces8" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">fireplace<input name="ces7" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new walls<input name="ces5" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">wall surfaces<input name="ces13" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">counter top<input name="ces4" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">appliances<input name="ces9" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">kitchen floor<input name="ces1" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">low cabinets<input name="ces10" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">high cabinets<input name="ces11" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">lighting<input name="ces12" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new chairs<input name="ces14" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">garden stuff<input name="ces15" size="3"> %</span></td>
+        </tr>
+        <tr height="40px">
+          <td align="center" colspan="5"><span style="color:eeeeee;font-size:12px">...</span></td>
+        </tr>
+      </table>
+    </div>
+    <div id="table3">
+      <table width="650" border="2">
+        <tr>
+          <td colspan="5" align="center"><span style="color:white;font-weight:bold;background-color:55ccff;font-size:14px;">THESE ARE ROUGH PERCENTAGES BASED ON YOUR CHOICES SO FAR<br>
+          THEY APPROXIMATELY REFLECT YOUR CHOICES ABOUT HOW IMPORTANT DIFFERENT ELEMENTS ARE TO YOU</span><br>
+          <span style="color:eeeeee;font-size:14px"><b>Later you can refine your ideas about how YOU want to spend the money. These percentages show possible proportions of total remodel cost that are based on the 1 to 10 scores you gave these items on the last screen. You might use them for your own kitchen. Please adjust them until they reflect your EMOTION, your FEELING, about what is important and what will make you happy.</b></span></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="4" valign="middle" bgcolor="#000000" color="#EEEEEE"></td>
+        </tr>
+        <tr>
+          <td align="right" width="130"><span style="color:eeeeee;font-size:12px">kitchen table<input name="intuit3" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">windows<input name="intuit2" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">small garden<input name="intuit6" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">thick walls<input name="intuit8" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">fireplace<input name="intuit7" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new walls<input name="intuit5" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">wall surfaces<input name="intuit13" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">counter top<input name="intuit4" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">appliances<input name="intuit9" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">kitchen floor<input name="intuit1" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">low cabinets<input name="intuit10" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">high cabinets<input name="intuit11" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">lighting<input name="intuit12" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">new chairs<input name="intuit14" size="3"> %</span></td>
+          <td width="130" align="right"><span style="color:eeeeee;font-size:12px">garden stuff<input name="intuit15" size="3"> %</span></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="5">
+            <span style="color:eeeeee;font-size:12px">sum of percentages<input name="intuitsum" size="3"> %</span>
+            <p><span style="color:eeeeee;font-size:12px"><input type='button' value='IF OK FOR NOW, START MAIN CALCULATION' onclick='hideAll();showElement("result");scoretoPc()'></span></p>
+            <p><span style="color:eeeeee;font-size:12px">You can always adjust these numbers later</span></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="table4">
+      <table width="650" border="2">
+        <tr>
+          <td colspan="5" align="center">
+            <span style="color:white;font-weight:bold;background-color:55ccff;font-size:14px;">STEP 1. PUT NUMBERS TO INDICATE THE <span style="background-color:cc0000">EMOTIONAL</span> IMPORTANCE OF DIFFERENT ELEMENTS</span><br>
+            <span style="color:222222;font-size:14px"><b>To get started, put one of ten numbers (from 1 to 10) opposite each of the fifteen items to indicate how important they are to you <span style="background-color:cc0000;color:ffffff">EMOTIONALLY</span> on a scale of 1 to 10.</b></span>
+            <ul>
+              <li><span style="color:222222;font-size:14px">10 for those things which are VERY important</span></li>
+              <li><span style="color:222222;font-size:14px">7 for things that are somewhat important</span></li>
+              <li><span style="color:222222;font-size:14px">4 for items which are vaguely important</span></li>
+              <li><span style="color:222222;font-size:14px">1 for items not in the least important</span></li>
+              <li><span style="color:222222;font-size:14px">0 for items YOU DO NOT WANT AT ALL</span></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" colspan="4" valign="middle" bgcolor="#000000" color="#990099"></td>
+        </tr>
+        <tr>
+          <td align="right" width="130"><span style="color:990099;font-size:12px">kitchen table<input name="score3" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">windows<input name="score2" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">small garden<input name="score6" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">thick walls<input name="score8" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">fireplace<input name="score7" size="3"> pts</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">new walls<input name="score5" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">wall surfaces<input name="score13" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">counter top<input name="score4" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">appliances<input name="score9" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">kitchen floor<input name="score1" size="3"> pts</span></td>
+        </tr>
+        <tr>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">low cabinets<input name="score10" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">high cabinets<input name="score11" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">lighting<input name="score12" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">new chairs<input name="score14" size="3"> pts</span></td>
+          <td width="130" align="right"><span style="color:990099;font-size:12px">garden stuff<input name="score15" size="3"> pts</span></td>
+        </tr>
+        <tr>
+          <td align="center" colspan="5" height="50px">
+            <span style="color:ff00ff">Now the computer will generate approximate percentages from these numbers, put them on the next (purple) screen, as a guess at the percent of your total budget you may be willing to spend on each type of items in the overall kitchen project.</span>
+            <p><input type='button' value='NEXT CALCULATE PERCENTAGES' onclick='scoreConversion();reCalcIntuits();hideAll();showElement("black");showElement("table3");'></p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </form>
+  <p>
+  <script language="JavaScript">
+
+
+  <!--
+  f=document.orderform; 
+
+  //default percent later copied from intuit
+  f.pc1.value=7; f.pc2.value=12;
+  f.pc3.value=6; f.pc4.value=5;
+  f.pc5.value=2; f.pc6.value=15;
+  f.pc7.value=15; f.pc8.value=15;
+  f.pc9.value=9; f.pc10.value=10;
+  f.pc11.value=5; f.pc12.value=10;
+  f.pc13.value=12; f.pc14.value=7;
+  f.pc15.value=7; 
+
+  //default percent values computed from totals
+  f.actpc1.value=0; f.actpc2.value=0;
+  f.actpc3.value=0; f.actpc4.value=0;
+  f.actpc5.value=0; f.actpc6.value=0;
+  f.actpc7.value=0; f.actpc8.value=0;
+  f.actpc9.value=0; f.actpc10.value=0;
+  f.actpc11.value=0; f.actpc12.value=0;
+  f.actpc13.value=0; f.actpc14.value=0;
+  f.actpc15.value=0; 
+
+
+  //default percent obtained from scores
+  //and shown in purple screen
+  f.intuit1.value=7; f.intuit2.value=12;
+  f.intuit3.value=6; f.intuit4.value=5;
+  f.intuit5.value=2; f.intuit6.value=15;
+  f.intuit7.value=15; f.intuit8.value=15;
+  f.intuit9.value=9; f.intuit10.value=10;
+  f.intuit11.value=5; f.intuit12.value=10;
+  f.intuit13.value=12; f.intuit14.value=7;
+  f.intuit15.value=7; 
+
+
+  //fixed values for present practice
+  f.present1.value=2; f.present2.value=0;
+  f.present3.value=0; f.present4.value=5;
+  f.present5.value=2; f.present6.value=0;
+  f.present7.value=0; f.present8.value=0;
+  f.present9.value=14; f.present10.value=25;
+  f.present11.value=20; f.present12.value=10;
+  f.present13.value=3; f.present14.value=3;
+  f.present15.value=0; 
+
+  //values in ces typical kitchen
+  f.ces1.value=5; f.ces2.value=9;
+  f.ces3.value=4; f.ces4.value=4;
+  f.ces5.value=1; f.ces6.value=11;
+  f.ces7.value=11; f.ces8.value=11;
+  f.ces9.value=7; f.ces10.value=7;
+  f.ces11.value=4; f.ces12.value=7;
+  f.ces13.value=9; f.ces14.value=5;
+  f.ces15.value=5;
+
+  //default quantities
+  f.sf1.value=100; f.sf2.value=42;
+  f.sf3.value=18; f.sf4.value=12;
+  f.sf5.value=40; f.sf6.value=230;
+  f.sf7.value=1; f.sf8.value=22;
+  f.sf9.value=5; f.sf10.value=22;
+  f.sf11.value=12; f.sf12.value=6;
+  f.sf13.value=320; f.sf14.value=5;
+  f.sf15.value=18; 
+
+  //default scores
+  f.score1.value=0; f.score2.value=0;
+  f.score3.value=0; f.score4.value=0;
+  f.score5.value=0; f.score6.value=0;
+  f.score7.value=0; f.score8.value=0;
+  f.score9.value=0; f.score10.value=0;
+  f.score11.value=0; f.score12.value=0;
+  f.score13.value=0; f.score14.value=0;
+  f.score15.value=0; 
+
+  //default totals
+  f.total1.value=0; f.total2.value=0;
+  f.total3.value=0; f.total4.value=0;
+  f.total5.value=0; f.total6.value=0;
+  f.total7.value=0; f.total8.value=0;
+  f.total9.value=0; f.total10.value=0;
+  f.total11.value=0; f.total12.value=0;
+  f.total13.value=0; f.total14.value=0;
+  f.total15.value=0; 
+
+
+  f.yellowtotal.value=0;
+  f.yellowbudget.value=0;
+
+  f.grandtotal.value=0;
+  f.percenttotal.value=100;
+  f.actpercenttotal.value=0;
+  f.targetbudget.value=10000;
+  f.intuitsum.value=100;
+
+  f.item.value="Kitchen floor"; 
+  f.units.value="square feet"; 
+  f.amount.value=0;
+  f.squarefootage.value=150
+  //-->
+  </script></p>
+</body>
+</html>

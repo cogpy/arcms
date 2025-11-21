@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PLACING WINDOWS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#55bbff; color:#ffffff; font-weight:normal}
+  .unhighlightedSlideMarker {visibility:hidden}
+  .highlightedSlideMarker {visibility:visible}
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 285px;
+  visibility: visible;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    0px;
+                left:   290px;
+  width   : 450px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    350;
+                left:   10px;
+  width   : 440px;
+  height : 100px;
+  FONT-style: italic; FONT-SIZE: 14px; FONT-FAMILY: "Times New Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+  </style>
+  <script language="javascript" src="../universal/universal.js"></script>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <script language="javascript">
+    // these must appear before stepb is first called
+        enableManualSlideshowViaStepb = true; 
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+        setStepDescriptionToShowInline(1);
+
+        setupSlides(0, "mcfinal2.jpg",
+                    1, "mc1.jpg", "mc2.jpg",
+                    2, "mc3.jpg",
+                                        3, "mc4.jpg", "mc41.jpg", "mc5.jpg",
+                                        4, "mc6.jpg", "mc7.jpg",
+                                        5, "mc8.jpg", "mc9.jpg", "mc10.jpg",
+                                        6, "mc11.jpg", "mc12.jpg", "mcfinal2.jpg");
+
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 3000;
+        timeAfterLastSlide = 2000;
+        showSetupCaptions = true;
+    </script>
+    <table width="285" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">WATCH A SLIDESHOW</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:70%;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'>The window layout process has six main steps</span>
+          <ol>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(1,'Stand in room and see where to put windows','Stand in the room and make guesses about where to put windows to enhance the feeling of the room')
+            </script></span></li>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(2,'Place openings', 'Use surveyors tape to place openings where you think the windows ought to be, and at the size you think they ought to be.')
+            </script></span></li>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(3,'Double check and adjust','Double check, move, and adjust the surveyors tape until openings feel just right.')
+            </script></span></li>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(4,'Check from outside and adjust','Look at the windows from outside the building. Move and resize as needed')
+            </script></span></li>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(5,'Place rough frames','Take measurements and place rough frames.')
+            </script></span></li>
+            <li><span style='font-size:80%'>
+            <script>
+
+            stepb(6,'Make rough stab at fenestration pattern','Make a rough stab at possible fenestration pattern -- to be decided finally in a later session.')
+            </script></span></li>
+          </ol><span style='font-size:80%'></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="slideshow" style='position:relative'>
+    <div id='restartdiv' style="position:absolute;left:0;top:0width:350;height:400;visibility:hidden">
+      <table width="450" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftershowdiv);showElement(showdiv);startRotate()"><font color="#000000">Watch the slideshow again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <table align="center" bgcolor="black" border="0">
+        <tr>
+          <td bgcolor="black" align="center"><font color="white"><span class="h4class">Using the tools available on this site, anyone can place windows to make a room beautiful</span></font></td>
+        </tr>
+        <tr>
+          <td align="center" height="250"><img src="mc1.jpg" width="450" name="adBanner" alt="You can do this" id="adBanner"></td>
+        </tr>
+      </table>
+      <script language='javascript'>
+      writeMessageDiv('stepDescriptionCaption',440,300,
+                  'align=left', 'A slideshow is loading.', 
+                                                'font-size:90%;top:350px;left:10px;');
+      setStepCaptionDiv('stepDescriptionCaption',2);
+      </script>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

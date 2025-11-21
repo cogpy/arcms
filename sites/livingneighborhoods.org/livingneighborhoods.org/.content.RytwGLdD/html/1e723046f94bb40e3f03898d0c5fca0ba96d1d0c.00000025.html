@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Latent Centers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+
+
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: FFFFFF;
+  }
+
+  .h31class {
+        FONT-WEIGHT: normal; FONT-SIZE: 26px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h32class {
+        FONT-WEIGHT: normal; FONT-SIZE: 23px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h33class {
+        FONT-WEIGHT: normal; FONT-SIZE: 21px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h34class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+  .h404class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 13px; FONT-FAMILY: "Arial"
+  }
+
+  .h414class {
+        FONT-WEIGHT: BOLD; FONT-SIZE: 15px; FONT-FAMILY: "Arial"; COLOR: GREEN;
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  .h66class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h69class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; COLOR: 005511;
+  }
+  .h69medclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000099;
+  }
+  .h69bigwhiteclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: WHITE; 
+  }
+
+  .h69biggrayclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 28px; FONT-FAMILY: "Times Roman"; COLOR: 222222;
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: "Arial";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+
+  .caption {
+        FONT-WEIGHT: normal; FONT-STYLE: italic; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; COLOR: black; text-decoration: none;  }
+
+
+
+  #hillock {
+                position: absolute;
+                top:   600px;
+                left:  44%;
+  width   : 400 px;
+        z-index:10;
+  visibility: hidden; 
+        }
+
+  #codys {
+                position: absolute;
+                top:   860 px;
+                left:  44%;
+        z-index:10;
+  width   : 400 px;
+  visibility: hidden
+        }
+
+  #walking {
+                position: absolute;
+                top:   1370 px;
+                left:  44%;
+        z-index:10;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #discussion {
+                position: absolute;
+                top:   1600 px;
+                left:  44%;
+        z-index:10;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #looking {
+                position: absolute;
+                top:   2000 px;
+                left:  44%;
+        z-index:10;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+  #working {
+                position: absolute;
+                top:   2310 px;
+                left:  44%;
+        z-index:10;
+  height  : 400 px;
+  visibility: hidden
+        }
+
+
+  </style>
+  <style>
+  .actionclass {
+        FONT-WEIGHT: bold; color: 008800; FONT-SIZE: 22px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  .action2class {
+        FONT-WEIGHT: bold; color: 008800; FONT-SIZE: 14px; FONT-FAMILY: "arial"; text-decoration: none;  }
+
+  .action3class {
+        FONT-WEIGHT: bold; color: 008800; FONT-SIZE: 12px; FONT-FAMILY: "arial";   }
+
+  </style>
+</head>
+<body text="#000000" vlink="#0000FF" link="#0000FF" bgcolor="#FFFFFF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <table width="650" align="center" border="0">
+    <tr>
+      <td align="center"><span class="h4class" style="font-family:Times"><span style="FONT-SIZE:140%">A F</span>ragment of the <span style="FONT-SIZE:140%">G</span>enerative <span style="FONT-SIZE:140%">C</span>ode for <span style="FONT-SIZE:140%">N</span>eighborhoods</span></td>
+    </tr>
+    <tr>
+      <td align="left">
+        <a href="../packets/diagnosis-phase.htm"><span class="h5class" style='font-weight:normal;color:blue'>Back to Diagnosis Section</span></a>
+      </td>
+    </tr>
+  </table>
+  <center>
+    <img src="pics/diagnosis/ricefields-words.jpg" width="650">
+  </center><span class="h5class"><br></span>
+  <hr height="10" color="#005511">
+  <table align="center" width="560" border="0">
+    <tr>
+      <td width="560" align="center" valign="top"></td>
+      <td>
+        <table width="560" align="center" border="0" padding-left="10px">
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">&nbsp;</span>
+              <p><span class="h4class"><b>PROTECTING THE LAND FOR EVER, IN CITIES AND IN NATURE</b></span><br></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">Walking around the land, walking around the city, one encounters different spots with natural beauty or special characteristics. It is not enough to simply identify these beautiful spots. What happens in a typical green-field development is that people see these beautiful places, then rush to exploit them, or overlook them, and perhaps even bulldoze them. In the city the problem is even greater. There are precious places, and spots which have magic in them - but these are burdened especially in the most recently built areas, by such utter disregard for the naturally occurring wholeness, that it is extremely difficult to imagine how to bring it back to order. Yet these urban examples, no less than nature, are no less our obligation. They need to be deeply transformed to make the ugly constructions of the 20th century, beautiful.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">This unfolding seeks to protect these spots - whether in the city, or in open nature, or in suburban places -- and enhance them by providing steps that will enshrine each of these lovely, precious spots so that they are part of the living fabric of the neighborhood that is to come.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">In order to protect the natural beauty of countryside, and repair the damaged urban land and towns, and try to repair the developers tracts and suburbs most recently built, a continual effort must be made to identify those naturally occurring "centers" in the land which most inspire love and attachment. We must keep them and strengthen them so that, as the town is developed, and the country urbanized by construction, still the deep centers which are present, inherent in the land, are able to inspire and dominate the structure of the newly built place.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560"><span class="h4class"><b>WHAT IS A CENTER, AND HOW WILL THEY BE PROTECTED AND ENHANCED?</b></span><br></td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">A center is a spot of living beauty in the land. When you walk around the land, as it is today, these places strike you with their life, the life radiates out beyond them, and they beg to be preserved. Centers can be any size: very small, middle-sized, or very large. A trickling stream under a piece of stone may be a center. A large basin in the landscape may be a living center. A narrow piece of a street with the sun shining it, and quiet, may be a center. The steps going up to a beautiful building, if the steps invite you to sit on them. You may already have recorded places like this on your Base Map.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">The intent of unfoldings is not only to encourage the preservation of living centers in the land, but to enhance them and strengthen them. That means to build buildings and other structures which preserve and draw their inspiration from the naturally occurring centers, so that their beauty and intensity is kept alive. This can be done by building - in stone, in wood, concrete, tile, steel, or glass - constructed enhancements that support the naturally occurring centers in the land. This is intended to preserve a continuity from the city as it was, or the land as it was, to the neighborhood and buildings as they will be, and, through its unfolding, to maintain the deep feeling of the place at all times.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">In the Chinese terraces above, there is a natural and very strong center readily apparent. It is captured in the picture to the left. This is an example of a center that one would work very hard to protect and preserve.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">The neighborhood, as it evolves, must always be made so that, as far as possible, the existing centers visible in the land are maintained, sustained, and improved, by the actions taken in development. This means specifically that:</span>
+              <ol>
+                <li type="a"><span class="h4class">The public pedestrian paths and roads and public open spaces - the rights of way which form the life of the neighborhood - are chosen to preserve and strengthen the centers that are inherent in the land itself; and</span></li>
+                <li type="a">
+                  <span class="h4class">The buildings and enclosures created by construction adjacent to these public rights of way are placed and shaped to strengthen and enliven the deep feeling which lies in the centers as they exist, now, in the neighborhood and land.</span>
+                  <p></p>
+                </li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">In an area being diagnosed, the living centers are identified by the following empirical test: a place within the area is identified as "living" when two or three people agree that to them it seems a spot with exceptional life. Places meeting this test should be recorded on a Base Map.</span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class"><b>LATENT CENTERS</b></span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">A "latent" center is a center that has the promise of life, even though it may not be very strongly living as matters now stand. The criterion for a latent center, is that two or three people can see, and agree, not only that it has potential as a living center, but that actions can be imagined which will bring that place to life.</span>
+              <p><span class="h4class">There are more latent centers in urban areas…. . .</span></p>
+              <p><span class="h4class">Latent centers that have the promise of life are recorded on the diagnosis site map, and protected in any subsequent construction that takes place. Rough ideas about possible repairs or new construction for a given place are recorded at the time of the initial diagnosis. Members of the neighborhood are encouraged to think about diagnosis as a routine matter of daily life, and to communicate their feelings about possible actions that can be taken to bring more life to the neighborhood.</span></p>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class"><b>CONCLUSION</b></span>
+              <p></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" width="560">
+              <span class="h4class">It is implicit in this definition, that we allow the land or the city itself (as it is today), to define the future. We do not seek to impose an image on the land, or on the city. We do our best to draw what is to come, from what is there already. This is the vital difference between what is proposed on this website, and the current conventional ways of thinking about architecture and planning. A "latent" center is a center that has the promise of life, even though it may not be very good, and we draw the inspiration of the large from that which is latent in the present. Only that way can we overcome our egotism, and reach real beauty.</span>
+              <p></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#FFFFFF">
+        <center>
+          <hr height="14" color="#008800">
+          <span class="actionclass" style="font-size:22px;color:008800;">TASKS TO COMPLETE<br>
+          TO ACHIEVE THIS UNFOLDING</span>
+          <hr height="14" color="#008800">
+        </center><span class="action2class" style="color:008800;"></span>
+        <ul>
+          <li><span class="action2class" style="color:008800;"><b>Walk around</b> for a while on the land, with all stakeholders, and look for centers and latent centers.</span></li>
+          <li><span class="action2class" style="color:008800;">Sit down outside, and <b>discuss-- everyone compare their lists.</b> Walk around til' everyone agrees on where these latent centers are.</span></li>
+          <li><span class="action2class" style="color:008800;">Make a quick <b>handsketch,</b> and take photos for your workbook.</span></li>
+          <li><span class="action2class" style="color:008800;"><b>Write a quick sentence</b> or two about each latent center, describing why it is special.</span></li>
+          <li><span class="action2class" style="color:008800;">Keep all this information in your Workbook. Once the <b>Drawing Pad</b> becomes operational, mark the centers and latent centers on your map. Until then, use copies of your base map to record them.</span></li>
+        </ul><span class="action2class" style="color:008800;"></span>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="2" bgcolor="#FFFFFF">
+        <center>
+          <table>
+            <tr>
+              <td colspan="2" bgcolor="#FFFFFF">
+                <center>
+                  <table align="center" width="550" border="3" colspan="2" bordercolor="#008800" bgcolor="#FFFFBB">
+                    <tr>
+                      <td>
+                        <a href="../drawing-pad/drawingpad.htm"><img src="../drawing-pad/buttons/pencil-button.jpg" width="20"></a>
+                      </td>
+                      <td width="550" align="center" height="20" bgcolor="#008800" valign="middle">
+                        &nbsp;&nbsp;<a href="../drawing-pad/drawingpad.htm"><span class="action3class" style="font-family:arial;font-size:12px;color:white;">Go to the drawing pad to make your sketches</span></a>
+                      </td>
+                    </tr>
+                  </table>
+                  <hr height="10" color="#008800">
+                  <a href="../packets/diagnosis-phase.htm"><span class="h5class" style='font-weight:normal;color:blue;font-size:11px;'>Back to Diagnosis Section</span></a><br>
+                  <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span>
+                </center>
+              </td>
+            </tr>
+          </table>
+          <div id="codys" z-index="10"><img src="pics/diagnosis/codys.jpg" width="650px" name="codys1" border="2" id="codys1"></div>
+          <div id="hillock" z-index="10"><img src="pics/diagnosis/hillock.jpg" width="400px" name="hillock1" border="2" id="hillock1"></div>
+          <div id="walking" z-index="10"><img src="pics/people/maggiesophie-inthesnow.jpg" width="400px" name="walking1" border="2" id="walking1"></div>
+          <div id="discussion" z-index="10"><img src="pics/people/listening-to-oneanother.jpg" width="400px" name="discussion1" border="2" id="discussion1"></div>
+          <div id="looking" z-index="10"><img src="pics/people/looking3.jpg" width="400px" name="looking1" border="2" id="looking1"></div>
+          <div id="working" z-index="10"><img src="pics/people/working.jpg" width="400px" name="working1" border="2" id="working1"></div>
+        </center>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

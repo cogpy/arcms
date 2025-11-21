@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WORKBOOK - SECTION 1</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style type="text/css">
+
+  INPUT {
+  height: 50px;
+  width: 150px;
+  background-color: #ff0000;
+  border-color: #990000;
+  color: BLACK;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+  }
+  </style>
+  <style type="text/css" media="print">
+
+  p.pagebreakhere {page-break-before: always} 
+
+  </style>
+  <style>
+
+  .h1greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 008833;
+  }
+  .h1yellowclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: FFFF22;<!-- eeee33; -->
+  }
+  .h1darkgreenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 40px; FONT-FAMILY: "Times Roman"; COLOR: 004400;
+  }
+  .h2greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"; COLOR: 005522;
+  }
+
+  .h3greenclass {
+        FONT-WEIGHT: bold; FONT-DECORATION: italic; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"; COLOR: 000000;
+  }
+
+  .h4greenclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; LINE-SPACING: 16px; FONT-FAMILY: "Arial"; COLOR: 0000ff;
+  }
+
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 14px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  *******************************************
+
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  160px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="h4menuclass" style="color:007722"><b><span style="font-size:12px">Coming soon</span><br>
+        <a class="type1" href="../ht-0/workbook.htm"><span class="h4menuclass" style="color:ff0000"><b>WORKBOOK</b></span></a><span style="color:ffffff"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/workbook-assembly.htm">Workbook Assembly</a></b></span></span><span class="h7menuclass" style="color:000000"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/workbook-assembly.htm#printing">Printing Pages</a></b></span></span><span class="h7menuclass" style="color:000000"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../packets/workbook-section1.htm"><span style="color:000000">Worksheets-Section 1</span></a></b></span></span></b></span></td>
+      </tr>
+      <tr>
+        <td><span class="h4menuclass" style="color:007722"><b><span style="font-size:12px">Coming soon</span><br>
+        <a class="type1" href="../drawing-pad/intro.htm"><span class="h4menuclass" style="color:ff0000"><b>DRAWING PAD</b></span></a><span style="color:ffffff"><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../drawing-pad/instructions.htm">Drawing instructions</a></b></span><br>
+        <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../drawing-pad/drawingpad.htm">The drawing pad itself</a></b></span><br></span></b></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="560" align="center" bgcolor="#1166CC" border="1">
+      <tr>
+        <td width="150" align="center" valign="middle" bgcolor="#1188DD"><img align="center" src="../pics/open-workbook.jpg" width="140"></td>
+        <td align="center" width="260"><font font-size="12px" color="#FFFF00"><b><i>Building Living Neighborhoods</i></b></font><br>
+        <img src="../images/noonew5-t.jpg" height="80"></td>
+        <td align="right" width="150" bgcolor="#1188DD"><br></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#1188DD">
+      <tr>
+        <td align="center"><span class="h1yellowclass"><span style="font-size:75%">WORKBOOK</span> <span style="font-size:75%">SECTION 1</span><br>
+        <span style="font-size:55%">STARTUP AND VISION</span></span></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+      <tr height="5">
+        <td align="left" width="560"></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#1188DD">
+      <tr height="25">
+        <td align="center" width="560"><span class="h1yellowclass" style="font-size:12px">CONTENTS</span></td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="0" bgcolor="#FFFFDD">
+      <tr>
+        <td width="200">&nbsp;</td>
+        <td align="left" width="350">
+          <blockquote>
+            <table>
+              <tr>
+                <td align="left" colspan="2" border="1">
+                  <blockquote>
+                    <span class="h6class" style="color:000000;font-size:12px"></span>
+                    <p><span class="h6class" style="color:000000;font-size:12px">This section of the workbook should contain:</span></p>
+                    <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                    <ul>
+                      <li><span class="h6class" style="color:000000;font-size:12px">The five unfolding pages listed below, printed from the website;</span></li>
+                      <li><span class="h6class" style="color:000000;font-size:12px">The five complementary instructional worksheets, to match the unfolding pages. These sheets are attached to this page, and will print out when you print this page.</span></li>
+                      <li><span class="h6class" style="color:000000;font-size:12px">Your own handwritten notes, and the hand-drawn sketches developed through discussion with others;</span></li>
+                      <li><span class="h6class" style="color:000000;font-size:12px">Drawings and sketches from the Drawing Pad on the website, <i>when it becomes operational</i>.</span></li>
+                    </ul>
+                  </blockquote>
+                </td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr height="25">
+                <td align="center" width="560"><span class="h1yellowclass" style="font-size:12px">FIVE WORKSHEETS</span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="0" bgcolor="#FFFFDD">
+              <tr>
+                <td width="140">&nbsp;</td>
+                <td align="left" width="410">
+                  <blockquote>
+                    <span class="h2greenclass" style="font-size:27px">&nbsp;<br>
+                    1.1 Parameters</span>
+                    <p><span class="h2greenclass" style="font-size:27px">1.2 People</span></p>
+                    <p><span class="h2greenclass" style="font-size:27px">1.3 Vision</span></p>
+                    <p><span class="h2greenclass" style="font-size:27px">1.4 Base Map</span></p>
+                    <p><span class="h2greenclass" style="font-size:27px">1.5 Poetic Language</span></p>
+                  </blockquote>
+                </td>
+              </tr>
+            </table>
+            <table width="561" align="center" border="1" bgcolor="#FFFFDD" cellpadding="4"></table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <p></p>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"><span style="color:white">End of page<br>
+                <br></span></td>
+              </tr>
+            </table>
+            <p class="pagebreakhere">*********start worksheet 1.1************</p>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+              <tr>
+                <td align="center"></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center"><span class="h1yellowclass"><span style="font-size:45%">WORKSHEET<br></span><span style="font-size:35%">FOR</span> <span style="font-size:55%"><br>
+                1.1 &nbsp; PARAMETERS</span><br></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8" valign="top">
+              <tr>
+                <td width="540">
+                  <span class="h6class" style="color:000000;font-size:12px"><b>1.1 Parameters</b></span>
+                  <p><span class="h6class" style="color:000000;font-size:12px">The Parameters page on the website asks you to fill out and submit a worksheet to get started on defining the loose parameters of your project. If you have not competed the worksheet yet, please do so. It is important to have a record of your original thoughts about your project - this is the beginning of the unfolding of your dream.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">Visitors to the earlier version of the livingneighborhoods.org website may have completed "Your Basic Worksheet". If so, it was sent to you via email at the time you submitted it. That is the same worksheet the Parameters page refers to, and it should be inserted here.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">You may have additional thoughts about how you would like your neighborhood to grow and thrive. Record those thoughts here. In particular, say as much as you can about what the place will be like, feel like, and grow into, as the questions on the worksheet lead you to consider.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                </td>
+              </tr>
+              <tr>
+                <td width="540" valign="top" bgcolor="#1188DD" align="center"><span class="h6class" style="color:FFFFFF;font-size:12px">YOUR INPUT, NOTES, SKETCHES, COMMUNITY DECISIONS, ETC.</span></td>
+              </tr>
+              <tr>
+                <td width="540" height="470" valign="top"><span class="h6class" style="color:FFFFFF;font-size:12px"></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <center>
+              End of Page
+            </center>
+            <p class="pagebreakhere">*********start worksheet 1.2************</p>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+              <tr>
+                <td align="center"></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center"><span class="h1yellowclass"><span style="font-size:45%">WORKSHEET<br></span><span style="font-size:35%">FOR</span> <span style="font-size:55%"><br>
+                1.2 &nbsp; PEOPLE</span><br></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8" valign="top">
+              <tr>
+                <td width="540">
+                  <span class="h6class" style="color:000000;font-size:12px"><b>1.2 People</b></span>
+                  <p><span class="h6class" style="color:000000;font-size:12px">Start right away involving people in discussions about what this place can be, walking the land together, and imagining what they would like to see happen there. Share your thoughts with others who could be involved, and ask them to record their thoughts as well.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">As ideas are generated, summarize them here.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                </td>
+              </tr>
+              <tr>
+                <td width="540" valign="top" bgcolor="#1188DD" align="center"><span class="h6class" style="color:FFFFFF;font-size:12px">YOUR INPUT, NOTES, SKETCHES, COMMUNITY DECISIONS, ETC.</span></td>
+              </tr>
+              <tr>
+                <td width="540" height="570" valign="top"><span class="h6class" style="color:FFFFFF;font-size:12px"></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <center>
+              End of Page
+            </center>
+            <p class="pagebreakhere">*********start worksheet 1.3************</p>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+              <tr>
+                <td align="center"></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center"><span class="h1yellowclass"><span style="font-size:45%">WORKSHEET<br></span><span style="font-size:35%">FOR</span> <span style="font-size:55%"><br>
+                1.3 &nbsp; VISION</span><br></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8" valign="top">
+              <tr>
+                <td width="540">
+                  <span class="h6class" style="color:000000;font-size:12px"><b>1.3 Vision</b></span>
+                  <p><span class="h6class" style="color:000000;font-size:12px">The Vision page on the website describes several different questions to explore with people who are interested in the project. First, together, close your eyes, and imagine the neighborhood as you wish it to be. Wait for it, and it will come of its own accord into your eyes-shut mind.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">Many questions are listed on the web page for Vision. These are additional questions that might help stimulate descriptions of what you have in mind:</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">What kind of experience are you hoping to have in your neighborhood?</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">As you see people moving around this wonderful, imaginary place, what things are they doing that contribute to the feelings you have in your mind's eye?</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">If you are moved, or thrilled, by the image of your neighborhood, what is it that makes you feel that way?</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">If you have experience in a neighborhood that even faintly resembles what you have in mind for yours, what features give it the qualities you like?</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                  <center>
+                    <span class="h6class" style="color:000000;font-size:12px">.oOo.</span>
+                  </center>
+                  <p><span class="h6class" style="color:000000;font-size:12px">Conversations that attend to these questions, and probably others as well, help to fill in details that may be illusive. Share the ideas as you wrote them with others who are interested in the project. Make simple sketches of the ideas if that is helpful. Edit it until it is more or less agreed to among all of you. It should be written in as much detail as you feel you know. It is hoped that this vision is largely shared, but if there are points of disagreement or opinion, not settled yet, then write those down as well. Change what needs changing as new ideas come up.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">As you move into the next phase of unfoldings, Diagnosis of the Land, your vision will get grounded in the land itself. You will have the opportunity to consider the issues deeply, and resolve them.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                </td>
+              </tr>
+              <tr>
+                <td width="540" valign="top" bgcolor="#1188DD" align="center"><span class="h6class" style="color:FFFFFF;font-size:12px">YOUR INPUT, NOTES, SKETCHES, COMMUNITY DECISIONS, ETC.</span></td>
+              </tr>
+              <tr>
+                <td width="540" height="600" valign="top"><span class="h6class" style="color:FFFFFF;font-size:12px"></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <center>
+              End of Page
+            </center>
+            <p class="pagebreakhere">*********start worksheet 1.4************</p>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+              <tr>
+                <td align="center"></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center"><span class="h1yellowclass"><span style="font-size:45%">WORKSHEET<br></span><span style="font-size:35%">FOR</span> <span style="font-size:55%"><br>
+                1.4 &nbsp; BASEMAP</span><br></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8" valign="top">
+              <tr>
+                <td width="540">
+                  <span class="h6class" style="color:000000;font-size:12px"><b>1.4 Basemap</b></span>
+                  <p><span class="h6class" style="color:000000;font-size:12px">The instructions on the Base Map Unfolding page describe several ways in which to develop the map you need. One of them, the Drawing Pad, is not yet operational. However, even without this tool, you can assemble aerial photos of your neighborhood site and hand-drawn maps, and also obtain surveyor maps, if you wish. The point is to become very aware of your neighborhood's physical shape and attributes and create a base from which to work with unfoldings. Place the maps you assemble in this section to keep them handy for future reference.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px">Produce a scale map of the whole neighborhood on which you and your colleagues have written a record of your observations while walking the land:</span></p>
+                  <ul>
+                    <li><span class="h6class" style="color:000000;font-size:12px">Use arrows to show important views.</span></li>
+                    <li><span class="h6class" style="color:000000;font-size:12px">Use circles to designate important precious places.</span></li>
+                    <li><span class="h6class" style="color:000000;font-size:12px">Mark good places to come into the site; and</span></li>
+                    <li><span class="h6class" style="color:000000;font-size:12px">Mark good places to leave by.</span></li>
+                    <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                    <tr>
+                      <td width="540" valign="top" bgcolor="#1188DD" align="center"><span class="h6class" style="color:FFFFFF;font-size:12px">YOUR INPUT, NOTES, SKETCHES, COMMUNITY DECISIONS, ETC.</span></td>
+                    </tr>
+                    <tr>
+                      <td width="540" height="450" valign="top"><span class="h6class" style="color:FFFFFF;font-size:12px"></span></td>
+                    </tr>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <center>
+              End of Page
+            </center>
+            <p class="pagebreakhere">*********start worksheet 1.5************</p>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD">
+              <tr>
+                <td align="center"></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center"><span class="h1yellowclass"><span style="font-size:45%">WORKSHEET<br></span><span style="font-size:35%">FOR</span> <span style="font-size:55%"><br>
+                1.5 &nbsp; POETIC LANGUAGE</span><br></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#FFFFDD" cellpadding="8" valign="top">
+              <tr>
+                <td width="540">
+                  <span class="h6class" style="color:000000;font-size:12px"><b>1.5 Poetic Language</b></span>
+                  <p><span class="h6class" style="color:000000;font-size:12px">In words, write down a poetic vision of the place, in the most emotional language. Describe recurring themes from previous conversations with others. Deliberately describe the most touching aspects this place could have. The work that you have done prior to this step, will inform you of the times when you had emotional reactions; the times when you felt excited just imagining your neighborhood finished. You are trying to draw a picture of of your emotional reaction o the land. Poetry is a way to do that.</span></p>
+                  <p><span class="h6class" style="color:000000;font-size:12px"></span></p>
+                </td>
+              </tr>
+              <tr>
+                <td width="540" valign="top" bgcolor="#1188DD" align="center"><span class="h6class" style="color:FFFFFF;font-size:12px">YOUR INPUT NOTES, SKETCHES, COMMUNITY DECISIONS, ETC.</span></td>
+              </tr>
+              <tr>
+                <td width="540" height="520" valign="top"><span class="h6class" style="color:FFFFFF;font-size:12px"></span></td>
+              </tr>
+            </table>
+            <table width="560" align="center" border="1" bgcolor="#1188DD">
+              <tr>
+                <td align="center" height="10"></td>
+              </tr>
+            </table>
+            <center>
+              End of Page
+            </center>
+          </blockquote>
+        </td>
+      </tr>
+    </table><br>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+      <br>
+    </center>
+  </div>
+</body>
+</html>

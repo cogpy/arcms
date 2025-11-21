@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+                  .notOver {background-color:#ffffff}
+                  .over {background-color:#99ffff}
+  </style>
+  <script>
+                        var nowOver = 4;
+                        function mouseIsOver(k)
+                          { if (nowOver)
+                              { document.all['c'+nowOver].className = 'notOver';
+                                document.all['l'+nowOver].style.visibility = 'hidden';
+                              }
+                                 
+                            nowOver = k;
+                            if (nowOver)
+                              { document.all['c'+nowOver].className = 'over';
+                                document.all['l'+nowOver].style.visibility = 'visible';
+                              }
+                                 
+                          }
+  </script>
+  <title></title>
+</head>
+<body>
+  <center>
+    <span style="font-size:140%;color:0000ff">Not Real Diagnosis : sample only</span>
+  </center>
+  <p></p>
+  <div id="content">
+    <img id='gr' style='position:absolute;left:10;top:50;visibility:visible' src='dville008gr2.jpg'> <img id='bl' style='position:absolute;left:10;top:50;visibility:hidden' src='dville008bl.jpg'> <img id='l1' style='position:absolute;left:10;top:50;visibility:hidden' src='dville008blbaa.gif'> <img id='l2' style='position:absolute;left:10;top:50;visibility:hidden' src='dville008blb1.gif'> <img id='l3' style='position:absolute;left:10;top:50;visibility:hidden' src='dville008blb2.gif'> <img id='l4' style='position:absolute;left:10;top:50;visibility:visible' src='dville008blb3.gif'>
+    <div style='position:absolute;left:400;top:50'>
+      <p></p>
+      <table>
+        <tr>
+          <td>DIAGNOSIS OF MAIN STREET <span style="font-size:60%">(sample only)</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span style="font-size:90%;font-weight:bold"><span style="color:yellow;background-color:99cccc">Yellow areas</span> show good places, which should be preserved and extended to help the overall health of the city<br>
+            <span style="color:black;background-color:99cccc">Black areas</span> show bad places, which should be fixed, or repaired, for the good of the city's overall health.</span>
+            <p></p>
+          </td>
+        </tr>
+        <tr>
+          <td><i>Move your mouse over the list to see how people in Duncanville assess the areas along main street.</i></td>
+        </tr>
+        <tr>
+          <td class='over' id='c4' onmouseover='mouseIsOver(4)'>Areas receiving at least 50 votes</td>
+        </tr>
+        <tr>
+          <td class='notOver' id='c3' onmouseover='mouseIsOver(3)'>Areas receiving at least 10 votes</td>
+        </tr>
+        <tr>
+          <td class='notOver' id='c2' onmouseover='mouseIsOver(2)'>Areas receiving at least 2 votes</td>
+        </tr>
+        <tr>
+          <td class='notOver' id='c1' onmouseover='mouseIsOver(1)'>Areas receiving at least 1 vote</td>
+        </tr>
+      </table><br>
+      <br>
+      <center>
+        <font size="1">&nbsp;&nbsp;&nbsp;&nbsp; All material in these pages copyright © 2002 Patternlanguage.com, Patents Pending</font>
+      </center>
+    </div>
+  </div>
+</body>
+</html>

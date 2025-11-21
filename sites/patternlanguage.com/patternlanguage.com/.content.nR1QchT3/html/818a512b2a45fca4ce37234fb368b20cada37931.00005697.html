@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAINSTREET</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+
+    .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .stepnumber {padding-left:16px;padding-right:8px;text-align:right}
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman";
+        text-decoration: none; 
+    }
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    .big_yellow { list-style-image: url(yellow.jpg)}
+    .big_yellow_highlighted { list-style-image: url(yellow-border.jpg)}
+    .big_green { list-style-image: url(green.jpg)}
+    .big_green_highlighted { list-style-image: url(green-border.jpg)}
+    .big_darkgreen { list-style-image: url(darkgreen.jpg)}
+    .big_darkgreen_highlighted { list-style-image: url(darkgreen-border.jpg)}
+    .big_gray { list-style-image: url(gray.jpg)}
+    .big_gray_highlighted { list-style-image: url(gray-border.jpg)}
+    .big_red { list-style-image: url(red.jpg)}
+    .big_red_highlighted { list-style-image: url(red-border.jpg)}
+    .big_darkred { list-style-image: url(darkred.jpg)}
+    .big_darkred_highlighted { list-style-image: url(darkred-border.jpg)}
+    .big_black { list-style-image: url(black.jpg)}
+    .big_black_highlighted { list-style-image: url(black-border.jpg)}
+    .big_lilac { list-style-image: url(lilac.jpg)}
+    .big_lilac_highlighted { list-style-image: url(lilac-border.jpg)}
+    .big_lightblue { list-style-image: url(lightblue.jpg)}
+    .big_lightblue_highlighted { list-style-image: url(lightblue-border.jpg)}
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the slide_step() and setup_step functions) */
+    -->
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#55bbff; color:#ffffff; font-weight:normal}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+    .unhighlightedSlideMarker {display:none}
+    .highlightedSlideMarker {display:none}
+
+
+    #illuminate {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: visible;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+            }
+
+    #captiondiv {
+        position: absolute;
+        top:    350;
+        left:   340px;
+        width   : 425px;
+        height : 500px;
+        FONT-style: italic; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman" ;
+        FONT-WEIGHT: bold;
+        text-decoration: bold;
+        visibility: visible;
+    }
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        FONT-style: bold;
+        text-align: right;
+        visibility: hidden;
+    }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie(2);  // This call must appear before the parameters are set
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(3,0);
+        // applet and slides both are 700 x 400
+        // setAppletDrawingSize(425,340);
+        // setAppletDrawingSize(425,243);
+        setAppletDrawingSize(445,254);
+        // slideImageAttributeString = 'width=426 height=284';
+        // slideImageAttributeString = 'width=425 height=243';  //// set size of slideshow images here
+        slideImageAttributeString = 'width=445 height=257';  //// set size of slideshow images here
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        setScrollDiv('stepscrolldiv');
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(3000);
+        setPauseWhenSwitchFromMoiveToSlide(2000)
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // They are taken from three different places:
+        //   captions included in the parameters to setupShow
+        //   captions included as an extra, final, parameter 
+        //        to setup_step or slide_step when creating the step list
+        //        (This parameter follows the parameter that gives the label of the
+        //        step that appears in the list.)
+        //   for movies, captions that appear in the gdraw file
+        // If necessary, calls can be added here to suppress some of the captions
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+    //////// DESCRIPTION OF THE SHOW ///////////////
+          // In the call to setupShow we tell what the sequential contents of the show will
+        // be if it is played automatically.
+        // This is where all of the Jpeg slide files are specified, in order.
+        // Now all movie files call setupShow.  (Since so many movies have slides
+        // before or after them, this provides a clear way to show just where the
+        // movie itself fits in.  It's almost as if it's just one of the slides of
+        // a slideshow.)
+
+        // Here is where the show is described, specifying what images are shown, in order,
+        //  and whether and when a gdraw movie is shown
+        setMovieFile('firstc.gdraw');
+        // setupShow(
+                    // 'movie:firstb.gdraw',
+                    // 2112, "caption-manual:Sketch plan which followed this process", "afterfirst.jpg",
+                    // setup_step('image:afterfirst2.jpg','caption:Sketch plan which followed this process')
+    setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+
+    big_color_size = 12;
+    small_color_size = 12;
+   c_yellow = '#ffff00';
+   c_green = '#00ff00';
+   c_gray = '#a1a1a1';
+   c_red = '#ff0000';
+   c_darkgreen = '#00cc82';
+   c_black = '#000000';
+   c_lightblue = '#80c4ff';
+   c_darkred = '#d63018';
+   c_lilac = '#e094ff';
+   function make_color_patch(size,right_margin,color)
+  { // size = '100px';
+    // alert("hi<img width='" + size + "' height='" + size + "' src='../images/empty.gif' style='background-color:"+color+"'>what now");
+    // document.write("<img width='" + size + "' height='" + size + "' src='../images/empty.gif' style='background-color:"+color+"'>");
+  alert( "<img style='margin-right:"+right_margin+"' width='" + size + "' height='" + size + "' src='../images/empty.gif' style='background-color:"+color+"'>" + '&nbsp;');
+    return "<img style='margin-right:"+right_margin+"px' width='" + size + "' height='" + size + "' src='../images/empty.gif' style='background-color:"+color+"'>" + '&nbsp;';
+       // document.write('&nbsp;');
+  // document.write("<img style='margin-right:"+right_margin+"' width='" + size + "' height='" + size + "' src='../images/empty.gif' style='background-color:#ff0000'>")
+     }
+   function big_color(color)
+     { return make_color_patch(big_color_size,0,color);
+     }
+   function small_color(color)
+  { return make_color_patch(small_color_size,big_color_size-small_color_size,color);
+     }
+
+  </script>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span><br>
+        <span style='font-size:80%'></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>First, let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp; click here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;height:235;overflow-y:scroll'>
+                  <span style='font-size:80%;line-height:1.2; background-color:eeeeee;'><br></span>
+                  <ul style='list-style-type:none'>
+                    <li><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('image:insertaerial.jpg','Aerial view of context',"caption:Aerial view of existing city")
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:0','Existing context',
+                        "caption-manual:")
+                    </script></span></li>
+                    <li class='big_yellow'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:1','Add a pedestrian space',
+                        "caption-manual:This shows the extent of the pedestrian space in front of the lower right lot")
+                    </script></span></li>
+                    <li class='big_green'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:2','Add garden space',
+                        "caption-manual:That pedestrian space is embellished and bounded with garden on either side")
+                    </script></span></li>
+                    <li class='big_gray'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:3','Add a building volume',
+                        "caption-manual:Building volume is defined and extended, to help shape the garden and pedestrian space")
+                    </script></span></li>
+                    <li class='big_red'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:4','Add parking area',
+                        "caption-manual:This building needs parking, its added AFTER pedestrian space and gardens, so that pedestrian and gardens get the best positions possible.")
+                    </script></span></li>
+                    <li class='big_gray'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:5','Add a building volume',
+                        "caption-manual:The parking is too close to the front garden – add a wing of building to separate them, and further define and give shape to the garden")
+                    </script></span></li>
+                    <li class='big_yellow'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:6','Add a pedestrian space',
+                        "caption-manual:Next Lot: extend the yellow pedestrian network to reach it, and also extend across the street")
+                    </script></span></li>
+                    <li class='big_darkgreen'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:7','Add tree places',
+                        "caption-manual:The pedestrian sense of the street should be strengthened by creating a tree place across the street from the growing pedestrian space. This will help give primacy to pedestrian over cars")
+                    </script></span></li>
+                    <li class='big_yellow'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:8','Add a pedestrian space',
+                        "caption-manual:Extend yellow pedestrian network through the tree place")
+                    </script></span></li>
+                    <li class='big_black'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:9','Add low walls',
+                        "caption-manual:Low walls strengthen the pedestrian spaces")
+                    </script></span></li>
+                    <li class='big_lightblue'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:10','Add water',
+                        "caption-manual:At a crossing in the pedestrian network, there is a latent center waiting to be brought out: create a water fountain")
+                    </script></span></li>
+                    <li class='big_yellow'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:11','Add a pedestrian space',
+                        "caption-manual:Further embellish pedestrian space around the fountain")
+                    </script></span></li>
+                    <li class='big_lightblue'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:12','Add water',
+                        "caption-manual:Add fountains to define the edge of the pedestrian space.")
+                    </script></span></li>
+                    <li class='big_red'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:13','Add roadway',
+                        "caption-manual:Only now, AFTER giving the basic shape to the pedestrian network, place the red area where cars travel.")
+                    </script></span></li>
+                    <li class='big_lilac'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:14','Add trellis with overhead flowers',
+                        "caption-manual:Extend the pedestrian network to the upper right lot, with something special: an overhead trellis with flowers.")
+                    </script></span></li>
+                    <li class='big_gray'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:15','Add a building volume',
+                        "caption-manual:After the pedestrian space on this lot is begun, now begin to define the gray building volume")
+                    </script></span></li>
+                    <li class='big_yellow'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:16','Add a pedestrian space',
+                        "caption-manual:Extend the pedestrian space across the the front of the building, to reach several doors.")
+                    </script></span></li>
+                    <li class='big_lilac'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:17','Add seats and benches' ,
+                        "caption-manual:Really make it a place to be, not just pass through: add benches under the trellis")
+                    </script></span></li>
+                    <li class='big_darkgreen'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:18','Umbrellas and shade',
+                        "caption-manual:")
+                    </script></span></li>
+                    <li class='big_darkred'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:19','Add parking area',
+                        "caption-manual:Only now add parking, AFTER the pedestrian spaces associated with these buildings have been given life.")
+                    </script></span></li>
+                    <li class='big_darkgreen'><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('movie:20','Add tree places',
+                        "caption-manual:Embellish this garden with small fruit trees.")
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('image:afterfirst2.jpg','Final Plan',"caption:The final configuration.")
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2; background-color:eeeeee;'>
+                    <script>
+
+                    setup_step('image:insertaerial.jpg','Aerial view of context',"caption-manual:")
+                    </script></span></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="showdiv">
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center"><span class="h2class"><font color="#222222"><b>YGGR SEQUENCE UNFOLDING TO CREATE A PART OF MAIN STREET</b></font></span><br>
+        <br></td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+      putCaptionsHere('A movie is loading.','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();
+  </script>
+</body>
+</html>

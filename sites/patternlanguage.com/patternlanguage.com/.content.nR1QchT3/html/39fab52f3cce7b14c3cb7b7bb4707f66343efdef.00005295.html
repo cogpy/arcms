@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMALL HOUSE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="javascript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+
+  .h3class {
+   FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+   FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .superstep {
+   font-size: 80%; font-weight: bold;
+  }
+  .step {
+   font-size: 70%;
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal; }
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal; }
+  .unhighlightedSlideMarker {visibility:hidden}
+  .highlightedSlideMarker {visibility:hidden}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 350px;
+  visibility: hidden;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   380px;
+  width   : 350px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    350;
+                left:   27px;
+  width   : 300px;
+  height : 100px;
+  FONT-style: italic; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <script language="javascript">
+    // these must appear before stepb is first called
+        enableManualSlideshowViaStepb = true; 
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");
+        setStepDescriptionToShowInline(1);
+
+    setupSlides(1, "caption:Susanne starts by finding a good spot for the garden, and placing the house in relation to this spot", "susanne/susanne0.jpg",
+                    11, "susanne/susanne1.jpg",
+                                        13, "susanne/susanne2.jpg",
+                                        14, "susanne/susanne3.jpg",
+                                        12, "susanne/susanne4.jpg",
+                                        2, "caption:",
+                                        21, "susanne/susanne6.jpg",
+                                        22, "susanne/susanne6.jpg",
+                                        23, "susanne/susanne8.jpg",
+                                        3, "caption:",
+                                        31, "susanne/susanne9.jpg",
+                                        32, "susanne/susanne10.jpg",
+                                        33, "susanne/susanne11.jpg",
+                                        34, "susanne/susanne12.jpg",
+                                        4, "caption:Now the design gets squared off with rectangular rooms and beams placed for each room -- forming the main structure of the building",
+                                        41, "susanne/susanne13.jpg",
+                                        42, "susanne/susanne14.jpg",
+                                        43, "susanne/susanne15.jpg",
+                                        44, "susanne/susanne16.jpg",
+                                        5, "caption:The garden at the back is broken into a series of small positive room like gardens, the windows and doors are shaped, and their rhythm made into an ornament.",
+                                        51, "susanne/susanne17.jpg",
+                                        52, "susanne/susanne18.jpg",
+                                        53, "susanne/susanne18.jpg");
+
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 3000;
+        timeAfterLastSlide = 2000;
+        showSetupCaptions = true;
+    </script>
+    <table width="360" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">WATCH A SLIDESHOW</font></b></span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0"><span style="font-size:70%;background-color:66ccdd;color:ffffff"><i>Slowly mouse-over the list of steps to view the slideshow at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'>&nbsp;&nbsp;The small-house design process has five main steps</span>
+          <table cellpadding="0" cellspacing="0" width='90%'>
+            <tr>
+              <td width='30px'></td>
+              <td><span class="superstep">
+              <script>
+
+              stepb(1,'1: Position of garden, house, and living room', '')
+              </script></span> <span class="step"><br>
+              <script>
+
+              stepb(11,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Best spot as garden','')
+              </script><br>
+              <script>
+
+              stepb(12,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terrace position','')
+              </script><br>
+              <script>
+
+              stepb(13,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Living room position','')
+              </script><br>
+              <script>
+
+              stepb(14,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Position of house','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="superstep">
+              <script>
+
+              stepb(2,'2: House volume and inside of living room','')
+              </script></span> <span class="step"><br>
+              <script>
+
+              stepb(21,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Latent structure of the place','')
+              </script><br>
+              <script>
+
+              stepb(22,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main room contents','')
+              </script><br>
+              <script>
+
+              stepb(23,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two main centers','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="superstep">
+              <script>
+
+              stepb(3,"3: Walls, entrance, roof: the building's substance",'')
+              </script></span> <span class="step"><br>
+              <script>
+
+              stepb(31,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thick walls','')
+              </script><br>
+              <script>
+
+              stepb(32,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Summary and recap','')
+              </script><br>
+              <script>
+
+              stepb(33,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;House entrance','')
+              </script><br>
+              <script>
+
+              stepb(34,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The roof','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="superstep">
+              <script>
+
+              stepb(4,'4: Establish building structure')
+              </script></span> <span class="step"><br>
+              <script>
+
+              stepb(41,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place small rooms','')
+              </script><br>
+              <script>
+
+              stepb(42,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stair (if needed)','')
+              </script><br>
+              <script>
+
+              stepb(43,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building structure as a whole','')
+              </script><br>
+              <script>
+
+              stepb(44,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Beam pattern in each room','')
+              </script></span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><span class="superstep">
+              <script>
+
+              stepb(5,'5: Outdoor spaces, doors, windows and ornament','')
+              </script></span> <span class="step"><br>
+              <script>
+
+              stepb(51,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Outdoor positive spaces','')
+              </script><br>
+              <script>
+
+              stepb(52,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Doors and windows','')
+              </script><br>
+              <script>
+
+              stepb(53,'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ornament','')
+              </script></span></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+   // ******* set up handling slideshow and restart-button divs ***************
+        // *********************************************************************
+        // When reusing this, make sure the following settings are correct
+        // *********************************************************************
+
+        // name of div that holds just the slideshow (without the restart button)
+        var showdiv = 'showdiv';
+
+        // name of div to show after the slideshow
+        var aftershowdiv = 'restartdiv';  
+
+        // Include the following to replace showdiv with aftershowdiv
+        //  when the slideshow is done
+        setDelayedCallWhenSlideshowDone(
+           function () { hideElement(showdiv); showElement(aftershowdiv); }
+        );
+  </script>
+  <div id="slideshow" style='position:relative'>
+    <script language='javascript'>
+    setCallOnDocumentLoad(function () { 
+                                 setTimeout(function () {
+                                                                            hideElement('comment'); showElement(showdiv); showElement('steps'); },3000) });
+    </script>
+    <div id='comment' style="position:absolute;left:0;top:0width:350;height:400;background-color:black;color:white;padding:10px;visibility:visible">
+      <span class="h4class">Susanne is a student. This went simply and easily.</span>
+    </div>
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftershowdiv);showElement(showdiv);startRotate()"><font color="#000000">Watch the slideshow again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:hidden">
+      <table align="center" border="0">
+        <tr>
+          <td bgcolor="#000000" align="center"><font color="white"><span class="h4class">Using this sequence you can make a sketch design of a good small house</span></font></td>
+        </tr>
+        <tr>
+          <td align="center" height="312"><img src="susanne/susanne0.jpg" height="310" name="adBanner" alt="You?" id="adBanner"></td>
+        </tr>
+      </table>
+      <div id="loadingmsg" align="center" style="font-weight: bold;">
+        A slideshow is loading.
+      </div>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

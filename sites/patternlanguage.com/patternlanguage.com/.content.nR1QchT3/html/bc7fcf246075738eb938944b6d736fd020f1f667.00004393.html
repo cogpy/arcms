@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UNASHAMED IDEALISM</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <style>
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; line-height: 18px;
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"
+  }
+  H1 {
+        FONT-WEIGHT: normal; FONT-SIZE: 26px; FONT-FAMILY: "Times Roman"
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; FONT-COLOR:dddddd
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"; line-height: 21px;
+  }
+
+        #nirvana {
+                position: absolute;
+                top:  255px;
+                left: 140px;
+
+  height  : 160px;
+  visibility: hidden;
+        }
+
+        #mlk {
+                position: absolute;
+                top:  200px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #gandhi {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #mandela {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+
+        #jefferson {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #dalai {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #fsm {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #selma {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #southafrica {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+        #gandhi13 {
+                position: absolute;
+                top:  250px;
+                left: 250px;
+
+  height  : 300px;
+  visibility: hidden;
+        }
+
+  </style>
+  <script language="JAVASCRIPT" type="TEXT/JAVASCRIPT">
+        <!-- Hide script from old browsers
+
+        function updateParent(newURL) {
+                opener.document.location = newURL
+        }
+
+        // End hiding script from old browsers -->
+
+
+  function newWindow(file,window) {
+
+
+
+       msgWindow=open(file,window,'resizable=yes,scrollbars=1,width=535,height=380,left=150,top=100,border=0');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  //clearID=msgWindow.setTimeout("self.close()",1500)//
+                     }
+
+                     //-->
+  </script>
+  <script language="javaScript">
+  <!--
+  ///to toggle pictures///
+
+        function togglePicture(image_name, picture_id){
+                
+                if (document.layers) { 
+                        var thisImage  = document.layers['myimage'].document.images[image_name];                
+                        var thisPicture = document.layers[picture_id];
+                        var hidden     = "hide";        
+                        var visible    = "show";        
+                }
+                if (document.all)    { 
+                        var thisImage  = document.images[image_name];           
+                        var thisPicture = eval("document.all." + picture_id + ".style");
+                        var hidden     = "hidden";      
+                        var visible    = "visible";     
+                }
+                                
+                if ( thisPicture.visibility == visible) {
+                // it was ON, now turn it OFF
+                        thisImage.src = 'red.jpg';
+                        thisPicture.visibility = hidden;
+                } else {                
+                // it was OFF, now turn it ON
+                        thisImage.src = 'green.jpg';
+                        thisPicture.visibility = visible;
+                }
+        }
+
+
+
+        // -->
+  </script>
+  <script language="javaScript">
+
+        <!-- Hide script from old browsers
+
+
+
+
+  //ROTATE FACES
+        adFaces = new Array("../photos/enigmatic.jpg","../photos/indianbride.jpg","../photos/laughing.jpg","../photos/african2.jpg","../photos/businessman.jpg","../photos/blackman.jpg")
+        thisAdf = 0
+        imgCtf = adFaces.length
+
+        function rotatefaces() {
+                if (document.images) {
+                        thisAdf++
+                        if (thisAdf == imgCtf) {
+                                thisAdf = 0
+                        }
+                        document.adBannerf.src=adFaces[thisAdf]
+                        setTimeout("rotatefaces()", 4000)
+                }
+        }
+
+
+  //ROTATE PLACES
+        adPlaces = new Array("../photos/poppyhall.jpg","../photos/street.jpg","../photos/arch.jpg","../photos/inglenook.jpg","../photos/kamran2.jpg","../photos/fire.jpg","../photos/cafe.jpg","../photos/dance.jpg")
+        thisAdp = 0
+        imgCtp = adPlaces.length
+
+        function rotateplaces() {
+                if (document.images) {
+                        thisAdp++
+                        if (thisAdp == imgCtp) {
+                                thisAdp = 0
+                        }
+                        document.adBannerp.src=adPlaces[thisAdp]
+                        setTimeout("rotateplaces()", 7000)
+                }
+        }
+
+  //ROTATE NATURE
+        adNature = new Array("../photos/valley.jpg","../photos/polar.jpg","../photos/iceland.jpg","../photos/kamran2.jpg","../photos/wilder3.jpg","../photos/sibley.jpg","../photos/reddaisy2.jpg","../photos/needlegrass2.jpg","../photos/beach.jpg")
+        thisAdn = 0
+        imgCtn = adNature.length
+
+        function rotatenature() {
+                if (document.images) {
+                        thisAdn++
+                        if (thisAdn == imgCtn) {
+                                thisAdn = 0
+                        }
+                        document.adBannern.src=adNature[thisAdn]
+                        setTimeout("rotatenature()", 5000)
+                }
+        }
+
+  //ROTATE PEOPLE
+        adPeople = new Array("../photos/family.jpg","../photos/swing.jpg","../photos/goodbye.jpg","../photos/prayer.jpg","../photos/oldmenmusic.jpg","../photos/beach.jpg","../photos/girlwbubble.jpg")
+        thisAdpe = 0
+        imgCtpe = adPeople.length
+
+        function rotatepeople() {
+                if (document.images) {
+                        thisAdpe++
+                        if (thisAdpe == imgCtpe) {
+                                thisAdpe = 0
+                        }
+                        document.adBannerpe.src=adPeople[thisAdpe]
+                        setTimeout("rotatepeople()", 5000)
+                }
+        }
+
+  //ROTATE CITIES
+        adCities = new Array("../photos/cig.jpg","../photos/jump.jpg","../photos/feathers.jpg","../photos/oldmen.jpg","../photos/beach.jpg","../photos/girlwbubble.jpg","../photos/family.jpg")
+        thisAdc = 0
+        imgCtc = adCities.length
+
+        function rotatecities() {
+                if (document.images) {
+                        thisAdc++
+                        if (thisAdc == imgCtc) {
+                                thisAdc = 0
+                        }
+                        document.adBannerc.src=adCities[thisAdc]
+                        setTimeout("rotatecities()", 5000)
+                }
+        }
+
+
+
+  //FREEDOM CYCLE
+        function freedomcycle() {
+
+
+        setTimeout("showElement('mlk')", 10000);
+        setTimeout("hideElement('mlk')", 13000);
+        setTimeout("showElement('gandhi')", 20000);
+        setTimeout("hideElement('gandhi')", 23000);
+        setTimeout("showElement('dalai')", 30000);
+        setTimeout("hideElement('dalai')", 33000);
+        setTimeout("showElement('fsm')", 40000);
+        setTimeout("hideElement('fsm')", 43000);
+        setTimeout("showElement('selma')", 50000);
+        setTimeout("hideElement('selma')", 53000);
+        setTimeout("showElement('jefferson')", 60000);
+        setTimeout("hideElement('jefferson')", 63000);
+        setTimeout("showElement('southafrica')", 70000);
+        setTimeout("hideElement('southafrica')", 73000);
+
+        setTimeout("freedomcycle()", 73000);
+  }
+
+        // End hiding script from old browsers -->
+  </script>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+</head>
+<body bgcolor="#663366" text="#333399" link="#FFFFFF" vlink="#FFFFFF" onload="rotatefaces();rotatecities();rotateplaces();rotatenature();rotatepeople();freedomcycle()">
+  <div id="main">
+    <table border="0" align="center" width="600px">
+      <tr>
+        <td>
+          <span style="color:5555bb">FREEDOM</span>&nbsp;&nbsp;&nbsp;BEAUTY&nbsp;&nbsp;&nbsp;LIFE&nbsp;&nbsp;&nbsp;<span style="color:5555bb">FREEDOM</span>&nbsp;&nbsp;&nbsp;BEAUTY&nbsp;&nbsp;&nbsp;LIFE&nbsp;&nbsp;&nbsp;<span style="color:5555bb">FREEDOM</span>&nbsp;&nbsp;&nbsp;BEAUTY&nbsp;&nbsp;&nbsp;LIFE
+          <hr height="5" color="black">
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="600" bgcolor="#660066" align="center">
+          <h5><a href="javascript:parent.goToInFrame('https://'%20+%20location.host%20+%20'/leveltwo/memberframe.htm','../member/freedom.htm')"><span style="color:9977dd">Please consider being part of our association</span></a></h5>
+        </td>
+      </tr>
+    </table>
+    <table border="0" align="center" width="600px">
+      <tr>
+        <td align="center"></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" colspan="2"><img src="gandhi1.jpg" width="60"></td>
+      </tr>
+    </table>
+    <table align="center" width="600" padding="5">
+      <tr height="100">
+        <td align="left" width="100"><img src="../photos/face1.jpg" width="40" height="50" name="adBannerf" alt="You?" border="20" id="adBannerf"></td>
+        <td align="left">
+          <h4><b><font color="#DDDD00">WE ARE TRYING TO DO WHAT WE CAN, IN OUR LIMITED WAY, TO HELP ALL PEOPLE ON EARTH BECOME FREE<br>
+          <br></font></b></h4>
+        </td>
+      </tr>
+      <tr height="100">
+        <td align="left" width="100"><img src="../photos/nature1.jpg" width="80" height="100" name="adBannern" alt="You?" id="adBannern"></td>
+        <td align="left">
+          <h4><b><font color="#BBBB33">WE ARE TRYING TO FIGHT AGAINST THE ENSLAVEMENT OF PEOPLE BY MONEY, BY POWER, AND BY BUILDINGS AND BY DEADLY LANDSCAPES AND CITY NEIGHBORHOODS</font></b></h4>
+          <p><b></b></p>
+        </td>
+      </tr>
+      <tr height="100">
+        <td align="left" width="100"><img src="../photos/people1.jpg" width="80" height="100" name="adBannerpe" alt="You?" id="adBannerpe"></td>
+        <td align="left">
+          <h4><b><font color="#BBBB33">IT WILL TAKE ALL OUR ENERGY TO FIND WAYS OF REPLACING DEAD CITIES AND ENVIRONMENTS, WITH THOSE IN WHICH WE CAN MORE EASILY BE FREE</font></b></h4>
+          <p><b></b></p>
+        </td>
+      </tr>
+      <tr height="100">
+        <td align="left" width="100"><img src="../photos/place1.jpg" width="80" height="100" name="adBannerp" alt="You?" id="adBannerp"></td>
+        <td align="left">
+          <h4><b><font color="#BBBB33">HUMAN FREEDOM IS NOT ONLY IN OUR MINDS: IT IS A STATE OF GRACE, NATURAL TO US, BUT TOO OFTEN PREVENTED BY THE PHYSICAL ENVIRONMENT IN WHICH WE LIVE</font></b></h4>
+          <p><b></b></p>
+        </td>
+      </tr>
+      <tr height="100">
+        <td align="left" width="100"><img src="../photos/cities1.jpg" width="80" height="100" name="adBannerc" alt="You?" id="adBannerc"></td>
+        <td align="left">
+          <h4><b><font color="#BBBB33">THIS IS OUR FIGHT TO GIVE BACK THE WORLD TO ITS PEOPLE: YOU AND ME</font><br></b></h4>
+        </td>
+      </tr>
+    </table>
+    <table width="600" align="center">
+      <tr height="15">
+        <td>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" width="600" bgcolor="#660066" align="center">
+          <h5><a href="javascript:parent.goToInFrame('https://'%20+%20location.host%20+%20'/leveltwo/memberframe.htm','../member/freedom.htm')"><span style="color:ffff00">Please consider being part of the association</span></a></h5>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="mlk">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="lastmarch.jpg" height="300" name="mlk1" alt="Martin Luther King's last march" border="1" id="mlk1"><br>
+        <i><span style="color:ffffff">Martin Luther King's last march</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="gandhi">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="gandhimarch.jpg" height="200" name="gandhi1" alt="Martin Luther King's last march" border="1" id="gandhi1"><br>
+        <i><span style="color:ffffff">Gandhi's march for freedom</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="selma">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="mlk08.jpg" height="200" name="jefferson1" alt="Martin Luther King's last march" border="1" id="jefferson1"><br>
+        <i><span style="color:ffffff">The march from Selma to Montgomery</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="fsm">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="fsm-car-sitdown.jpg" height="200" name="fsm1" alt="Martin Luther King's last march" border="1" id="fsm1"><br>
+        <i><span style="color:ffffff">The Free Speech Movement, Berkeley<br>
+        <span style="font-size:12px">image &#169; Ronald L. Enfield</span></span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="dalai">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="birthdaydalai.jpg" height="200" name="dalai1" alt="Martin Luther King's last march" border="1" id="dalai1"><br>
+        <i><span style="color:ffffff">The Dalai Lama's birthday</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="gandhi13">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="gandhi13.jpg" height="200" name="gandhi1" alt="Martin Luther King's last march" border="1" id="gandhi1"><br>
+        <i><span style="color:ffffff">Gandhi teaching at his Ashram</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="jefferson">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="jefferson.jpg" height="200" name="gandhi1" alt="Martin Luther King's last march" border="1" id="gandhi1"><br>
+        <i><span style="color:ffffff">Thomas Jefferson</span></i></td>
+      </tr>
+    </table>
+  </div>
+  <div id="southafrica">
+    <table width="300" align="center">
+      <tr>
+        <td align="center" bgcolor="#000000"><img src="southafrica.jpg" height="200" name="gandhi1" alt="Martin Luther King's last march" border="1" id="gandhi1"><br>
+        <i><span style="color:ffffff">South Africa: Let us not forget</span></i></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

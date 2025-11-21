@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOUSE MOVIE</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universaltest3-27.js"></script>
+  <style>
+  H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+  H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+  H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+  H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+  H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+  .superstep {font-weight:bold;background-color:#888888;color:#ffffff;padding-left:8px;padding-right:8px}
+  .stepnumber {padding-left:16px;padding-right:8px;text-align:right}
+
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#55bbff; color:#ffffff; font-weight:normal}
+  /********************** END FROM NICK ******************************/
+
+
+
+  #illuminate {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 330px;
+  visibility: hidden;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   340px;
+  width   : 400px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #stepDescriptionCaption {
+                position: absolute;
+                top:    420;
+                left:   30px;
+  width   : 240px;
+  height : 500px;
+  FONT-style: italic; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="320" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td colspan="2" align="center">
+          <h4><font color="#222222"><b><br>
+          SESSION ONE</b></font></h4>
+        </td>
+      </tr>
+    </table>
+    <table width="320" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1">
+          <h3><b><span style="color:000000">MOVIE-TUTORIAL</span></b></h3>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="0">
+          <span style="font-size:70%;background-color:ff0000;color:ffffff">To activate, slowly mouse-over the list of steps below to view the slideshow at your own pace.</span> 
+          <script>
+
+
+          enableMovieControlViaStepb = true; // this must appear before stepb is first called
+          setStepDescriptionToShowInline(1) // this must appear before stepb is first called
+          /*
+          var stepcWidth=300;
+          var stepcVerticalExpansion = 0.8;
+          function stepc(stepnum,top,short,long)
+          { document.writeln("<div style='position:absolute;left=0;top="+stepcVerticalExpansion*top+";width:"+stepcWidth+"'>");
+            document.writeln("<table style='font-size:100%'><tr><td valign='top'><img width=20 height=1 style='background-color:#000000'></td>");
+            document.write("<td align='right' width=17>"+stepnum+".</td><td>");
+            stepb(stepnum,short,stepnum + '. ' + long);
+            document.writeln("</td></tr></table>");
+            document.writeln("</div>");
+
+          }
+          */
+          </script>
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td valign="top">&nbsp;</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(0,'.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;.','')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Establish context</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">1.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(1,'Draw boundaries','Start by drawing the site plan boundaries and the road')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">2.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(2,'Show nearby houses, trees','Now put in the neighboring houses, and the trees on your land')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">3.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(3,'Draw south arrow','Draw a south arrow showing where the sun comes from')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Locate house in relation to garden</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">4.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(4,'Find beautiful spot','Find the most beautiful place outdoors that you want for your garden')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">5.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(5,'Best place for living room','Now place the living room, so that it opens to the garden in a nice way and is in the position on the site where you most want to BE')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">6.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(6,'Place a terrace','Put a terrace outside the living room, where it connects with the beauty of the garden')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">7.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(7,'Complete the house volume','Now put in the rest of the house volume where you think it needs to be to surround the living room')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Establish basic structure of house</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">8.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(8,'Place the entrance','Place the front door and entrance to the house in a position which commands and draws you to it')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">9.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(9,'Put in staircase','If the house is two story, put in the volume of the staircase and staircase hall and make this volume regular and nicely shaped')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class='superstep'>Work on transition from street</td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">10.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(10,'Make path from street','Draw in a path from street to the front door enterin the site at a good place, and leading naturaly to the front door')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">11.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(11,'Best place for garage','Put in a garage and its driveway, so that it is very unobtrusive even though convenient')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">12.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(12,'Add trees along path','Trees along the path for beauty and shade, and to shield the garage')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td class='stepnumber' valign="top">13.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepb(13,'Make trellised walk','Build a trellised walk, or other kind of pleasant, well-marked walk, from the garage to the front door')
+                </script></h6>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p></p>
+  </div>
+  <script language="javascript">
+    // ******* set up handling movie and restart-button divs ***************
+    // *********************************************************************
+    // When reusing this, make sure the following settings are correct
+    // *********************************************************************
+    var moviediv = 'movie';   // name of div that holds the movie
+    var aftermoviediv = 'restartdiv';  // name of div to show after movie and slideshow
+
+    // Include the following to replace moviediv with aftermoviediv
+    //  when the movie and slideshow are done
+    setDelayedCallWhenSlideshowDone(
+        function () { hideElement(moviediv); showElement(aftermoviediv); }
+      );
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:400;height:400;visibility:hidden">
+      <table width="400" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="400" align="center" border="2">
+              <tbody>
+                <tr>
+                  <td align="middle" bgcolor="#EEEEEE" height="30">
+                    <h3><a href="javascript:hideElement(aftermoviediv);showElement(moviediv);getMovieBackAndRestart()"><span style="color:000000">Watch the movie again.</span></a></h3>
+                  </td>
+                </tr>
+                <tr align="middle">
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='movie' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <table height="60" width="80%" align="center" border="0">
+        <tr>
+          <td valign="top" align="center" colspan="3">
+            <h4><font color="#222222"><b><br>
+            SMALL HOUSE SEQUENCE UNFOLDING TO CREATE A HOUSE PLAN</b></font></h4>
+          </td>
+        </tr>
+      </table>
+      <table align="center">
+        <tr height="400">
+          <td valign="top" align="left">
+            <h3>
+            <script language="javascript">
+
+
+              setAppletURL();
+              replayCab = "/gdrawreplay2-3-27.cab";
+
+              //////// PARAMETERS TO SET /////////////
+              inputFileName = "chris1nl3-27.gdraw";
+              replayDelay = 4;  // increasing this number slows the replay
+              showSlideshowAfterReplayDone("",2000); //file name, wait before photo
+              SetDrawingSize(425,340);
+              replayWhenLoaded = true;   // must be true unless there's some other way to start the replay
+                                         //  (for example, a button that calls requestReplay()  )
+              setCallOnDocumentLoad(emptyAllCaptions);
+              setCallOnDocumentLoad(function () {showElement('illuminate');});
+              ////////////////////////////////////////
+
+              forReplay = true;
+              supplyCaptions = true;  // changed for test
+              pauseAfterNewCaptionTime = 500;
+              resizeIfNecessary = false;
+              setCallOnDocumentLoad(updateCaption);
+
+              // Set up a slideshow to follow the movie
+              //  If there is no slideshow, leave this here,
+              //  but setupSlides should have no parameters
+              //  (creates an empty slide show)
+              setupSlides(0,"caption:Sketch plan which followed this process","chris1.jpg");
+              setCallAtDocumentEnd(preloadImages);
+              timePerSlide = 6000;
+              timeAfterLastSlide = 3000;
+              // showSetupCaptions = true;
+              slideWidth = 425; // if set to 0, will be ignored (not specified in img tag)
+              slideHeight = 0; // if set to 0, will be ignored (not specified in img tag)
+
+              // the following call generates the html for the movie and slideshow
+              // It should come after everything has been specified
+              drawapplet();
+
+              /*
+              var replayProgressScaleFactor = 13;
+              var rpsf = replayProgressScaleFactor/stepcVerticalExpansion;
+              function followMouse()
+                { 
+                  document.all.progressmarker.style.pixelTop = event.clientY-10;
+                  var cy = document.all.stepcontainer.offsetTop;
+                  if (document.drawApplet)
+                    document.drawApplet.requestReplayProgress(rpsf*(event.clientY-cy));
+                }
+              */
+            </script></h3>
+          </td>
+        </tr>
+      </table>
+      <script language='javascript'>
+        writeMessageDiv('stepDescriptionCaption',380,300,'align=left style="font-size:90%"','A movie is loading.');
+        setStepCaptionDiv('stepDescriptionCaption',2);
+      </script>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+  <p></p>
+</body>
+</html>

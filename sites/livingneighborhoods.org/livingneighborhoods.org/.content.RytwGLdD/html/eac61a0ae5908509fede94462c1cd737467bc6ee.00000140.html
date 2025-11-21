@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developers Charter</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  </style>
+  <style type="text/css">
+  .h7class {
+  FONT-WEIGHT: normal; FONT-SIZE: 36px; FONT-FAMILY: "Palatino", "Times", "Times New Roman";
+  }
+
+  .h5class {
+  FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman"; LINE-HEIGHT: 24px
+  }
+
+  .h8class {
+  FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman"; <!-- LINE-height: 20px; -->
+  }
+
+  .h3class {
+  FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial";
+  }
+
+  .h6class {
+  FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  195px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="500" align="center" bgcolor="#006622">
+      <tr>
+        <td align="left" width="180"></td>
+        <td align="center" width="90"><img src="../images/noonew5-g.jpg" height="69"><br></td>
+        <td align="right" width="180"></td>
+      </tr>
+    </table>
+    <table align="center" width="500" border="1" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center">
+          <span class="h7class" style="color:red">CHARTER FOR RESPONSIBLE<br>
+          PROFESSIONAL DEVELOPERS</span><br>
+          <span class="h3class"><b>ROUGH DRAFT FOR DISCUSSION</b></span>
+          <p><span class="h3class"></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" width="500"></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <a href="developers.htm"><span class="h6class" style='font-weight:normal;color:blue'>Back to developer's page</span></a>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="450" border="1" cellpadding="9" bgcolor="#FFFFDD">
+      <tr>
+        <td align="left" width="450" valign="top">
+          <span class="h3class" style="color:black">This first draft of a charter for professional developers, arose from two impulses. First, a number of years ago, Andres Duany asked me if I would be willing to draft such a charter, and if so, proposed that he would then take it to a number of influential developers and press for its adoption. At the time, I felt I was not quite ready to undertake this task.</span>
+          <p><span class="h3class" style="color:black">Then, more recently, at the 14th Congress of New Urbanism, a very considerable number of architects, planners, developers and builders, met with me after my address to the congress. Together we decided that we would pursue this concept, probably at a meeting held in London, with the idea that we would then thrash out the details of the articles together.</span></p>
+          <p><span class="h3class" style="color:black">The version presented below is a very rough draft which I made , virtually on the back of an envelope, and then showed at the Congress. It is only a starting point. Many items, especially the items 9-23, need considerable review and refinement, before they could reasonably be accepted by a wide group of charter members.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Christopher Alexander</span></p>
+        </td>
+      </tr>
+    </table>
+    <p></p>
+    <table align="center" width="450" border="1" cellpadding="5" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center" width="450" valign="top"><span class="h5class" style="color:red;font-size:140%;"><b>A CHARTER</b></span><br>
+        <span class="h3class">Version 1, June 3 2006. Very rough first draft</span></td>
+      </tr>
+      <tr>
+        <td align="left" width="450" valign="top">
+          <span class="h5class" style="color:red"><u>The Primary Article of Intent</u></span>
+          <p><span class="h5class" style="color:red"></span><span class="h8class" style="color:black">To Protect and Care for the Beauty of the Living Earth</span></p>
+          <p><span class="h8class" style="color:black"><span class="h5class" style="color:red"><u>Secondary Articles of Intent that Express and Manifest this Primary Concern.</u></span><span class="h8class" style="color:black"></span></span></p>
+          <ol>
+            <li><span class="h8class" style="color:black">Recognize that we are responsible for the Earth.</span></li>
+            <li><span class="h8class" style="color:black">Pay attention to the beauty of the whole, and always act in service to the whole.</span></li>
+            <li><span class="h8class" style="color:black">Do no harm.</span></li>
+            <li><span class="h8class" style="color:black">Base everything on unfolding.</span></li>
+            <li><span class="h8class" style="color:black">Make this a work of love, not commercial.</span></li>
+            <li><span class="h8class" style="color:black">Spend as much time as possible on site.</span></li>
+            <li><span class="h8class" style="color:black">Involve people.</span></li>
+            <li><span class="h8class" style="color:black">Trust the judgment of others, and believe in them as you believe in yourself.</span></li>
+          </ol><span class="h8class" style="color:black"><span class="h5class" style="color:red"><u>Tertiary Practical Articles<br>
+          The Methods and Assumptions which we believe any Developer will need to Subscribe to, in order to act practically on his/her Devotion to the Earth.</u></span></span>
+          <ol start="9">
+            <li>Recognize yourself as a fee-based professional.</li>
+            <li>Replace large loans with pay-as-you-go economics.</li>
+            <li>Modest returns on investment.</li>
+            <li>Give back to the community 30% of any windfall profit generated by land speculation.</li>
+            <li>Give up charettes and adopt more personal ways of talking to people.</li>
+            <li>Abandon the use of form-based prescriptive rules of geometry.</li>
+            <li>Professional fee-based Construction Management in lieu of large general contractors.</li>
+            <li>Diagnosis of the land as the start of every project.</li>
+            <li>Unfolding as the primary mode - hence cooperation with building and planning to accept this form.</li>
+            <li>Autonomy of every part at every scale allowed to develop its uniqueness.</li>
+            <li>Survey from stakes that are judged and placed and agreed by intuition.</li>
+            <li>Slow speed of construction to accommodate adaptation.</li>
+            <li>Fixed price construction and flexible moves within the budget.</li>
+            <li>Modify what is built, during construction.</li>
+            <li>Establish repair and maintenance programs for annual repair.</li>
+          </ol><br>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="450" border="1" cellpadding="9" bgcolor="#FFFFDD">
+      <tr>
+        <td align="center" width="450" valign="top"><span class="h3class" style="color:black">THANK YOU</span></td>
+      </tr>
+      <tr>
+        <td align="center" width="450" valign="top"><span class="h3class" style="color:black">Andres Duany, Carrie Marsh, Buff Chase, Yaroslav Steiner and others who have done so much to propel this project. We hope we shall all very soon be able to meet in London, for our seminar.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chris and Maggie</span></td>
+      </tr>
+    </table>
+    <table width="450" align="center" bgcolor="#006622">
+      <tr height="50">
+        <td align="center">
+          <br>
+          <form method="link" action="developers.htm">
+            <input type="submit" value="Back to Developer's Page" style="font-size:12px;font-family:serif;font-style:italic;background-color:#ffff00;valign=middle; color:#000000;height:20px;width:130px;border-color:#ff0000;">
+          </form>
+        </td>
+      </tr>
+    </table><br>
+    <center>
+      <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span>
+    </center>
+  </div>
+</body>
+</html>

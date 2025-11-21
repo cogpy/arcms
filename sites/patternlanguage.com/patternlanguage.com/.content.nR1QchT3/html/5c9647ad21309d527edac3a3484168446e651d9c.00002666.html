@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+    form {margin-top:0px; margin-bottom:0px}
+    ul {margin-top:2px;margin-bottom:2px}
+    H2 {font-size: 20px; font-family: "Times Roman"; font-weight: bold; margin-top:2px; margin-bottom:2px;padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px }
+    H3 {font-size: 20px; font-family: "Times Roman"; font-weight: bold; margin-top:2px; margin-bottom:2px }
+    H4 {font-size:15px; font-family:"Times Roman"; font-weight:normal; background-color:000000; color:white; }
+    .text4 {font-size:15px; font-family:"Times Roman"; font-weight:normal;}
+    H5 {font-size: 13px; font-family: "Times Roman"; font-weight: normal; }
+    .text5 {font-size: 13px; font-family: "Times Roman"; font-weight: normal; }
+    H6 {font-size:18px; font-family:"Times Roman"; font-weight:normal; background-color:666666; color:ffff00; }
+   
+  .greenscreendiv {position:absolute;left:0;top:0;width:100%;height:100%;visibility:hidden;background-color:#008866;font-size: 13px; font-family: "Times Roman"; font-weight:normal}
+  <!-- nice green #119966 -->
+
+  .blackscreendiv {position:absolute;left:0;top:0;width:100%;height:100%;visibility:hidden;background-color:#000000;font-size: 13px; font-family: "Times Roman"; font-weight:normal}
+
+
+    /* for testing:
+    .greenscreendiv {position:relative;left:0;top:0;width:100%;height:100%;visibility:visible;background-color:#66ddaa;font-size: 13px; font-family: "Times Roman"; font-weight:normal; color:e3e5c9;}
+    */
+   
+  .greenscreen {font-size: 20px; font-family: "Times Roman"; margin-top:2px; margin-bottom:2px;  ;font-weight:bold; background-color:119966; color:ffffff; padding-left:5px;padding-right:5px; margin-right:5px}
+   
+  /* .experiment {font-size:14px;background-color:0066aa;color:#ffffff} */
+    /* .experiment {font-size:14px;background-color:#663300;color:#ffffff} */
+    /* .experiment {font-size:14px;background-color:#99cc99;color:#663300} */
+   
+  .experiment {font-size:14px;background-color:#eeeeee;color:#663300}
+
+  .experimentdata {font-size:14px;background-color:#ffffff;color:#663300}
+
+
+  .bigChange {color:e3e5c9;   font-size:100%; background-color:119966}
+  .blueChange {color:e3e5c9;   font-size:100%; background-color:0099ff}
+  .bluestart {color:e3e5c9;background-color:0099ff; text-decoration:none}
+  .start {color:eeeeee;background-color:000000; text-decoration:none}
+  <!-- nice blue 6699cc -->
+  <!-- start red cc0066 -->
+
+  #listbox {
+                position: absolute;
+                top:    40px;
+                left:   10px;
+  width   : 200px;
+  height:400px;
+  visibility: visible;
+        }
+
+  #connections {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  #diagnosis {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  #available {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  #best {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  #positive {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  #centers {
+                position: absolute;
+                top:    40px;
+                left:   225px;
+  width   : 100px;
+  visibility: hidden;
+        }
+
+  </style>
+</head>
+<body bgcolor="#008866" text="#000000" link="#0000FF" vlink="#800080">
+  <div id='listbox' style='padding-top:10px; visibility:visible' class='blackscreendiv' align='left'>
+    <span style="color:ffffff;"></span>
+    <center>
+      <span style="color:ffffff;">REALITY EXPERIMENTS<br>
+      FOR THE PEDESTRIAN NETWORK</span>
+    </center>
+    <p><span style="color:ffffff;"></span></p>
+    <ol>
+      The repeating cycle of the network creation process has six main phases
+      <p><span style="color:ffffff;"></span></p>
+      <li>
+        <span style="color:ffffff;"><a href="javascript:void(0)" onmouseover="changeState('diagnosis','visible');" onmousedown="changeState('diagnosis','hidden');" onmouseout="javascript:togglePic('ornament1');"><span onmouseover="changeClass(this,'bigChange')" class="start">Diagnosis</span></a></span>
+        <p></p>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onmouseover="changeState('connections','visible');" onmousedown="changeState('connections','hidden');" onmouseout="javascript:togglePic('ornament1');"><span onmouseover="changeClass(this,'bigChange')" class="start">Good Connections</span></a>
+        <p></p>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onmouseover="changeState('available','visible');" onmousedown="changeState('available','hidden');"><span onmouseover="changeClass(this,'bigChange')" class="start">What is Available</span></a>
+        <p></p>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onmouseover="changeState('best','visible');" onmousedown="changeState('best','hidden');"><span onmouseover="changeClass(this,'bigChange')" class="start">Choose the one which helps the network most as a whole</span></a>
+        <p></p>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onmouseover="changeState('positive','visible');" onmousedown="changeState('positive','hidden');"><span onmouseover="changeClass(this,'bigChange')" class="start">Make the space positive</span></a>
+        <p></p>
+      </li>
+      <li>
+        <a href="javascript:void(0)" onmouseover="changeState('centers','visible');" onmousedown="changeState('centers','hidden');"><span onmouseover="changeClass(this,'bigChange')" class="start">Intensify the new bit of path with centers</span></a>
+        <p></p>
+      </li>
+    </ol>
+  </div>
+  <div id='diagnosis' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            1. &nbsp;DIAGNOSIS
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id='connections' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            2. &nbsp;GOOD CONNECTIONS
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id='available' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            3. &nbsp;WHAT PLACES ARE AVAILABLE
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id='best' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            4. &nbsp;CHOOSE THE ONE WHICH HELPS THE NETWORK MOST AS A WHOLE
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id='positive' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            5. &nbsp;MAKE THE SPACE POSITIVE
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div id='centers' class='greenscreendiv' align='center'>
+    <form style='margin-top:0px;margin-bottom:0px' name='green3form' onsubmit='return false;' id="green3form">
+      <table cellpadding="0" cellspacing="0" width="530">
+        <tr>
+          <td align="center" valign='middle' class='greenscreen' style='font-size:16px' colspan="3">
+            6. &nbsp;INTENSIFY THE NEW BIT OF PATH WITH CENTERS
+            <p></p>
+          </td>
+        </tr>
+      </table>
+      <table width='530' border="1" align='center' class='experiment' bordercolor='#000000' cellpadding="5" cellspacing="0">
+        <tr>
+          <td colspan="2" align="center"><b>PERFORM THIS EXPERIMENT</b></td>
+        </tr>
+        <tr>
+          <td width="100">The Setting.</td>
+          <td width="430" align="left">Walk about your neighborhood. What are the best places for pedestrian paths? What are the worst places?</td>
+        </tr>
+        <tr>
+          <td>Find the Existing Centers.</td>
+          <td align="left">Ask yourself, above all the question: Which spots function NOW, as centers, places where you want to be, places in which you feel a sense of beauty, or a sense of conection to the neighborhood as a whole.</td>
+        </tr>
+        <tr>
+          <td>Draw on a Map of the Neighborhood.</td>
+          <td align="left">Mark the best centers on a map</td>
+        </tr>
+        <tr>
+          <td width="100">Confer with neighbors</td>
+          <td align="left">Go as far as you can in reaching agreement about the best centers</td>
+        </tr>
+        <tr>
+          <td width="100">Make communal map</td>
+          <td align="left">Draw the agreements about the best and most important centers on a communal map, which is shared by being available in a public place, or shared by being accessible on a communal website.</td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>

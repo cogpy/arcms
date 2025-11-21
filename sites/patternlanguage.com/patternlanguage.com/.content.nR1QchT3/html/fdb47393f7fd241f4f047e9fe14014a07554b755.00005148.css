@@ -1,0 +1,362 @@
+@charset "UTF-8";
+
+
+body {font-family: "Times New Roman", serif;
+	background-color: #003;
+	color: #fff;}
+
+img {border: none;}
+
+ul {margin: 0 0 0 7px;
+	padding: 0;}
+	
+a {color: #fff;
+	font-weight: bold;}
+	
+a:hover {color: #6c6;}	
+
+#container {padding: 3px 3px 13px 3px;
+		clear: left;
+		background-color: #396;
+		position: absolute;
+		top: 122px;}				
+		
+#header {width: 850px;
+		height: 88px;
+		border: 0;
+		float: left;
+		padding-bottom: 25px;}
+		
+	#frametree {float: left;
+		width: 228px;
+		background-color: #222;
+		padding-top: 10px;
+		padding-left: 10px;
+		padding-bottom: 10px;
+		margin-top: 39px;
+		margin-left: 49px;}
+
+                #frametree a {font-weight: normal;}
+
+		#frametree a:hover {color: #ffff99;}
+		
+	#frametitle {float: left;
+		width: 485px;
+		line-height: 1.15;}
+		
+	#frameimage {float: left;}
+	
+	#frameimage img {padding-top: 12px;}
+
+	#frameimage a {font-size: 24px;}
+
+.h1class {font-size: 56px; 
+	font-family: "Times Roman", "Times", "Times New Roman"; 
+  	font-weight: normal; 
+  	line-height: 56px; }
+
+.h2class {font-weight: bold; 
+	font-size: 20px; 
+	font-family: "Times Roman", "Times", "Times New Roman";}
+
+.h3class {font-weight: normal; 
+	font-size: 15px; 
+	font-family: "Times Roman", "Times", "Times New Roman";}
+
+.h4class {font-weight: normal; 
+	font-size: 11px; 
+	font-family: "Clarendon";}
+	
+.h5class {font-weight: normal;
+	font-family: arial, sans-serif;
+	font-size: 10px;}
+	
+.h6class {font-weight: normal; 
+	font-size: 18px; 
+	font-family: "Clarendon";}		
+	
+.h4classcolor {font-weight: bold; 
+	font-size: 11px; 
+	font-family: "Clarendon";
+	color: #cc99cc;
+	line-height: 0.7;}
+	
+.h4classlineheight {font-weight: bold; 
+	font-size: 11px; 
+	font-family: "Clarendon";
+	line-height: 0.7;}	
+	
+.h2classwithhover {font-weight: bold; 
+	font-size: 20px; 
+	font-family: "Times Roman", "Times", "Times New Roman";
+	line-height: 0.7;}
+	
+.h1classpadding {font-size: 56px; 
+	font-family: "Times Roman", "Times", "Times New Roman"; 
+  	font-weight: normal; 
+  	line-height: 56px; 
+  	padding-top: 20px;}
+  	
+.h2classblue {font-weight: bold; 
+	font-size: 20px; 
+	font-family: "Times Roman", "Times", "Times New Roman";
+	color: #00868B;}
+	
+.h2classbluesmaller {font-size: 16px; 
+	font-family: "Times Roman", "Times", "Times New Roman";
+	color: #55b;}
+	
+.h2classbluesmaller2 {font-size: 16px; 
+	font-family: "Times Roman", "Times", "Times New Roman";
+	color: #636;}		 
+	
+.tocenter {text-align: center;}	
+
+.content {display: none;}
+
+#mainContent {text-align: center;
+	padding-top: 50px;
+	padding-left: 60px;
+	margin-left: 7%;
+	margin-right: 5%;}
+	
+	#mainContent img {width: 200px;}
+	
+#mainContent2 , #mainContent2-1 {text-align: center;
+	padding-top: 30px;}
+	
+.mainContent3 {text-align: center;
+	padding-top: 34px;}
+	
+	.mainContent3 img {}	
+
+.inline {text-align: center;
+	padding-top: 30px;}
+
+/* BEGIN INDIVIDUAL SLIDES STYLINGS */	
+	
+#text1 , #text2 , #image1 {position: relative; 		/*for 1st Slide */
+		float: left;
+		font-size: 26px;
+		color: #e3e5c9;
+		font-style: italic;
+		width: 23%;
+		margin: 0 3% 0 0;
+		overflow: visible;}
+
+#text1 {text-align: left;}
+
+#text2 {text-align: right;}
+
+#image1 p {font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		text-align: center;}						/*end of 1st Slide */
+		
+		
+		
+#text1-2 , #text2-2 , #image1-2 , 
+#text1-2yggr , #text1-2super , #text2-2super , #image1-2super    /*for 2nd Slide, Table of Contents */
+		{position: relative; 														/*text1-2super etc for small house superslides*/
+		clear: left;
+		/*font-size: 26px;*/
+		color: #e3e5c9;
+		overflow: visible;}	
+			
+#text1-2 , #text1-2yggr , #text1-2super {height: auto;		
+		width: 32%;
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		color: #e3e5c9;
+		padding-top: 7px;}
+
+		#text1-2 ol , #text1-2super ol {font-weight: bold;
+		line-height: 1.3;}
+		
+		#text1-2 ul , #text1-2super ul {font-weight: bold;
+			padding-left: 30px;
+			list-style: none;}
+
+#text2-2 , #text2-2super {height: auto;		
+		width: 60%;
+		margin: auto;
+		text-align: center;
+		font-variant: small-caps;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		padding-top: 7px;}
+
+#image1-2 , #image1-2-1 , #image1-2super {height: auto;		
+		margin: auto;
+		width: 40%;}
+
+/* #image1-2 p , #image1-2-1 p , #image1-2super p {font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;} */
+		
+		#image1-2 img , #image1-2super img {height: 175px;
+			max-width: 100%;			
+			padding-bottom: 10px;}
+
+		#image1-2-1 img {height: 60px;
+			max-width: 100%;			
+			padding-bottom: 10px;}						
+					
+															/*for 3rd-9th Slides */
+					
+#text1-3 , #text1-4 , #text1-5 , 
+#text1-7 , #text1-9 , #text1-10 , 
+#text1-13 , #text1-14 , #text1-15 , 
+#text1-16 , #text1-17 , #text1-18 , #text1-19   /* Regular DIV size */
+		{position: relative; 
+		clear: left;
+		padding: none;
+		overflow: visible;
+		height: auto;		
+		width: 35%;
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		color: #e3e5c9;}
+		
+#text1-6 , #text1-8 , #text1-11    /* Wider DIV for a larger amount of text per slide */
+		{position: relative; 
+		clear: left;
+		overflow: visible;
+		padding: none;
+		height: auto;		
+		width: 45%;
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		color: #e3e5c9;}		
+		
+#text2-3 , #text2-4 , #text2-5 , 
+#text2-6 , #text2-7 , #text2-8 , #text2-9 , #text2-10 , 
+#text2-11 , #text2-13 , #text2-14 , #text2-15 , 
+#text2-16 , #text2-17 , #text2-18 , #text2-19
+		{position: relative; 
+		clear: left;
+		overflow: visible;
+		height: auto;
+		width: 65%;
+		margin: auto;
+		text-align: center;
+		font-variant: small-caps;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		padding: 7px 0 0 0;}
+
+#image1-3 , #image1-4 , #image1-5 , 
+#image1-6 , #image1-7 , #image1-8 , #image1-9 , #image1-10 , 
+#image1-11 , #image1-13 , #image1-14 , #image1-15 , 
+#image1-16 , #image1-17 , #image1-18 , #image1-19
+		{position: relative; 
+		clear: left;
+		overflow: visible;
+		height: auto;
+		width: 40%;		
+		margin: auto;
+		padding: none;}
+
+#image1-3 p, #image1-4 p, #image1-5 p, 
+#image1-6 p, #image1-7 p, #image1-8 p, #image1-9 p , #image1-10 p , 
+#image1-11 p , #image1-13 p , #image1-14 p , #image1-15 p , 
+#image1-16 p , #image1-17 p , #image1-18 p , #image1-19 p
+		{font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;}
+		
+		#image1-3 img, #image1-4 img, #image1-5 img, 
+		#image1-6 img, #image1-7 img, #image1-8 img, #image1-9 img , #image1-10 img , 
+		#image1-11 img , #image1-13 img , #image1-14 img , #image1-15 img , 
+		#image1-16 img , #image1-17 img , #image1-18 img , #image1-19 img
+		{height: 200px;
+			max-width: 100%;}			
+											/*end of 3rd-9th Slides */			
+			
+				
+#text1-12 {position: relative;            /* downtown slides -- multiple images on one slide that are floated */
+		clear: left;
+		color: #e3e5c9;
+		padding: none;
+		height: auto;		
+		width: 68%;
+		margin: auto;
+		text-align: center;
+		font-size: 14px;}
+		
+#text2-12 {position: relative; 
+		clear: left;
+		height: auto;		
+		width: 65%;
+		margin: auto;
+		text-align: center;
+		font-variant: small-caps;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		padding-top: 7px 0 0 0;}	
+		
+#image1-12 {position: relative; 
+		clear: left;
+		font-size: 26px;
+		height: 100px;		
+		margin: auto;
+		overflow: hidden;}
+					
+		#image1-12 p
+		{font-size: 14px;
+		font-style: normal;}
+		
+		#image1-12 img
+		{width: 130px;
+		border: 1px solid #e3e5c9;}	
+		
+#image1-12-1 {position: relative; 
+		clear: left;
+		font-size: 26px;
+		height: 125px;		
+		margin: auto;
+		overflow: hidden;
+		text-align: center;}
+					
+		#image1-12-1 p
+		{font-size: 14px;
+		font-style: normal;}
+		
+		#image1-12-1 img
+		{width: 130px;
+                max-height: 123px;
+		border: 1px solid #e3e5c9;}					/* end city/pedestrian/downtown slides */
+
+
+#nextsessionlink a:hover , #prevsessionlink a:hover {
+		color: #fff;}	
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+		

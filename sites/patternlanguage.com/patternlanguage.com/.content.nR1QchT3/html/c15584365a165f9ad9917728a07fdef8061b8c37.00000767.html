@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+  <title>APL</title>
+  <script src='../universal/universal.js'></script>
+  <script>
+   function loadFrames() {  
+           if (location.hash) // a hash should give a pattern request, e.g. #apl1
+                   loadPatternIntoFrame(window.frames.text,
+                                             'aplbullets.htm', 
+                                                                                window.frames.bullets);
+                else { // load default frame contents
+                   window.frames.bullets.location.replace('aplbullets.htm');
+                        window.frames.text.location.replace('aplsummary.htm');
+                }
+        }
+
+   setCallOnDocumentLoad(loadFrames);
+        // setCallOnDocumentLoad(loadPatternIntoFrame);
+  </script>
+</head>
+<frameset cols="25%,*" onload='universalDocumentLoaded()'>
+  <frame src="empty.htm" name="bullets" noresize>
+  <frame src="empty.htm" name="text" noresize>
+  <noframes>
+    <body bgcolor="white" text="black" link="black" vlink="green" alink="blue" border="navy">
+    </body>
+  </noframes>
+</frameset>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>deal</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style type="text/css">
+  .h1class {
+        FONT-WEIGHT: normal; FONT-SIZE: 56px; FONT-FAMILY: "Times Roman"
+  }
+  .h2class {
+        FONT-WEIGHT: bold; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: arial
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space: 15px
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times New Roman"
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 25px; FONT-FAMILY: "Times Roman"
+  }
+
+  .bigChange {color:0000ff;  text-decoration:none;}
+  .start {color:dddd66; text-decoration:none;}
+
+
+
+  #joining {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #working {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #size {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #money {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+
+  #open {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #group {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #husbandry {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #house {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #water {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #build {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  #time {
+        LEFT: 250; WIDTH:500px; VISIBILITY: hidden; POSITION: absolute; TOP: 120px; HEIGHT: 240px; background-color:000000
+  }
+
+  </style>
+</head>
+<body bgcolor="#880000" text="#DDDD66" link="#0000FF" vlink="#CC66CC">
+  <table width="700" align="center" bgcolor="#880000">
+    <tr>
+      <td align="center">
+        <span class="h3class">OUTLINE OF THE PROCESS</span>
+        <p>What happens as you build your house<br></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="javascript:void(0)" onmouseover="changeState('joining','visible');" onmousedown="changeState('joining','hidden');" onmouseout="changeState('joining','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Joining</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('working','visible');" onmousedown="changeState('working','hidden');" onmouseout="changeState('working','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Working</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('size','visible');" onmousedown="changeState('size','hidden');" onmouseout="changeState('size','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">House size</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('money','visible');" onmousedown="changeState('money','hidden');" onmouseout="changeState('money','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Money</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('group','visible');" onmousedown="changeState('group','hidden');" onmouseout="changeState('group','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">House group</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('open','visible');" onmousedown="changeState('open','hidden');" onmouseout="changeState('open','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Open land</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('house','visible');" onmousedown="changeState('house','hidden');" onmouseout="changeState('house','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">House layout</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('husbandry','visible');" onmousedown="changeState('husbandry','hidden');" onmouseout="changeState('husbandry','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Husbandry</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('water','visible');" onmousedown="changeState('water','hidden');" onmouseout="changeState('water','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Water and gray water</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('build','visible');" onmousedown="changeState('build','hidden');" onmouseout="changeState('build','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Building technology</span></a><br>
+        <a href="javascript:void(0)" onmouseover="changeState('time','visible');" onmousedown="changeState('time','hidden');" onmouseout="changeState('time','hidden')"><span onmouseover="changeClass(this,'bigChange')" onmouseout="changeClass(this,'start')" class="start"><img src="tree.gif" width="30" border="0">Timeline</span></a><br>
+      </td>
+    </tr>
+  </table>
+  <div id="joining">
+    <div id="working"></div>
+    <div id="size"></div>
+    <div id="money"></div>
+    <div id="group"></div>
+    <div id="open"></div>
+    <div id="house"></div>
+    <div id="husbandry"></div>
+    <div id="water"></div>
+    <div id="build"></div>
+    <div id="time"></div>
+    <hr height="5" color="#CC66CC">
+    <div></div>
+    <table>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">You choose one of the next house groups, to be built.<br>
+        <img src="tree.gif" width="30">In all probability, you will make your choice according to the green land that lies next to it, and its future use for agriculture, orchard, field, park, and so on.<br>
+        <img src="tree.gif" width="30">You meet the families in the group, and decide whether you are comfortable with them.<br>
+        <img src="tree.gif" width="30">You go to the land selected for the house-group, and choose a spot where you are comfortable<br>
+        <img src="tree.gif" width="30">You decide how much land you want, it can be large or small within a range<br>
+        <img src="tree.gif" width="30">You sign up and start paying monthly ground rent, to hold your land</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">We hope you will choose to work in your house or elsewhere in Fairview.<br>
+        <img src="tree.gif" width="30">Make room for a workshop or an office in your house, large or small.<br>
+        <img src="tree.gif" width="30">If your workshop is one or more separate buildings in your yard, so much the better.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">You decide how big or small your place is going to be and what it will contain (workshops, offices etc)<br>
+        <img src="tree.gif" width="30">This means, first decide how big the buildings themselves will be (total square footage)<br>
+        <img src="tree.gif" width="30">Then decide how big the yard will be.<br>
+        <img src="tree.gif" width="30">Now the bubble of land you have selected has a size and cost. Juggle the numbers until it fits your budget.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">You will have a land-tenancy for your land, paid for by a monthly ground rent.<br>
+        <img src="tree.gif" width="30">The monthly ground rent is expected to be $250/month for 1/12th of an acre (equivalent to 7 cents per sf). The amount you pay depends on the size of parcel you choose during the layout process.<br>
+        <img src="tree.gif" width="30">Beyond a certain maximum, the ground rent per/sf will increase with size of your parcel (to discourage land-grabbing).<br>
+        <img src="tree.gif" width="30">You will be expected to pay for construction of your own house, any way you wish. It is your responsibility. Construction price per square foot will be known ahead of time. It is expected to be in trhe range $90 to $125.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">Each group is about an acre<br>
+        <img src="tree.gif" width="30">It includes 8-15 houses.<br>
+        <img src="tree.gif" width="30">The families together establish a common place, the most beautiful spot in the one acre.<br>
+        <img src="tree.gif" width="30">A central path is laid down, essentially pedestrian, but able to take a few cars.<br>
+        <img src="tree.gif" width="30">The houses are put in position by their owners, one by one, working from the street, back towards the open land.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">A vital part of the new approach to housing that is being used for Fairview, lies in the fact that each house group has open land one both sides, and very close.<br>
+        <img src="tree.gif" width="30">No house is more than 100 feet from this open land.<br>
+        <img src="tree.gif" width="30">The very close access to open land, makes every house and office quite different in feeling from anything that is currently offered in urban areas.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">To make your house layout, we start with the garden. Put in in the right place, an outside area where you really like to be.<br>
+        <img src="tree.gif" width="30">Next put in the building volumes.<br>
+        <img src="tree.gif" width="30">Put stakes in the ground, at the corners, use tape to see the outline.<br>
+        <img src="tree.gif" width="30">When you are satisfied, put stakes to mark the corners of your land.<br>
+        <img src="tree.gif" width="30">Put the living room where you want it, as yo ustand on the land. Get the size with stakes.<br>
+        <img src="tree.gif" width="30">Then the entrance. And so on... until the house is laid out to your satisfaction.<br>
+        <img src="tree.gif" width="30">We work with you, to help you make the design that is just right for you, that comes from your dreams, and works practically.<br>
+        <img src="tree.gif" width="30">The detailed process we use is a tool available on this website, as part of the price of your land rent.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">The fingers of open land next to each house group, ar intended to be productive.<br>
+        <img src="tree.gif" width="30">The whole idea of Fairview, is to recreate a productive relationship between people and the land they live on.<br>
+        <img src="tree.gif" width="30">Swales will be built on slopes, to increase water retention.<br>
+        <img src="tree.gif" width="30">Orchards, vegetables, fruit, are planted and worked by some of the families in your house group.<br>
+        <img src="tree.gif" width="30">Animals may be kept<br>
+        <img src="tree.gif" width="30">Some places, fenced, mowed and cared for are simply park land.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">A stream and adjacent riparian areas are already being cared for in the lower part of the site.<br>
+        <img src="tree.gif" width="30">We have the idea of proposing to SFA, that a small lake be built at the core of the community. In other projects, a lake, or abundant water, has an enormously enriching effect on family and community life.<br>
+        <img src="tree.gif" width="30">Water holding tanks, and small dams or bunds in the catch basin of the valleys of the site, may be enlarged as part of the green areas between housing fingers.<br>
+        <img src="tree.gif" width="30">It may be possible to use local sandfilters near each house group, as a source of irrigation for the cultivated fields.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">All houses will be built in a common construction system.<br>
+        <img src="tree.gif" width="30">The construction system will allow each house to be different, and will have its own identity just because it is based on your plan, and your approach to its design.<br>
+        <img src="tree.gif" width="30">All houses will have up-to-the-minute approaches to solar energy, no-net-energy consumption, highest quality insultation, organic roofs, and use of earth and wood materials when possible.<br>
+        <img src="tree.gif" width="30">Houses will be built to a common pattern, so that as a group they will form a beautiful and comfortable unity.<br>
+        <img src="tree.gif" width="30">In individual cases if you wish, you may choose to build your house yourself, and would then have wider latitude with its materials.</span></td>
+      </tr>
+      <tr>
+        <td><span class="h6class"><img src="tree.gif" width="30">Zoning approval for the site as a whole, is now in the early stages of the application process. It is hoped that we shall have a green light for construction about June 2003.<br>
+        <img src="tree.gif" width="30">You do not need to wait until to apply, and indeed, may apply now to build your house in one of the first house groups.<br>
+        <img src="tree.gif" width="30">We expect the layout process for the first groups will start after Christmas, about January 2003. Meetings and discussions can begin right away, as families come on line and identify themselves.</span></td>
+      </tr>
+      <tr>
+        <td>
+          <hr height="5" color="#CC66CC">
+          <blockquote></blockquote>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

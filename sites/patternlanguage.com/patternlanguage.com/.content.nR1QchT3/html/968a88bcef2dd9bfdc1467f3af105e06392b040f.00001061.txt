@@ -1,0 +1,10 @@
+<!--apl price $60.00-->
+<!--apl shipping $5.95-->
+<!--apl picture /apl/aplcover.gif-->
+<!--apl description-->A Pattern Language<!--end description-->
+<!--apl stock yes -->
+<!--carpet_book price $150.00-->
+<!--carpet_book shipping $5.95-->
+<!--carpet_book picture /carpets/carpetbookcover.jpg-->
+<!--carpet_book description-->A Foreshadowing of 21st Century Art, The Geometry of Very Early Turkish Carpets<!--end description-->
+<!--carpet_book stock no -->

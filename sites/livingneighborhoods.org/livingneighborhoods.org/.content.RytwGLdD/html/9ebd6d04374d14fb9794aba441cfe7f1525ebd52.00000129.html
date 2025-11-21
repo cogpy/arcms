@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+       p {margin-top:5px;margin-bottom:0px}
+       div {margin-top:0px;margin-bottom:0px}
+       .filename {color:#0000ff}
+      .wizard {visibility:hidden;position:absolute;top:0;left:0;width:700;height:450;padding-left:40px;padding-right:40px;padding-top:30px;padding-bottom:0px;font-size:16px;background-color:#ffffff}
+      .buttonb {width:200px}
+      .wzbutton {font-size:14px;
+               font-family:arial;
+               font-weight:bold;
+               background-color:#FF0000;
+               color:#ffffff;
+               height:30px;
+               width:430px;
+               border-color:#ffffff}
+      .wzbackbutton {margin-right:30px}
+      .wznextbutton {margin-right:80px}
+      .wzbackbuttonx {font-size:14px;
+               font-family:arial;
+               font-weight:bold;
+               background-color:#FF0000;
+               color:#ffffff;
+               height:30px;
+               border-color:#ffffff;
+               margin-right:80px}
+      .wznextbuttonx {font-size:14px;
+               font-family:arial;
+               font-weight:bold;
+               background-color:#FF0000;
+               color:#ffffff;
+               height:30px;
+               border-color:#ffffff}
+       .backnext {position:absolute;left:0;top:380;width:700;height:70;text-align:right}
+  </style>
+  <script src='../universal/universal.js'></script>
+  <script>
+      function doOnLoad()
+        { parent.setWizardWindow(this);
+        }
+  var demoURL = 'http://livingneighborhoods.org/drawing-pad/demo-drawfilea.lndraw';
+  // var wzHaveFolder = false;
+  // var wzHaveDrawing = false;
+  // var loadRequested = false;
+  // var wizardDivsShown = new Object();
+  var wizardDivsShown = new Array();  // store name or div??
+  var curWizardDiv = '';
+  // var firstTimeUser = false;
+  // var loadProjectRequested = false;
+  // var createProjectRequested = false;
+  // var readyForWizardLogic = false;
+
+  // reach stuff not used???
+  var waitingForAppletToReach = 0;
+  var appletHasReached = 0;
+
+  function setWaitingForAppletToReach(i)
+  { if (waitingForAppletToReach < i)
+        waitingForAppletToReach  = i;
+  }
+
+  function fromApplet_setAppletHasReached(i)
+  { if (appletHasReached < i)
+        appletHasReached  = i;
+  }
+
+  function appletHasFinishedRequests()
+  { return appletHasReached >= waitingForAppletToReach;
+  }
+
+  var wizardActive = false;
+
+  function setWizardActive(state)
+  { wizardActive = state;
+  }
+
+  function getWizardActive()
+  { return wizardActive;
+  }
+
+  function restartWizard()
+  { 
+    setOkToCancel(true);
+    // alert('wizardActive ' + wizardActive);
+    if (!wizardActive)
+        wizardStart();
+  }
+
+  function wizardStart()
+  { setWizardActive(true);
+    wizardDivsShown.length = 0;
+    // alert('pll' + parent.getLoadRequested());
+    if (parent.getLoadRequested())
+        wizardStart2();
+    else
+      { wizardShowAppletLoading(false);
+        wizardJustShow("wizardLoadApplet");
+      }
+  }
+  function wizardStart2()
+  { 
+    // alert('ws2');
+    if (!parent.isAppletStarted())
+      { setTimeout(wizardStart2,100);
+        if (parent.isAppletInitStarted())
+            wizardJustShow("wizardAppletLoading");
+        return;
+      }
+    initWizardCreateFolder();
+    // alert("wizardStart");
+    // alert("wizardStart 2");
+    // initWizardProjectFileChoice();
+    // wizardLogic();
+  }
+  function wizardLogic()
+  { // alert("wizardLogic");
+    // var newProjectRequested = wizardGet("wizardDemoChoice","newProject",false);
+    // if (!parent.isAppletStarted())
+    // if (!readyForWizardLogic)
+    if (!appletHasFinishedRequests()) // not used????
+      { setTimeout(wizardLogic,100);
+        return;
+      }
+    var newProjectRequested = wizardGet("newProject",false);
+    /*
+    if (haveDrawing())
+      { parent.loadApplet(); // restore when implement delayed applet loading
+        gotoApplet();
+      }
+    else
+    */
+    if (!wizardShown("wizardInitialChoice"))
+      { wizardShow("wizardInitialChoice");
+      }
+    else if (!haveFolder() && !wizardShown("wizardCreateFolder"))
+      { wizardShow("wizardCreateFolder");
+      }
+    /* restore when implement delayed applet loading
+    else if (!parent.loadRequested)
+      { wizardShow("wizardLoadApplet");
+      }
+      */
+    // else if (loadProjectRequested && !wizardShown("wizardLoadFileChoice"))
+    // else if (wizardGet("wizardInitialChoice","loadProject",false) && !wizardShown("wizardLoadFileChoice"))
+    else if (wizardGet("loadProject",false) && !wizardShown("wizardLoadFileChoice"))
+      { wizardShow("wizardLoadFileChoice");
+      }
+    else if (newProjectRequested && !wizardShown("wizardProjectNameChoice"))
+      { wizardShow("wizardProjectNameChoice");
+      }
+    else if (newProjectRequested && !wizardShown("wizardBasemapChoice"))
+      { wizardShow("wizardBasemapChoice");
+      }
+      /*
+    else if (newProjectRequested && !wizardShown("wizardProjectFileChoice"))
+      { wizardShow("wizardProjectFileChoice");
+      }
+      */
+      /*
+    else if (willHaveFolder() && !wizardShown("wizardDemoChoice"))
+      { wizardShow("wizardDemoChoice");
+      }
+    else if (!willHaveFolder() && !wizardShown("wizardDemoChoiceNoFolder"))
+      { wizardShow("wizardDemoChoiceNoFolder");
+      }
+      */
+    /*
+    else if (!wizardShown("wizardNewProjectChoice"))
+      { wizardShow("wizardNewProjectChoice");
+      r
+      */
+    else
+      { gotoApplet();
+      }
+  }
+
+  function escapeHTML(s)
+  { if (!s)
+        return '';
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function unescapeHTML(s)
+  { return s.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&');
+  }
+
+  function haveDrawing()
+  { var c = GetCookieX("lndrawing");
+    // return c && !/\/\s*$/.test(c);
+    return c;
+  }
+
+  function haveFolder() // returns folder path
+  { var c = GetCookieX("lndrawingfolder");
+    return c;
+  }
+
+  function willHaveFolder() // returns folder path
+  { // return haveFolder() || wizardGet("wizardCreateFolder","createFolder");
+    var f =  wizardGet("createFolder",false);
+    if (f)
+       return f;
+    else
+      return haveFolder();
+  }
+
+  function wzMakeInitialChoice()
+  { if (document.all.radioLoadDemo.checked)
+        wzLoadDemo();
+    else
+        alert('Not implemented yet');
+  }
+
+  function wzLoadApplet()
+  { parent.loadApplet();
+    // alert('wla');
+    wizardShowAppletLoading(true);
+    wizardStart2();
+  }
+
+  function wizardShowAppletLoading(state)
+  { if (state)
+        document.all.appletLoadingMsg.style.visibility = 'visible';
+    else
+        document.all.appletLoadingMsg.style.visibility = 'hidden';
+  }
+
+  function setProjectFolderPath(path)
+  {
+    projectFolderPath = path;
+    savedProjectFolderPath = path;
+    document.all.projectFolderPath.innerHTML = escapeHTML(projectFolderPath);
+  }
+
+  function hideProjectFolderPath()
+  { projectFolderPath = ''
+    document.all.projectFolderPath.innerHTML = '<i>none</i>';
+  }
+
+  function restoreProjectFolderPath()
+  { projectFolderPath = savedProjectFolderPath;
+    document.all.projectFolderPath.innerHTML = escapeHTML(projectFolderPath);
+  }
+
+  function getProjectFolderPath()
+  { return projectFolderPath;
+  }
+
+  var projectFolderPath;
+  var savedProjectFolderPath;
+  var omitProjectFolder
+  function projectFolderOmitClicked()
+  { 
+    omitProjectFolder = document.all.projectFolderOmit.checked;
+    if (omitProjectFolder)
+        hideProjectFolderPath();
+    else
+        restoreProjectFolderPath();
+    // document.all.projectFolderPath.disabled = document.all.projectFolderOmit.checked;
+  }
+
+  function setOmitProjectFolder(state)
+  { if (state != omitProjectFolder)
+      { document.all.projectFolderOmit.checked = state;
+        projectFolderOmitClicked();
+      }
+  }
+
+  function wzCreateFolder()
+  { 
+    var omit = document.all.projectFolderOmit.checked;
+    // var path = unescapeHTML(document.all.projectFolderPath.value);
+    var path = getProjectFolderPath();
+    if (omit)
+       { path = '';
+       }
+    else if (!path)
+      { alert("Please choose a folder name");
+        return;
+      }
+    wizardSet("createFolder", path);
+    wizardLogic();
+
+    // var path = document.all.projectFolderPath.value;
+    // alert("wzCreateFolder path: " + path);
+    /*
+    if (path)
+      { // parent.lndraw_applet.createProjectFolder(path,this,"wzCreateFolderDone");
+      }
+      */
+  }
+
+  function wizardDoNotCreateFolder()
+  { wizardSet("createFolder", null);
+    wizardLogic();
+  }
+
+
+  /*
+  function wzCreateFolderDone()  // called from applet
+  { if (haveFolder())
+      { setTimeout(wizardLogic,200);  // give time for applet to create folder in another thread
+      }
+    else
+      { alert("Failed to create project folder. Please try again.");
+      }
+  }
+  */
+
+  /*
+  function loadApplet()
+  { if (!parent.loadRequested)
+      { loadRequested = true;
+        parent.loadApplet();
+      }
+  }
+  */
+
+  /* data race trouble
+  function waitForApplet(thenCall)
+  { 
+    // alert("gotoApplet");
+    parent.loadApplet();
+    // alert("par " + parent);
+    parent.setCallOnAppletLoad(thenCall);
+    if (parent.isAppletStarted())
+      { goNowToApplet();
+      }
+    else
+      { // parent.setCallOnAppletLoad(goNowToApplet);
+        wizardShow("wizardAppletLoading");
+        // alert("applet loading");
+      }
+  }
+  */
+
+  function gotoApplet()
+  { 
+    // alert("gotoApplet");
+    parent.loadApplet();
+    // alert("par " + parent);
+    // parent.setCallOnAppletLoad(goNowToApplet);
+    if (parent.isAppletStarted())
+      { goNowToApplet();
+      }
+    else
+      { // parent.setCallOnAppletLoad(goNowToApplet);
+        wizardShow("wizardAppletLoading");
+        // alert("applet loading");
+        setTimeout(gotoApplet,100);
+      }
+  }
+
+  function goNowToApplet()
+  { // hide wizard and show applet
+    // alert("go now");
+    wizardShow("wizardToApplet");
+    parent.lndraw_applet.finishWizard(this);
+    /*
+    if (haveDrawing())
+        fromApplet_wizardReadyToShowApplet();
+    else
+     { // alert('calling finish wiz');
+       parent.lndraw_applet.finishWizard(this);
+     }
+     */
+  }
+  function fromApplet_wizardReadyToShowApplet()
+  { setTimeout(doWizardReadyToShowApplet,10);  // do not do directly from applet
+  }
+  function doWizardReadyToShowApplet()
+  {
+    setWizardActive(false);
+    parent.changeState('startinstructions','hidden');
+    parent.changeState('appletRegion','visible');
+    parent.lndraw_applet.focus();  // workaround for Java tooltip bug
+                        // not showing tooltip when applet does not have
+                        // focus
+  }
+
+  var wizardData = new Object();
+  var divForKey = new Object();
+
+  function wizardSet(key,val)
+  { var cw = wizardDivsShown[wizardDivsShown.length-1];
+    divForKey[key] = cw;
+    if (!wizardData[cw])
+      { wizardData[cw] = new Object();
+      }
+    wizardData[cw][key] = val;
+  }
+
+  function fromApplet_wizardGetString(key)  // for use from Java
+  { var v = wizardGet(key,"");
+    if (!v)
+        v = "";
+    return new String(v);
+  }
+
+  // function wizardGet(wizardDiv,key,default)
+  function wizardGet(key,defaultVal)
+  { var wizardDiv = divForKey[key];
+    if (!wizardDiv)
+        return defaultVal;
+    if (!wizardShown(wizardDiv))  // if have gone back before it was shown,
+                                 // return default value
+       return defaultVal;
+    var d = wizardData[wizardDiv];
+    if (d)
+      { var v = d[key];
+        if (typeof v == 'undefined')
+          { v = defaultVal;
+          }
+        return v;
+      }
+    else
+      { return defaultVal;
+      }
+  }
+
+  function wizardJustShow(wizardDiv)
+  { wizardShowAndRemember(wizardDiv,false);
+  }
+
+  function wizardShow(wizardDiv)
+  { wizardShowAndRemember(wizardDiv,true);
+  }
+
+  function wizardShowAndRemember(wizardDiv,remember)
+  { // alert('wizardShow ' + wizardDiv);
+    var wd = document.all[wizardDiv];
+    if (!wd)
+       alert("error in wizard logic (wizardShow): div " + wizardDiv + " does not exist");
+    wizardData[wizardDiv] = new Object();  // clear any previous data
+    changeState(curWizardDiv,'hidden');
+    // wizardDivsShown[wizardDiv] = true;
+    if (remember)
+        wizardDivsShown.push(wizardDiv);
+    curWizardDiv = wizardDiv;
+    // if (wizardDiv == 
+    var c = wd.callbeforewizardshow;
+    if (c)
+      this[c]();
+    changeState(curWizardDiv,'visible');
+  }
+
+  function wizardCancel()
+  { if (okToCancel)
+      { // setWizardActive(false);
+        // gotoApplet();
+        doWizardReadyToShowApplet();
+      }
+  }
+
+  var okToCancel = false;
+
+  function setOkToCancel(state)
+  { okToCancel = state;
+    document.all.cancelButton1.disabled = !okToCancel;
+  }
+
+  function wizardBack()
+  { if (wizardDivsShown.length >= 2)
+      { wizardDivsShown.pop();
+        // var d = wizardDivsShown.pop();
+        wizardShow(wizardDivsShown.pop());
+      }
+  }
+
+  function wizardRemainAtCurrent()
+  { if (wizardDivsShown.length >= 1)
+      { wizardShow(wizardDivsShown.pop());
+      }
+  }
+
+  function fromApplet_wizardGoBack()
+  { setTimeout(doWizardGoBackFromApplet,10);
+  }
+  function doWizardGoBackFromApplet()
+  { wizardBack();
+    parent.changeState('startinstructions','visible');
+    parent.changeState('appletRegion','hidden');
+  }
+
+  function wizardShown(divname)
+  { if (!document.all[divname])
+       alert("error in wizard logic (wizardShown): div " + divname + " does not exist");
+    for (var i = 0; i < wizardDivsShown.length; i++)
+      { if (wizardDivsShown[i] == divname)
+          return true;
+      }
+    return false;
+    /*
+    if (wizardDivsShown[divname])
+        return true;
+    else
+        return false;
+    */
+  }
+
+  // var defaultProjectFolderName = "LN-DRAWING-FILES";
+  var defaultProjectFolderName = "livingneighborhoods projects";
+  function initWizardCreateFolder()
+  { // var path = parent.lndraw_applet.getPathForFileInCwd(defaultProjectFolderName);
+    /*
+    choices for first arg for path and behavior I have observed on my XP system:
+    "default" - My documents
+    "home"   - the user's top directory (holds desktop and My Documents) '
+    "userdir" - the Desktop (right now, shows full path name
+    "null" - the Desktop - rooted at the desktop (shows empty path for containing directory)
+    "" - leaves at current directory (currently like "null")
+    */
+    // var path = parent.lndraw_applet.setChooserFolderAndGetPathForFile("default",defaultProjectFolderName);
+    setProjectFolderPath("");  // in case the following fails
+    parent.lndraw_applet.setChooserToDefaultFolderAndReportPathForFileInFolder("default",defaultProjectFolderName,"",this,"setProjectFolderPath");
+    // alert("initWizardCreateFolder path " + path);
+    // document.all.projectFolderPath.value = path;
+    wizardLogic();
+  }
+
+  function fromApplet_setProjectFolderPath(path)  // called to set default and after browsing
+  { // document.all.projectFolderPath.value = parent.lndraw_applet.getPathForFileInCurrentFolder();
+    // document.all.projectFolderPath.value = path;
+    // document.all.projectFolderPath.innerHTML = escapeHTML(path);
+    if (path)
+        setProjectFolderPath(path);
+    // readyForWizardLogic = true;
+  //   wizardLogic(); do not call from applet
+  }
+
+  /*
+  function initWizardProjectFileChoice()
+  { var path = parent.lndraw_applet.seDefaulttFolderAndGetPathForDrawingFile(projectName);
+    document.all.newDrawingPath.value = path;
+  }
+  */
+  function browseForExistingDrawing()
+  { var result = parent.lndraw_applet.browseForExistingDrawing(document.all.existingDrawingPath.value);
+    if (result)
+      { document.all.existingDrawingPath.value = result;
+      }
+  }
+
+  function browseForBasemap()
+  { var result = parent.lndraw_applet.browseForBasemap(document.all.basemapPathField.value);
+    if (result)
+      { document.all.basemapPathField.value = result;
+      }
+  }
+
+  function browseForProjectFolder()
+  { // var result = parent.lndraw_applet.browseForProjectFolder(document.all.projectFolderPath.value);
+    setOmitProjectFolder(false);
+    // alert('bfp ' + getProjectFolderPath());
+    var result = parent.lndraw_applet.browseForAllProjectsFolder(getProjectFolderPath(),this,"setProjectFolderPath");
+    /*
+    if (result)
+      { // document.all.projectFolderPath.value = result;
+        setProjectFolderPath(result);
+      }
+      */
+  }
+
+  function wzLoadDemo()
+  { // parent.loadDemo();
+    wizardSet("loadDemo",demoURL);
+    // gotoApplet();
+    wizardLogic();
+  }
+  function wzNewProject()
+  { wizardSet("newProject",true);
+    wizardLogic();
+  }
+  function wzFirstTime()
+  { // firstTimeUser = true;
+    wizardSet("firstTime",true);
+    wizardLogic();
+  }
+  function wzLoadProject()
+  { wizardSet("loadProject",true);
+    // loadProjectRequested = true;
+    wizardLogic();
+  }
+  function wzSetProjectName()
+  { // projectName = document.all.projectNameField.value;
+    // .. add check to see if project name is usable
+    // .. applet can popup error message
+    // .. here, if not usable, we do nothing
+    var projectName = document.all.projectNameField.value;
+    wizardSet("projectName", projectName);
+    // setWaitingForAppletToReach(parent.lndraw_applet.checkProjectName(willHaveFolder(),projectName),this,"projectNameLooksOk"));
+    parent.lndraw_applet.checkProjectName(willHaveFolder(),projectName,this,"projectNameLooksOk");
+  }
+  function projectNameLooksOk(result)
+  { if (result)
+       setTimeout(wizardLogic,10); // do not call directly from applet
+    else
+       setTimeout(wizardRedoCurrent,10); // do not call directly from applet
+  }
+
+  function wzChooseBasemap()
+  { // parent.lndraw_applet.setBackgroundImage(document.all.basemapPathField.value);
+    wizardSet("backgroundImage",document.all.basemapPathField.value);
+    wizardLogic();
+  }
+  function wzSetNewDrawingFile()
+  { // parent.lndraw_applet.newDrawing(projectName,document.all.basemapPathField.value,document.all.newDrawingPath.value);
+    wizardSet("outputFile",document.all.newDrawingPath.value);
+    wizardLogic();
+  }
+  </script>
+  <title></title>
+</head>
+<body onload='doOnLoad()' style='background-color:#cccccc'>
+  <div id='wizardInitialChoice' class='wizard'>
+    <h3>Choose what you would like to do</h3>
+    <table cellpadding="10">
+      <tr>
+        <td><input id='radioLoadDemo' name='initialChoiceRadio' type='radio' checked class='radiob' value='LOAD DEMO'>LOAD DEMO</td>
+        <td>This choice is recommended for first time users.</td>
+      </tr>
+      <tr>
+        <td><input id='radioNewProject' name='initialChoiceRadio' type='radio' class='radiob' value='START NEW PROJECT'>START&nbsp;NEW&nbsp;PROJECT</td>
+        <td>Choose this when you are ready to start working on your own project</td>
+      </tr>
+      <tr>
+        <td><input id='radioLoadExisting' name='initialChoiceRadio' type='radio' class='radiob' value='LOAD EXISTING PROJECT'>LOAD&nbsp;EXISTING&nbsp;PROJECT</td>
+      </tr>
+      <tr>
+        <td><input id='radioSaveAs' name='initialChoiceRadio' type='radio' class='radiob' disabled value='SAVE AS' onclick='XXXwzSaveAs()'><span disabled>SAVE AS</span></td>
+        <td disabled>Choose this if you are working on a project and want to change the file it is being saved in.</td>
+      </tr>
+    </table>
+    <div class='backnext'>
+      &nbsp; <input id='cancelButton1' type="button" class="wzbackbutton" disabled value="CANCEL" onclick="wizardCancel()"> <input type="button" class="wzbackbutton" value="BACK" disabled onclick="wizardBack()"> <input type="button" class='wznextbutton' value="NEXT" onclick="wzMakeInitialChoice()">
+    </div>
+  </div>
+  <div id='wizardLoadApplet' class='wizard'>
+    <div align='center' style="font-size:20px;color:0000ff;bgcolor:ffffff;">
+      If you are a first time user, this wizard will guide you to load a demo to explore how this drawing pad works.
+    </div>
+    <hr>
+    <br>
+    Before getting started, the java applet that powers the drawing pad needs to be loaded. In order for the applet to save the work that you do, you must agree to trust the applet. When you click on <b>NEXT</b>, you will be asked if you want to run the applet and to trust it (unless you have already been asked and the computer remembers your answer). You will need to answer "run" or "yes" in order to be able to save your work from one session to the next.<br>
+    <br>
+    <br>
+    <p><span style='color:#000000;font-size:90%'><i>What if I say that I do not wish to trust the applet, and then I change my mind?</i></span></p>
+    <div style='margin-left:20px;font-size:90%'>
+      To get another chance to answer the question, you may need to completely shut down the browser, closing all of the browser windows, and then visit this page again. There will not be a way to save any work that you do before you answer "yes".
+    </div><br>
+    <br>
+    <div align='center'>
+      <i>Click on</i> <b>NEXT</b> <i>to load the drawing pad applet</i>
+    </div><br>
+    <div id='appletLoadingMsg' align='center' style='font-size:110%;color:#0000ff;visibility:hidden'>
+      The applet is being loaded ...
+    </div>
+    <div class='backnext'>
+      &nbsp; <input type="button" class='wznextbutton' value="NEXT" onclick="wzLoadApplet()">
+    </div>
+  </div>
+  <div id='wizardAppletLoading' class='wizard'>
+    The drawing applet is now loading...
+  </div>
+  <div id='wizardToApplet' class='wizard'>
+    Going to drawing pad...
+  </div>
+  <div id='wizardCreateFolder' class='wizard'>
+    Before you do anything else, you must choose a folder on your own computer, which will hold your project files. We recommend that you create a new folder called <b>livingneighborhoods projects</b>, just for this purpose. The computer will remember that this folder is the place to store your drawings. It will store an updated version of each drawing as you work on it, and will bring it back automatically, when you re-open the drawing pad.<br>
+    <br>
+    <b>The following folder will be used</b><br>
+    <table>
+      <tr>
+        <td width="600"><span id='projectFolderPath' class='filename' style='margin:10px'></span></td>
+        <td><input type='button' value='Browse' onclick="browseForProjectFolder()"></td>
+      </tr>
+    </table>
+    <p><i>Click browse if you wish to choose a different folder namee or a different location for the folder. When you are ready to start work, the folder that you choose will be created if it does not exist.</i><br>
+    <br>
+    <input id='projectFolderOmit' type='checkbox' onclick='projectFolderOmitClicked()'> Do not save files on my computer.</p>
+    <div style='font-size:90%;margin-left:20px;margin-right:40px'>
+      Check this checkbox if you are unable to create a folder or would like just to look at a demo without saving anything you do. However, we recommend choosing a folder now, so that the drawing pad can remember any experiments that you do.
+      <p></p>
+      <div class='backnext'>
+        &nbsp; <input type="button" class="wzbackbutton" value="BACK" onclick="wizardBack()"> <input type="button" class='wznextbutton' value="NEXT" onclick="wzCreateFolder()">
+      </div>
+      <div id='wizardDemoChoice' class='wizard'>
+        <p>2. Once you have created a drawing-files folder, you can begin using the drawing-pad. We recommend that the best way to get started, is to load an existing project, and play with it, to get a feel for the controls, drawing tools, switching layers on and off, erasing and correcting and rebuilding layers, and rearranging the sequence of steps.</p>
+        <center>
+          <input type="button" class='wzbutton' value="LOAD OUR DEMONSTRATION PROJECT" alt='load and play with a demo project' onclick="wzLoadDemo()">
+        </center>
+        <p>Or you can immediately start work on your own project.</p>
+        <center>
+          <input type="button" class='wzbutton' value="BEGIN NEW PROJECT" onclick="wzNewProject()">
+        </center><input type="button" class="wzbackbutton" value="BACK" onclick="wizardBack()">
+      </div>
+      <div id='wizardDemoChoiceNoFolder' class='wizard'>
+        <p>(NO FOLDER) 2. Once you have created a drawing-files folder, you can begin using the drawing-pad. We recommend that the best way to get started, is to load an existing project, and play with it, to get a feel for the controls, drawing tools, switching layers on and off, erasing and correcting and rebuilding layers, and rearranging the sequence of steps.</p>
+        <center>
+          <input type="button" class='wzbutton' value="LOAD OUR DEMONSTRATION PROJECT" onclick="wzLoadDemo()">
+        </center><input type="button" class="wzbackbutton" value="BACK" onclick="wizardBack()">
+      </div>
+      <div id='wizardLoadFileChoice' class='wizard'>
+        <p><br>
+        <i>Click on the Browse button to find the file that holds the project you wish to load.</i><br>
+        <input id='existingDrawingPath' type='text' size="40" value=''>&nbsp;<input type='button' value='Browse' onclick="browseForExistingDrawing()"></p>
+        <center>
+          <input type="button" class='wzbutton' value="LOAD PROJECT" onclick="wzLoadProject()">&nbsp;&nbsp;<input type='button' value='CANCEL' onclick='wizardLogic()'>
+        </center>
+      </div>
+      <div id='wizardProjectNameChoice' class='wizard'>
+        Choose a name for your project <input id='projectNameField' type='text' value=''>
+        <p><input type="button" class='wzbutton' value="NEXT" onclick="wzSetProjectName()">&nbsp;&nbsp;<input type='button' value='CANCEL' onclick='wizardLogic()'><br>
+        <input type="button" class="wzbackbutton" value="BACK" onclick="wizardBack()"></p>
+      </div>
+      <div id='wizardBasemapChoice' class='wizard'>
+        <p>Now choose a background image for your drawing. This should be a map or an aerial or satellite photo of your site. It should be stored on your computer as an image file (for example, as a jpeg file).<br>
+        <i>Click on the Browse button to find the background image that you wish to use.</i><br>
+        <input id='basemapPathField' type='text' size="40" value=''>&nbsp;<input type='button' value='Browse' onclick="browseForBasemap()"></p>
+        <center>
+          <input type="button" class='wzbutton' value="SELECT BACKGROUND IMAGE" onclick="wzChooseBasemap()">&nbsp;&nbsp;<input type='button' value='CANCEL' onclick='wizardLogic()'>
+        </center><input type="button" class="wzbackbutton" value="BACK" onclick="wizardBack()">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

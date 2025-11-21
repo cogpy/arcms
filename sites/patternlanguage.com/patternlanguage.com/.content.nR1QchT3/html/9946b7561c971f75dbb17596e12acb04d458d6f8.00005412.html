@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript">
+  //ROTATE PIX
+        adImages = new Array("sm1.jpg","sm2.jpg","sm3.jpg","sm4.jpg","sm5.jpg","sm5.jpg","stmarks.jpg","stmarks.jpg","stmarks.jpg")
+        thisAd = -1
+        imgCt = adImages.length
+
+        function rotate() {
+                if (document.images) {
+                        thisAd++
+                        if (thisAd == imgCt) {
+                                thisAd = 0
+                        }
+                        document.adBanner.src=adImages[thisAd]
+                        setTimeout("rotate()", 2000)
+                }
+        }
+  </script>
+  <style>
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  </style>
+</head>
+<body bgcolor="black" text="#000000" link="#0000FF" vlink="#800080" onload="rotate()">
+  <table align="center" bgcolor="black" width="400">
+    <tr>
+      <td bgcolor="red" align="center" width="">
+        <font color="white"></font>
+        <h4><font color="white">Essentially, using the tools available in this sequence, and not much else, St Mark's square was formed.</font></h4>
+        <p><font color="white">We believe that anyone, using the same tools, can do something almost as good -- though whether they will be around for 900 years to do it, remains to be seen.</font></p>
+      </td>
+    </tr>
+    <tr height="100">
+      <td align="center">
+        <img src="sm1.jpg" width="343" height="300" name="adBanner" alt="You?" id="adBanner"><br>
+        <h4><font color="#CCCCCC"><i>The slow progression that formed St. Marks Square</i></font></h4>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

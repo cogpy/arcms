@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KITCHEN</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+  H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman" }
+  H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman" }
+  H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+  H4 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+  H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman" }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#44bbdd; color:#ffffff; font-weight:normal}
+  /********************** END FROM NICK ******************************/
+
+
+
+  #illuminate {
+                position: absolute;
+                top:    10px;
+                left:   10px;
+  width   : 10px;
+  visibility: hidden;
+        }
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   110px;
+  width   : 600px;
+  height : 400px;
+  visibility: visible;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    350;
+                left:   10px;
+  width   : 300px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="illuminate">
+    <a name='steps' id="steps"></a>
+    <table width="250" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td colspan="2">
+          <h4><font color="#222222"><b><br>
+          FIREPLACE PROCESS UNFOLDING TO CREATE A FIREPLACE DESIGN</b></font></h4>
+        </td>
+      </tr>
+    </table>
+    <table width="250" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <h6>The design process has six main steps</h6>
+          <p></p>
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td valign="top" width='30px'>1.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(1,'Get the height of mantel shelf')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">2.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(2,'Define main rectangle of outside of the fireplace under the shelf')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">3.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(3,'Define inner rectangle which makes the whole harmonious')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">4.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(31,'Add the periphery -- chimney, wings, chimney breast, hearth, to make it complete in three dimensions.')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">5.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(4,'Get color and material of main body of the fireplace')
+                </script></h6>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">6.</td>
+              <td>
+                <h6>
+                <script>
+
+                stepa(5,'Put finishing touches of ornament')
+                </script></h6>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p></p>
+  </div>
+  <script language="javascript">
+    // ******* set up handling movie and restart-button divs ***************
+    // *********************************************************************
+    // When reusing this, make sure the following settings are correct
+    // *********************************************************************
+    var moviediv = 'movie';   // name of div that holds the movie
+    var aftermoviediv = 'restartdiv';  // name of div to show after movie and slideshow
+
+    // Include the following to replace moviediv with aftermoviediv
+    //  when the movie and slideshow are done
+    setDelayedCallWhenSlideshowDone(
+        function () { hideElement(moviediv); showElement(aftermoviediv); }
+      );
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tbody>
+                <tr>
+                  <td align="middle" bgcolor="#EEEEEE" height="30">
+                    <h3><a href="javascript:hideElement(aftermoviediv);showElement(moviediv);getMovieBackAndRestart()"><span style="color:000000">Watch the movie again.</span></a></h3>
+                  </td>
+                </tr>
+                <tr align="middle">
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='movie' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <table height="60" width="80%" align="center" border="0">
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+      <table align="center">
+        <tr height="400">
+          <td valign="top" align="left">
+            <h3>
+            <script language="javascript">
+
+
+              setAppletURL();
+
+              //////// PARAMETERS TO SET /////////////
+              inputFileName = "group1.gdraw";
+              replayDelay = 5;  // increasing this number slows the replay
+              showSlideshowAfterReplayDone("",20000); //file name, wait before photo
+              SetDrawingSize(600,400);
+              replayWhenLoaded = true;   // must be true unless there's some other way to start the replay
+                                         //  (for example, a button that calls requestReplay()  )
+              ////////////////////////////////////////
+
+              forReplay = true;
+              supplyCaptions = 'true';
+              resizeIfNecessary = false;
+              drawapplet();
+              setCallOnDocumentLoad(updateCaption);
+
+              // Set up a slideshow to follow the movie
+              //  If there is no slideshow, leave this here,
+              //  but setupSlides should have no parameters
+              //  (creates an empty slide show)
+              // setupSlides(0,"caption:<h4><i>The fireplace as built</i></h4>","fireplace2a.jpg");
+              setupSlides();
+              setCallAtDocumentEnd(preloadImages);
+              timePerSlide = 6000;
+              timeAfterLastSlide = 0;
+              showSetupCaptions = true;
+              slideWidth = 365; // if set to 0, will be ignored (not specified in img tag)
+              slideHeight = 0; // if set to 0, will be ignored (not specified in img tag)
+            </script><br></h3>
+            <h4><font color="#000000"><i>The unfolding of a house group</i></font></h4>
+          </td>
+        </tr>
+      </table>
+      <div id="loadingmsg" align="center">
+        <ilayer id="loadingmsglayer" visibility="show">A movie is loading.</ilayer>
+      </div>
+    </div>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+  <p></p>
+</body>
+</html>

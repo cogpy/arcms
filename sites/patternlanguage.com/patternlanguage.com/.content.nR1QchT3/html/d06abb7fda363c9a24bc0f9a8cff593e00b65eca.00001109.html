@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script language="JavaScript">
+  <!--
+  function newWindow(file,window) {
+       msgWindow=open(file,window,'resizable=yes,scrollbars=0,width=300,height=300,left=100,top=100,border=2');
+              if (msgWindow.opener == null) msgWindow.opener = self;
+              msgWindow.focus();
+  clearID=msgWindow.setTimeout("self.close()",3500)
+                     }
+                     //-->
+  </script>
+  <title>ENTRANCE SEQUENCE</title>
+  <style>
+  h1 {font: 24pt "Times Roman";
+
+  font-weight: bold; line height: 30pt}
+
+  h2 {font: 18pt "Times Roman";
+
+  font-weight: normal; line height: 24pt}
+
+  h3 {font: 14pt "Times Roman";
+
+  font-weight: normal; line height: 22pt}
+
+  h4 {font: 10pt "Times Roman";
+
+  font-weight: bold; line height: 14pt}
+
+  h6 {font-size: 11px; font-family: "Times Roman";
+  font-weight: normal; line-height: 11px}
+
+  </style>
+</head>
+<body bgcolor="#669999" text="#E3E5C9" onload="gethelp();" onunload="SetFileName();">
+  <script language="JavaScript" src="nick/drawfunctions.js"></script>
+  <table cellpadding="0" cellspacing="0" border="0" align="center">
+    <tr>
+      <td align="center">
+        <script language="JavaScript">
+        initialImage = GetCookieX("InitialImage");
+        var stepInfo = /^(\d+) (.*)$/.exec(GetCookieX("StepCookie"));
+        sequenceStepNumber = stepInfo[1];
+        sequenceStepTitle = stepInfo[2];
+        // sequenceStepTitle = "IDENTIFY TRANSITION SPACE";
+        // sequenceStepNumber = 1;
+        var cookieInfo = GetCookieX("DrawCookie").split(" ");
+        var backURL = cookieInfo[0];
+        var nextStepURL = cookieInfo[1];
+        var wantHelp = (cookieInfo.length > 2) && (cookieInfo[2]=="first");
+        var endOfSequence = (cookieInfo.length > 2) && (cookieInfo[2]=="last");
+
+        drawapplet();
+        </script>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <script>
+        if (wantHelp)
+        document.write(" <table width=100% align=center><tr><td><IFRAME SRC=helpwait.htm name=helpbox width=100% height=70 align=center></iframe><tr><td align=center></table>");
+        </script>
+        <table style="margin:0pt;padding:0pt" width="700" border="0" align="center">
+          <tr>
+            <td width="50%" align="center">
+              <form method="post">
+                <input type="button" tabindex="1" height="30;" value="Go back to instructions for this step" onclick="location.replace(backURL)">
+              </form>
+            </td>
+            <td width="50%" align="center">
+              <script language="javascript">
+              if (!endOfSequence)
+              document.write('<FORM METHOD="post"> <INPUT TYPE="button" height=30; VALUE="Go on to next step of sequence" onClick="location.replace(nextStepURL)"></FORM>');
+              </script>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <script language="javascript">
+        if (endOfSequence)
+        document.write('<table style="font:15px" width="80%" border=0 cellpadding=2 cellspacing=0 align=center>'
+        + '<tr> <td align=center ><h4>'
+        + 'THIS IS THE LAST STEP OF THE SEQUENCE</td></tr>'
+        + '<tr><td align=left >'
+        + '<b>When you are done, click on the button below.</b> '
+        + 'This will create a copy of your drawing that you can save.'
+        + '</table>');
+        else
+        document.write('<table>'
+        + '<tr><td width=23%></td>'
+        + '<td width=49% align=center>'
+        + '<h6>So long as your browser remains open, the program will remember the progress you have made in your drawing, and you can modify it and work on it whenever you come back to the drawpad</td>'
+        + '<td width=23%> </td></tr></table>');
+
+        </script>
+        <div align="center">
+          <form method="post">
+            <input type="button" tabindex="3" style="font-size:12px" height="30;" value="Quit, and save your drawing on your computer" onclick="RequestJpegAndGo(nextURL)">
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+
+body {font-family: "Times New Roman", serif;
+	background-color: #003;
+	color: #fff;}
+
+img {border: none;}
+
+ul {margin: 0 0 0 7px;
+	padding: 0;}
+	
+a {color: #fff;
+	font-weight: bold;}
+	
+a:hover {color: #6c6;}	
+
+#container {padding: 3px 3px 13px 3px;
+		clear: left;
+		background-color: #396;
+		position: absolute;
+		top: 122px;}				
+		
+#header {width: 850px;
+		height: 88px;
+		border: 0;
+		float: left;
+		padding-bottom: 25px;}
+		
+	#frametree {float: left;
+		width: 228px;
+		background-color: #222;
+		padding-top: 10px;
+		padding-left: 10px;
+		padding-bottom: 10px;
+		margin-top: 39px;
+		margin-left: 49px;}
+
+                #frametree a {font-weight: normal;}
+
+		#frametree a:hover {color: #ff9;}
+		
+	#frametitle {float: left;
+		width: 485px;
+		line-height: 1.15;}
+		
+	#frameimage {float: left;}
+	
+	#frameimage img {padding-top: 12px;}
+
+	#frameimage a {font-size: 24px;}
+
+#interiordiv1-1 , #interiordiv2-1 , #interiordiv3-1 , #interiordiv4-1 , #interiordiv5 ,
+#interiordiv1-2 , #interiordiv2-2 , #interiordiv3-2 , #interiordiv4-2 ,
+#interiordiv1-3 , #interiordiv2-3 , #interiordiv3-3 , #interiordiv4-3 ,
+#interiordiv1-4 , #interiordiv2-4 , #interiordiv3-4 , #interiordiv4-4 ,
+#interiordiv1-5 , #interiordiv2-5 , #interiordiv3-5 , #interiordiv4-5 {clear: left;
+		width: 520px;
+		height: auto;
+		padding: 0 5px 0 5px;
+		margin: auto;
+		border: solid 1px #c30;}
+
+#interiordiv1-1 p , #interiordiv2-1 p , #interiordiv3-1 p , #interiordiv4-1 p , #interiordiv5 p ,
+#interiordiv1-2 p , #interiordiv2-2 p , #interiordiv3-2 p , #interiordiv4-2 p ,
+#interiordiv1-3 p , #interiordiv2-3 p , #interiordiv3-3 p , #interiordiv4-3 p ,
+#interiordiv1-4 p , #interiordiv2-4 p , #interiordiv3-4 p , #interiordiv4-4 p ,
+#interiordiv1-5 p , #interiordiv2-5 p , #interiordiv3-5 p , #interiordiv4-5 p 
+		{padding: 9px;
+		margin: 0;}	
+
+#interiordiv1-1-1 , #interiordiv2-1-1 {clear: left;
+		width: 520px;
+		height: auto;
+		padding: 0 5px 0 5px;
+		margin: auto;
+		border: solid 1px #c30;}		
+
+.mainContent3 {text-align: center;
+	padding-top: 34px;}
+	
+	.mainContent3 img {}
+
+.h1class {font-size: 56px; 
+	font-family: "Times Roman", "Times", "Times New Roman"; 
+  	font-weight: normal; 
+  	line-height: 56px; }
+	
+.h5class {font-weight: normal;
+	font-family: arial, sans-serif;
+	font-size: 10px;}
+	
+.h1classpadding {font-size: 56px; 
+	font-family: "Times Roman", "Times", "Times New Roman"; 
+  	font-weight: normal; 
+  	line-height: 56px; 
+  	padding-top: 20px;}
+
+#mainContent {text-align: center;
+	padding-top: 50px;
+	padding-left: 60px;
+	margin-left: 7%;
+	margin-right: 5%;}
+	
+	#mainContent img {width: 200px;}
+	
+#mainContent2 {text-align: center;
+	padding-top: 30px;}
+	
+	#mainContent2 img {width: 200px;}	
+
+.mainContent3 {text-align: center;
+	padding-top: 34px;}
+	
+	.mainContent3 img {}	
+
+.inline {text-align: center;
+	padding-top: 30px;}
+	
+#text1 , #text2 , #image1 {position: relative; 		/*for 1st Slide */
+		float: left;
+		font-size: 26px;
+		color: #e3e5c9;
+		font-style: italic;
+		width: 23%;
+		margin: 0 3% 0 0;
+		overflow: visible;}
+
+#text1 {text-align: left;}
+
+#text2 {text-align: right;}
+
+#image1 p {font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		text-align: center;}						/*end of 1st Slide */
+		
+		
+		
+#text1-2 , #text2-2 , #image1-2    /*for 2nd Slide, Table of Contents */
+		{position: relative; 
+		clear: left;
+		/*font-size: 26px;*/
+		color: #e3e5c9;
+		overflow: visible;}	
+			
+#text1-2 {height: auto;		
+		width: 32%;
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		color: #e3e5c9;
+		padding-top: 7px;}
+		
+		#text1-2 ol {font-weight: bold;
+			line-height: 1.3;}
+
+#text2-2 {height: auto;		
+		width: 60%;
+		margin: auto;
+		text-align: center;
+		font-variant: small-caps;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;
+		padding-top: 7px;}
+
+#image1-2 , #image1-2-1 {height: auto;		
+		margin: auto;
+		width: 40%;}
+
+/* #image1-2 p , #image1-2-1 p {font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;} */
+		
+		#image1-2 img {height: 175px;
+			width: auto;
+			padding-bottom: 10px;}
+
+		#image1-2-1 img {height: 60px;
+			width: auto;
+			padding-bottom: 10px;}						
+					
+															/*for 3rd-9th Slides */
+					
+#text1-3 , #text1-4 , #text1-5 , #text1-7 , #text1-9 , #text1-10   /* Regular DIV size */
+		{position: relative; 
+		clear: left;
+		padding: none;
+		height: auto;		
+		width: 560px;
+		margin: auto;
+		text-align: center;
+		font-size: 14px;
+		color: #e3e5c9;}
+		
+#text1-6 , #text1-8 , #text1-11    /* Wider DIV for a larger amount of text per slide */
+		{position: relative; 
+		clear: left;
+		padding: none;
+		height: auto;		
+		width: 560px;
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		color: #e3e5c9;}		
+		
+#text2-3 , #text2-4 , #text2-5 , #text2-6 , #text2-7 , #text2-8 , #text2-9 , #text2-10 , #text2-11
+		{position: relative; 
+		clear: left;
+		height: auto;
+		width: 560px;
+		margin: auto;
+		text-align: center;
+		font-variant: small-caps;
+		font-size: 17px;
+		font-style: italic;
+		color: #fff;}
+
+#image1-3 , #image1-4 , #image1-5 , #image1-6 , #image1-7 , #image1-8 , #image1-9 , #image1-10 , #image1-11
+		{position: relative; 
+		clear: left;
+		height: auto;
+		width: 40%;						
+		margin: auto;
+		padding: none;}
+
+#image1-3 p, #image1-4 p, #image1-5 p, #image1-6 p, #image1-7 p, #image1-8 p, #image1-9 p , #image1-10 p , #image1-11 p
+		{font-variant: small-caps;
+		font-size: 40px;
+		font-style: normal;
+		font-weight: bold;
+		color: #6c6;}
+		
+		#image1-3 img, #image1-4 img, #image1-5 img, #image1-6 img, #image1-7 img, #image1-8 img, #image1-9 img , #image1-10 img , #image1-11 img
+		{height: 200px;}			
+											/*end of 3rd-9th Slides */			
+			
+
+#nextsessionlink a:hover , #prevsessionlink a:hover {
+		color: #fff;}	
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

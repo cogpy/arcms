@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script language="JavaScript">
+  <!--
+
+
+
+  function newWindow(file,window) {
+
+
+
+       msgWindow=open(file,window,'resizable=yes,scrollbars=0,width=320,height=430,left=170,top=60,border=1');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+
+  clearID=msgWindow.setTimeout("self.close()",5000)
+
+                     }
+
+                     //-->
+  </script>
+  <script>
+  function disable_right_click(e)
+  {
+      var browser = navigator.appName.substring ( 0, 9 );
+      var event_number = 0;
+
+      if (browser=="Microsoft")
+          event_number = event.button;
+      else if (browser=="Netscape")
+          event_number = e.which;
+
+      if ( event_number==2 || event_number==3 )
+          {
+          alert ("Right Mouse Button Is Disabled");
+          return (false);
+          }
+
+      return (true);
+  }
+
+  function check_mousekey ()
+  {
+      var mouse_key = 93;
+      var keycode = event.keyCode;
+
+      if ( keycode == mouse_key )
+          alert ( "Mouse Key Is Disabled" );
+  }
+
+  function trap_page_mouse_key_events ()
+  {
+      var browser = navigator.appName.substring ( 0, 9 );
+
+      document.onmousedown = disable_right_click;
+
+      if ( browser == "Microsoft" )
+          document.onkeydown = check_mousekey;
+      else if ( browser == "Netscape" )
+          document.captureEvents( Event.MOUSEDOWN );
+  }
+
+  window.onload = trap_page_mouse_key_events;
+  </script>
+  <title>ENTRANCE TRANSITION</title>
+  <style>
+
+  h1 {font: 24pt "Times Roman";
+
+  font-weight: bold; line height: 30pt}
+
+  h2 {font: 18pt "Times Roman";
+
+  font-weight: normal; line height: 24pt}
+
+  h3 {font: 14pt "Times Roman";
+
+  font-weight: normal; line height: 22pt}
+
+  h4 {font: 10pt "Times Roman";
+
+  font-weight: bold; line height: 14pt}
+
+  h6 {font: 10pt "Times Roman";
+
+  font-weight: normal; line height: 10pt}
+
+  </style>
+</head>
+<body bgcolor="#669999" text="#E3E5C9" link="paleblue" vlink="paleblue">
+  <table width="80%" height="60" border="0" align="center">
+    <tr>
+      <td width="15%" valign="top" align="left">
+        <a href="start.htm"><img src="backarrow6.gif"></a>
+        <h2><i><font color="#E3E5C9"></font></i></h2>
+      </td>
+      <td width="50%" align="center" valign="top"><img src="logoentrance.jpg" height="200" border="1"></td>
+      <td width="15%" valign="top" align="right">
+        <a href="entr1.htm"><img src="nextarrow6.gif"></a>
+        <h2><i><font color="#E3E5C9"></font></i></h2>
+      </td>
+    </tr>
+  </table>
+  <table width="80%" align="center">
+    <tr>
+      <td colspan="3">
+        <h2><font color="#66CC66"></font></h2>
+        <center>
+          <h2><b>SEQUENCE OF STEPS FOR AN ENTRANCE TRANSITION</b></h2>
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td width="15%"></td>
+      <td width="50%" align="" left="">
+        <blockquote>
+          These are the steps you will follow in making your entrance transition
+          <ol>
+            <h4></h4>
+            <li><font color="#BBBBFF">STEP 1:</font> DEFINE A SINGLE SPACE WHICH EXTENDS FROM THE FRONT DOOR TO THE STREET</li>
+            <li><font color="#BBBBFF">STEP 2:</font> CHANGES OF LEVEL AND DIRECTION</li>
+            <li><font color="#BBBBFF">STEP 3:</font> FORMING THE TRANSITION AS AN ACTUAL SPACE</li>
+            <li><font color="#BBBBFF">STEP 4:</font> THE FIVE SENSES</li>
+            <li><font color="#BBBBFF">STEP 5:</font> THE INNER CENTER OF THE TRANSITION</li>
+            <li><font color="#BBBBFF">STEP 6:</font> SHAPING THE MOUTH OF THE PATH</li>
+            <li><font color="#BBBBFF">STEP 7:</font> MAKE ALL SPACES POSITIVE</li>
+            <li>FINISH</li>
+          </ol>
+          <table>
+            <tr>
+              <td width="15%"></td>
+            </tr>
+          </table>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="2" width="80%" align="center">
+            <tr>
+              <td height="20" bgcolor="#9999FF" align="right">
+                <a href="entr1.htm" target="_top"><b><span style="color:E3E5C9;"></span></b>
+                <h4><b><span style="color:E3E5C9;">NOW TRY IT OUT FOR YOURSELF</span></b></h4></a>
+              </td>
+            </tr>
+            <tr align="center">
+              <td></td>
+            </tr>
+          </table>
+          <table align="center">
+            <tr>
+              <td>
+                <h6>Copyright, PatternLanguage.com, 2000. Patent pending.</h6>
+              </td>
+            </tr>
+          </table>
+        </blockquote>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

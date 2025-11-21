@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>visitors</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <style type="text/css">
+  .h1class {
+        FONT-WEIGHT: normal; FONT-SIZE: 56px; FONT-FAMILY: "Times Roman"
+  }
+  .h2class {
+        FONT-WEIGHT: bold; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"
+  }
+  H4 {
+        FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: arial
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Clarendon"; line-space: 15px
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times New Roman"
+  }
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 16px; FONT-FAMILY: "Times Roman"
+  }
+
+  #main {
+        LEFT: 0; WIDTH:700px; VISIBILITY: visible; POSITION: absolute; TOP: 0px; HEIGHT: 500px; font-size:12px ; class:h3class; 
+  }
+
+  #text {
+        LEFT: 0; WIDTH:700px; VISIBILITY: visible; POSITION: absolute; TOP: 500px; HEIGHT: 120px
+  }
+
+  #lower {
+        LEFT: 0; WIDTH:700px; VISIBILITY: visible; POSITION: absolute; TOP: 350px; HEIGHT: 240px
+  }
+  </style>
+</head>
+<body bgcolor="#330000" text="#FFCC66" link="#EEEEEE" vlink="#EEEEEE">
+  <div id="main">
+    <blockquote>
+      <span class="h3class"><span style="font-size:20">OUR VISITOR BOOK &nbsp;&nbsp;&nbsp;&nbsp;<img src="yellowrose.jpg" height="60"></span></span>
+      <p>If you would like us to know you, or if you would like to tell us anything about yourself, or your comments on this series of city pages, we would be very glad to hear from you.</p>
+      <p></p>
+      <form name="orderform" method="post" action="/cgi-bin/patternl/visitoraccept.py/duncanville/currentvisitorbook.htm" id="orderform">
+        <b>NAME</b> If you wish, please do write your name and email address or mailing address here:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="text_nameaddr" size="50" value=" ">
+        <p><b>COMMENT</b> All of us at patternlanguage.com, and Earle Jones, the Director of Economic Development in the city of Duncanville,would like to hear from you, with your comments about our program for Main Street, and any ideas you might have for helping, or building something along Main Street, or ideas you may have as a visitor to improve our ideas about Main Street.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <textarea cols="60" rows="3" name="text_comments">
+</textarea></p>
+        <p><b>HOME TOWN</b> If you are not from Duncanville, please tell us where you are from?<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="text_from" size="50" value=" "></p>
+        <p><b>ASPIRATIONS</b> It would be very interesting, too, to hear from you if you have similar aspirations for your own home town, wherever it may be. Would you tell us some of those aspirations?<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <textarea cols="60" rows="3" name="text_aspirations"></textarea></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit"> <input type="hidden" name="gotourl" value="/duncanville/visitorbookthanks.htm"></p>
+      </form>
+      <p></p>
+      <p></p>
+    </blockquote>
+  </div>
+</body>
+</html>

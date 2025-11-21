@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PEDESTRIAN NETWORK</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="javascript" src="../universal/universal.js"></script>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  H4 {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"
+  }
+  H5 {
+        FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h4class {
+        FONT-WEIGHT: bold; FONT-SIZE: 14px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .h6class {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+        FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+  }
+  .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  <!--
+  /********************** FROM NICK ******************************/
+  /* The unhighlighted and highlighted classes determine
+  the appearance of the items in the list of steps
+  (Those that are produced by the stepa() function) */
+  -->
+  .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+  .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+  <!--
+  /********************** END FROM NICK ******************************/
+  -->
+
+  #steps {
+                position: absolute;
+                top:    10px;
+                left:   125px;
+  width   : 350px;
+  visibility: hidden;
+        }
+
+
+  #slideshow {
+                position: absolute;
+                top:    10px;
+                left:   440px;
+  width   : 350px;
+  height : 500px;
+  visibility: visible;
+        }
+
+  #slideshowcontroldiv {
+                position: absolute;
+                top:    40px;
+                left:   10px;
+                width: 50px;
+                text-align: right;
+                visibility: hidden;
+        }
+
+  #loadingmsg {
+                position: absolute;
+                top:    387px;
+                left:   45px;
+  width   : 261px;
+  height : 22px;
+  FONT-weight: bold; FONT-style: italic; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman" ;text-decoration:italic;background-color:66ccdd;color:ffffff;
+  visibility: visible;
+        }
+
+  </style>
+</head>
+<body text="#000000" vlink="#E3E5C9" link="#E3E5C9" alink="#0AEB0E" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="left" width="80%" border="1"><span class="h3class"><b><font color="#000000">WATCH A SLIDESHOW</font></b><br>
+        <span style="font-size:18px; font-style: italic">Slowly run your mouse along the multi-colored strip to the left to view the slideshow at your own pace.</span></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span class="h6class"><font color="#000000">This repeating five-step sequence allows a community to build a pedestrian network over time, applying the same rules repeatedly to the position of new paths and little sections of paths. As a result of this repetition, the individual paths will come to work as a whole network adapted to the neighborhood, with its own appropriate and unique character, according to the position of houses and roads and trees in the existing neighborhood.</font></span>
+          <ul>
+            <li style="color: #ff0000"><span class="h6class">
+            <script>
+
+            stepa(1,'Where are some feasible places where a small segment of pedestrian path might be put?')
+            </script></span></li>
+            <li style='color:#ffff00'><span class="h6class">
+            <script>
+
+            stepa(2,'Which of these does the most to extend and complete the connectivity of the pedestrian network in the neighborhood?')
+            </script></span></li>
+            <li style='color:#00ff00'><span class="h6class">
+            <script>
+
+            stepa(3,'Make the space positive')
+            </script></span></li>
+            <li style='color:#0000ff'><span class="h6class">
+            <script>
+
+            stepa(4,'Embellish the new bit of path with centers')
+            </script></span></li>
+            <li style='color:#ff00ff'><span class="h6class">
+            <script>
+
+            stepa(5,'If needed make small car roads, and small parking areas, to replace any roads you have converted to pedestrian use')
+            </script></span></li>
+          </ul><span class="h6class"><font color="#000000">Over and over individual paths are built wherever it is feasible to put them, even in very small segments.</font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+   // ******* set up handling slideshow and restart-button divs ***************
+        // *********************************************************************
+        // When reusing this, make sure the following settings are correct
+        // *********************************************************************
+
+        // name of div that holds just the slideshow (without the restart button)       
+        var showdiv = 'showdiv';
+        // name of div to show after the slideshow
+        var aftershowdiv = 'restartdiv';  
+
+        // Include the following to replace showdiv with aftershowdiv
+        //  when the slideshow is done
+        setDelayedCallWhenSlideshowDone(
+           function () { hideElement(showdiv); showElement(aftershowdiv); }
+        );
+  </script>
+  <div id="slideshow">
+    <div id='restartdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:hidden">
+      <table width="350" align="center" bgcolor="#EEEEEE" cellspacing="3" border="1">
+        <tr>
+          <td align="center" height="400">
+            <table cellspacing="0" cellpadding="0" width="80%" align="center" border="2">
+              <tr>
+                <td align="middle" bgcolor="#EEEEEE" height="30"><span class="h3class"><a href="javascript:hideElement(aftershowdiv);showElement(showdiv);startRotate()"><font color="#000000">Watch the slideshow again.</font></a></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id='showdiv' style="position:absolute;left:0;top:0;width:350;height:400;visibility:visible">
+      <script language="JavaScript">
+      //ROTATE PIX
+        setupSlides(0, "flo1.jpg",
+                    1, "caption:Cycle 1", "flo1ac.jpg",
+                                        2, "flo1bc.jpg",
+                                        3, "flo1cc.jpg",
+                                        4, "flo1dc.jpg",
+                                        5, "flo1ec.jpg",
+                                        0, "caption:", "flo2.jpg",
+                                        1, "caption:Cycle 2", "flo2ac.jpg",
+                                        2, "flo2bc.jpg",
+                                        3, "flo2cc.jpg",
+                                        4, "flo2dc.jpg",
+                                        5, "flo2ec.jpg",
+                                        0, "caption:", "flo3.jpg",
+                                        1, "caption:Cycle 3", "flo3ac.jpg",
+                                        2, "flo3bc.jpg",
+                                        3, "flo3cc.jpg",
+                                        4, "flo3dc.jpg",
+                                        5, "flo3ec.jpg",
+                                        0, "caption:", "flo4.jpg",
+                                        1, "caption:Cycle 4", "flo4ac.jpg",
+                                        2, "flo4bc.jpg",
+                                        3, "flo4cc.jpg",
+                                        4, "flo4dc.jpg",
+                                        5, "flo4ec.jpg",
+                                        0, "caption:", "flo5.jpg",
+                                        1, "caption:Cycle 5", "flo5ac.jpg",
+                                        2, "flo5bc.jpg",
+                                        3, "flo5cc.jpg",
+                                        4, "flo5dc.jpg",
+                                        5, "flo5ec.jpg",
+                                        0, "caption:", "flo5ec.jpg");
+
+        // setCallOnDocumentLoad(rotate);
+
+        setCallOnDocumentLoad(emptyAllCaptions);
+        setCallOnDocumentLoad(function () {showElement('steps')});
+        setCallOnDocumentLoad(function () {showElement('slideshowcontroldiv')});
+        setCallAtDocumentEnd(preloadImages);
+        timePerSlide = 2000;
+        timeAfterLastSlide = 2000;
+        showSetupCaptions = true;
+      </script>
+      <table align="center" bgcolor="#EEEEEE" width="250">
+        <tr>
+          <td bgcolor="#000000" align="center"><font color="white"><span class="h4class">Using the tools available on this site, members of a community can slowly build a pedestrian network in their neighborhood</span></font></td>
+        </tr>
+        <tr height="100">
+          <td align="center"><img src="flo1.jpg" width="260" name="adBanner" alt="You can do this" id="adBanner"></td>
+        </tr>
+      </table>
+      <div id="loadingmsg" align="center">
+        A slideshow is loading.
+      </div>
+    </div>
+  </div>
+  <div id='slideshowcontroldiv'>
+    <script>
+    writeVerticalSlideshowStripForCycling(40,300,['../images/slidecontroltilecyana.gif','../images/slidecontroltilereda.gif','../images/slidecontroltileyellowa.gif','../images/slidecontroltilegreena.gif','../images/slidecontroltilebluea.gif', '../images/slidecontroltilemagentaa.gif']);
+    </script>
+  </div>
+  <script>
+  universalDocumentEnd();
+  </script>
+</body>
+</html>

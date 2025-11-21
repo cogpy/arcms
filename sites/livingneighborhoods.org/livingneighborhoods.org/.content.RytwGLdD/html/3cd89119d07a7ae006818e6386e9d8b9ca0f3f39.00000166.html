@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Overall Process Explanation</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+
+
+  <!-- Begin
+  function setVariables() {
+  if (navigator.appName == "Netscape") {
+  v=".top=";
+  dS="document.";
+  sD="";
+  y="window.pageYOffset";
+  }
+  else {
+  v=".pixelTop=";
+  dS="";
+  sD=".style";
+  y="document.body.scrollTop";
+   }
+  }
+  function checkLocation() {
+  object="object1";
+  yy=eval(y);
+  eval(dS+object+sD+v+yy);
+  setTimeout("checkLocation()",10);
+  }
+  //  End -->
+  </script>
+  <script>
+  function clientSideInclude(id, url) {
+  var req = false;
+  // For Safari, Firefox, and other non-MS browsers
+  if (window.XMLHttpRequest) {
+    try {
+      req = new XMLHttpRequest();
+    } catch (e) {
+      req = false;
+    }
+  } else if (window.ActiveXObject) {
+    // For Internet Explorer on Windows
+    try {
+      req = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+      try {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+      } catch (e) {
+        req = false;
+      }
+    }
+  }
+  var element = document.getElementById(id);
+  if (!element) {
+  alert("Bad id " + id + 
+   "passed to clientSideInclude." +
+   "You need a div or span element " +
+   "with this id in your page.");
+  return;
+  }
+  if (req) {
+    // Synchronous request, wait till we have it all
+    req.open('GET', url, false);
+    req.send(null);
+    element.innerHTML = req.responseText;
+  } else {
+    element.innerHTML =
+   "Sorry, your browser does not support " +
+      "XMLHTTPRequest objects. This page requires " +
+      "Internet Explorer 5 or better for Windows, " +
+      "or Firefox for any system, or Safari. Other " +
+      "compatible browsers may also exist.";
+  }
+  }
+  </script>
+  <style type="text/css">
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  </style>
+  <style type="text/css">
+  .h7class {
+  FONT-WEIGHT: normal; FONT-SIZE: 36px; FONT-FAMILY: "Palatino", "Times", "Times New Roman";
+  }
+
+  .h5class {
+  FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman"; LINE-HEIGHT: 24px
+  }
+
+  .h8class {
+  FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman", "Times", "Times New Roman"; <!-- LINE-height: 20px; -->
+  }
+
+  .h3class {
+  FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: "Arial";
+  }
+  .h3bclass {
+  FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Arial";
+  }
+  .h6class {
+  FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-FAMILY: "Arial";
+  }
+  </style>
+  <style type="text/css" media="screen">
+
+  #object2 {
+                position: absolute;
+                top:   0px;
+                left:  180px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: hidden;
+  z-index:0;
+  </style>
+  <style type="text/css" media="print">
+
+  #object2 {
+                position: relative;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:3;
+        }
+
+  #whitescreen {
+        position: absolute;
+                top:   0px;
+                left:  0px;
+  visibility: visible;
+  z-index:0;
+  }
+
+  </style>
+  <title></title>
+  <style type="text/css">
+
+  .h3class {
+        FONT-WEIGHT: normal; FONT-SIZE: 14px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+
+  .h4menuclass {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; LINE-SPACING: 13px; FONT-FAMILY: "Arial"; COLOR: 000000;
+  }
+  .h7menuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 10px; LINE-SPACING: 6px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+
+  .thinmenuclass {
+        FONT-WEIGHT: bold; FONT-SIZE: 4px; LINE-SPACING: 4px; FONT-FAMILY: "Arial"; COLOR: 000000; TEXT-DECORATION: none;
+  }
+  </style>
+  <style>
+  <!--
+
+  A.type1:link    {color:#000000; text-decoration:none;}
+  A.type1:visited {color:#000000; text-decoration:none;}
+  A.type1:active  {color:#FFDD00; text-decoration:bold overline underline;}
+  A.type1:hover   {color:#0000ff; background-color:dddddd; text-decoration:underline;}
+  -->
+  </style>
+  <style>
+  <!--  
+  .h70class {
+        FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: "Arial"; COLOR: 005522;
+  }
+  -->
+  </style>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#0000FF" onload="if(self.name !== 'BoomWindow' && self.name !== 'LilWindow'){fEleven()};">
+  <div id="object1" style="position:absolute; visibility:show; left:0px; top:0px; z-index:0">
+    <span id="menu"></span>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <table width="143" border="1" cellspacing="0" cellpadding="4" rules="rows">
+      <tr>
+        <td>
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <a href="javascript:history.go(-1)" onmouseover="self.status=document.referrer;return true"><img src="../images/backred2.jpg" width="30" border="0"></a><a href="javascript:history.go(1)" onmouseover="self.status=document.referrer;return true"><img src="../images/forwardred2.jpg" width="30" border="0"></a>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/bln-exp.htm"><span class="h4menuclass" style="color:007722"><b>WELCOME</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/wholeness.htm">Wholeness</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/gcwelcome.htm">What is a Generative<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Code?</a></b></span></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h4menuclass" style="color:ff0000;line-height:12px"><span class="h7menuclass"><b><a class="type1" href="../ht-0/process.htm">Overview of the<br>
+          <img src="../ht-0/empty.gif" width="21" height="6" border="0">Building Process</a></b></span></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/action.htm"><span class="h4menuclass" style="color:red"><b>ACTION & PRACTICE :</b></span> <span class="h4menuclass" style="color:000000"><b>A Generative Code for Neighborhoods</b></span></a><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">1.&nbsp;<a class="type1" href="../packets/vision-phase.htm">Startup & Vision</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">2.&nbsp;<a class="type1" href="../packets/diagnosis-phase.htm">Diagnosis of the Land</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">3.&nbsp;<a class="type1" href="../packets/density-phase.htm">Setting Density</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">4.&nbsp;<a class="type1" href="../packets/code-phase.htm">Modifying the Code</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">5.&nbsp;<a class="type1" href="../packets/publicspaces-phase.htm">Public spaces</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">6.&nbsp;<a class="type1" href="../packets/buildingvolumes-phase.htm">Building volumes</a></span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">7.&nbsp;Building layout</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">8.&nbsp;Building design</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">9.&nbsp;Project Management</span><br>
+          <img src="../ht-0/empty.gif" width="9"><span class="h7menuclass">10.&nbsp;Craft & Construction</span><br>
+          <img src="../ht-0/empty.gif" width="8"><a class="type1" href="../ht-0/actionlist.htm"><span class="h7menuclass" style="color:ff0000"><b>Library of all unfoldings</b></span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/developers.htm"><span class="h4menuclass" style="color:007722"><b>DEVELOPER'S PAGE</b></span></a><span style="color:ffffff"><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/charter.htm">Developer's charter</a></b></span><br>
+          <img src="../ht-0/empty.gif" width="11"><span class="h7menuclass"><b><a class="type1" href="../ht-0/management.htm">Management practices</a></b></span></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Money innovations</b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;Development process</b></span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/theory.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">THEORY & BACKGROUND</span></b></span></a><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/basics.htm">Basics</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/generative.htm">Generative codes</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/community.htm">Community</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/mainsteps.htm">Main Steps</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/libraryofunfoldings.htm">What is unfolding?</a></b></span><br>
+          <span class="h7menuclass" style="color:000000"><b>&nbsp;&nbsp;&nbsp;&nbsp;<a class="type1" href="../ht-0/neighborhoods.htm">Example neighborhds</a></b></span><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/archive.htm"><span class="h4menuclass" style="color:0000ff"><b><span style="font-size:12px">ARCHIVE</span></b></span></a><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="type1" href="../ht-0/contact.htm"><span class="h4menuclass" style="color:007722"><b>CONTACT</b></span></a><br>
+          <a class="type1" href="../ht-0/services.htm"><span class="h4menuclass" style="color:007722"><b>SERVICES</b></span></a><br>
+          <br>
+        </td>
+      </tr>
+      <tr>
+        <td width="130" align="center">
+          <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Copyright Notice</span></a></span>
+          <p><span class="h5class" style='font-weight:normal;color:black;font-size:9px;'>To place this icon on your desktop <img src="../ht-0/green-earth9-trans.gif" width="48"> right click on the main page and choose <b>create shortcut</b>.</span></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script language="javascript">
+  <!-- 
+  null;
+  -->
+  </script>
+  <div id="whitescreen"><img src="../pics/white.jpg" width="200" height="1000"></div>
+  <div id="object2">
+    <table width="560" align="center" border="1" bordercolor="#005544">
+      <tr>
+        <td width="560" bgcolor="#005544" align="center">
+          <table width="560" align="center" bgcolor="#005544" border="0">
+            <tr>
+              <td align="left" width="230" bgcolor="#005544" valign="top"><span class="h5class" style="color:ffffdd"></span></td>
+              <td align="center" width="100" bgcolor="#005544"><img src="../images/noonew5-r.jpg" height="69"><br></td>
+              <td align="right" width="230" bgcolor="#005544"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table width="560" align="center" border="1" bgcolor="#005544">
+      <tr>
+        <td align="center" width="560">
+          <form method="link" action="../ht-0/bln-exp.htm">
+            <input type="submit" value="Building Living Neighborhoods" style="font-size:16px;font-family:serif;font-style:italic;background-color:#ff0000;border-color:#000000;color:#ffff00;height:29px;width:375px;"><br>
+          </form>
+          <table align="center" width="560" border="1" bgcolor="#FFFFDD">
+            <tr>
+              <td align="center"><span class="h7class" style="color:red">OVERVIEW<br>
+              <span style="font-size:24px">OF THE BUILDING PROCESS</span></span><br></td>
+            </tr>
+          </table>
+          <table align="center" width="560" border="1" cellpadding="9" bgcolor="#FFFFDD">
+            <tr>
+              <td align="left" width="560" valign="top">
+                <span class="h3bclass" style="color:black">&nbsp;<br></span>
+                <blockquote>
+                  <span class="h3bclass" style="color:black">This website gives you a step-by-step process, for laying out large neighborhoods, small neighborhoods, building complexes, and buildings, using generative code.</span>
+                  <p><span class="h3bclass" style="color:black">The process begins with large and general aspects of layout, and gradually works its way down to detailed issues of planning, buildings, road layout, common public space, gardens. It also includes material helping you to manage, or build, the implementation, or parts of the implementation of such a project.</span></p>
+                  <p><span class="h3bclass" style="color:black">To lay out a neighborhood, or any portion of a neighborhood, you use the "unfoldings" that appear on the ACTION & PRACTICE pages (see menu to the left), one at a time. This will allow the design, layout and structure of the neighborhood to unfold, step by step, until it is complete.</span></p>
+                  <p><span class="h3bclass" style="color:black">The unfoldings are arranged in groups, each dealing with a typical phase in creating or repairing a neighborhood. To simplify your tasks, use the groups of unfoldings roughly in the order they are presented. As you become familiar with and work with the unfoldings, you'll find that you can modify them, and create new ones that are specific to the physical attributes and culture of your neighborhood.</span></p>
+                  <p><span class="h3bclass" style="color:black">Print out the unfoldings in groups, or individually, to study them carefully at the site on which you are building. The WORKBOOK is offered to support the work you do by yourself and with others, making the unfoldings and other materials easily accessible. All these materials and your ideas and notes can be assembled together there.</span></p>
+                  <p><span class="h3bclass" style="color:black">The DRAWING PAD is also a vitally useful tool. With it, you can create realistic site maps and drawings on which each new unfolding is built, gradually bringing coherence to the whole project.</span></p>
+                  <p><span class="h3bclass" style="color:black"></span></p>
+                </blockquote>
+              </td>
+            </tr>
+          </table>
+          <table align="center" width="560" border="1" cellpadding="5" bgcolor="#FFFFDD">
+            <tr>
+              <td align="center" width="560" valign="top" bgcolor="#005544"><span class="h5class" style="color:ffff44;font-size:120%;">THIS IS AN EVOLVING WEB SITE<br></span><br></td>
+            </tr>
+            <tr>
+              <td>
+                <span class="h3class"></span>
+                <center>
+                  <span class="h3class"><b>WHY IS THIS SITE RUNNING, WHEN IT IS NOT YET FINISHED?<br>
+                  SHOULD IT BE DESIGNATED AS A BETA-SITE?</b></span>
+                </center>
+                <p><b><i><u><span class="h3bclass"></span></u></i></b></p>
+                <blockquote>
+                  <b><i><u><span class="h3bclass">We are working hard every day to make this site useful to you. Even in its current state, we believe it will help you significantly, if you use the material.</span></u><span class="h3bclass"></span></i><span class="h3bclass"></span></b><span class="h3bclass"></span>
+                  <p><span class="h3bclass">Several newly introduced sections now form the core of the site's operational purpose. These include the WORKBOOK, the DRAWING PAD, and the extensive LIST OF UNFOLDINGS (see menu, left and above). They are, for the time being, in an experimental state. We need to build a very substantial number of unfoldings -- possibly several hundred unfoldings, before the site works fully. We also need months of further refinement on the drawing pad, which is a vitally important part of the site.</span></p>
+                  <p><span class="h3bclass">All this will require months of ongoing, live experiments, so that we can modify the way the material is presented in a form that works as well as possible, for people who are using it to help themselves lay out new neighborhoods, or buildings.</span></p>
+                  <p><span class="h3bclass">We could have chosen to wait until these experiments were complete, before opening the site to the public. However, this is a non-profit site, and our aim is not financial, but to give people help, in a practical setting, so that the huge change ultimately implied by the way this website works, has a chance to catch up on contemporary forms of planning, and construction, and development.</span></p>
+                  <p><span class="h3bclass"><b>In addition, we cannot make the necessary changes and innovations effective, unless we do it with your help!</b></span></p>
+                  <p><span class="h3bclass"></span><br>
+                  <span class="h6class"></span></p>
+                  <center>
+                    <span class="h6class">If you have comments, please let us hear from you.</span>
+                  </center>
+                </blockquote>
+              </td>
+            </tr>
+          </table>
+          <table align="center" width="560" border="1" cellpadding="9" bgcolor="#FFFFDD">
+            <tr>
+              <td align="center" width="560" valign="top"><span class="h3class" style="color:black">THANK YOU to all our users, for sharpening our wits, and for allowing us to serve you.<br></span></td>
+            </tr>
+          </table>
+          <table width="560" align="center" bgcolor="#005544">
+            <tr height="50">
+              <td align="left" width="180"></td>
+              <td align="center" width="90"></td>
+              <td align="right" width="180"><br></td>
+            </tr>
+          </table><br>
+          <center>
+            <span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>&copy; 2006 CES <a href="javascript:clickWindow('../clickagreement/clickagreementces.htm','window2')"><span class="h5class" style='font-weight:normal;color:black;font-size:11px;'>Terms of Use & Copyright Notice<span class="h5class" style='font-weight:normal;color:black;font-size:11px;'></span></span></a></span><br>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YOUR CHOICES</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language='javascript'>
+  if (location.href.match(/^(.*patternlanguage.com)\/cgi-bin/))
+   { var prefix =  RegExp.$1;
+     document.write("<base href='"+prefix+"/stafford'>");
+   }
+
+  function doWhenLoaded()
+  { if (location.href.match(/^(.*patternlanguage.com)/) && !location.href.match(/cgi-bin/))
+    document.forms.voteform.submit();
+  }
+  </script>
+  <style>
+  .rankedChartTitle {font-size:15px;color:#aaaa00}
+  .rankedChartVotes {font-size:15px;color:#00ff00;padding-left:20px;display:block}
+  .rankedChartBarHolder {padding-left:30px;display:block}
+  .rankedChartBar{background-color:#ffff00;border:0}
+  .standardChartTitle {font-size:18px;color:#ff00ff}
+  .standardChartVotes {font-size:18px;color:#ff00ff;padding-left:20px}
+  .standardChartBarHolder {padding-left:30px;display:block}
+  .standardChartBar{background-color:#ffff00;border:0}
+  </style>
+  <style>
+  H1 {
+        FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"
+  }
+  H2 {
+        FONT-WEIGHT: normal; FONT-SIZE: 20px; FONT-FAMILY: "Times Roman"
+  }
+  H3 {
+        FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px;
+  }
+  .h4class {
+        FONT-WEIGHT: normal; FONT-SIZE: 19px; FONT-FAMILY: "Times Roman"
+  }
+  .h5class {
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman";
+  }
+  H6 {
+        FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"
+  }
+  .link 
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; text-decoration: none;  }
+
+  p.MsoNormal, li.MsoNormal, div.MsoNormal
+        {mso-style-parent:"";
+        margin:.5in;
+        margin-bottom:.0001pt;
+        mso-pagination:none;
+        mso-layout-grid-align:none;
+        punctuation-wrap:simple;
+        text-autospace:none;
+        font-size:12.0pt;
+        mso-bidi-font-size:10.0pt;
+        font-family:"Book Antiqua";
+        mso-fareast-font-family:"Times New Roman";
+        mso-bidi-font-family:"Times New Roman";
+  color:222222; background-color:ffeeaa;}
+
+  </style>
+  <script language='javascript'>
+  function checkVoteCount(category,maxVotes)
+  { var aa = document.all['vote_'+category];
+    count = 0;
+    for (var i = 0; i < aa.length; i++)
+      { var a = aa[i];
+        if (a.checked)
+          { count++;
+          }
+      }
+    if (count > maxVotes)
+      { alert('You have voted for more than ' + maxVotes + ' choices. Please modify your votes and resubmit.');
+        return false;
+      }
+    else
+       return true;
+  }
+  </script>
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <script language="JavaScript">
+  <!--
+
+
+  function commentWindow(file,window) {
+        var url = makeAbsolute(file).replace(/\/cgi-bin\/.*\.py/,'');
+        
+
+
+
+       msgWindow=open(url,window,'resizable=yes,scrollbars=1,width=500,height=300,left=155,top=300,border=2');
+
+
+
+              if (msgWindow.opener == null) msgWindow.opener = self;
+
+              msgWindow.focus();
+  //clearID=msgWindow.setTimeout("self.close()",16000)//
+                     }
+
+                     //-->
+  </script>
+</head>
+<body>
+  <a name="#top" id="#top"></a>
+  <h1><span style='font-weight:normal;font-size:120%'>Referendum on User Initiated Development</span><br>
+  <span style="font-size:90%;font-weight:normal;"><img src="../environmental-groups/flags/us-flag-flying.jpg" height="50"><br>
+  What Practical Issues matter most to you about User-Initiated Development?</span></h1>
+  <p></p>
+  <table>
+    <tr>
+      <td width="130"><img src="../stafford/aquiachurch.jpg" height="120"></td>
+      <td width="500">
+        <span class="h4class" style="color:ffcc66"><span style="font-size:90%">Our Stafford County zoning ordinance must be a response to the wishes, sentiments, ideas, dreams, and considered judgment of people who live in Stafford county. <span style="color:ffff00;font-size:110%;font-weight:bold">Please express your feelings, thoughts and ideas by making them known, through this referendum. In your opinion . . . . Please select three from each of A, B and C below.</span></span></span>
+        <p></p>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+  <table>
+    <tr>
+      <td width="700">
+        <form name='voteform' method='post' action='/cgi-bin/patternl/stafford/vote.py/stafford/referendum.htm' onsubmit="return checkVoteCount('worst',3) && checkVoteCount('aspects',3) && checkVoteCount('provisions',3)" id="voteform">
+          <p></p>
+          <p><span class="h4class" style="color:ffff00;font-weight:bold">A. Three Worst ways Stafford County is being ruined by development</span><br>
+          <span style="color:ffcc66;font-size:80%"><input type="checkbox" name="vote_worst" value="tracts">Size of tracts <input type="hidden" name="title_worst_tracts" value="Size of tracts"> &nbsp; &nbsp; &nbsp;<input type="checkbox" name="vote_worst" value="ugly">Ugliness of tracts <input type="hidden" name="title_worst_ugly" value="Ugliness of tracts"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_worst" value="shopping">Shopping malls <input type="hidden" name="title_worst_shopping" value="Shopping malls"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_worst" value="traffic">Traffic and highways <input type="hidden" name="title_worst_traffic" value="Traffic and highways"> &nbsp; &nbsp; &nbsp;<br>
+          <input type="checkbox" name="vote_worst" value="sameness">Sameness <input type="hidden" name="title_worst_sameness" value="Sameness"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_worst" value="nature">Lack of respect for nature <input type="hidden" name="title_worst_nature" value="Lack of respect for Nature"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_worst" value="absence"> Absence of open land between new built areas <input type="hidden" name="title_worst_absence" value="Absence of Open Land between new built areas"> &nbsp; &nbsp; &nbsp;<br>
+          <input type="checkbox" name="vote_worst" value="greed"> The smell of greed <input type="hidden" name="title_worst_greed" value="The smell of greed"> &nbsp; &nbsp; &nbsp;</span><br>
+          <span class="h4class" style="color:ffff00;font-weight:bold">B. Three Aspects of current zoning law most damaging to the beauty of our environment</span><br>
+          <span style="color:ffcc66;font-size:80%"><input type="checkbox" name="vote_aspects" value="parking">Excessive parking requirements&nbsp;&nbsp; <input type="hidden" name="title_aspects_parking" value="Parking requirements&nbsp;&nbsp;"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_aspects" value="setbacks"> Setbacks making useless space around houses <input type="hidden" name="title_aspects_setbacks" value="Setbacks making useless space around houses"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_aspects" value="corporations">Commercial stores owned by mass corporations along every highway&nbsp;&nbsp; <input type="hidden" name="title_aspects_corporations" value="Commercial stores owned by mass corporations along every highway&nbsp;"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_aspects" value="trees">Cutting down trees is permitted&nbsp;&nbsp; <input type="hidden" name="title_aspects_trees" value="Cutting down trees is permitted&nbsp;"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_aspects" value="flattening">Flattening and scraping land&nbsp;&nbsp; <input type="hidden" name="title_aspects_flattening" value="Flattening and scraping land&nbsp;"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_aspects" value="wetland">Wetland destruction&nbsp;&nbsp; <input type="hidden" name="title_aspects_wetland" value="Wetland destruction&nbsp;"> &nbsp; &nbsp; &nbsp;</span><br>
+          <span class="h4class" style="color:ffff00;font-weight:bold">C. Three Provisions for user-initiated development that would help most to make Stafford County beautiful</span><br>
+          <span style="color:ffcc66;font-size:80%"><input type="checkbox" name="vote_provisions" value="quicker">Quicker approval <input type="hidden" name="title_provisions_quicker" value="Quicker approval"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_provisions" value="narrow"> Narrower roads <input type="hidden" name="title_provisions_narrow" value="Narrower roads"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_provisions" value="individuality"> Individuality of houses <input type="hidden" name="title_provisions_individuality" value="Individuality of houses"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_provisions" value="less">Less constraints <input type="hidden" name="title_provisions_less" value="Less constraints"> &nbsp; &nbsp; &nbsp;<br>
+          <input type="checkbox" name="vote_provisions" value="community"> Community <input type="hidden" name="title_provisions_community" value="Community"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_provisions" value="funds"> Funds from County Supervisors allowing every county resident to vote in this referendum <input type="hidden" name="title_provisions_funds" value="Funds from County Supervisors allowing every county resident to vote in this referendum"> &nbsp; &nbsp; &nbsp; <input type="checkbox" name="vote_provisions" value="tools"> Availability of tools for user-initiated planning and design <input type="hidden" name="title_provisions_tools" value="Availability of tools for user-initiated planning and design"> &nbsp; &nbsp; &nbsp;</span></p>
+          <p></p>
+          <p></p>
+          <center>
+            <input type='submit' name='submit_vote' value='SUBMIT YOUR CHOICES'>
+          </center>
+        </form>
+        <p></p>
+        <h1>Tally of All Votes to Date</h1>
+        <h6></h6>
+        <align center="">
+          <span style="color:ff0000">Below you see the ongoing tally of votes, showing choices currently made by people in Stafford County, as they are currently ranking them, shown in order of types of store most often chosen as beneficial to Stafford County. The ideas receiving most votes are listed at the top, the ones getting least votes are at the bottom.</span> <a name="#tally" id="#tally"></a> Your choices of issues you consider most important in the future of the user-initiated development ordinance, in rank order of potential value to Stafford County, as seen by its citizens:
+          <p><span style="font-size"></span></p>%(ranked_worst)s %(ranked_aspects)s %(ranked_provisions)s
+          <table>
+            <tr>
+              <td colspan="3"><img style='background-color:#ffff00' height="2" width="400" src='../stafford/transp.gif'><br>
+              <span style="color:ffff00">A. Worst ways Stafford County is currently being ruined by development</span></td>
+            </tr>
+            <tr>
+              <td colspan="3"><img style='background-color:#ffff00' height="2" width="400" src='../stafford/transp.gif'><br>
+              <span style="color:ffff00">B. Aspects of current zoning law most damaging to the beauty of our environment</span></td>
+            </tr>
+            <tr>
+              <td colspan="3"><img style='background-color:#ffff00' height="2" width="400" src='../stafford/transp.gif'><br>
+              <span style="color:ffff00">C. Provisions for user-initiated development that would help most make places beautiful</span></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+          </table>
+          <p></p>
+        </align>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" width="500">
+        <a href="#top">Back to Top</a>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+  <table>
+    <tr>
+      <td align="right" width="800">
+        <span class="h5class"></span>
+        <p><span class="h5class">PatternLanguage.com is engaged in the development of an integrated, web-based public planning system. This includes collaborative tools for citizens, planners, entrepreneurs and developers.&nbsp; If you are a principal in the planning process, and would like to create vibrant, unique and economically successful places in your area, using our approach, please contact us at :</span> <span class="h5class"></span></p>
+      </td>
+    </tr>
+  </table>
+  <p></p>
+</body>
+</html>

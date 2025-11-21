@@ -1,0 +1,150 @@
+BODY {
+	MARGIN: 20px 0px 0px
+}
+LI {
+	LIST-STYLE-POSITION: outside; FONT: 10pt/120% verdana,arial,helvetica,sans-serif
+}
+UL {
+	LIST-STYLE-POSITION: outside; FONT: 10pt/120% verdana,arial,helvetica,sans-serif
+}
+OL {
+	FONT: 10pt/120% verdana,arial,helvetica,sans-serif
+}
+P {
+	FONT: 10pt/120% verdana,arial,helvetica,sans-serif
+}
+B {
+	FONT: bold 10pt/120% verdana,arial,helvetica,sans-serif
+}
+H1 {
+	FONT: 20pt/120% verdana,arial,helvetica,sans-serif
+}
+H2 {
+	FONT: 16pt/120% verdana,arial,helvetica,sans-serif
+}
+H3 {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #d0d0d0; PADDING-BOTTOM: 1px; FONT: 12pt/120% verdana,arial,helvetica,sans-serif; PADDING-TOP: 1px
+}
+H4 {
+	FONT: bold 12pt/120% verdana,arial,helvetica,sans-serif
+}
+HR {
+	COLOR: green
+}
+TH {
+	BACKGROUND: #ccffcc; FONT: bold 11pt/12pt verdana,arial,helvetica,sans-serif
+}
+TD {
+	FONT: 10pt/12pt verdana,arial,helvetica,sans-serif
+}
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.main {
+	LEFT: 0px; WIDTH: 100%; POSITION: relative; TOP: 0px
+}
+.monospace {
+	FONT-FAMILY: Courier,monospace
+}
+.red {
+	COLOR: #ff0000
+}
+.small {
+	FONT: 8pt/100% verdana,arial,helvetica,sans-serif
+}
+.smallsidebox {
+	MARGIN-BOTTOM: 8px; FONT: 8pt/100% verdana,arial,helvetica,sans-serif; MARGIN-LEFT: 4px
+}
+.smallboldsidebox {
+	MARGIN-BOTTOM: 8px; FONT: bold 8pt/100% verdana,arial,helvetica,sans-serif; MARGIN-LEFT: 4px
+}
+.smallwhite {
+	FONT: 8pt/100% verdana,arial,helvetica,sans-serif; COLOR: #ffffff
+}
+.smallboldwhite {
+	FONT: bold 8pt/100% verdana,arial,helvetica,sans-serif; COLOR: #ffffff
+}
+.smallbold {
+	FONT: bold 8pt/100% verdana,arial,helvetica,sans-serif
+}
+.smallitalic {
+	FONT: italic 8pt/100% verdana,arial,helvetica,sans-serif
+}
+.smallbolditalic {
+	FONT: bold italic 8pt/100% verdana,arial,helvetica,sans-serif
+}
+.isisgreen {
+	BACKGROUND-COLOR: #ccffcd
+}
+.float185 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 185px
+}
+.float2 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 250px
+}
+.floatR365 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 365px
+}
+.floatL365 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 365px
+}
+.floatR335 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 335px
+}
+.floatL335 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 335px
+}
+.floatR305 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 305px
+}
+.floatR250 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 250px
+}
+.floatL250 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 250px
+}
+.float100 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 100px
+}
+.floatL505 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 505px
+}
+.floatL205 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 205px
+}
+.floatR400 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 400px
+}
+.floatR44 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 44px
+}
+.floatL44 {
+	FLOAT: left; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 44px
+}
+.floatR120 {
+	FLOAT: right; FONT: bold 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 120px
+}
+.light {
+	FONT: 8pt/10pt verdana,arial,helvetica,sans-serif; COLOR: white
+}
+.menu {
+	FONT: 8pt/10pt verdana,arial,helvetica,sans-serif; WIDTH: 100px; COLOR: #ffffff; BACKGROUND-COLOR: #c0c0c0
+}
+.submenu {
+	FONT: 7pt/9pt verdana,arial,helvetica,sans-serif; WIDTH: 200px; COLOR: #ffffff; POSITION: absolute; BACKGROUND-COLOR: #e0e0e0
+}
+.listoutside {
+	PADDING-LEFT: 10px; LIST-STYLE-POSITION: inside; MARGIN-BOTTOM: 6px; FONT: 8pt/100% verdana,arial,helvetica,sans-serif; MARGIN-LEFT: 10px
+}
+.list2 {
+	MARGIN-BOTTOM: 6px; FONT: 8pt/100% verdana,arial,helvetica,sans-serif
+}
+A:link {
+	COLOR: blue; FONT-STYLE: normal
+}
+A:active {
+	COLOR: black; FONT-STYLE: italic
+}
+A:visited {
+	COLOR: green; FONT-STYLE: normal
+}

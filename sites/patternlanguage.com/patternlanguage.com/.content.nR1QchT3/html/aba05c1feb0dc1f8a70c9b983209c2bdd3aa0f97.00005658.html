@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PLACING WINDOWS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script language="JavaScript" src="../universal/universal.js"></script>
+  <style>
+    H1 { FONT-WEIGHT: bold; FONT-SIZE: 30px; FONT-FAMILY: "Times Roman"; }
+    H2 { FONT-WEIGHT: normal; FONT-SIZE: 24px; FONT-FAMILY: "Times Roman"; }
+    H3 { FONT-WEIGHT: normal; FONT-SIZE: 17px; FONT-FAMILY: "Times Roman"; line-space:20px; }
+    H4 { FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: "Times Roman"; margin-bottom: 0;      }
+    H5 { FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: "Times Roman"; }
+    H6 { FONT-WEIGHT: normal; FONT-SIZE: 15px; FONT-FAMILY: "Times Roman"; }
+    .h3class {
+       FONT-WEIGHT: normal; FONT-SIZE: 17px; line-space:20px;
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h4class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+    .h6class {
+       FONT-WEIGHT: normal; FONT-SIZE: 15px; 
+       FONT-FAMILY: "Times Roman", "Times", "Times New Roman";
+    }
+
+    .link {
+        FONT-WEIGHT: normal; FONT-SIZE: 18px; FONT-FAMILY: "Times Roman"; 
+        text-decoration: none;
+    }
+
+    .clickon:link {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;
+    }
+    .clickon:visited {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none; 
+    }
+    .clickon:active {
+        color:#ffffff; background-color:#ff0000;
+        FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: "Times Roman"; text-decoration: none;  
+    }
+
+    <!--
+    /********************** FROM NICK ******************************/
+    /* The classes below (unhighlighted, highlighted,...)  determine
+    the appearance of the items in the list of steps
+    (Those that are produced by the setup_step() and movie_step functions) */
+    -->
+
+    .unhighlighted {background-color:#eeeeee; color:#000000; font-weight:normal}
+    .highlighted {background-color:#66ccdd; color:#ffffff; font-weight:normal}
+    .unhighlightedSlideMarker {visibility:hidden}
+    .highlightedSlideMarker {visibility:visible}
+    .unused {background-color:#eeeeee; color:#666666; font-weight:normal}
+
+    #steps {
+        position: absolute;
+        top:    10px;
+        left:   10px;
+        width   : 300px;
+        visibility: hidden;
+    }
+
+    #showdiv {
+        position: absolute;
+        top:    10px;
+        left:   310px;
+        width   : 445px;
+        height : 500px;
+        visibility: visible;
+    }
+
+    #captiondiv {
+        position: absolute;
+        top:    395px;
+        left:   340px;
+        width   : 415;
+        height : 300px;
+    FONT-style: italic; 
+    FONT-SIZE: 16px; 
+        FONT-FAMILY: "Times Roman" ;
+    FONT-WEIGHT: bold;
+        text-decoration:bold;
+        visibility: visible;
+    }
+
+
+    #controlstripdiv {
+        position: absolute;
+        top:    40px;
+        left:   10px;
+        width: 50px;
+        text-align: right;
+        visibility: hidden;
+    }
+
+
+  </style>
+  <script language="javascript">
+
+    initializeSlideshowAndMovie();  // This call must appear before the parameters are set
+    showWhenReady('steps'); // We hide the steps until images are loaded
+                                     // so user sees whole show
+                                     //  This call tells how to make them visible
+
+    ////////////////////////////////////////
+    //////// PARAMETERS TO SET /////////////
+    ////////////////////////////////////////
+
+    //////// LAYOUT ///////////////
+        appletPositionAdjustment(0,0);
+        slidePositionAdjustment(0,0);
+        setAppletDrawingSize(445,299);
+        // slideImageAttributeString = 'width=432 height=205 name="adBanner" alt="You?"';
+        slideImageAttributeString = 'width=445 name="adBanner"';
+
+    //////// CONTROLLING THE SHOW ///////////////
+        allowManualControlViaSteplist(true);
+        allowManualControlViaControlStrip(false);
+        setScrollDiv('stepscrolldiv');  // The name of the div holding the step list that will be scrolled
+        startAutoplayWhenLoaded(false);
+        replayDelay = 5;  // increasing this number slows the replay
+        setTimePerSlide(2000);
+
+    //////// CAPTIONS ///////////////
+        // Captions are shown in the place marked by the call to putCaptionsHere()
+        // Captions are now all specified in the calls to setup_step
+        //  If specified with a parameter beginning with 'caption-manual:'
+        //    they will be shown only when the show is being manually controlled
+        //  (There is also 'caption-auto:', for captions to be shown only during autoplay
+        //      and plain 'caption:', shown always.)
+
+    //////// CONTROL STRIP ///////////////
+        // Setting up a control strip that can be moused along to control the show
+        //   (as in St Marks slideshow)
+        // This information is only used if
+        //  allowManualControlViaControlStrip(true) is called.
+        setControlStripDimensions(40,300);
+        setControlStripTile(0,'../images/slidecontroltilecyana.gif');
+        setControlStripTile(1,'../images/slidecontroltilereda.gif');
+        setControlStripTile(2,'../images/slidecontroltileyellowa.gif');
+        setControlStripTile(3,'../images/slidecontroltilegreena.gif');
+        setControlStripTile(4,'../images/slidecontroltilebluea.gif');
+
+        setSlideMarker("<img height=12 src='../images/rbluetriangle.gif'>");  // for displaying a marker such as a blue triangle
+  </script>
+</head>
+<body text="#000000" bgcolor="#EEEEEE" onload='universalDocumentLoaded()'>
+  <div id="steps">
+    <table width="290" align="center" bgcolor="#EEEEEE" border="1">
+      <tr>
+        <td bgcolor="#EEEEEE" valign="top" align="center" width="80%" border="1"><span class="h3class"><b><font color="#000000">STUDY THE STEPS OF THE UNFOLDING</font></b></span><br>
+        <span style='font-size:80%'>The window layout process has six main steps</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>You can let the computer run the playback</b> of the unfolding automatically: <a class='clickon' href='javascript:autoPlayShowThenMouseControl()'>&nbsp;click&nbsp;here</a> &nbsp;. You can dynamically see the steps as they come into play.</i> &nbsp;</span></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" valign="top" align="left" width="80%" border="1"><span style="font-size:80%;color:000000"><i><b>Or, you may control the playback</b> of the unfolding: VERY slowly <b>mouse-over the list</b> of steps to view the unfolding at your own pace.</i></span></td>
+      </tr>
+      <tr>
+        <td align="left">
+          <span style='font-size:80%'></span>
+          <p></p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td>
+                <div id='stepscrolldiv' style='position:relative;overflow-y:visible'>
+                  <span style='font-size:80%;line-height:1.2;'><br></span>
+                  <ul>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc1.jpg','Stand in room and see where to put windows','caption-manual:Stand in the room and make guesses about where to put windows to enhance the feeling of the room');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc2.jpg','caption-manual:Stand in the room and make guesses about where to put windows to enhance the feeling of the room');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc3.jpg','Place openings', 'caption-manual:Use surveyors tape to place openings where you think the windows ought to be, and at the size you think they ought to be.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc4.jpg','Double check and adjust','caption-manual:Double check, move, and adjust the surveyors tape until openings feel just right.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc41.jpg','caption-manual:Double check, move, and adjust the surveyors tape until openings feel just right.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc5.jpg','caption-manual:Double check, move, and adjust the surveyors tape until openings feel just right.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc6.jpg','Check from outside and adjust','caption-manual:Look at the windows from outside the building. Move and resize as needed');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc7.jpg','caption-manual:Look at the windows from outside the building. Move and resize as needed');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc8.jpg','Place rough frames','caption-manual:Take measurements and place rough frames.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc9.jpg','caption-manual:Take measurements and place rough frames.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc10.jpg','caption-manual:Take measurements and place rough frames.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mc11.jpg','Make rough stab at fenestration pattern','caption-manual:Make a rough stab at possible fenestration pattern -- to be decided finally in a later session.');
+                    </script><br>
+                    <script>
+
+
+                    setup_step('image:mc12.jpg','caption-manual:Make a rough stab at possible fenestration pattern -- to be decided finally in a later session.');
+                    </script></span></li>
+                    <li><span style='font-size:80%;line-height:1.2;'>
+                    <script>
+
+
+                    setup_step('image:mcfinal2.jpg','Completed room','caption-manual:');
+                    </script></span></li>
+                  </ul><span style='font-size:80%;line-height:1.2;'></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id='showdiv'>
+    <table height="60" width="100%" align="center" border="1">
+      <tr>
+        <td valign="top" align="center">
+          <span class="h2class"><font color="#222222"><b>PLACING WINDOWS BY UNFOLDING, AT TIME OF CONSTRUCTION</b></font></span>
+          <p><span class="h2class"><font color="#222222"><span class="h6class"><i>Using this process, anyone can place windows to make a room beautiful</i></span></font></span></p>
+        </td>
+      </tr>
+    </table>
+    <table align="center" width="100%">
+      <tr height="400">
+        <td valign="top" align="left">
+          <script language="javascript">
+            // the following call generates the html for the movie and slideshow 
+            // It should come after everything has been specified
+            <!-- ********** HERE IS WHERE THE MOVIE AND SLIDES WILL APPEAR ********** -->
+            putShowHere();
+          </script><br>
+          <span class="h4class"><font color="#000000"><i></i></font></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div id="captiondiv" align="center">
+    <script>
+       putCaptionsHere('<center>A slideshow is loading.</center>','');
+    </script>
+  </div>
+  <div id="controlstripdiv" align="center">
+    <script>
+      putControlStripHere();  // This can be left here even when a control strip is not being created.
+    </script>
+  </div>
+  <script>
+    universalDocumentEnd();  // always include this and the end of the body
+  </script>
+</body>
+</html>
