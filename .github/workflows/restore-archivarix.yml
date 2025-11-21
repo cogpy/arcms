@@ -98,14 +98,75 @@ jobs:
             mkdir -p "$SITE_DIR"
 
             # Download the archive from Archivarix
-            DOWNLOAD_URL="https://archivarix.com/get/$code_clean/"
-            echo "Download URL: $DOWNLOAD_URL"
-
+            # Extract actual download URL from status page
+            echo "Fetching download URL from status page: $status_url"
+            
+            # Parse status page for available download links
+            # Pattern matches both https:// and protocol-relative // URLs
+            URLS=$(curl -s "$status_url" | grep -oP '(https?:)?//download\.archivarix\.cloud/(restores|content)/[^"'\''<>]+\.zip' || true)
+            
+            # Normalize protocol-relative URLs to https://
+            URLS=$(echo "$URLS" | sed 's|^//|https://|g')
+            
+            # Filter URLs to only include those matching this site's ID
+            if [ -n "$URLS" ]; then
+              URLS=$(echo "$URLS" | grep "$code_clean" || true)
+              if [ -n "$URLS" ]; then
+                echo "Found $(echo "$URLS" | wc -l) download link(s) for $code_clean"
+              fi
+            fi
+            
+            if [ -z "$URLS" ]; then
+              echo "WARNING: No download URLs found on status page for $code_clean" >&2
+              echo "Attempting direct URL construction based on ID pattern..."
+              # Construct direct URL: https://download.archivarix.cloud/restores/R/6/R6IO2MK4OEI0WO26.zip
+              char1="${code_clean:0:1}"
+              char2="${code_clean:1:1}"
+              direct_restore_url="https://download.archivarix.cloud/restores/$char1/$char2/$code_clean.zip"
+              direct_content_url="https://download.archivarix.cloud/content/$char1/$char2/$code_clean.zip"
+              URLS="$direct_restore_url $direct_content_url"
+              echo "Trying constructed URLs: $URLS"
+            fi
+            
+            # Find valid download URL with preference for 'restores' over 'content'
+            DOWNLOAD_URL=""
+            for url in $URLS; do
+              echo "Checking URL: $url"
+              if [[ "$url" == *restores* ]]; then
+                if curl --head --silent --fail "$url" >/dev/null 2>&1; then
+                  DOWNLOAD_URL="$url"
+                  echo "✓ Found valid 'restores' archive: $DOWNLOAD_URL"
+                  break
+                fi
+              fi
+            done
+            
+            # Fallback to 'content' archive if no 'restores' found
+            if [ -z "$DOWNLOAD_URL" ]; then
+              for url in $URLS; do
+                if [[ "$url" == *content* ]]; then
+                  if curl --head --silent --fail "$url" >/dev/null 2>&1; then
+                    DOWNLOAD_URL="$url"
+                    echo "✓ Found valid 'content' archive: $DOWNLOAD_URL"
+                    break
+                  fi
+                fi
+              done
+            fi
+            
             # Validate URL is not empty
             if [ -z "$DOWNLOAD_URL" ]; then
-              echo "ERROR: Download URL is empty" >&2
-              exit 2
+              echo "ERROR: No valid archive zip found for $code (ID: $code_clean)" >&2
+              echo "Status page: $status_url" >&2
+              echo "Available URLs checked: $URLS" >&2
+              echo "Creating placeholder page..."
+              # Create simple placeholder and continue to next site
+              mkdir -p "$SITE_DIR"
+              echo "<html><body><h1>Site Restoration Pending</h1><p>No valid archive found.</p></body></html>" > "$SITE_DIR/index.html"
+              continue
             fi
+            
+            echo "Download URL: $DOWNLOAD_URL"
 
             # Download with retry logic
             MAX_RETRIES=3
@@ -438,7 +499,8 @@ jobs:
           fi
 
           # Replace SITES_DATA placeholder in the HTML
-          sed -i "s/const sites = SITES_DATA;/const sites = $SITES_DATA;/" "$INDEX_FILE"
+          # Use | as delimiter to avoid conflicts with JSON content
+          sed -i "s|const sites = SITES_DATA;|const sites = $SITES_DATA;|" "$INDEX_FILE"
 
           echo "✓ Generated site index at deployment/index.html"
 
