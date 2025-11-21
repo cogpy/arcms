@@ -102,11 +102,22 @@ jobs:
             echo "Fetching download URL from status page: $status_url"
             
             # Parse status page for available download links
-            # Pattern matches URLs like: https://download.archivarix.cloud/restores/R/6/R6IO2MK4OEI0WO26.zip
-            URLS=$(curl -s "$status_url" | grep -oP 'https://download\.archivarix\.cloud/(restores|content)/[^"'\''<>]+\.zip' || true)
+            # Pattern matches both https:// and protocol-relative // URLs
+            URLS=$(curl -s "$status_url" | grep -oP '(https?:)?//download\.archivarix\.cloud/(restores|content)/[^"'\''<>]+\.zip' || true)
+            
+            # Normalize protocol-relative URLs to https://
+            URLS=$(echo "$URLS" | sed 's|^//|https://|g')
+            
+            # Filter URLs to only include those matching this site's ID
+            if [ -n "$URLS" ]; then
+              URLS=$(echo "$URLS" | grep "$code_clean" || true)
+              if [ -n "$URLS" ]; then
+                echo "Found $(echo "$URLS" | wc -l) download link(s) for $code_clean"
+              fi
+            fi
             
             if [ -z "$URLS" ]; then
-              echo "WARNING: No download URLs found on status page" >&2
+              echo "WARNING: No download URLs found on status page for $code_clean" >&2
               echo "Attempting direct URL construction based on ID pattern..."
               # Construct direct URL: https://download.archivarix.cloud/restores/R/6/R6IO2MK4OEI0WO26.zip
               char1="${code_clean:0:1}"
